@@ -1,9 +1,8 @@
-import { getFriendProfile } from '../server/src/controllers/social.controller.js';
+import { getFriendProfile } from './controllers/social.controller.js';
+import { checkDbConnection } from './services/db.service.js';
 import dotenv from 'dotenv';
-import path from 'path';
-import { fileURLToPath } from 'url';
 
-dotenv.config({ path: '../server/.env' });
+dotenv.config();
 
 const mockReq = {
   params: {
@@ -28,6 +27,7 @@ const mockRes = {
 };
 
 async function test() {
+  await checkDbConnection();
   console.log('Starting getFriendProfile test...');
   try {
     await getFriendProfile(mockReq, mockRes);
