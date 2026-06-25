@@ -1,0 +1,3800 @@
+{
+  "users": [
+    {
+      "_id": "6a34eaa7e3c70f38541e020c",
+      "username": "testuser_1781852838739",
+      "email": "test_1781852838739@example.com",
+      "password": "$2a$10$hE1zOYMbVudbHkydLkODZ.oVQkz8Yvit.ijixNVI3W2ey4LyEYDxe",
+      "avatarUrl": "https://api.dicebear.com/7.x/adventurer/svg?seed=testuser_1781852838739",
+      "targetLanguage": "Spanish",
+      "xp": 15,
+      "level": 1,
+      "streakCount": 1,
+      "lastActiveDate": "2026-06-19T07:07:19.301Z",
+      "dailyGoalXp": 20,
+      "unlockedLessons": [
+        "lesson_spanish_1"
+      ],
+      "createdAt": "2026-06-19T07:07:19.188Z",
+      "isOnline": false
+    },
+    {
+      "_id": "6a35b00c5907b1185020bf76",
+      "username": "marybro",
+      "email": "ibrahimabdulgafar4545@gmail.com",
+      "password": "$2a$10$Kt.NdwsR9ui15y1jVQ61m.u78/fT7TtKyt7nqYV5AVc5Dz1n1euS2",
+      "avatarUrl": "https://api.dicebear.com/7.x/adventurer/svg?seed=marybro",
+      "targetLanguage": "Arabic",
+      "xp": 30,
+      "level": 1,
+      "streakCount": 1,
+      "lastActiveDate": "2026-06-20T08:19:42.610Z",
+      "dailyGoalXp": 20,
+      "unlockedLessons": [
+        "lesson_arabic_1",
+        "lesson_english_1"
+      ],
+      "createdAt": "2026-06-19T21:09:32.451Z",
+      "gems": 35,
+      "recentActivity": [
+        {
+          "type": "lesson_complete",
+          "message": "Completed a lesson with 67% score",
+          "xp": 10,
+          "timestamp": "2026-06-20T06:41:01.488Z"
+        },
+        {
+          "type": "lesson_complete",
+          "message": "Completed a lesson with 67% score",
+          "xp": 10,
+          "timestamp": "2026-06-20T06:44:33.803Z"
+        },
+        {
+          "type": "lesson_complete",
+          "message": "Completed a lesson with 67% score",
+          "xp": 10,
+          "timestamp": "2026-06-20T08:19:42.610Z"
+        }
+      ],
+      "ownedItems": [
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "streak_freeze",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "heart_refill",
+        "heart_refill",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "bonus_gems_pack",
+        "streak_freeze",
+        "xp_boost_2x",
+        "heart_refill",
+        "weekend_warrior",
+        "hint_pack",
+        "xp_boost_2x",
+        "xp_boost_2x",
+        "heart_refill",
+        "heart_refill",
+        "hint_pack",
+        "hint_pack",
+        "hint_pack",
+        "hint_pack"
+      ],
+      "streakFreezes": 2,
+      "blockedUsers": [],
+      "friendRequests": [],
+      "notifications": [
+        {
+          "type": "friend_request",
+          "sender": "6a39bb5539a88e9db7bd72b2",
+          "message": "father sent you a friend request.",
+          "read": true,
+          "createdAt": "2026-06-22T22:48:31.271Z"
+        }
+      ],
+      "hearts": {
+        "current": 5,
+        "max": 5,
+        "lastRegeneratedAt": "2026-06-22T22:49:16.482Z"
+      },
+      "weeklyXp": 0,
+      "weeklyXpStartedAt": "2026-06-21T11:00:00.000Z",
+      "dailyQuestState": {
+        "date": "2026-06-22",
+        "lessonsCompleted": 0,
+        "xpEarned": 0,
+        "minutesPracticed": 0,
+        "claimedQuestIds": []
+      },
+      "studyCalendar": [],
+      "achievementsUnlocked": [],
+      "friends": [
+        "6a39bb5539a88e9db7bd72b2"
+      ],
+      "isOnline": false,
+      "lastSeen": "2026-06-22T22:49:16.482Z"
+    },
+    {
+      "_id": "6a39bb5539a88e9db7bd72b2",
+      "username": "father",
+      "email": "ibrahimabdulgafar@gmail.com",
+      "password": "$2a$10$HE5P7Gt7B/IEwg5Z4SRaaug/RYd.rRmTWhsKbJeM8bCOJem.7CSPO",
+      "avatarUrl": "https://api.dicebear.com/7.x/adventurer/svg?seed=father",
+      "targetLanguage": "English",
+      "xp": 0,
+      "level": 1,
+      "streakCount": 0,
+      "lastActiveDate": null,
+      "dailyGoalXp": 20,
+      "gems": 50,
+      "hearts": {
+        "current": 5,
+        "max": 5,
+        "lastRegeneratedAt": "2026-06-22T22:46:45.210Z"
+      },
+      "weeklyXp": 0,
+      "weeklyXpStartedAt": "2026-06-21T11:00:00.000Z",
+      "dailyQuestState": {
+        "date": "2026-06-22",
+        "lessonsCompleted": 0,
+        "xpEarned": 0,
+        "minutesPracticed": 0,
+        "claimedQuestIds": []
+      },
+      "studyCalendar": [],
+      "achievementsUnlocked": [],
+      "streakFreezes": 0,
+      "ownedItems": [],
+      "friends": [
+        "6a35b00c5907b1185020bf76"
+      ],
+      "friendRequests": [],
+      "blockedUsers": [],
+      "notifications": [
+        {
+          "type": "friend_accepted",
+          "sender": "6a35b00c5907b1185020bf76",
+          "message": "marybro accepted your friend request.",
+          "read": true,
+          "createdAt": "2026-06-22T22:49:37.846Z"
+        }
+      ],
+      "isOnline": false,
+      "lastSeen": "2026-06-22T22:46:45.210Z",
+      "recentActivity": [],
+      "unlockedLessons": [],
+      "createdAt": "2026-06-22T22:46:45.210Z"
+    },
+    {
+      "_id": "6a3b020505055c1d2ac058f0",
+      "username": "admin",
+      "email": "admin@lingoleap.com",
+      "password": "$2a$10$V1J78O9t2a/3vGSf0nSfRuGwj2Yf3RhLzbJD.6LHCirDJKn6JCucy",
+      "avatarUrl": "https://api.dicebear.com/7.x/adventurer/svg?seed=admin",
+      "targetLanguage": "Spanish",
+      "xp": 0,
+      "level": 1,
+      "streakCount": 0,
+      "lastActiveDate": null,
+      "dailyGoalXp": 20,
+      "gems": 50,
+      "hearts": {
+        "current": 5,
+        "max": 5,
+        "lastRegeneratedAt": "2026-06-23T22:00:37.967Z"
+      },
+      "weeklyXp": 0,
+      "weeklyXpStartedAt": "2026-06-21T11:00:00.000Z",
+      "dailyQuestState": {
+        "date": "2026-06-23",
+        "lessonsCompleted": 0,
+        "xpEarned": 0,
+        "minutesPracticed": 0,
+        "claimedQuestIds": []
+      },
+      "studyCalendar": [],
+      "achievementsUnlocked": [],
+      "streakFreezes": 0,
+      "ownedItems": [],
+      "friends": [],
+      "friendRequests": [],
+      "blockedUsers": [],
+      "notifications": [],
+      "isOnline": false,
+      "lastSeen": "2026-06-23T22:00:37.981Z",
+      "recentActivity": [],
+      "unlockedLessons": [],
+      "emailVerified": true,
+      "emailVerificationToken": null,
+      "emailVerificationExpire": null,
+      "passwordResetToken": null,
+      "passwordResetExpire": null,
+      "nativeLanguage": "English",
+      "learningGoal": null,
+      "skillLevel": "Beginner",
+      "isOnboarded": true,
+      "role": "admin",
+      "isBanned": false,
+      "createdAt": "2026-06-23T22:00:37.981Z"
+    }
+  ],
+  "lessons": [
+    {
+      "_id": "lesson_spanish_1",
+      "title": "Basics - Intro to Spanish",
+      "language": "Spanish",
+      "category": "Vocabulary",
+      "difficulty": 1,
+      "order": 1,
+      "unit": 1,
+      "unitTitle": "First Contact & Basics",
+      "xpReward": 15,
+      "questions": [
+        {
+          "_id": "q_0_0",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'Hello' in Spanish?",
+          "options": [
+            "Hola",
+            "Adiós",
+            "Gracias",
+            "Por favor"
+          ],
+          "correctAnswer": "Hola"
+        },
+        {
+          "_id": "q_0_1",
+          "type": "translate",
+          "prompt": "Translate: 'El niño come manzanas'",
+          "correctAnswer": "The boy eats apples"
+        },
+        {
+          "_id": "q_0_2",
+          "type": "fill-blank",
+          "prompt": "Yo ____ un estudiante (I am a student).",
+          "options": [
+            "soy",
+            "estoy",
+            "tengo",
+            "llamo"
+          ],
+          "correctAnswer": "soy"
+        },
+        {
+          "_id": "q_0_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'gracias' mean?",
+          "options": [
+            "Thank you",
+            "Please",
+            "Goodbye",
+            "Hello"
+          ],
+          "correctAnswer": "Thank you"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_spanish_2",
+      "title": "Greetings & Small Talk",
+      "language": "Spanish",
+      "category": "Speaking",
+      "difficulty": 1,
+      "order": 2,
+      "unit": 1,
+      "unitTitle": "First Contact & Basics",
+      "xpReward": 15,
+      "questions": [
+        {
+          "_id": "q_1_0",
+          "type": "multiple-choice",
+          "prompt": "Which of the following means 'How are you?'",
+          "options": [
+            "¿Cómo estás?",
+            "Mucho gusto",
+            "De nada",
+            "Hasta luego"
+          ],
+          "correctAnswer": "¿Cómo estás?"
+        },
+        {
+          "_id": "q_1_1",
+          "type": "translate",
+          "prompt": "Translate: '¿De dónde eres?'",
+          "correctAnswer": "Where are you from?"
+        },
+        {
+          "_id": "q_1_2",
+          "type": "fill-blank",
+          "prompt": "Buenos _____, señor (Good morning, sir).",
+          "options": [
+            "días",
+            "noches",
+            "tardes",
+            "años"
+          ],
+          "correctAnswer": "días"
+        },
+        {
+          "_id": "q_1_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'hasta luego' mean?",
+          "options": [
+            "See you later",
+            "Good morning",
+            "Thank you",
+            "Please"
+          ],
+          "correctAnswer": "See you later"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_spanish_3",
+      "title": "Numbers & Counting",
+      "language": "Spanish",
+      "category": "Vocabulary",
+      "difficulty": 1,
+      "order": 3,
+      "unit": 1,
+      "unitTitle": "First Contact & Basics",
+      "xpReward": 15,
+      "questions": [
+        {
+          "_id": "q_2_0",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'Five' in Spanish?",
+          "options": [
+            "Cinco",
+            "Tres",
+            "Ocho",
+            "Dos"
+          ],
+          "correctAnswer": "Cinco"
+        },
+        {
+          "_id": "q_2_1",
+          "type": "translate",
+          "prompt": "Translate: '¿Qué hora es?'",
+          "correctAnswer": "What time is it?"
+        },
+        {
+          "_id": "q_2_2",
+          "type": "fill-blank",
+          "prompt": "Tengo ____ años (I am twenty years old).",
+          "options": [
+            "veinte",
+            "treinta",
+            "diez",
+            "cuarenta"
+          ],
+          "correctAnswer": "veinte"
+        },
+        {
+          "_id": "q_2_3",
+          "type": "multiple-choice",
+          "prompt": "What is 'diez' in English?",
+          "options": [
+            "Ten",
+            "Two",
+            "Seven",
+            "Four"
+          ],
+          "correctAnswer": "Ten"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_spanish_4",
+      "title": "Colors & Descriptions",
+      "language": "Spanish",
+      "category": "Vocabulary",
+      "difficulty": 1,
+      "order": 4,
+      "unit": 1,
+      "unitTitle": "First Contact & Basics",
+      "xpReward": 20,
+      "questions": [
+        {
+          "_id": "q_3_0",
+          "type": "multiple-choice",
+          "prompt": "What is 'rojo' in English?",
+          "options": [
+            "Red",
+            "Blue",
+            "Green",
+            "Yellow"
+          ],
+          "correctAnswer": "Red"
+        },
+        {
+          "_id": "q_3_1",
+          "type": "translate",
+          "prompt": "Translate: 'El cielo es azul'",
+          "correctAnswer": "The sky is blue"
+        },
+        {
+          "_id": "q_3_2",
+          "type": "fill-blank",
+          "prompt": "La manzana es ____ (The apple is red).",
+          "options": [
+            "roja",
+            "verde",
+            "azul",
+            "amarilla"
+          ],
+          "correctAnswer": "roja"
+        },
+        {
+          "_id": "q_3_3",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'Green' in Spanish?",
+          "options": [
+            "Verde",
+            "Amarillo",
+            "Morado",
+            "Naranja"
+          ],
+          "correctAnswer": "Verde"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_spanish_5",
+      "title": "Common Phrases",
+      "language": "Spanish",
+      "category": "Speaking",
+      "difficulty": 2,
+      "order": 5,
+      "unit": 1,
+      "unitTitle": "First Contact & Basics",
+      "xpReward": 20,
+      "questions": [
+        {
+          "_id": "q_4_0",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'Please' in Spanish?",
+          "options": [
+            "Por favor",
+            "De nada",
+            "Lo siento",
+            "Claro"
+          ],
+          "correctAnswer": "Por favor"
+        },
+        {
+          "_id": "q_4_1",
+          "type": "translate",
+          "prompt": "Translate: 'Lo siento mucho'",
+          "correctAnswer": "I am very sorry"
+        },
+        {
+          "_id": "q_4_2",
+          "type": "fill-blank",
+          "prompt": "No ____ español muy bien (I don't speak Spanish very well).",
+          "options": [
+            "hablo",
+            "escucho",
+            "entiendo",
+            "leo"
+          ],
+          "correctAnswer": "hablo"
+        },
+        {
+          "_id": "q_4_3",
+          "type": "multiple-choice",
+          "prompt": "What does '¿Cuánto cuesta?' mean?",
+          "options": [
+            "How much does it cost?",
+            "Where is it?",
+            "What time is it?",
+            "How are you?"
+          ],
+          "correctAnswer": "How much does it cost?"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_spanish_6",
+      "title": "Food & Café Culture",
+      "language": "Spanish",
+      "category": "Grammar",
+      "difficulty": 2,
+      "order": 6,
+      "unit": 2,
+      "unitTitle": "Everyday Spanish Life",
+      "xpReward": 20,
+      "questions": [
+        {
+          "_id": "q_5_0",
+          "type": "multiple-choice",
+          "prompt": "Which word means 'Water'?",
+          "options": [
+            "Agua",
+            "Leche",
+            "Cerveza",
+            "Jugo"
+          ],
+          "correctAnswer": "Agua"
+        },
+        {
+          "_id": "q_5_1",
+          "type": "fill-blank",
+          "prompt": "Yo quiero una taza de ____ (I want a cup of coffee).",
+          "options": [
+            "café",
+            "té",
+            "pan",
+            "queso"
+          ],
+          "correctAnswer": "café"
+        },
+        {
+          "_id": "q_5_2",
+          "type": "translate",
+          "prompt": "Translate: 'La cuenta, por favor'",
+          "correctAnswer": "The bill, please"
+        },
+        {
+          "_id": "q_5_3",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'I am hungry' in Spanish?",
+          "options": [
+            "Tengo hambre",
+            "Tengo sed",
+            "Estoy cansado",
+            "Me llamo Juan"
+          ],
+          "correctAnswer": "Tengo hambre"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_spanish_7",
+      "title": "Family & Relationships",
+      "language": "Spanish",
+      "category": "Vocabulary",
+      "difficulty": 2,
+      "order": 7,
+      "unit": 2,
+      "unitTitle": "Everyday Spanish Life",
+      "xpReward": 25,
+      "questions": [
+        {
+          "_id": "q_6_0",
+          "type": "multiple-choice",
+          "prompt": "What does 'hermano' mean?",
+          "options": [
+            "Brother",
+            "Sister",
+            "Father",
+            "Son"
+          ],
+          "correctAnswer": "Brother"
+        },
+        {
+          "_id": "q_6_1",
+          "type": "translate",
+          "prompt": "Translate: 'Mi madre es muy amable'",
+          "correctAnswer": "My mother is very kind"
+        },
+        {
+          "_id": "q_6_2",
+          "type": "fill-blank",
+          "prompt": "Mi ____ tiene treinta años (My father is thirty years old).",
+          "options": [
+            "padre",
+            "hermano",
+            "abuelo",
+            "hijo"
+          ],
+          "correctAnswer": "padre"
+        },
+        {
+          "_id": "q_6_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'abuela' mean?",
+          "options": [
+            "Grandmother",
+            "Grandfather",
+            "Aunt",
+            "Mother"
+          ],
+          "correctAnswer": "Grandmother"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_spanish_8",
+      "title": "Shopping & Money",
+      "language": "Spanish",
+      "category": "Grammar",
+      "difficulty": 3,
+      "order": 8,
+      "unit": 2,
+      "unitTitle": "Everyday Spanish Life",
+      "xpReward": 25,
+      "questions": [
+        {
+          "_id": "q_7_0",
+          "type": "multiple-choice",
+          "prompt": "How do you ask for the price in Spanish?",
+          "options": [
+            "¿Cuánto cuesta?",
+            "¿Dónde está?",
+            "¿Cómo te llamas?",
+            "¿Qué hora es?"
+          ],
+          "correctAnswer": "¿Cuánto cuesta?"
+        },
+        {
+          "_id": "q_7_1",
+          "type": "translate",
+          "prompt": "Translate: 'Quiero comprar esto'",
+          "correctAnswer": "I want to buy this"
+        },
+        {
+          "_id": "q_7_2",
+          "type": "fill-blank",
+          "prompt": "Necesito ____ dinero (I need more money).",
+          "options": [
+            "más",
+            "menos",
+            "mucho",
+            "poco"
+          ],
+          "correctAnswer": "más"
+        },
+        {
+          "_id": "q_7_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'barato' mean?",
+          "options": [
+            "Cheap",
+            "Expensive",
+            "Big",
+            "Small"
+          ],
+          "correctAnswer": "Cheap"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_spanish_9",
+      "title": "Travel & Directions",
+      "language": "Spanish",
+      "category": "Reading",
+      "difficulty": 3,
+      "order": 9,
+      "unit": 2,
+      "unitTitle": "Everyday Spanish Life",
+      "xpReward": 25,
+      "questions": [
+        {
+          "_id": "q_8_0",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'Where is the hotel?' in Spanish?",
+          "options": [
+            "¿Dónde está el hotel?",
+            "¿Cuánto cuesta el hotel?",
+            "¿Cómo es el hotel?",
+            "¿Hay un hotel?"
+          ],
+          "correctAnswer": "¿Dónde está el hotel?"
+        },
+        {
+          "_id": "q_8_1",
+          "type": "translate",
+          "prompt": "Translate: 'Gire a la derecha'",
+          "correctAnswer": "Turn right"
+        },
+        {
+          "_id": "q_8_2",
+          "type": "fill-blank",
+          "prompt": "El aeropuerto está ____ lejos (The airport is very far).",
+          "options": [
+            "muy",
+            "poco",
+            "nada",
+            "tan"
+          ],
+          "correctAnswer": "muy"
+        },
+        {
+          "_id": "q_8_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'cerca' mean?",
+          "options": [
+            "Near",
+            "Far",
+            "Left",
+            "Right"
+          ],
+          "correctAnswer": "Near"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_spanish_10",
+      "title": "Present Tense Verbs",
+      "language": "Spanish",
+      "category": "Grammar",
+      "difficulty": 3,
+      "order": 10,
+      "unit": 2,
+      "unitTitle": "Everyday Spanish Life",
+      "xpReward": 30,
+      "questions": [
+        {
+          "_id": "q_9_0",
+          "type": "multiple-choice",
+          "prompt": "What is the correct form of 'hablar' for 'yo'?",
+          "options": [
+            "hablo",
+            "hablas",
+            "habla",
+            "hablamos"
+          ],
+          "correctAnswer": "hablo"
+        },
+        {
+          "_id": "q_9_1",
+          "type": "translate",
+          "prompt": "Translate: 'Ella trabaja en una oficina'",
+          "correctAnswer": "She works in an office"
+        },
+        {
+          "_id": "q_9_2",
+          "type": "fill-blank",
+          "prompt": "Nosotros ____ en Madrid (We live in Madrid).",
+          "options": [
+            "vivimos",
+            "vivís",
+            "viven",
+            "vivo"
+          ],
+          "correctAnswer": "vivimos"
+        },
+        {
+          "_id": "q_9_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'correr' mean?",
+          "options": [
+            "To run",
+            "To eat",
+            "To sleep",
+            "To work"
+          ],
+          "correctAnswer": "To run"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_french_1",
+      "title": "French Essentials - Greetings",
+      "language": "French",
+      "category": "Vocabulary",
+      "difficulty": 1,
+      "order": 1,
+      "unit": 1,
+      "unitTitle": "Bonjour! First Steps",
+      "xpReward": 15,
+      "questions": [
+        {
+          "_id": "q_10_0",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'Hello' in French?",
+          "options": [
+            "Bonjour",
+            "Merci",
+            "Au revoir",
+            "S'il vous plaît"
+          ],
+          "correctAnswer": "Bonjour"
+        },
+        {
+          "_id": "q_10_1",
+          "type": "translate",
+          "prompt": "Translate: 'Le chat noir'",
+          "correctAnswer": "The black cat"
+        },
+        {
+          "_id": "q_10_2",
+          "type": "fill-blank",
+          "prompt": "Je ____ un homme (I am a man).",
+          "options": [
+            "suis",
+            "es",
+            "ai",
+            "appelle"
+          ],
+          "correctAnswer": "suis"
+        },
+        {
+          "_id": "q_10_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'merci' mean?",
+          "options": [
+            "Thank you",
+            "Please",
+            "Hello",
+            "Goodbye"
+          ],
+          "correctAnswer": "Thank you"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_french_2",
+      "title": "Numbers & Colors",
+      "language": "French",
+      "category": "Vocabulary",
+      "difficulty": 1,
+      "order": 2,
+      "unit": 1,
+      "unitTitle": "Bonjour! First Steps",
+      "xpReward": 15,
+      "questions": [
+        {
+          "_id": "q_11_0",
+          "type": "multiple-choice",
+          "prompt": "What is 'rouge' in English?",
+          "options": [
+            "Red",
+            "Blue",
+            "Green",
+            "Yellow"
+          ],
+          "correctAnswer": "Red"
+        },
+        {
+          "_id": "q_11_1",
+          "type": "translate",
+          "prompt": "Translate: 'Le ciel est bleu'",
+          "correctAnswer": "The sky is blue"
+        },
+        {
+          "_id": "q_11_2",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'Ten' in French?",
+          "options": [
+            "Dix",
+            "Cinq",
+            "Huit",
+            "Trois"
+          ],
+          "correctAnswer": "Dix"
+        },
+        {
+          "_id": "q_11_3",
+          "type": "fill-blank",
+          "prompt": "J'ai ____ ans (I am twenty years old).",
+          "options": [
+            "vingt",
+            "trente",
+            "dix",
+            "quarante"
+          ],
+          "correctAnswer": "vingt"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_french_3",
+      "title": "Basic Introductions",
+      "language": "French",
+      "category": "Speaking",
+      "difficulty": 1,
+      "order": 3,
+      "unit": 1,
+      "unitTitle": "Bonjour! First Steps",
+      "xpReward": 15,
+      "questions": [
+        {
+          "_id": "q_12_0",
+          "type": "multiple-choice",
+          "prompt": "How do you introduce yourself in French?",
+          "options": [
+            "Je m'appelle...",
+            "Tu t'appelles...",
+            "Il s'appelle...",
+            "Nous nous appelons..."
+          ],
+          "correctAnswer": "Je m'appelle..."
+        },
+        {
+          "_id": "q_12_1",
+          "type": "translate",
+          "prompt": "Translate: 'Enchanté de vous rencontrer'",
+          "correctAnswer": "Nice to meet you"
+        },
+        {
+          "_id": "q_12_2",
+          "type": "fill-blank",
+          "prompt": "Je viens ____ France (I come from France).",
+          "options": [
+            "de",
+            "du",
+            "des",
+            "d'"
+          ],
+          "correctAnswer": "de"
+        },
+        {
+          "_id": "q_12_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'au revoir' mean?",
+          "options": [
+            "Goodbye",
+            "Hello",
+            "Please",
+            "Thank you"
+          ],
+          "correctAnswer": "Goodbye"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_french_4",
+      "title": "Family in French",
+      "language": "French",
+      "category": "Vocabulary",
+      "difficulty": 2,
+      "order": 4,
+      "unit": 1,
+      "unitTitle": "Bonjour! First Steps",
+      "xpReward": 20,
+      "questions": [
+        {
+          "_id": "q_13_0",
+          "type": "multiple-choice",
+          "prompt": "What does 'frère' mean?",
+          "options": [
+            "Brother",
+            "Sister",
+            "Father",
+            "Son"
+          ],
+          "correctAnswer": "Brother"
+        },
+        {
+          "_id": "q_13_1",
+          "type": "translate",
+          "prompt": "Translate: 'Ma mère est belle'",
+          "correctAnswer": "My mother is beautiful"
+        },
+        {
+          "_id": "q_13_2",
+          "type": "fill-blank",
+          "prompt": "Mon ____ s'appelle Pierre (My father's name is Pierre).",
+          "options": [
+            "père",
+            "frère",
+            "fils",
+            "oncle"
+          ],
+          "correctAnswer": "père"
+        },
+        {
+          "_id": "q_13_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'grand-mère' mean?",
+          "options": [
+            "Grandmother",
+            "Mother",
+            "Aunt",
+            "Sister"
+          ],
+          "correctAnswer": "Grandmother"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_french_5",
+      "title": "Common French Phrases",
+      "language": "French",
+      "category": "Speaking",
+      "difficulty": 2,
+      "order": 5,
+      "unit": 1,
+      "unitTitle": "Bonjour! First Steps",
+      "xpReward": 20,
+      "questions": [
+        {
+          "_id": "q_14_0",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'Excuse me' in French?",
+          "options": [
+            "Excusez-moi",
+            "S'il vous plaît",
+            "De rien",
+            "Pardon"
+          ],
+          "correctAnswer": "Excusez-moi"
+        },
+        {
+          "_id": "q_14_1",
+          "type": "translate",
+          "prompt": "Translate: 'Je ne comprends pas'",
+          "correctAnswer": "I don't understand"
+        },
+        {
+          "_id": "q_14_2",
+          "type": "fill-blank",
+          "prompt": "Pouvez-vous parler plus ____? (Can you speak more slowly?)",
+          "options": [
+            "lentement",
+            "vite",
+            "fort",
+            "doucement"
+          ],
+          "correctAnswer": "lentement"
+        },
+        {
+          "_id": "q_14_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'de rien' mean?",
+          "options": [
+            "You're welcome",
+            "Thank you",
+            "Please",
+            "Excuse me"
+          ],
+          "correctAnswer": "You're welcome"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_french_6",
+      "title": "Ordering at a Paris Café",
+      "language": "French",
+      "category": "Reading",
+      "difficulty": 2,
+      "order": 6,
+      "unit": 2,
+      "unitTitle": "La Vie Parisienne",
+      "xpReward": 20,
+      "questions": [
+        {
+          "_id": "q_15_0",
+          "type": "multiple-choice",
+          "prompt": "How do you ask for the bill in French?",
+          "options": [
+            "L'addition, s'il vous plaît",
+            "Un café, please",
+            "Bonjour",
+            "Merci beaucoup"
+          ],
+          "correctAnswer": "L'addition, s'il vous plaît"
+        },
+        {
+          "_id": "q_15_1",
+          "type": "translate",
+          "prompt": "Translate: 'Un café au lait, s'il vous plaît'",
+          "correctAnswer": "A coffee with milk, please"
+        },
+        {
+          "_id": "q_15_2",
+          "type": "fill-blank",
+          "prompt": "Je voudrais un ____ (I would like a croissant).",
+          "options": [
+            "croissant",
+            "sandwich",
+            "gâteau",
+            "baguette"
+          ],
+          "correctAnswer": "croissant"
+        },
+        {
+          "_id": "q_15_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'une baguette' refer to?",
+          "options": [
+            "French bread",
+            "Coffee",
+            "Butter",
+            "Cheese"
+          ],
+          "correctAnswer": "French bread"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_french_7",
+      "title": "Shopping in Paris",
+      "language": "French",
+      "category": "Grammar",
+      "difficulty": 2,
+      "order": 7,
+      "unit": 2,
+      "unitTitle": "La Vie Parisienne",
+      "xpReward": 25,
+      "questions": [
+        {
+          "_id": "q_16_0",
+          "type": "multiple-choice",
+          "prompt": "How do you ask the price in French?",
+          "options": [
+            "C'est combien?",
+            "Où est-ce?",
+            "Comment vous appelez-vous?",
+            "Quelle heure est-il?"
+          ],
+          "correctAnswer": "C'est combien?"
+        },
+        {
+          "_id": "q_16_1",
+          "type": "translate",
+          "prompt": "Translate: 'Je voudrais acheter ça'",
+          "correctAnswer": "I would like to buy this"
+        },
+        {
+          "_id": "q_16_2",
+          "type": "fill-blank",
+          "prompt": "C'est trop ____ (It's too expensive).",
+          "options": [
+            "cher",
+            "bon",
+            "beau",
+            "grand"
+          ],
+          "correctAnswer": "cher"
+        },
+        {
+          "_id": "q_16_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'bon marché' mean?",
+          "options": [
+            "Cheap",
+            "Expensive",
+            "Beautiful",
+            "Large"
+          ],
+          "correctAnswer": "Cheap"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_french_8",
+      "title": "Travel & Transport",
+      "language": "French",
+      "category": "Reading",
+      "difficulty": 3,
+      "order": 8,
+      "unit": 2,
+      "unitTitle": "La Vie Parisienne",
+      "xpReward": 25,
+      "questions": [
+        {
+          "_id": "q_17_0",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'Where is the metro?' in French?",
+          "options": [
+            "Où est le métro?",
+            "Comment allez-vous?",
+            "Quel est le prix?",
+            "Y a-t-il un bus?"
+          ],
+          "correctAnswer": "Où est le métro?"
+        },
+        {
+          "_id": "q_17_1",
+          "type": "translate",
+          "prompt": "Translate: 'Tournez à gauche'",
+          "correctAnswer": "Turn left"
+        },
+        {
+          "_id": "q_17_2",
+          "type": "fill-blank",
+          "prompt": "Le train part à ____ heures (The train leaves at two o'clock).",
+          "options": [
+            "deux",
+            "trois",
+            "quatre",
+            "cinq"
+          ],
+          "correctAnswer": "deux"
+        },
+        {
+          "_id": "q_17_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'tout droit' mean?",
+          "options": [
+            "Straight ahead",
+            "Turn right",
+            "Stop",
+            "Go back"
+          ],
+          "correctAnswer": "Straight ahead"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_french_9",
+      "title": "French Verbs - Present Tense",
+      "language": "French",
+      "category": "Grammar",
+      "difficulty": 3,
+      "order": 9,
+      "unit": 2,
+      "unitTitle": "La Vie Parisienne",
+      "xpReward": 25,
+      "questions": [
+        {
+          "_id": "q_18_0",
+          "type": "multiple-choice",
+          "prompt": "What is the correct form of 'parler' for 'je'?",
+          "options": [
+            "parle",
+            "parles",
+            "parlez",
+            "parlons"
+          ],
+          "correctAnswer": "parle"
+        },
+        {
+          "_id": "q_18_1",
+          "type": "translate",
+          "prompt": "Translate: 'Elle travaille dans un bureau'",
+          "correctAnswer": "She works in an office"
+        },
+        {
+          "_id": "q_18_2",
+          "type": "fill-blank",
+          "prompt": "Nous ____ à Paris (We live in Paris).",
+          "options": [
+            "habitons",
+            "habitez",
+            "habitent",
+            "habite"
+          ],
+          "correctAnswer": "habitons"
+        },
+        {
+          "_id": "q_18_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'courir' mean?",
+          "options": [
+            "To run",
+            "To eat",
+            "To sleep",
+            "To work"
+          ],
+          "correctAnswer": "To run"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_french_10",
+      "title": "French Culture & Expressions",
+      "language": "French",
+      "category": "Vocabulary",
+      "difficulty": 3,
+      "order": 10,
+      "unit": 2,
+      "unitTitle": "La Vie Parisienne",
+      "xpReward": 30,
+      "questions": [
+        {
+          "_id": "q_19_0",
+          "type": "multiple-choice",
+          "prompt": "What does 'C'est la vie' mean?",
+          "options": [
+            "That's life",
+            "It's beautiful",
+            "Very well",
+            "Of course"
+          ],
+          "correctAnswer": "That's life"
+        },
+        {
+          "_id": "q_19_1",
+          "type": "translate",
+          "prompt": "Translate: 'Bon appétit'",
+          "correctAnswer": "Enjoy your meal"
+        },
+        {
+          "_id": "q_19_2",
+          "type": "fill-blank",
+          "prompt": "Je suis très ____ de vous voir (I am very happy to see you).",
+          "options": [
+            "content",
+            "triste",
+            "fatigué",
+            "occupé"
+          ],
+          "correctAnswer": "content"
+        },
+        {
+          "_id": "q_19_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'voilà' mean?",
+          "options": [
+            "There you go",
+            "Hello",
+            "Goodbye",
+            "Thank you"
+          ],
+          "correctAnswer": "There you go"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_english_1",
+      "title": "Greetings",
+      "language": "English",
+      "category": "Vocabulary",
+      "difficulty": 1,
+      "order": 1,
+      "unit": 1,
+      "unitTitle": "Basics",
+      "xpReward": 15,
+      "questions": [
+        {
+          "_id": "q_20_0",
+          "type": "multiple-choice",
+          "prompt": "Which is the most formal greeting?",
+          "options": [
+            "Good morning, how do you do?",
+            "Hey, what's up?",
+            "Yo!",
+            "Howdy!"
+          ],
+          "correctAnswer": "Good morning, how do you do?"
+        },
+        {
+          "_id": "q_20_1",
+          "type": "fill-blank",
+          "prompt": "Nice to ____ you! (Said when meeting someone for the first time)",
+          "options": [
+            "meet",
+            "see",
+            "hear",
+            "find"
+          ],
+          "correctAnswer": "meet"
+        },
+        {
+          "_id": "q_20_2",
+          "type": "match",
+          "prompt": "Match the greetings with their Spanish translations.",
+          "options": [
+            "hello - hola",
+            "goodbye - adiós",
+            "morning - mañana"
+          ],
+          "correctAnswer": "hello:hola;goodbye:adiós;morning:mañana"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_english_2",
+      "title": "Introductions",
+      "language": "English",
+      "category": "Speaking",
+      "difficulty": 1,
+      "order": 2,
+      "unit": 1,
+      "unitTitle": "Basics",
+      "xpReward": 15,
+      "questions": [
+        {
+          "_id": "q_21_0",
+          "type": "multiple-choice",
+          "prompt": "How do you tell someone your name?",
+          "options": [
+            "My name is...",
+            "I call me...",
+            "Name is me...",
+            "I am call..."
+          ],
+          "correctAnswer": "My name is..."
+        },
+        {
+          "_id": "q_21_1",
+          "type": "fill-blank",
+          "prompt": "I ____ from London.",
+          "options": [
+            "come",
+            "am",
+            "live",
+            "born"
+          ],
+          "correctAnswer": "come"
+        },
+        {
+          "_id": "q_21_2",
+          "type": "match",
+          "prompt": "Match introduction terms with categories.",
+          "options": [
+            "name - nombre",
+            "job - trabajo",
+            "age - edad"
+          ],
+          "correctAnswer": "name:nombre;job:trabajo;age:edad"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_english_3",
+      "title": "Numbers",
+      "language": "English",
+      "category": "Vocabulary",
+      "difficulty": 1,
+      "order": 3,
+      "unit": 1,
+      "unitTitle": "Basics",
+      "xpReward": 15,
+      "questions": [
+        {
+          "_id": "q_22_0",
+          "type": "multiple-choice",
+          "prompt": "How do you say 10 in English?",
+          "options": [
+            "Ten",
+            "Two",
+            "Eight",
+            "Three"
+          ],
+          "correctAnswer": "Ten"
+        },
+        {
+          "_id": "q_22_1",
+          "type": "fill-blank",
+          "prompt": "Two plus three equals ____.",
+          "options": [
+            "five",
+            "six",
+            "seven",
+            "four"
+          ],
+          "correctAnswer": "five"
+        },
+        {
+          "_id": "q_22_2",
+          "type": "match",
+          "prompt": "Match digits to words.",
+          "options": [
+            "1 - one",
+            "2 - two",
+            "3 - three"
+          ],
+          "correctAnswer": "1:one;2:two;3:three"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_english_4",
+      "title": "Colors",
+      "language": "English",
+      "category": "Vocabulary",
+      "difficulty": 1,
+      "order": 4,
+      "unit": 1,
+      "unitTitle": "Basics",
+      "xpReward": 20,
+      "questions": [
+        {
+          "_id": "q_23_0",
+          "type": "multiple-choice",
+          "prompt": "What color is a ripe banana?",
+          "options": [
+            "Yellow",
+            "Red",
+            "Blue",
+            "Green"
+          ],
+          "correctAnswer": "Yellow"
+        },
+        {
+          "_id": "q_23_1",
+          "type": "fill-blank",
+          "prompt": "The sky on a clear day is ____.",
+          "options": [
+            "blue",
+            "green",
+            "red",
+            "black"
+          ],
+          "correctAnswer": "blue"
+        },
+        {
+          "_id": "q_23_2",
+          "type": "match",
+          "prompt": "Match color words.",
+          "options": [
+            "red - rojo",
+            "green - verde",
+            "black - negro"
+          ],
+          "correctAnswer": "red:rojo;green:verde;black:negro"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_english_5",
+      "title": "Common Words",
+      "language": "English",
+      "category": "Vocabulary",
+      "difficulty": 1,
+      "order": 5,
+      "unit": 1,
+      "unitTitle": "Basics",
+      "xpReward": 20,
+      "questions": [
+        {
+          "_id": "q_24_0",
+          "type": "multiple-choice",
+          "prompt": "What is the opposite of 'yes'?",
+          "options": [
+            "No",
+            "Maybe",
+            "Ok",
+            "Sure"
+          ],
+          "correctAnswer": "No"
+        },
+        {
+          "_id": "q_24_1",
+          "type": "fill-blank",
+          "prompt": "Please and thank ____ are polite words.",
+          "options": [
+            "you",
+            "them",
+            "him",
+            "her"
+          ],
+          "correctAnswer": "you"
+        },
+        {
+          "_id": "q_24_2",
+          "type": "match",
+          "prompt": "Match opposite words.",
+          "options": [
+            "hot - cold",
+            "big - small",
+            "fast - slow"
+          ],
+          "correctAnswer": "hot:cold;big:small;fast:slow"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_english_6",
+      "title": "Family",
+      "language": "English",
+      "category": "Vocabulary",
+      "difficulty": 2,
+      "order": 6,
+      "unit": 2,
+      "unitTitle": "Everyday Life",
+      "xpReward": 20,
+      "questions": [
+        {
+          "_id": "q_25_0",
+          "type": "multiple-choice",
+          "prompt": "Who is your mother's husband?",
+          "options": [
+            "Father",
+            "Uncle",
+            "Brother",
+            "Son"
+          ],
+          "correctAnswer": "Father"
+        },
+        {
+          "_id": "q_25_1",
+          "type": "fill-blank",
+          "prompt": "My brother's daughter is my ____.",
+          "options": [
+            "niece",
+            "nephew",
+            "cousin",
+            "sister"
+          ],
+          "correctAnswer": "niece"
+        },
+        {
+          "_id": "q_25_2",
+          "type": "match",
+          "prompt": "Match family members.",
+          "options": [
+            "son - hijo",
+            "sister - hermana",
+            "wife - esposa"
+          ],
+          "correctAnswer": "son:hijo;sister:hermana;wife:esposa"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_english_7",
+      "title": "Food",
+      "language": "English",
+      "category": "Grammar",
+      "difficulty": 2,
+      "order": 7,
+      "unit": 2,
+      "unitTitle": "Everyday Life",
+      "xpReward": 20,
+      "questions": [
+        {
+          "_id": "q_26_0",
+          "type": "multiple-choice",
+          "prompt": "Which of the following is a fruit?",
+          "options": [
+            "Apple",
+            "Bread",
+            "Milk",
+            "Beef"
+          ],
+          "correctAnswer": "Apple"
+        },
+        {
+          "_id": "q_26_1",
+          "type": "fill-blank",
+          "prompt": "I want a cup of ____ (hot brew).",
+          "options": [
+            "coffee",
+            "salad",
+            "cheese",
+            "rice"
+          ],
+          "correctAnswer": "coffee"
+        },
+        {
+          "_id": "q_26_2",
+          "type": "match",
+          "prompt": "Match food items with translations.",
+          "options": [
+            "bread - pan",
+            "milk - leche",
+            "meat - carne"
+          ],
+          "correctAnswer": "bread:pan;milk:leche;meat:carne"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_english_8",
+      "title": "Shopping",
+      "language": "English",
+      "category": "Grammar",
+      "difficulty": 2,
+      "order": 8,
+      "unit": 2,
+      "unitTitle": "Everyday Life",
+      "xpReward": 25,
+      "questions": [
+        {
+          "_id": "q_27_0",
+          "type": "multiple-choice",
+          "prompt": "How do you ask for the price?",
+          "options": [
+            "How much is this?",
+            "What is time?",
+            "Where is hotel?",
+            "Who are you?"
+          ],
+          "correctAnswer": "How much is this?"
+        },
+        {
+          "_id": "q_27_1",
+          "type": "fill-blank",
+          "prompt": "Do you have this shirt in a medium ____?",
+          "options": [
+            "size",
+            "color",
+            "price",
+            "brand"
+          ],
+          "correctAnswer": "size"
+        },
+        {
+          "_id": "q_27_2",
+          "type": "match",
+          "prompt": "Match shopping terms.",
+          "options": [
+            "price - precio",
+            "cheap - barato",
+            "receipt - recibo"
+          ],
+          "correctAnswer": "price:precio;cheap:barato;receipt:recibo"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_english_9",
+      "title": "Time",
+      "language": "English",
+      "category": "Grammar",
+      "difficulty": 2,
+      "order": 9,
+      "unit": 2,
+      "unitTitle": "Everyday Life",
+      "xpReward": 25,
+      "questions": [
+        {
+          "_id": "q_28_0",
+          "type": "multiple-choice",
+          "prompt": "How do you say 12:00 PM?",
+          "options": [
+            "Noon",
+            "Midnight",
+            "Morning",
+            "Evening"
+          ],
+          "correctAnswer": "Noon"
+        },
+        {
+          "_id": "q_28_1",
+          "type": "fill-blank",
+          "prompt": "There are sixty minutes in one ____.",
+          "options": [
+            "hour",
+            "day",
+            "second",
+            "minute"
+          ],
+          "correctAnswer": "hour"
+        },
+        {
+          "_id": "q_28_2",
+          "type": "match",
+          "prompt": "Match time units.",
+          "options": [
+            "day - día",
+            "week - semana",
+            "month - mes"
+          ],
+          "correctAnswer": "day:día;week:semana;month:mes"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_english_10",
+      "title": "Travel",
+      "language": "English",
+      "category": "Reading",
+      "difficulty": 2,
+      "order": 10,
+      "unit": 2,
+      "unitTitle": "Everyday Life",
+      "xpReward": 25,
+      "questions": [
+        {
+          "_id": "q_29_0",
+          "type": "multiple-choice",
+          "prompt": "Where do you board a plane?",
+          "options": [
+            "Airport",
+            "Station",
+            "Port",
+            "Library"
+          ],
+          "correctAnswer": "Airport"
+        },
+        {
+          "_id": "q_29_1",
+          "type": "fill-blank",
+          "prompt": "The train departs from platform ____.",
+          "options": [
+            "three",
+            "red",
+            "car",
+            "air"
+          ],
+          "correctAnswer": "three"
+        },
+        {
+          "_id": "q_29_2",
+          "type": "match",
+          "prompt": "Match travel terms.",
+          "options": [
+            "ticket - boleto",
+            "hotel - hotel",
+            "map - mapa"
+          ],
+          "correctAnswer": "ticket:boleto;hotel:hotel;map:mapa"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_english_11",
+      "title": "Questions",
+      "language": "English",
+      "category": "Grammar",
+      "difficulty": 3,
+      "order": 11,
+      "unit": 3,
+      "unitTitle": "Communication",
+      "xpReward": 25,
+      "questions": [
+        {
+          "_id": "q_30_0",
+          "type": "multiple-choice",
+          "prompt": "Which question word asks about a place?",
+          "options": [
+            "Where",
+            "Who",
+            "When",
+            "Why"
+          ],
+          "correctAnswer": "Where"
+        },
+        {
+          "_id": "q_30_1",
+          "type": "fill-blank",
+          "prompt": "____ is your name?",
+          "options": [
+            "What",
+            "Where",
+            "How",
+            "Why"
+          ],
+          "correctAnswer": "What"
+        },
+        {
+          "_id": "q_30_2",
+          "type": "match",
+          "prompt": "Match question words to intent.",
+          "options": [
+            "who - person",
+            "when - time",
+            "why - reason"
+          ],
+          "correctAnswer": "who:person;when:time;why:reason"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_english_12",
+      "title": "Conversations",
+      "language": "English",
+      "category": "Speaking",
+      "difficulty": 3,
+      "order": 12,
+      "unit": 3,
+      "unitTitle": "Communication",
+      "xpReward": 30,
+      "questions": [
+        {
+          "_id": "q_31_0",
+          "type": "multiple-choice",
+          "prompt": "What is an appropriate response to 'Thank you'?",
+          "options": [
+            "You're welcome",
+            "No",
+            "Goodbye",
+            "Excuse me"
+          ],
+          "correctAnswer": "You're welcome"
+        },
+        {
+          "_id": "q_31_1",
+          "type": "fill-blank",
+          "prompt": "Could you please ____ that? (I didn't hear)",
+          "options": [
+            "repeat",
+            "speak",
+            "tell",
+            "say"
+          ],
+          "correctAnswer": "repeat"
+        },
+        {
+          "_id": "q_31_2",
+          "type": "match",
+          "prompt": "Match conversations phrases.",
+          "options": [
+            "hello - hi",
+            "please - por favor",
+            "sorry - disculpa"
+          ],
+          "correctAnswer": "hello:hi;please:por favor;sorry:disculpa"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_english_13",
+      "title": "Directions",
+      "language": "English",
+      "category": "Reading",
+      "difficulty": 3,
+      "order": 13,
+      "unit": 3,
+      "unitTitle": "Communication",
+      "xpReward": 30,
+      "questions": [
+        {
+          "_id": "q_32_0",
+          "type": "multiple-choice",
+          "prompt": "Which direction is the opposite of left?",
+          "options": [
+            "Right",
+            "Straight",
+            "North",
+            "Down"
+          ],
+          "correctAnswer": "Right"
+        },
+        {
+          "_id": "q_32_1",
+          "type": "fill-blank",
+          "prompt": "Go straight and turn ____ at the traffic lights.",
+          "options": [
+            "left",
+            "around",
+            "over",
+            "across"
+          ],
+          "correctAnswer": "left"
+        },
+        {
+          "_id": "q_32_2",
+          "type": "match",
+          "prompt": "Match direction translations.",
+          "options": [
+            "straight - derecho",
+            "north - norte",
+            "near - cerca"
+          ],
+          "correctAnswer": "straight:derecho;north:norte;near:cerca"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_english_14",
+      "title": "Daily Activities",
+      "language": "English",
+      "category": "Grammar",
+      "difficulty": 3,
+      "order": 14,
+      "unit": 3,
+      "unitTitle": "Communication",
+      "xpReward": 30,
+      "questions": [
+        {
+          "_id": "q_33_0",
+          "type": "multiple-choice",
+          "prompt": "What is the first thing you do in the morning?",
+          "options": [
+            "Wake up",
+            "Sleep",
+            "Dinner",
+            "Work"
+          ],
+          "correctAnswer": "Wake up"
+        },
+        {
+          "_id": "q_33_1",
+          "type": "fill-blank",
+          "prompt": "I usually ____ my teeth after breakfast.",
+          "options": [
+            "brush",
+            "wash",
+            "eat",
+            "make"
+          ],
+          "correctAnswer": "brush"
+        },
+        {
+          "_id": "q_33_2",
+          "type": "match",
+          "prompt": "Match verbs to nouns.",
+          "options": [
+            "read - book",
+            "cook - dinner",
+            "watch - tv"
+          ],
+          "correctAnswer": "read:book;cook:dinner;watch:tv"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_english_15",
+      "title": "Emotions",
+      "language": "English",
+      "category": "Vocabulary",
+      "difficulty": 3,
+      "order": 15,
+      "unit": 3,
+      "unitTitle": "Communication",
+      "xpReward": 30,
+      "questions": [
+        {
+          "_id": "q_34_0",
+          "type": "multiple-choice",
+          "prompt": "How do you feel when you win a competition?",
+          "options": [
+            "Excited",
+            "Sad",
+            "Angry",
+            "Tired"
+          ],
+          "correctAnswer": "Excited"
+        },
+        {
+          "_id": "q_34_1",
+          "type": "fill-blank",
+          "prompt": "She was so ____ that she started crying.",
+          "options": [
+            "sad",
+            "happy",
+            "brave",
+            "calm"
+          ],
+          "correctAnswer": "sad"
+        },
+        {
+          "_id": "q_34_2",
+          "type": "match",
+          "prompt": "Match opposite emotions.",
+          "options": [
+            "happy - sad",
+            "calm - angry",
+            "brave - scared"
+          ],
+          "correctAnswer": "happy:sad;calm:angry;brave:scared"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_german_1",
+      "title": "German Basics - Guten Tag!",
+      "language": "German",
+      "category": "Vocabulary",
+      "difficulty": 1,
+      "order": 1,
+      "unit": 1,
+      "unitTitle": "Willkommen! Getting Started",
+      "xpReward": 15,
+      "questions": [
+        {
+          "_id": "q_35_0",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'Hello' in German?",
+          "options": [
+            "Hallo",
+            "Danke",
+            "Bitte",
+            "Tschüss"
+          ],
+          "correctAnswer": "Hallo"
+        },
+        {
+          "_id": "q_35_1",
+          "type": "translate",
+          "prompt": "Translate: 'Ich heiße Anna'",
+          "correctAnswer": "My name is Anna"
+        },
+        {
+          "_id": "q_35_2",
+          "type": "fill-blank",
+          "prompt": "Guten ____ (Good morning).",
+          "options": [
+            "Morgen",
+            "Tag",
+            "Nacht",
+            "Abend"
+          ],
+          "correctAnswer": "Morgen"
+        },
+        {
+          "_id": "q_35_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'Danke' mean?",
+          "options": [
+            "Thank you",
+            "Please",
+            "Hello",
+            "Goodbye"
+          ],
+          "correctAnswer": "Thank you"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_german_2",
+      "title": "Numbers in German",
+      "language": "German",
+      "category": "Vocabulary",
+      "difficulty": 1,
+      "order": 2,
+      "unit": 1,
+      "unitTitle": "Willkommen! Getting Started",
+      "xpReward": 15,
+      "questions": [
+        {
+          "_id": "q_36_0",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'Five' in German?",
+          "options": [
+            "Fünf",
+            "Drei",
+            "Acht",
+            "Zwei"
+          ],
+          "correctAnswer": "Fünf"
+        },
+        {
+          "_id": "q_36_1",
+          "type": "translate",
+          "prompt": "Translate: 'Ich bin zwanzig Jahre alt'",
+          "correctAnswer": "I am twenty years old"
+        },
+        {
+          "_id": "q_36_2",
+          "type": "fill-blank",
+          "prompt": "Eins, zwei, ____, vier (One, two, three, four).",
+          "options": [
+            "drei",
+            "fünf",
+            "sechs",
+            "sieben"
+          ],
+          "correctAnswer": "drei"
+        },
+        {
+          "_id": "q_36_3",
+          "type": "multiple-choice",
+          "prompt": "What is 'zehn' in English?",
+          "options": [
+            "Ten",
+            "Two",
+            "Seven",
+            "Four"
+          ],
+          "correctAnswer": "Ten"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_german_3",
+      "title": "German Colors",
+      "language": "German",
+      "category": "Vocabulary",
+      "difficulty": 1,
+      "order": 3,
+      "unit": 1,
+      "unitTitle": "Willkommen! Getting Started",
+      "xpReward": 15,
+      "questions": [
+        {
+          "_id": "q_37_0",
+          "type": "multiple-choice",
+          "prompt": "What is 'rot' in English?",
+          "options": [
+            "Red",
+            "Blue",
+            "Green",
+            "Yellow"
+          ],
+          "correctAnswer": "Red"
+        },
+        {
+          "_id": "q_37_1",
+          "type": "translate",
+          "prompt": "Translate: 'Der Himmel ist blau'",
+          "correctAnswer": "The sky is blue"
+        },
+        {
+          "_id": "q_37_2",
+          "type": "fill-blank",
+          "prompt": "Das Gras ist ____ (The grass is green).",
+          "options": [
+            "grün",
+            "rot",
+            "blau",
+            "gelb"
+          ],
+          "correctAnswer": "grün"
+        },
+        {
+          "_id": "q_37_3",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'Yellow' in German?",
+          "options": [
+            "Gelb",
+            "Grün",
+            "Blau",
+            "Schwarz"
+          ],
+          "correctAnswer": "Gelb"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_german_4",
+      "title": "Family in German",
+      "language": "German",
+      "category": "Vocabulary",
+      "difficulty": 2,
+      "order": 4,
+      "unit": 1,
+      "unitTitle": "Willkommen! Getting Started",
+      "xpReward": 20,
+      "questions": [
+        {
+          "_id": "q_38_0",
+          "type": "multiple-choice",
+          "prompt": "What does 'Bruder' mean?",
+          "options": [
+            "Brother",
+            "Sister",
+            "Father",
+            "Son"
+          ],
+          "correctAnswer": "Brother"
+        },
+        {
+          "_id": "q_38_1",
+          "type": "translate",
+          "prompt": "Translate: 'Meine Mutter ist sehr nett'",
+          "correctAnswer": "My mother is very kind"
+        },
+        {
+          "_id": "q_38_2",
+          "type": "fill-blank",
+          "prompt": "Mein ____ heißt Thomas (My father is called Thomas).",
+          "options": [
+            "Vater",
+            "Bruder",
+            "Sohn",
+            "Onkel"
+          ],
+          "correctAnswer": "Vater"
+        },
+        {
+          "_id": "q_38_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'Oma' mean?",
+          "options": [
+            "Grandmother",
+            "Mother",
+            "Aunt",
+            "Sister"
+          ],
+          "correctAnswer": "Grandmother"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_german_5",
+      "title": "German Common Phrases",
+      "language": "German",
+      "category": "Speaking",
+      "difficulty": 2,
+      "order": 5,
+      "unit": 1,
+      "unitTitle": "Willkommen! Getting Started",
+      "xpReward": 20,
+      "questions": [
+        {
+          "_id": "q_39_0",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'Please' in German?",
+          "options": [
+            "Bitte",
+            "Danke",
+            "Entschuldigung",
+            "Ja"
+          ],
+          "correctAnswer": "Bitte"
+        },
+        {
+          "_id": "q_39_1",
+          "type": "translate",
+          "prompt": "Translate: 'Ich verstehe nicht'",
+          "correctAnswer": "I don't understand"
+        },
+        {
+          "_id": "q_39_2",
+          "type": "fill-blank",
+          "prompt": "Sprechen Sie ____? (Do you speak English?)",
+          "options": [
+            "Englisch",
+            "Deutsch",
+            "Französisch",
+            "Spanisch"
+          ],
+          "correctAnswer": "Englisch"
+        },
+        {
+          "_id": "q_39_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'Entschuldigung' mean?",
+          "options": [
+            "Excuse me",
+            "Thank you",
+            "Please",
+            "Goodbye"
+          ],
+          "correctAnswer": "Excuse me"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_german_6",
+      "title": "German Travel Phrases",
+      "language": "German",
+      "category": "Reading",
+      "difficulty": 2,
+      "order": 6,
+      "unit": 2,
+      "unitTitle": "Auf Reisen! Out & About",
+      "xpReward": 20,
+      "questions": [
+        {
+          "_id": "q_40_0",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'Where is the station?' in German?",
+          "options": [
+            "Wo ist der Bahnhof?",
+            "Ich bin müde",
+            "Was kostet das?",
+            "Danke schön"
+          ],
+          "correctAnswer": "Wo ist der Bahnhof?"
+        },
+        {
+          "_id": "q_40_1",
+          "type": "translate",
+          "prompt": "Translate: 'Ich verstehe nicht'",
+          "correctAnswer": "I don't understand"
+        },
+        {
+          "_id": "q_40_2",
+          "type": "fill-blank",
+          "prompt": "Wie viel ____ das? (How much does that cost?)",
+          "options": [
+            "kostet",
+            "ist",
+            "hat",
+            "macht"
+          ],
+          "correctAnswer": "kostet"
+        },
+        {
+          "_id": "q_40_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'Bahnhof' mean?",
+          "options": [
+            "Train station",
+            "Airport",
+            "Bus stop",
+            "Hotel"
+          ],
+          "correctAnswer": "Train station"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_german_7",
+      "title": "German Food & Drink",
+      "language": "German",
+      "category": "Grammar",
+      "difficulty": 2,
+      "order": 7,
+      "unit": 2,
+      "unitTitle": "Auf Reisen! Out & About",
+      "xpReward": 25,
+      "questions": [
+        {
+          "_id": "q_41_0",
+          "type": "multiple-choice",
+          "prompt": "How do you order a beer in German?",
+          "options": [
+            "Ein Bier, bitte.",
+            "Ich will Bier.",
+            "Gib mir Bier!",
+            "Bier haben!"
+          ],
+          "correctAnswer": "Ein Bier, bitte."
+        },
+        {
+          "_id": "q_41_1",
+          "type": "translate",
+          "prompt": "Translate: 'Die Rechnung, bitte'",
+          "correctAnswer": "The bill, please"
+        },
+        {
+          "_id": "q_41_2",
+          "type": "fill-blank",
+          "prompt": "Ich hätte gerne ____ (I would like a coffee).",
+          "options": [
+            "einen Kaffee",
+            "ein Wasser",
+            "ein Bier",
+            "einen Tee"
+          ],
+          "correctAnswer": "einen Kaffee"
+        },
+        {
+          "_id": "q_41_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'lecker' mean?",
+          "options": [
+            "Delicious",
+            "Expensive",
+            "Large",
+            "Hot"
+          ],
+          "correctAnswer": "Delicious"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_german_8",
+      "title": "German Shopping",
+      "language": "German",
+      "category": "Grammar",
+      "difficulty": 3,
+      "order": 8,
+      "unit": 2,
+      "unitTitle": "Auf Reisen! Out & About",
+      "xpReward": 25,
+      "questions": [
+        {
+          "_id": "q_42_0",
+          "type": "multiple-choice",
+          "prompt": "How do you ask for help in a shop?",
+          "options": [
+            "Können Sie mir helfen?",
+            "Was kostet das?",
+            "Ich kaufe das!",
+            "Kasse bitte!"
+          ],
+          "correctAnswer": "Können Sie mir helfen?"
+        },
+        {
+          "_id": "q_42_1",
+          "type": "translate",
+          "prompt": "Translate: 'Das ist zu teuer'",
+          "correctAnswer": "That is too expensive"
+        },
+        {
+          "_id": "q_42_2",
+          "type": "fill-blank",
+          "prompt": "Haben Sie das in einer anderen ____? (Do you have this in a different size?)",
+          "options": [
+            "Größe",
+            "Farbe",
+            "Form",
+            "Art"
+          ],
+          "correctAnswer": "Größe"
+        },
+        {
+          "_id": "q_42_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'billig' mean?",
+          "options": [
+            "Cheap",
+            "Expensive",
+            "Beautiful",
+            "Small"
+          ],
+          "correctAnswer": "Cheap"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_german_9",
+      "title": "German Verbs - Present",
+      "language": "German",
+      "category": "Grammar",
+      "difficulty": 3,
+      "order": 9,
+      "unit": 2,
+      "unitTitle": "Auf Reisen! Out & About",
+      "xpReward": 25,
+      "questions": [
+        {
+          "_id": "q_43_0",
+          "type": "multiple-choice",
+          "prompt": "What is the correct form of 'gehen' for 'ich'?",
+          "options": [
+            "gehe",
+            "gehst",
+            "geht",
+            "gehen"
+          ],
+          "correctAnswer": "gehe"
+        },
+        {
+          "_id": "q_43_1",
+          "type": "translate",
+          "prompt": "Translate: 'Wir wohnen in Berlin'",
+          "correctAnswer": "We live in Berlin"
+        },
+        {
+          "_id": "q_43_2",
+          "type": "fill-blank",
+          "prompt": "Er ____ jeden Tag Deutsch (He studies German every day).",
+          "options": [
+            "lernt",
+            "lernst",
+            "lerne",
+            "lernen"
+          ],
+          "correctAnswer": "lernt"
+        },
+        {
+          "_id": "q_43_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'schlafen' mean?",
+          "options": [
+            "To sleep",
+            "To eat",
+            "To run",
+            "To work"
+          ],
+          "correctAnswer": "To sleep"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_german_10",
+      "title": "German Culture & Expressions",
+      "language": "German",
+      "category": "Vocabulary",
+      "difficulty": 3,
+      "order": 10,
+      "unit": 2,
+      "unitTitle": "Auf Reisen! Out & About",
+      "xpReward": 30,
+      "questions": [
+        {
+          "_id": "q_44_0",
+          "type": "multiple-choice",
+          "prompt": "What does 'Prost!' mean when clinking glasses?",
+          "options": [
+            "Cheers!",
+            "Thanks!",
+            "Hello!",
+            "Goodbye!"
+          ],
+          "correctAnswer": "Cheers!"
+        },
+        {
+          "_id": "q_44_1",
+          "type": "translate",
+          "prompt": "Translate: 'Guten Appetit'",
+          "correctAnswer": "Enjoy your meal"
+        },
+        {
+          "_id": "q_44_2",
+          "type": "fill-blank",
+          "prompt": "Das ist ____ (That is great / wonderful)!",
+          "options": [
+            "wunderbar",
+            "schrecklich",
+            "langweilig",
+            "schwierig"
+          ],
+          "correctAnswer": "wunderbar"
+        },
+        {
+          "_id": "q_44_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'Gemütlichkeit' describe?",
+          "options": [
+            "Cozy, pleasant atmosphere",
+            "A type of food",
+            "A festival",
+            "A greeting"
+          ],
+          "correctAnswer": "Cozy, pleasant atmosphere"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_italian_1",
+      "title": "Ciao! Italian Basics",
+      "language": "Italian",
+      "category": "Vocabulary",
+      "difficulty": 1,
+      "order": 1,
+      "unit": 1,
+      "unitTitle": "Benvenuti! Welcome",
+      "xpReward": 15,
+      "questions": [
+        {
+          "_id": "q_45_0",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'Hello' in Italian?",
+          "options": [
+            "Ciao",
+            "Grazie",
+            "Prego",
+            "Arrivederci"
+          ],
+          "correctAnswer": "Ciao"
+        },
+        {
+          "_id": "q_45_1",
+          "type": "translate",
+          "prompt": "Translate: 'Buongiorno, come stai?'",
+          "correctAnswer": "Good morning, how are you?"
+        },
+        {
+          "_id": "q_45_2",
+          "type": "fill-blank",
+          "prompt": "Mi ____ Marco (My name is Marco).",
+          "options": [
+            "chiamo",
+            "sono",
+            "ho",
+            "vado"
+          ],
+          "correctAnswer": "chiamo"
+        },
+        {
+          "_id": "q_45_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'grazie' mean?",
+          "options": [
+            "Thank you",
+            "Please",
+            "Goodbye",
+            "Hello"
+          ],
+          "correctAnswer": "Thank you"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_italian_2",
+      "title": "Italian Numbers",
+      "language": "Italian",
+      "category": "Vocabulary",
+      "difficulty": 1,
+      "order": 2,
+      "unit": 1,
+      "unitTitle": "Benvenuti! Welcome",
+      "xpReward": 15,
+      "questions": [
+        {
+          "_id": "q_46_0",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'Five' in Italian?",
+          "options": [
+            "Cinque",
+            "Tre",
+            "Otto",
+            "Due"
+          ],
+          "correctAnswer": "Cinque"
+        },
+        {
+          "_id": "q_46_1",
+          "type": "translate",
+          "prompt": "Translate: 'Ho vent'anni'",
+          "correctAnswer": "I am twenty years old"
+        },
+        {
+          "_id": "q_46_2",
+          "type": "fill-blank",
+          "prompt": "Uno, due, ____, quattro (One, two, three, four).",
+          "options": [
+            "tre",
+            "cinque",
+            "sei",
+            "sette"
+          ],
+          "correctAnswer": "tre"
+        },
+        {
+          "_id": "q_46_3",
+          "type": "multiple-choice",
+          "prompt": "What is 'dieci' in English?",
+          "options": [
+            "Ten",
+            "Two",
+            "Seven",
+            "Four"
+          ],
+          "correctAnswer": "Ten"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_italian_3",
+      "title": "Italian Colors & Adjectives",
+      "language": "Italian",
+      "category": "Vocabulary",
+      "difficulty": 1,
+      "order": 3,
+      "unit": 1,
+      "unitTitle": "Benvenuti! Welcome",
+      "xpReward": 15,
+      "questions": [
+        {
+          "_id": "q_47_0",
+          "type": "multiple-choice",
+          "prompt": "What is 'rosso' in English?",
+          "options": [
+            "Red",
+            "Blue",
+            "Green",
+            "Yellow"
+          ],
+          "correctAnswer": "Red"
+        },
+        {
+          "_id": "q_47_1",
+          "type": "translate",
+          "prompt": "Translate: 'Il cielo è blu'",
+          "correctAnswer": "The sky is blue"
+        },
+        {
+          "_id": "q_47_2",
+          "type": "fill-blank",
+          "prompt": "L'erba è ____ (The grass is green).",
+          "options": [
+            "verde",
+            "rossa",
+            "blu",
+            "gialla"
+          ],
+          "correctAnswer": "verde"
+        },
+        {
+          "_id": "q_47_3",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'Beautiful' in Italian?",
+          "options": [
+            "Bello",
+            "Brutto",
+            "Grande",
+            "Piccolo"
+          ],
+          "correctAnswer": "Bello"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_italian_4",
+      "title": "Italian Family",
+      "language": "Italian",
+      "category": "Vocabulary",
+      "difficulty": 2,
+      "order": 4,
+      "unit": 1,
+      "unitTitle": "Benvenuti! Welcome",
+      "xpReward": 20,
+      "questions": [
+        {
+          "_id": "q_48_0",
+          "type": "multiple-choice",
+          "prompt": "What does 'fratello' mean?",
+          "options": [
+            "Brother",
+            "Sister",
+            "Father",
+            "Son"
+          ],
+          "correctAnswer": "Brother"
+        },
+        {
+          "_id": "q_48_1",
+          "type": "translate",
+          "prompt": "Translate: 'Mia madre è molto gentile'",
+          "correctAnswer": "My mother is very kind"
+        },
+        {
+          "_id": "q_48_2",
+          "type": "fill-blank",
+          "prompt": "Mio ____ si chiama Giovanni (My father's name is Giovanni).",
+          "options": [
+            "padre",
+            "fratello",
+            "figlio",
+            "zio"
+          ],
+          "correctAnswer": "padre"
+        },
+        {
+          "_id": "q_48_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'nonna' mean?",
+          "options": [
+            "Grandmother",
+            "Mother",
+            "Aunt",
+            "Sister"
+          ],
+          "correctAnswer": "Grandmother"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_italian_5",
+      "title": "Italian Common Phrases",
+      "language": "Italian",
+      "category": "Speaking",
+      "difficulty": 2,
+      "order": 5,
+      "unit": 1,
+      "unitTitle": "Benvenuti! Welcome",
+      "xpReward": 20,
+      "questions": [
+        {
+          "_id": "q_49_0",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'Please' in Italian?",
+          "options": [
+            "Per favore",
+            "Grazie",
+            "Prego",
+            "Scusi"
+          ],
+          "correctAnswer": "Per favore"
+        },
+        {
+          "_id": "q_49_1",
+          "type": "translate",
+          "prompt": "Translate: 'Non capisco'",
+          "correctAnswer": "I don't understand"
+        },
+        {
+          "_id": "q_49_2",
+          "type": "fill-blank",
+          "prompt": "Parla ____? (Do you speak English?)",
+          "options": [
+            "inglese",
+            "italiano",
+            "francese",
+            "spagnolo"
+          ],
+          "correctAnswer": "inglese"
+        },
+        {
+          "_id": "q_49_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'scusi' mean?",
+          "options": [
+            "Excuse me",
+            "Thank you",
+            "Please",
+            "You're welcome"
+          ],
+          "correctAnswer": "Excuse me"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_italian_6",
+      "title": "Italian Food Culture",
+      "language": "Italian",
+      "category": "Reading",
+      "difficulty": 2,
+      "order": 6,
+      "unit": 2,
+      "unitTitle": "La Dolce Vita",
+      "xpReward": 20,
+      "questions": [
+        {
+          "_id": "q_50_0",
+          "type": "multiple-choice",
+          "prompt": "How do you order a coffee in Italian?",
+          "options": [
+            "Un caffè, per favore.",
+            "Voglio caffè.",
+            "Dammi un caffè!",
+            "Caffè adesso!"
+          ],
+          "correctAnswer": "Un caffè, per favore."
+        },
+        {
+          "_id": "q_50_1",
+          "type": "translate",
+          "prompt": "Translate: 'Il conto, per favore'",
+          "correctAnswer": "The bill, please"
+        },
+        {
+          "_id": "q_50_2",
+          "type": "fill-blank",
+          "prompt": "Vorrei una ____ (I would like a pizza).",
+          "options": [
+            "pizza",
+            "pasta",
+            "bistecca",
+            "insalata"
+          ],
+          "correctAnswer": "pizza"
+        },
+        {
+          "_id": "q_50_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'buon appetito' mean?",
+          "options": [
+            "Enjoy your meal",
+            "The bill please",
+            "Thank you",
+            "Goodbye"
+          ],
+          "correctAnswer": "Enjoy your meal"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_italian_7",
+      "title": "Italian Shopping",
+      "language": "Italian",
+      "category": "Grammar",
+      "difficulty": 2,
+      "order": 7,
+      "unit": 2,
+      "unitTitle": "La Dolce Vita",
+      "xpReward": 25,
+      "questions": [
+        {
+          "_id": "q_51_0",
+          "type": "multiple-choice",
+          "prompt": "How do you ask the price in Italian?",
+          "options": [
+            "Quanto costa?",
+            "Dove si trova?",
+            "Come si chiama?",
+            "Che ora è?"
+          ],
+          "correctAnswer": "Quanto costa?"
+        },
+        {
+          "_id": "q_51_1",
+          "type": "translate",
+          "prompt": "Translate: 'Vorrei comprare questo'",
+          "correctAnswer": "I would like to buy this"
+        },
+        {
+          "_id": "q_51_2",
+          "type": "fill-blank",
+          "prompt": "È troppo ____ (It's too expensive).",
+          "options": [
+            "caro",
+            "buono",
+            "bello",
+            "grande"
+          ],
+          "correctAnswer": "caro"
+        },
+        {
+          "_id": "q_51_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'economico' mean?",
+          "options": [
+            "Cheap",
+            "Expensive",
+            "Beautiful",
+            "Large"
+          ],
+          "correctAnswer": "Cheap"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_italian_8",
+      "title": "Italian Travel",
+      "language": "Italian",
+      "category": "Reading",
+      "difficulty": 3,
+      "order": 8,
+      "unit": 2,
+      "unitTitle": "La Dolce Vita",
+      "xpReward": 25,
+      "questions": [
+        {
+          "_id": "q_52_0",
+          "type": "multiple-choice",
+          "prompt": "How do you ask for directions in Italian?",
+          "options": [
+            "Dove si trova la stazione?",
+            "Quanto costa?",
+            "Come stai?",
+            "Cosa c'è?"
+          ],
+          "correctAnswer": "Dove si trova la stazione?"
+        },
+        {
+          "_id": "q_52_1",
+          "type": "translate",
+          "prompt": "Translate: 'Giri a destra'",
+          "correctAnswer": "Turn right"
+        },
+        {
+          "_id": "q_52_2",
+          "type": "fill-blank",
+          "prompt": "L'aeroporto è molto ____ (The airport is very far).",
+          "options": [
+            "lontano",
+            "vicino",
+            "grande",
+            "bello"
+          ],
+          "correctAnswer": "lontano"
+        },
+        {
+          "_id": "q_52_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'vicino' mean?",
+          "options": [
+            "Near",
+            "Far",
+            "Left",
+            "Right"
+          ],
+          "correctAnswer": "Near"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_italian_9",
+      "title": "Italian Verbs",
+      "language": "Italian",
+      "category": "Grammar",
+      "difficulty": 3,
+      "order": 9,
+      "unit": 2,
+      "unitTitle": "La Dolce Vita",
+      "xpReward": 25,
+      "questions": [
+        {
+          "_id": "q_53_0",
+          "type": "multiple-choice",
+          "prompt": "What is the correct form of 'parlare' for 'io'?",
+          "options": [
+            "parlo",
+            "parli",
+            "parla",
+            "parliamo"
+          ],
+          "correctAnswer": "parlo"
+        },
+        {
+          "_id": "q_53_1",
+          "type": "translate",
+          "prompt": "Translate: 'Lei lavora in un ufficio'",
+          "correctAnswer": "She works in an office"
+        },
+        {
+          "_id": "q_53_2",
+          "type": "fill-blank",
+          "prompt": "Noi ____ a Roma (We live in Rome).",
+          "options": [
+            "abitiamo",
+            "abitate",
+            "abitano",
+            "abito"
+          ],
+          "correctAnswer": "abitiamo"
+        },
+        {
+          "_id": "q_53_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'correre' mean?",
+          "options": [
+            "To run",
+            "To eat",
+            "To sleep",
+            "To work"
+          ],
+          "correctAnswer": "To run"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_italian_10",
+      "title": "Italian Culture",
+      "language": "Italian",
+      "category": "Vocabulary",
+      "difficulty": 3,
+      "order": 10,
+      "unit": 2,
+      "unitTitle": "La Dolce Vita",
+      "xpReward": 30,
+      "questions": [
+        {
+          "_id": "q_54_0",
+          "type": "multiple-choice",
+          "prompt": "What does 'la dolce vita' mean?",
+          "options": [
+            "The sweet life",
+            "The fast life",
+            "The hard life",
+            "The beautiful life"
+          ],
+          "correctAnswer": "The sweet life"
+        },
+        {
+          "_id": "q_54_1",
+          "type": "translate",
+          "prompt": "Translate: 'In bocca al lupo!'",
+          "correctAnswer": "Good luck! (Into the wolf's mouth)"
+        },
+        {
+          "_id": "q_54_2",
+          "type": "fill-blank",
+          "prompt": "Sono molto ____ di conoscerti (I am very happy to meet you).",
+          "options": [
+            "felice",
+            "triste",
+            "stanco",
+            "occupato"
+          ],
+          "correctAnswer": "felice"
+        },
+        {
+          "_id": "q_54_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'mamma mia' express?",
+          "options": [
+            "Surprise or shock",
+            "A greeting",
+            "A farewell",
+            "A request"
+          ],
+          "correctAnswer": "Surprise or shock"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_arabic_1",
+      "title": "Arabic Alphabet & Greetings",
+      "language": "Arabic",
+      "category": "Vocabulary",
+      "difficulty": 1,
+      "order": 1,
+      "unit": 1,
+      "unitTitle": "First Words in Arabic",
+      "xpReward": 15,
+      "questions": [
+        {
+          "_id": "q_55_0",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'Hello' in Arabic?",
+          "options": [
+            "مرحبا (Marhaba)",
+            "شكرا (Shukran)",
+            "مع السلامة (Ma'a salama)",
+            "من فضلك (Min fadlak)"
+          ],
+          "correctAnswer": "مرحبا (Marhaba)"
+        },
+        {
+          "_id": "q_55_1",
+          "type": "translate",
+          "prompt": "What does 'شكرا' (Shukran) mean?",
+          "correctAnswer": "Thank you"
+        },
+        {
+          "_id": "q_55_2",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'Good morning' in Arabic?",
+          "options": [
+            "صباح الخير (Sabah al-khayr)",
+            "مساء الخير (Masa al-khayr)",
+            "مرحبا (Marhaba)",
+            "كيف حالك (Kayfa halak)"
+          ],
+          "correctAnswer": "صباح الخير (Sabah al-khayr)"
+        },
+        {
+          "_id": "q_55_3",
+          "type": "fill-blank",
+          "prompt": "The response to 'صباح الخير' is ____.",
+          "options": [
+            "صباح النور (Sabah al-nour)",
+            "مع السلامة",
+            "شكرا",
+            "مرحبا"
+          ],
+          "correctAnswer": "صباح النور (Sabah al-nour)"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_arabic_2",
+      "title": "Arabic Numbers",
+      "language": "Arabic",
+      "category": "Vocabulary",
+      "difficulty": 1,
+      "order": 2,
+      "unit": 1,
+      "unitTitle": "First Words in Arabic",
+      "xpReward": 15,
+      "questions": [
+        {
+          "_id": "q_56_0",
+          "type": "multiple-choice",
+          "prompt": "What is the Arabic word for 'Five'?",
+          "options": [
+            "خمسة (Khamsa)",
+            "ثلاثة (Thalatha)",
+            "ثمانية (Thamaniya)",
+            "اثنان (Ithnan)"
+          ],
+          "correctAnswer": "خمسة (Khamsa)"
+        },
+        {
+          "_id": "q_56_1",
+          "type": "translate",
+          "prompt": "What does 'عشرة' (Ashara) mean?",
+          "correctAnswer": "Ten"
+        },
+        {
+          "_id": "q_56_2",
+          "type": "fill-blank",
+          "prompt": "واحد، اثنان، ____، أربعة (1, 2, ?, 4)",
+          "options": [
+            "ثلاثة (Thalatha)",
+            "خمسة (Khamsa)",
+            "ستة (Sitta)",
+            "سبعة (Sab'a)"
+          ],
+          "correctAnswer": "ثلاثة (Thalatha)"
+        },
+        {
+          "_id": "q_56_3",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'One hundred' in Arabic?",
+          "options": [
+            "مائة (Mi'a)",
+            "ألف (Alf)",
+            "عشرة (Ashara)",
+            "خمسون (Khamson)"
+          ],
+          "correctAnswer": "مائة (Mi'a)"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_arabic_3",
+      "title": "Arabic Colors",
+      "language": "Arabic",
+      "category": "Vocabulary",
+      "difficulty": 1,
+      "order": 3,
+      "unit": 1,
+      "unitTitle": "First Words in Arabic",
+      "xpReward": 15,
+      "questions": [
+        {
+          "_id": "q_57_0",
+          "type": "multiple-choice",
+          "prompt": "What does 'أحمر' (Ahmar) mean?",
+          "options": [
+            "Red",
+            "Blue",
+            "Green",
+            "Yellow"
+          ],
+          "correctAnswer": "Red"
+        },
+        {
+          "_id": "q_57_1",
+          "type": "translate",
+          "prompt": "What does 'أزرق' (Azraq) mean?",
+          "correctAnswer": "Blue"
+        },
+        {
+          "_id": "q_57_2",
+          "type": "fill-blank",
+          "prompt": "السماء ____ (The sky is blue).",
+          "options": [
+            "زرقاء (Zarqa)",
+            "حمراء (Hamra)",
+            "خضراء (Khadra)",
+            "صفراء (Safra)"
+          ],
+          "correctAnswer": "زرقاء (Zarqa)"
+        },
+        {
+          "_id": "q_57_3",
+          "type": "multiple-choice",
+          "prompt": "What is 'أخضر' (Akhdar) in English?",
+          "options": [
+            "Green",
+            "Red",
+            "Yellow",
+            "White"
+          ],
+          "correctAnswer": "Green"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_arabic_4",
+      "title": "Arabic Family Words",
+      "language": "Arabic",
+      "category": "Vocabulary",
+      "difficulty": 2,
+      "order": 4,
+      "unit": 1,
+      "unitTitle": "First Words in Arabic",
+      "xpReward": 20,
+      "questions": [
+        {
+          "_id": "q_58_0",
+          "type": "multiple-choice",
+          "prompt": "What does 'أخ' (Akh) mean?",
+          "options": [
+            "Brother",
+            "Sister",
+            "Father",
+            "Son"
+          ],
+          "correctAnswer": "Brother"
+        },
+        {
+          "_id": "q_58_1",
+          "type": "translate",
+          "prompt": "What does 'أم' (Umm) mean?",
+          "correctAnswer": "Mother"
+        },
+        {
+          "_id": "q_58_2",
+          "type": "fill-blank",
+          "prompt": "اسم ____ محمد (My father's name is Muhammad).",
+          "options": [
+            "أبي (abi)",
+            "أخي (akhi)",
+            "ابني (ibni)",
+            "عمي (ammi)"
+          ],
+          "correctAnswer": "أبي (abi)"
+        },
+        {
+          "_id": "q_58_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'جدة' (Jadda) mean?",
+          "options": [
+            "Grandmother",
+            "Mother",
+            "Aunt",
+            "Sister"
+          ],
+          "correctAnswer": "Grandmother"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_arabic_5",
+      "title": "Arabic Common Phrases",
+      "language": "Arabic",
+      "category": "Speaking",
+      "difficulty": 2,
+      "order": 5,
+      "unit": 1,
+      "unitTitle": "First Words in Arabic",
+      "xpReward": 20,
+      "questions": [
+        {
+          "_id": "q_59_0",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'Please' in Arabic?",
+          "options": [
+            "من فضلك (Min fadlak)",
+            "شكرا (Shukran)",
+            "آسف (Asif)",
+            "نعم (Na'am)"
+          ],
+          "correctAnswer": "من فضلك (Min fadlak)"
+        },
+        {
+          "_id": "q_59_1",
+          "type": "translate",
+          "prompt": "What does 'لا أفهم' (La afham) mean?",
+          "correctAnswer": "I don't understand"
+        },
+        {
+          "_id": "q_59_2",
+          "type": "fill-blank",
+          "prompt": "هل تتكلم ____? (Do you speak English?)",
+          "options": [
+            "الإنجليزية (al-Injiliziyya)",
+            "العربية (al-Arabiyya)",
+            "الفرنسية (al-Fransiyya)",
+            "الإسبانية (al-Isbaniyya)"
+          ],
+          "correctAnswer": "الإنجليزية (al-Injiliziyya)"
+        },
+        {
+          "_id": "q_59_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'عفواً' (Afwan) mean?",
+          "options": [
+            "You're welcome / Excuse me",
+            "Thank you",
+            "Please",
+            "Goodbye"
+          ],
+          "correctAnswer": "You're welcome / Excuse me"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_arabic_6",
+      "title": "Arabic Food & Restaurant",
+      "language": "Arabic",
+      "category": "Reading",
+      "difficulty": 2,
+      "order": 6,
+      "unit": 2,
+      "unitTitle": "Arabic Daily Life",
+      "xpReward": 20,
+      "questions": [
+        {
+          "_id": "q_60_0",
+          "type": "multiple-choice",
+          "prompt": "How do you order food in Arabic?",
+          "options": [
+            "أريد... (Ureed...)",
+            "أنا جائع (Ana ja'i)",
+            "الطعام هنا",
+            "من فضلك الطعام"
+          ],
+          "correctAnswer": "أريد... (Ureed...)"
+        },
+        {
+          "_id": "q_60_1",
+          "type": "translate",
+          "prompt": "What does 'الحساب من فضلك' (Al-hisab min fadlak) mean?",
+          "correctAnswer": "The bill, please"
+        },
+        {
+          "_id": "q_60_2",
+          "type": "fill-blank",
+          "prompt": "أريد ____ من فضلك (I want water please).",
+          "options": [
+            "ماء (Ma'a)",
+            "قهوة (Qahwa)",
+            "شاي (Shay)",
+            "عصير (Aseer)"
+          ],
+          "correctAnswer": "ماء (Ma'a)"
+        },
+        {
+          "_id": "q_60_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'بالعافية' (Bil-afiya) mean?",
+          "options": [
+            "Enjoy your meal",
+            "Goodbye",
+            "Thank you",
+            "Please"
+          ],
+          "correctAnswer": "Enjoy your meal"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_arabic_7",
+      "title": "Arabic Shopping",
+      "language": "Arabic",
+      "category": "Grammar",
+      "difficulty": 2,
+      "order": 7,
+      "unit": 2,
+      "unitTitle": "Arabic Daily Life",
+      "xpReward": 25,
+      "questions": [
+        {
+          "_id": "q_61_0",
+          "type": "multiple-choice",
+          "prompt": "How do you ask for the price in Arabic?",
+          "options": [
+            "كم الثمن? (Kam al-thaman?)",
+            "أين هذا?",
+            "ما اسمك?",
+            "كم الوقت?"
+          ],
+          "correctAnswer": "كم الثمن? (Kam al-thaman?)"
+        },
+        {
+          "_id": "q_61_1",
+          "type": "translate",
+          "prompt": "What does 'غالي جداً' (Ghali jiddan) mean?",
+          "correctAnswer": "Very expensive"
+        },
+        {
+          "_id": "q_61_2",
+          "type": "fill-blank",
+          "prompt": "هذا ____ جداً (This is very cheap).",
+          "options": [
+            "رخيص (Rakhees)",
+            "غالي (Ghali)",
+            "جيد (Jayid)",
+            "سيء (Sayyi)"
+          ],
+          "correctAnswer": "رخيص (Rakhees)"
+        },
+        {
+          "_id": "q_61_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'رخيص' (Rakhees) mean?",
+          "options": [
+            "Cheap",
+            "Expensive",
+            "Beautiful",
+            "Large"
+          ],
+          "correctAnswer": "Cheap"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_arabic_8",
+      "title": "Arabic Directions",
+      "language": "Arabic",
+      "category": "Reading",
+      "difficulty": 3,
+      "order": 8,
+      "unit": 2,
+      "unitTitle": "Arabic Daily Life",
+      "xpReward": 25,
+      "questions": [
+        {
+          "_id": "q_62_0",
+          "type": "multiple-choice",
+          "prompt": "How do you say 'Where is the mosque?' in Arabic?",
+          "options": [
+            "أين المسجد? (Ayna al-masjid?)",
+            "كم يبعد?",
+            "هل هناك مسجد?",
+            "المسجد هنا"
+          ],
+          "correctAnswer": "أين المسجد? (Ayna al-masjid?)"
+        },
+        {
+          "_id": "q_62_1",
+          "type": "translate",
+          "prompt": "What does 'اليمين' (Al-yameen) mean?",
+          "correctAnswer": "Right (direction)"
+        },
+        {
+          "_id": "q_62_2",
+          "type": "fill-blank",
+          "prompt": "اذهب ____ ثم اليمين (Go straight, then right).",
+          "options": [
+            "إلى الأمام (ila al-amam)",
+            "إلى اليسار",
+            "إلى اليمين",
+            "إلى الخلف"
+          ],
+          "correctAnswer": "إلى الأمام (ila al-amam)"
+        },
+        {
+          "_id": "q_62_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'قريب' (Qareeb) mean?",
+          "options": [
+            "Near",
+            "Far",
+            "Left",
+            "Right"
+          ],
+          "correctAnswer": "Near"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_arabic_9",
+      "title": "Arabic Verbs - Present",
+      "language": "Arabic",
+      "category": "Grammar",
+      "difficulty": 3,
+      "order": 9,
+      "unit": 2,
+      "unitTitle": "Arabic Daily Life",
+      "xpReward": 25,
+      "questions": [
+        {
+          "_id": "q_63_0",
+          "type": "multiple-choice",
+          "prompt": "What is 'to go' for 'I' in Arabic?",
+          "options": [
+            "أذهب (Adh-hab)",
+            "يذهب (Yad-hab)",
+            "تذهب (Tad-hab)",
+            "نذهب (Nad-hab)"
+          ],
+          "correctAnswer": "أذهب (Adh-hab)"
+        },
+        {
+          "_id": "q_63_1",
+          "type": "translate",
+          "prompt": "What does 'هي تعمل في مكتب' mean?",
+          "correctAnswer": "She works in an office"
+        },
+        {
+          "_id": "q_63_2",
+          "type": "fill-blank",
+          "prompt": "نحن ____ في القاهرة (We live in Cairo).",
+          "options": [
+            "نسكن (Naskon)",
+            "يسكن (Yaskon)",
+            "أسكن (Askon)",
+            "تسكن (Taskon)"
+          ],
+          "correctAnswer": "نسكن (Naskon)"
+        },
+        {
+          "_id": "q_63_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'يأكل' (Ya'kol) mean?",
+          "options": [
+            "He eats",
+            "He runs",
+            "He sleeps",
+            "He works"
+          ],
+          "correctAnswer": "He eats"
+        }
+      ]
+    },
+    {
+      "_id": "lesson_arabic_10",
+      "title": "Arabic Culture & Expressions",
+      "language": "Arabic",
+      "category": "Vocabulary",
+      "difficulty": 3,
+      "order": 10,
+      "unit": 2,
+      "unitTitle": "Arabic Daily Life",
+      "xpReward": 30,
+      "questions": [
+        {
+          "_id": "q_64_0",
+          "type": "multiple-choice",
+          "prompt": "What does 'إن شاء الله' (Inshallah) mean?",
+          "options": [
+            "If God wills / Hopefully",
+            "Thank God",
+            "Praise God",
+            "God is great"
+          ],
+          "correctAnswer": "If God wills / Hopefully"
+        },
+        {
+          "_id": "q_64_1",
+          "type": "translate",
+          "prompt": "What does 'الحمد لله' (Al-hamdulillah) mean?",
+          "correctAnswer": "Praise/Thanks be to God"
+        },
+        {
+          "_id": "q_64_2",
+          "type": "fill-blank",
+          "prompt": "مبروك! (Mabrook) is said when someone ____.",
+          "options": [
+            "achieves something or gets married",
+            "says goodbye",
+            "orders food",
+            "asks for directions"
+          ],
+          "correctAnswer": "achieves something or gets married"
+        },
+        {
+          "_id": "q_64_3",
+          "type": "multiple-choice",
+          "prompt": "What does 'يلا!' (Yalla) mean in colloquial Arabic?",
+          "options": [
+            "Let's go! / Come on!",
+            "Goodbye",
+            "Hello",
+            "Thank you"
+          ],
+          "correctAnswer": "Let's go! / Come on!"
+        }
+      ]
+    }
+  ],
+  "progress": [
+    {
+      "_id": "6a34eaa7e3c70f38541e020d",
+      "userId": "6a34eaa7e3c70f38541e020c",
+      "lessonId": "lesson_spanish_1",
+      "completed": true,
+      "score": 100,
+      "completedAt": "2026-06-19T07:07:19.301Z"
+    },
+    {
+      "_id": "6a3635fdc2209738f51cace6",
+      "userId": "6a35b00c5907b1185020bf76",
+      "lessonId": "lesson_arabic_1",
+      "completed": true,
+      "score": 67,
+      "completedAt": "2026-06-20T08:19:42.610Z"
+    },
+    {
+      "_id": "6a3636d1c2209738f51cace7",
+      "userId": "6a35b00c5907b1185020bf76",
+      "lessonId": "lesson_english_1",
+      "completed": true,
+      "score": 67,
+      "completedAt": "2026-06-20T06:44:33.803Z"
+    }
+  ],
+  "achievements": [],
+  "conversations": [
+    {
+      "_id": "6a39bc4f39a88e9db7bd72b3",
+      "participants": [
+        "6a39bb5539a88e9db7bd72b2",
+        "6a35b00c5907b1185020bf76"
+      ],
+      "lastMessage": null,
+      "createdAt": "2026-06-22T22:50:55.388Z",
+      "updatedAt": "2026-06-22T22:50:55.388Z"
+    }
+  ],
+  "messages": [],
+  "pronunciationAttempts": [
+    {
+      "_id": "1782234334591",
+      "userId": "6a34eaa7e3c70f38541e020c",
+      "phrase": "Hola, ¿cómo estás?",
+      "transcript": "I couldn't hear you clearly.",
+      "score": 85,
+      "fluencyScore": 80,
+      "accuracyScore": 90,
+      "tips": [
+        "Great job!",
+        "Try speaking a bit louder next time."
+      ],
+      "mispronouncedWords": [],
+      "audioUrl": "data:audio/webm;base64,GkXfo09uZW1ic2NmSVQ=",
+      "createdAt": "2026-06-23T17:05:34.591Z"
+    }
+  ],
+  "callHistory": [
+    {
+      "_id": "6a3afbe43a9a41ee46ac9aef",
+      "caller": "6a34eaa7e3c70f38541e020c",
+      "receiver": "6a35b00c5907b1185020bf76",
+      "type": "audio",
+      "status": "connected",
+      "duration": 45,
+      "createdAt": "2026-06-23T21:34:28.200Z"
+    },
+    {
+      "_id": "6a3afbe43a9a41ee46ac9af0",
+      "caller": "6a34eaa7e3c70f38541e020c",
+      "receiver": "6a35b00c5907b1185020bf76",
+      "type": "video",
+      "status": "missed",
+      "duration": 0,
+      "createdAt": "2026-06-23T21:34:28.260Z"
+    }
+  ],
+  "settings": {
+    "maxHearts": 5,
+    "heartRegenMinutes": 30,
+    "startingGems": 500
+  }
+}

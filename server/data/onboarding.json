@@ -1,0 +1,148 @@
+{
+  "nativeLanguages": [
+    {
+      "name": "English",
+      "flag": "GB"
+    },
+    {
+      "name": "Spanish",
+      "flag": "🇪🇸"
+    },
+    {
+      "name": "French",
+      "flag": "🇫🇷"
+    },
+    {
+      "name": "German",
+      "flag": "🇩🇪"
+    },
+    {
+      "name": "Arabic",
+      "flag": "🇸🇦"
+    },
+    {
+      "name": "Chinese",
+      "flag": "🇨🇳"
+    },
+    {
+      "name": "Italian",
+      "flag": "🇮🇹"
+    },
+    {
+      "name": "Japanese",
+      "flag": "🇯🇵"
+    },
+    {
+      "name": "Portuguese",
+      "flag": "🇵🇹"
+    }
+  ],
+  "targetLanguages": [
+    {
+      "name": "English",
+      "flag": "🇬🇧",
+      "desc": "Global communication"
+    },
+    {
+      "name": "Spanish",
+      "flag": "🇪🇸",
+      "desc": "Vibrant cultures"
+    },
+    {
+      "name": "French",
+      "flag": "🇫🇷",
+      "desc": "Art & romance"
+    },
+    {
+      "name": "German",
+      "flag": "🇩🇪",
+      "desc": "Science & business"
+    },
+    {
+      "name": "Arabic",
+      "flag": "🇸🇦",
+      "desc": "Rich heritage"
+    },
+    {
+      "name": "Italian",
+      "flag": "🇮🇹",
+      "desc": "History & cuisine"
+    }
+  ],
+  "learningGoals": [
+    {
+      "id": "Travel",
+      "label": "✈️ Travel & Culture",
+      "desc": "Order food, ask directions, connect with locals"
+    },
+    {
+      "id": "School",
+      "label": "🏫 School & Studies",
+      "desc": "Ace exams, write essays, build academic skills"
+    },
+    {
+      "id": "Business",
+      "label": "💼 Career & Business",
+      "desc": "Negotiations, emails, international career growth"
+    },
+    {
+      "id": "Exams",
+      "label": "📝 Language Certification",
+      "desc": "Prepare for DELE, DELF, TOEFL, etc."
+    },
+    {
+      "id": "Casual Conversation",
+      "label": "💬 Casual Conversation",
+      "desc": "Chat naturally with friends and family"
+    }
+  ],
+  "dailyGoals": [
+    {
+      "id": "5 min",
+      "label": "⚡ 5 min / day (Casual)",
+      "desc": "Easy progress, zero pressure",
+      "xp": 10
+    },
+    {
+      "id": "10 min",
+      "label": "🔥 10 min / day (Regular)",
+      "desc": "Steady building block",
+      "xp": 20
+    },
+    {
+      "id": "15 min",
+      "label": "🏆 15 min / day (Serious)",
+      "desc": "Excellent daily habit",
+      "xp": 30
+    },
+    {
+      "id": "30 min",
+      "label": "👑 30 min / day (Insane)",
+      "desc": "Rapid skill acquisition",
+      "xp": 50
+    },
+    {
+      "id": "60 min",
+      "label": "🚀 60 min / day (Hardcore)",
+      "desc": "Complete immersion",
+      "xp": 100
+    }
+  ],
+  "placementLevels": [
+    {
+      "id": "Beginner",
+      "label": "Beginner",
+      "desc": "I am starting from scratch, learning basic words"
+    },
+    {
+      "id": "Intermediate",
+      "label": "Intermediate",
+      "desc": "I can form sentences and handle simple chats"
+    },
+    {
+      "id": "Advanced",
+      "label": "Advanced",
+      "desc": "I can read complex articles and converse fluently"
+    }
+  ]
+}

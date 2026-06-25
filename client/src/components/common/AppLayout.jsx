@@ -1,0 +1,176 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import Sidebar from '../navigation/Sidebar';
+import BottomNavbar from '../navigation/BottomNavbar';
+import NotificationBell from '../navigation/NotificationBell';
+import LingoLeapLogo from './LingoLeapLogo';
+import { useLearning } from '../../context/LearningContext';
+import { useAuth } from '../../context/AuthContext';
+import { WifiOff, CloudLightning, Gem, Heart, Sun, Moon, LogOut } from 'lucide-react';
+
+const AppLayout = ({ children, noPadding = false }) => {
+  const { isOnline, pendingSyncCount, syncOfflineSubmissions } = useLearning();
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+  const [darkMode, setDarkMode] = React.useState(() => document.documentElement.classList.contains('dark'));
+
+  React.useEffect(() => {
+    const handleThemeChange = () => {
+      setDarkMode(document.documentElement.classList.contains('dark'));
+    };
+    window.addEventListener('themechange', handleThemeChange);
+    return () => window.removeEventListener('themechange', handleThemeChange);
+  }, []);
+
+  const toggleTheme = () => {
+    const isDark = !darkMode;
+    setDarkMode(isDark);
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      window.dispatchEvent(new Event('themechange'));
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      window.dispatchEvent(new Event('themechange'));
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-bg-main text-text-main flex flex-col font-sans">
+      {/* Offline Status Banner */}
+      {!isOnline && (
+        <div className="sticky top-0 bg-gradient-to-r from-amber-500 to-orange-600 text-white text-xs font-extrabold py-2.5 px-4 flex items-center justify-center gap-2 shadow-md z-50">
+          <WifiOff size={14} className="flex-shrink-0 animate-bounce" />
+          <span>Offline Mode. Progress is saved locally.</span>
+          {pendingSyncCount > 0 && (
+            <span className="bg-white/20 px-2 py-0.5 rounded-full text-[10px] uppercase tracking-wider">
+              {pendingSyncCount} Pending Sync
+            </span>
+          )}
+        </div>
+      )}
+
+      {/* Online syncing status banner */}
+      {isOnline && pendingSyncCount > 0 && (
+        <div className="sticky top-0 bg-gradient-to-r from-secondary to-secondary-hover text-white text-xs font-extrabold py-2.5 px-4 flex items-center justify-center gap-2 shadow-md z-50">
+          <CloudLightning size={14} className="flex-shrink-0 animate-pulse" />
+          <span>Syncing {pendingSyncCount} offline completed lesson(s)...</span>
+          <button 
+            onClick={syncOfflineSubmissions} 
+            className="underline ml-2 bg-white/20 hover:bg-white/30 px-3 py-0.5 rounded-full text-[10px] transition uppercase tracking-wider"
+          >
+            Sync Now
+          </button>
+        </div>
+      )}
+
+      <div className="flex-1 flex flex-col md:flex-row">
+        <Sidebar />
+        
+        {/* Main Content Area Wrapper */}
+        <div className="md:ml-64 flex-grow flex flex-col min-h-screen">
+          {/* Global Sticky Top Header */}
+          <header className="sticky top-0 bg-white/80 dark:bg-bg-card/85 backdrop-blur-md border-b-2 border-border dark:border-border px-4 md:px-8 py-3 flex items-center justify-between z-40 transition-all">
+            {/* Left: Mobile-only brand identifier */}
+            <div className="flex items-center gap-2">
+              <div 
+                onClick={() => navigate('/dashboard')}
+                className="md:hidden flex items-center cursor-pointer hover:opacity-90 animate-fade-in"
+              >
+                <LingoLeapLogo size={28} variant="compact" concept="gecko" animated={true} />
+              </div>
+            </div>
+
+            {/* Right: Theme switch + Notification bell + Stats */}
+            <div className="flex items-center gap-3 ml-auto">
+              {user && (
+                <div className="flex items-center gap-2">
+                  {/* Gems Display */}
+                  <div className="flex items-center gap-1 bg-amber-500/10 text-amber-600 dark:text-amber-400 px-2 py-0.5 md:px-2.5 md:py-1 rounded-full text-[10px] md:text-[11px] font-black border border-amber-500/20 shadow-sm">
+                    <Gem size={11} className="fill-current text-amber-500" />
+                    <span>{user.gems ?? 0}</span>
+                  </div>
+
+                  {/* Hearts Display */}
+                  <div className="flex items-center gap-1 bg-brand-red/10 text-brand-red px-2 py-0.5 md:px-2.5 md:py-1 rounded-full text-[10px] md:text-[11px] font-black border border-brand-red/20 shadow-sm">
+                    <Heart size={11} className="fill-current text-brand-red animate-pulse" />
+                    <span>{(typeof user.hearts === 'object' ? user.hearts?.current : user.hearts) ?? 5}</span>
+                  </div>
+                </div>
+              )}
+
+              {/* Theme Toggle Button */}
+              <button
+                onClick={toggleTheme}
+                className="p-1.5 border-2 border-border dark:border-border0 dark:border-border/40 hover:border-primary/40 rounded-full text-brand-dark/70 dark:text-white/80 bg-white/50 dark:bg-bg-card hover:bg-primary/5 dark:hover:bg-primary/10 transition shadow-sm cursor-pointer flex items-center justify-center"
+                title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+              >
+                {darkMode ? <Sun size={14} className="text-amber-400" /> : <Moon size={14} className="text-brand-purple" />}
+              </button>
+
+              {/* Notification Bell Dropdown */}
+              <NotificationBell />
+
+              {/* Mobile Profile Dropdown */}
+              {user && (
+                <div className="relative group md:hidden">
+                  <button className="flex items-center gap-2 cursor-pointer border-2 border-transparent hover:border-primary/30 rounded-full p-0.5 transition">
+                    <img
+                      src={user.avatarUrl}
+                      alt={user.username}
+                      className="w-8 h-8 rounded-full border border-primary/30 object-cover bg-bg-main"
+                      onError={(e) => { e.target.src = `https://api.dicebear.com/7.x/adventurer/svg?seed=${user.username}`; }}
+                    />
+                  </button>
+                  {/* Dropdown Menu */}
+                  <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-bg-card border-2 border-border dark:border-border rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                    <div className="p-3 border-b-2 border-border dark:border-border">
+                      <p className="font-extrabold text-text-main text-sm truncate">{user.username}</p>
+                      <p className="text-xs text-text-secondary font-semibold">{user.xp || 0} XP</p>
+                    </div>
+                    <div className="p-2 flex flex-col gap-1">
+                      <button
+                        onClick={() => navigate('/profile')}
+                        className="w-full text-left px-3 py-2 text-sm font-bold text-text-main hover:bg-bg-main dark:hover:bg-bg-main/50 rounded-lg transition"
+                      >
+                        Profile
+                      </button>
+                      <button
+                        onClick={() => navigate('/settings')}
+                        className="w-full text-left px-3 py-2 text-sm font-bold text-text-main hover:bg-bg-main dark:hover:bg-bg-main/50 rounded-lg transition"
+                      >
+                        Settings
+                      </button>
+                      <button
+                        onClick={async () => {
+                          await logout();
+                          navigate('/');
+                        }}
+                        className="w-full text-left px-3 py-2 text-sm font-bold text-red-500 hover:bg-red-500/10 rounded-lg transition flex items-center gap-2"
+                      >
+                        <LogOut size={16} /> Logout
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </header>
+
+          {/* Actual Page Render Component */}
+          <main className={`flex-grow ${
+            noPadding 
+              ? 'p-0 pb-16 md:pb-8 md:px-8 md:py-6' 
+              : 'pb-24 pt-4 px-3 md:pb-8 md:px-8 md:py-6'
+          }`}>
+            {children}
+          </main>
+        </div>
+      </div>
+      <BottomNavbar />
+    </div>
+  );
+};
+
+export default AppLayout;
