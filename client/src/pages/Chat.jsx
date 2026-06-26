@@ -479,6 +479,7 @@ export default function Chat() {
   const localVideoRef = useRef(null);
   const remoteVideoRef = useRef(null);
   const peerConnectionRef = useRef(null);
+  const iceCandidatesQueueRef = useRef([]);
 
   // Load conversations
   const loadConversations = async (selectUserId = null) => {
@@ -719,6 +720,11 @@ export default function Chat() {
       if (signalData && peerConnectionRef.current) {
         try {
           await peerConnectionRef.current.setRemoteDescription(new RTCSessionDescription(signalData));
+          // Drain queued candidates
+          while (iceCandidatesQueueRef.current.length > 0) {
+            const candidate = iceCandidatesQueueRef.current.shift();
+            await peerConnectionRef.current.addIceCandidate(new RTCIceCandidate(candidate));
+          }
         } catch (err) {
           console.error('Error setting remote description:', err);
         }
@@ -727,12 +733,23 @@ export default function Chat() {
 
     // Listen for WebRTC signals (ICE Candidates or SDP offer/answers)
     socket.on('webrtc_signal', async ({ senderId, signalData }) => {
-      if (!peerConnectionRef.current) return;
       try {
         if (signalData.candidate) {
-          await peerConnectionRef.current.addIceCandidate(new RTCIceCandidate(signalData.candidate));
+          const pc = peerConnectionRef.current;
+          if (pc && pc.remoteDescription && pc.remoteDescription.type) {
+            await pc.addIceCandidate(new RTCIceCandidate(signalData.candidate));
+          } else {
+            iceCandidatesQueueRef.current.push(signalData.candidate);
+          }
         } else if (signalData.sdp || signalData.type) {
-          await peerConnectionRef.current.setRemoteDescription(new RTCSessionDescription(signalData));
+          if (peerConnectionRef.current) {
+            await peerConnectionRef.current.setRemoteDescription(new RTCSessionDescription(signalData));
+            // Drain queue
+            while (iceCandidatesQueueRef.current.length > 0) {
+              const candidate = iceCandidatesQueueRef.current.shift();
+              await peerConnectionRef.current.addIceCandidate(new RTCIceCandidate(candidate));
+            }
+          }
         }
       } catch (err) {
         console.error('Error handling WebRTC signaling data:', err);
@@ -1082,6 +1099,12 @@ export default function Chat() {
       // Set remote offer SDP
       await pc.setRemoteDescription(new RTCSessionDescription(activeCall.signalData));
 
+      // Drain queued candidates
+      while (iceCandidatesQueueRef.current.length > 0) {
+        const candidate = iceCandidatesQueueRef.current.shift();
+        await pc.addIceCandidate(new RTCIceCandidate(candidate));
+      }
+
       // Create SDP answer
       const answer = await pc.createAnswer();
       await pc.setLocalDescription(answer);
@@ -1149,6 +1172,7 @@ export default function Chat() {
       peerConnectionRef.current.close();
       peerConnectionRef.current = null;
     }
+    iceCandidatesQueueRef.current = [];
 
     // Terminate speech recognition if running
     if (recognitionRef.current) {
@@ -1204,6 +1228,18 @@ export default function Chat() {
       if (timer) clearInterval(timer);
     };
   }, [activeCall?.status]);
+
+  // Robustly bind local and remote media streams to their video/audio elements
+  useEffect(() => {
+    if (activeCall && activeCall.status === 'connected') {
+      if (localStream && localVideoRef.current && localVideoRef.current.srcObject !== localStream) {
+        localVideoRef.current.srcObject = localStream;
+      }
+      if (remoteStream && remoteVideoRef.current && remoteVideoRef.current.srcObject !== remoteStream) {
+        remoteVideoRef.current.srcObject = remoteStream;
+      }
+    }
+  }, [localStream, remoteStream, activeCall?.status]);
 
   // Real-time speech recognition effect for captions
   useEffect(() => {
