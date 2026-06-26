@@ -165,7 +165,12 @@ This file serves as the memory log for the LingoLeap language learning platform 
 ### Phase 18: Vercel SPA Routing Configuration (Completed)
 - [x] **Vercel Routing Rewrite**: Created `vercel.json` files in the `/client` directory and the root directory to handle rewrite rules (`/(.*)` to `/index.html`), preventing `404: NOT_FOUND` errors when refreshing/reloading deep pages of the application.
 
+### Phase 19: API & CORS URL Integrations (Completed)
+- [x] **Production API Link**: Updated `client/.env.production` to use the Render server API: `https://lingoleap-udj0.onrender.com/api`.
+- [x] **CORS Configuration**: Configured backend Express app and Socket.io server to dynamically read the `CLIENT_URL` environment variable, enabling requests from the Vercel frontend: `https://lingoleap4.vercel.app`.
+
 ---
+
 
 
 ## 🗃️ Active Directory Map
