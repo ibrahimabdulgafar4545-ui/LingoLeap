@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import AppLayout from '../components/common/AppLayout';
-import { Trophy, Target, Sparkles, User, LogOut, Camera } from 'lucide-react';
+import { Trophy, Target, Sparkles, User, LogOut, Camera, ShieldAlert } from 'lucide-react';
 import api from '../services/api';
 
 const langFlags = {
@@ -19,10 +19,12 @@ const Profile = () => {
   useEffect(() => {
     const fetchInsights = async () => {
       try {
-        const res = await api.get('/ai/insights');
-        if (res.data) setInsights(res.data);
+        const res = await api.get('/learning/profile-insights');
+        if (res.data && res.data.insights) {
+          setInsights(res.data.insights);
+        }
       } catch (e) {
-        console.error(e);
+        console.error('Failed to load profile insights:', e);
       } finally {
         setLoadingInsights(false);
       }
@@ -228,9 +230,18 @@ const Profile = () => {
               </div>
             ))}
           </div>
+          {user.role === 'admin' && (
+            <button
+              onClick={() => navigate('/admin')}
+              className="mt-4 w-full flex items-center justify-center gap-2 bg-purple-500/10 text-purple-500 border-2 border-purple-500/20 py-2.5 rounded-2xl font-extrabold text-xs hover:bg-purple-500/20 transition cursor-pointer"
+            >
+              <ShieldAlert size={14} /> Admin Panel
+            </button>
+          )}
+
           <button
             onClick={() => navigate('/settings')}
-            className="mt-4 w-full flex items-center justify-center gap-2 bg-secondary/10 text-secondary border-2 border-secondary/20 py-2.5 rounded-2xl font-extrabold text-xs hover:bg-secondary/20 transition cursor-pointer"
+            className="mt-2 w-full flex items-center justify-center gap-2 bg-secondary/10 text-secondary border-2 border-secondary/20 py-2.5 rounded-2xl font-extrabold text-xs hover:bg-secondary/20 transition cursor-pointer"
           >
             <Camera size={14} /> Edit Profile & Settings
           </button>

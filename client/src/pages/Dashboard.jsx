@@ -8,7 +8,7 @@ import confetti from 'canvas-confetti';
 import {
   Flame, Zap, Star, Target, BookOpen, Trophy,
   ChevronRight, TrendingUp, Bot, Globe, Gem, ShoppingCart, Users, Activity,
-  Heart, CalendarDays, Shield, Gift, Sparkles, CheckCircle2, Award, HeartHandshake
+  Heart, CalendarDays, Shield, Gift, Sparkles, CheckCircle2, Award, HeartHandshake, Loader2
 } from 'lucide-react';
 import { socialService } from '../services/socialService';
 import LingoLeapLogo from '../components/common/LingoLeapLogo';
@@ -69,6 +69,7 @@ const Dashboard = () => {
   const [celebratedIds, setCelebratedIds] = useState(new Set());
   const [showDailyRewardModal, setShowDailyRewardModal] = useState(false);
   const [dailyRewardGems, setDailyRewardGems] = useState(0);
+  const [loadingLessonId, setLoadingLessonId] = useState(null);
 
   useEffect(() => {
     if (user && user.dailyLoginRewardClaimedDate) {
@@ -542,7 +543,10 @@ const Dashboard = () => {
           {nextLesson ? (
             <motion.div 
               whileHover={{ scale: 1.01 }}
-              onClick={() => navigate(`/lesson/${nextLesson._id}`)}
+              onClick={() => {
+                setLoadingLessonId(nextLesson._id);
+                navigate(`/lesson/${nextLesson._id}`);
+              }}
               className="bg-gradient-to-br from-emerald-500 via-emerald-600 to-blue-600 rounded-[2rem] p-8 text-white shadow-3d-primary relative overflow-hidden cursor-pointer group"
             >
               <div className="absolute right-0 bottom-0 top-0 w-1/3 bg-white/5 skew-x-12 translate-x-10 group-hover:bg-white/10 transition-colors pointer-events-none" />
@@ -568,11 +572,16 @@ const Dashboard = () => {
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
+                    setLoadingLessonId(nextLesson._id);
                     navigate(`/lesson/${nextLesson._id}`);
                   }}
                   className="flex items-center gap-2 bg-white dark:bg-bg-card text-emerald-600 hover:text-emerald-700 font-black py-3.5 px-7 rounded-2xl btn-3d shadow-md hover:bg-white/95 text-xs cursor-pointer"
                 >
-                  START LESSON <ChevronRight size={16} />
+                  {loadingLessonId === nextLesson._id ? (
+                    <span className="flex items-center gap-1.5">LOADING <Loader2 size={13} className="animate-spin" /></span>
+                  ) : (
+                    <span className="flex items-center gap-1.5">START LESSON <ChevronRight size={16} /></span>
+                  )}
                 </button>
                 <span className="text-xs font-black text-white/80">
                   🎯 Next up in your syllabus

@@ -194,7 +194,7 @@ const NotificationBell = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 15, scale: 0.95 }}
             transition={{ duration: 0.15, ease: 'easeOut' }}
-            className="absolute right-0 mt-3.5 w-80 sm:w-96 max-h-[480px] bg-white dark:bg-bg-card border-2 border-border rounded-3xl shadow-2xl overflow-hidden z-50 flex flex-col font-sans"
+            className="fixed inset-x-4 top-[70px] md:absolute md:inset-x-auto md:right-0 md:top-auto md:w-96 max-h-[calc(100vh-140px)] md:max-h-[480px] md:mt-3.5 bg-white dark:bg-bg-card border-2 border-border rounded-3xl shadow-2xl overflow-hidden z-50 flex flex-col font-sans"
           >
             {/* Header */}
             <div className="p-4 border-b border-border bg-bg-main/30 dark:bg-bg-main/5 flex items-center justify-between">
@@ -225,7 +225,7 @@ const NotificationBell = () => {
             </div>
 
             {/* List */}
-            <div className="flex-1 overflow-y-auto min-h-[150px] max-h-[350px]">
+            <div className="flex-1 overflow-y-auto min-h-[150px] max-h-[calc(100vh-260px)] md:max-h-[350px]">
               {notifications.length === 0 ? (
                 <div className="py-12 px-4 text-center">
                   <div className="w-12 h-12 rounded-full bg-bg-main dark:bg-bg-main/10 flex items-center justify-center mx-auto mb-3 text-text-secondary/40">

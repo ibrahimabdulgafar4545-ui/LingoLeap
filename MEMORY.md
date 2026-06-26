@@ -169,7 +169,15 @@ This file serves as the memory log for the LingoLeap language learning platform 
 - [x] **Production API Link**: Updated `client/.env.production` to use the Render server API: `https://lingoleap-udj0.onrender.com/api`.
 - [x] **CORS Configuration**: Configured backend Express app and Socket.io server to dynamically read the `CLIENT_URL` environment variable, enabling requests from the Vercel frontend: `https://lingoleap4.vercel.app`.
 
+### Phase 20: Mobile Responsiveness & Button Click Loading States (Completed)
+- [x] **Chat Input Overflow Fix**: Optimized the wrapper height for `Chat.jsx` (`h-[calc(100dvh-64px-58px)]`) and bottom padding of `AppLayout.jsx` (`pb-[58px]`) to ensure the send button and microphone recording button remain visible and are never covered by the bottom navigation bar on mobile viewports.
+- [x] **Responsive Notification Bell Dropdown**: Redesigned the notification bell popover inside `NotificationBell.jsx` to be a fixed full-width overlay on mobile screens (`fixed inset-x-4 top-[70px]`), ensuring clean list alignments without edge overflows.
+- [x] **Profile Mobile Shortcut**: Replaced the hover dropdown trigger of the header avatar with a direct link to `/profile` on mobile viewports.
+- [x] **Mobile Admin Panel Navigation**: Embedded the Admin Panel link dynamically within the mobile `BottomNavbar.jsx` (under a ShieldAlert icon) for admin users. Also added a dedicated fallback Admin Panel button directly inside `Profile.jsx` for admins.
+- [x] **Button Click Loading feedback**: Integrated loading spinner states (`loadingLessonId` with `Loader2`) inside the `Learn.jsx` Skill Tree nodes and the `Dashboard.jsx` "Continue Learning" button, providing users with instant feedback after clicking.
+
 ---
+
 
 
 

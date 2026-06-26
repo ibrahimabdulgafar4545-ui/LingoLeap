@@ -179,6 +179,8 @@ const SpeakQuestion = ({ question, onAnswer, answered, language }) => {
       console.error('Speech recognition error:', event.error);
       if (event.error === 'not-allowed') {
         setMicError('Microphone access blocked. Please enable it in browser settings.');
+      } else if (event.error === 'no-speech') {
+        setMicError('No speech detected. Please try again.');
       } else {
         setMicError(`Speech error: ${event.error}`);
       }

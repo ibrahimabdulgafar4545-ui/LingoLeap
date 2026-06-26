@@ -1166,7 +1166,9 @@ export default function Chat() {
           };
 
           rec.onerror = (err) => {
-            console.error('Speech recognition call error:', err);
+            // 'no-speech' error occurs naturally when the mic is open but no one is speaking; ignore it.
+            if (err.error === 'no-speech') return;
+            console.error('Speech recognition call error:', err.error || err);
           };
 
           rec.onend = () => {
@@ -1375,7 +1377,7 @@ export default function Chat() {
 
   return (
     <AppLayout noPadding={true}>
-      <div className="w-full max-w-6xl mx-auto p-0 md:px-4 md:py-6 h-[calc(100dvh-120px)] md:h-[750px] flex flex-col">
+      <div className="w-full max-w-6xl mx-auto p-0 md:px-4 md:py-6 h-[calc(100dvh-64px-58px)] md:h-[750px] flex flex-col">
         <div className="bg-white dark:bg-bg-card md:rounded-[2rem] border-0 md:border-4 border-border overflow-hidden md:shadow-2xl flex flex-col md:flex-row h-full w-full relative">
           
           {/* LEFT SIDEBAR: Conversations List */}

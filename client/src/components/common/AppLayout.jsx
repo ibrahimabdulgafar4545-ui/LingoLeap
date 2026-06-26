@@ -112,58 +112,30 @@ const AppLayout = ({ children, noPadding = false }) => {
               {/* Notification Bell Dropdown */}
               <NotificationBell />
 
-              {/* Mobile Profile Dropdown */}
+              {/* Mobile Profile Link */}
               {user && (
-                <div className="relative group md:hidden">
-                  <button className="flex items-center gap-2 cursor-pointer border-2 border-transparent hover:border-primary/30 rounded-full p-0.5 transition">
-                    <img
-                      src={user.avatarUrl}
-                      alt={user.username}
-                      className="w-8 h-8 rounded-full border border-primary/30 object-cover bg-bg-main"
-                      onError={(e) => { e.target.src = `https://api.dicebear.com/7.x/adventurer/svg?seed=${user.username}`; }}
-                    />
-                  </button>
-                  {/* Dropdown Menu */}
-                  <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-bg-card border-2 border-border dark:border-border rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-                    <div className="p-3 border-b-2 border-border dark:border-border">
-                      <p className="font-extrabold text-text-main text-sm truncate">{user.username}</p>
-                      <p className="text-xs text-text-secondary font-semibold">{user.xp || 0} XP</p>
-                    </div>
-                    <div className="p-2 flex flex-col gap-1">
-                      <button
-                        onClick={() => navigate('/profile')}
-                        className="w-full text-left px-3 py-2 text-sm font-bold text-text-main hover:bg-bg-main dark:hover:bg-bg-main/50 rounded-lg transition"
-                      >
-                        Profile
-                      </button>
-                      <button
-                        onClick={() => navigate('/settings')}
-                        className="w-full text-left px-3 py-2 text-sm font-bold text-text-main hover:bg-bg-main dark:hover:bg-bg-main/50 rounded-lg transition"
-                      >
-                        Settings
-                      </button>
-                      <button
-                        onClick={async () => {
-                          await logout();
-                          navigate('/');
-                        }}
-                        className="w-full text-left px-3 py-2 text-sm font-bold text-red-500 hover:bg-red-500/10 rounded-lg transition flex items-center gap-2"
-                      >
-                        <LogOut size={16} /> Logout
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                <button
+                  onClick={() => navigate('/profile')}
+                  className="flex items-center gap-2 cursor-pointer border border-primary/20 hover:border-primary/50 rounded-full p-0.5 transition"
+                >
+                  <img
+                    src={user.avatarUrl}
+                    alt={user.username}
+                    className="w-8 h-8 rounded-full border border-primary/10 object-cover bg-bg-main"
+                    onError={(e) => { e.target.src = `https://api.dicebear.com/7.x/adventurer/svg?seed=${user.username}`; }}
+                  />
+                </button>
               )}
             </div>
           </header>
-
+ 
           {/* Actual Page Render Component */}
           <main className={`flex-grow ${
             noPadding 
-              ? 'p-0 pb-16 md:pb-8 md:px-8 md:py-6' 
+              ? 'p-0 pb-[58px] md:pb-8 md:px-8 md:py-6' 
               : 'pb-24 pt-4 px-3 md:pb-8 md:px-8 md:py-6'
           }`}>
+
             {children}
           </main>
         </div>

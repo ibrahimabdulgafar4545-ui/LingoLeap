@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useLearning } from '../context/LearningContext';
 import AppLayout from '../components/common/AppLayout';
-import { Lock, Check, BookOpen, ChevronDown, ChevronUp, Trophy, Star, Play, Sparkles } from 'lucide-react';
+import { Lock, Check, BookOpen, ChevronDown, ChevronUp, Trophy, Star, Play, Sparkles, Loader2 } from 'lucide-react';
 
 const langFlags = {
   Spanish: '🇪🇸', French: '🇫🇷', English: '🇬🇧',
@@ -45,7 +45,7 @@ const groupLessonsIntoUnits = (items) => {
   return Array.from(map.values());
 };
 
-const PathNode = ({ lesson, index, onClick }) => {
+const PathNode = ({ lesson, index, onClick, isLoading }) => {
   const colors = categoryColors[lesson.category] || categoryColors.Vocabulary;
   const isCurrent = !lesson.isCompleted && !lesson.isLocked;
 
@@ -79,7 +79,7 @@ const PathNode = ({ lesson, index, onClick }) => {
 
         <button
           onClick={() => !lesson.isLocked && onClick(lesson)}
-          disabled={lesson.isLocked}
+          disabled={lesson.isLocked || isLoading}
           className={`relative w-20 h-20 rounded-full flex items-center justify-center font-extrabold text-white transition-all duration-300 border-b-8 cursor-pointer
             ${lesson.isCompleted
               ? 'bg-primary border-primary-hover shadow-3d-primary hover:-translate-y-1 hover:brightness-105 active:translate-y-0'
@@ -88,7 +88,9 @@ const PathNode = ({ lesson, index, onClick }) => {
                 : `${colors.bg} ${colors.shadow} hover:-translate-y-1 hover:brightness-105 active:translate-y-0`
             }`}
         >
-          {lesson.isCompleted ? (
+          {isLoading ? (
+            <Loader2 className="w-8 h-8 animate-spin text-white" />
+          ) : lesson.isCompleted ? (
             <Check size={36} className="text-white stroke-[4.5]" />
           ) : lesson.isLocked ? (
             <Lock size={26} className="text-text-secondary/40" />
@@ -116,6 +118,7 @@ const Learn = () => {
   const navigate = useNavigate();
   const [selectedLanguage, setSelectedLanguage] = useState(user?.targetLanguage || 'Spanish');
   const [showLangPicker, setShowLangPicker] = useState(false);
+  const [loadingLessonId, setLoadingLessonId] = useState(null);
 
   // Keep selectedLanguage in sync when user changes language in Settings
   useEffect(() => {
@@ -239,10 +242,18 @@ const Learn = () => {
                   </div>
                 </div>
 
-                {/* Snake layout map container */}
                 <div className="flex flex-col items-center w-full px-4">
                   {unit.lessons.map((lesson, idx) => (
-                    <PathNode key={lesson._id} lesson={lesson} index={idx} onClick={(l) => navigate(`/lesson/${l._id}`)} />
+                    <PathNode 
+                      key={lesson._id} 
+                      lesson={lesson} 
+                      index={idx} 
+                      isLoading={loadingLessonId === lesson._id}
+                      onClick={(l) => {
+                        setLoadingLessonId(l._id);
+                        navigate(`/lesson/${l._id}`);
+                      }} 
+                    />
                   ))}
                 </div>
               </section>
