@@ -162,7 +162,11 @@ This file serves as the memory log for the LingoLeap language learning platform 
 - [x] **Dark Mode Theme Improvements**: Styled text search inputs, emoji selectors, typing bubbles, and active messages elements to adapt appropriately and read legibly across light/dark backgrounds.
 - [x] **Clean Compile Build Outputs**: Confirmed that all updated pages pass syntax compliance checks and compile cleanly with production React + Vite asset bundles.
 
+### Phase 18: Vercel SPA Routing Configuration (Completed)
+- [x] **Vercel Routing Rewrite**: Created `vercel.json` files in the `/client` directory and the root directory to handle rewrite rules (`/(.*)` to `/index.html`), preventing `404: NOT_FOUND` errors when refreshing/reloading deep pages of the application.
+
 ---
+
 
 ## 🗃️ Active Directory Map
 * **Frontend**: `client/`
