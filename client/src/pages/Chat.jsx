@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { chatService } from '../services/chatService';
@@ -140,7 +140,7 @@ const STICKERS = {
   }
 };
 
-const VoiceMessagePlayer = ({ audioUrl }) => {
+const VoiceMessagePlayer = ({ audioUrl, isMe }) => {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -191,21 +191,29 @@ const VoiceMessagePlayer = ({ audioUrl }) => {
     return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
   };
 
+  const containerBg = isMe
+    ? "bg-white/20 text-white border-white/30"
+    : "bg-brand-blue/10 dark:bg-white/10 text-text-main dark:text-white border-brand-blue/20 dark:border-white/10";
+  
+  const playButtonBg = isMe
+    ? "bg-white text-brand-blue"
+    : "bg-brand-blue text-white dark:bg-white/20 dark:text-white";
+
   return (
-    <div className="flex items-center gap-3 bg-white/20 p-2.5 rounded-2xl border border-white/30 text-white min-w-[200px]" onClick={(e) => e.stopPropagation()}>
+    <div className={`flex items-center gap-3 p-2.5 rounded-2xl border min-w-[200px] select-none ${containerBg}`} onClick={(e) => e.stopPropagation()}>
       <audio ref={audioRef} src={audioUrl} preload="metadata" className="hidden" />
       <button
         type="button"
         onClick={togglePlay}
-        className="w-9 h-9 rounded-full bg-white dark:bg-bg-card text-brand-blue flex items-center justify-center shadow hover:scale-105 active:scale-95 transition-all flex-shrink-0"
+        className={`w-9 h-9 rounded-full flex items-center justify-center shadow hover:scale-105 active:scale-95 transition-all flex-shrink-0 cursor-pointer ${playButtonBg}`}
       >
         {isPlaying ? (
           <span className="flex gap-1 justify-center items-center">
-            <span className="w-1.5 h-3.5 bg-brand-blue rounded-full"></span>
-            <span className="w-1.5 h-3.5 bg-brand-blue rounded-full"></span>
+            <span className={`w-1.5 h-3.5 rounded-full ${isMe ? 'bg-brand-blue' : 'bg-white'}`}></span>
+            <span className={`w-1.5 h-3.5 rounded-full ${isMe ? 'bg-brand-blue' : 'bg-white'}`}></span>
           </span>
         ) : (
-          <svg className="w-4 h-4 fill-current translate-x-0.5 text-brand-blue" viewBox="0 0 24 24">
+          <svg className={`w-4 h-4 fill-current translate-x-0.5 ${isMe ? 'text-brand-blue' : 'text-white'}`} viewBox="0 0 24 24">
             <path d="M8 5v14l11-7z" fill="currentColor" />
           </svg>
         )}
@@ -215,18 +223,24 @@ const VoiceMessagePlayer = ({ audioUrl }) => {
         <div className="flex gap-0.5 items-end h-5 mt-1 overflow-hidden">
           {Array.from({ length: 18 }).map((_, i) => {
             const seed = (i * 7) % 12 + 3;
+            const activeWaveformBg = isMe
+              ? 'bg-white'
+              : 'bg-brand-blue dark:bg-white';
+            const inactiveWaveformBg = isMe
+              ? 'bg-white/40'
+              : 'bg-brand-blue/20 dark:bg-white/25';
             return (
               <span
                 key={i}
                 style={{ height: `${seed}px` }}
                 className={`w-1 rounded-full transition-all duration-300 ${
-                  (duration > 0 && currentTime / duration >= i / 18) ? 'bg-white dark:bg-bg-card' : 'bg-white/40'
+                  (duration > 0 && currentTime / duration >= i / 18) ? activeWaveformBg : inactiveWaveformBg
                 }`}
               />
             );
           })}
         </div>
-        <div className="flex justify-between items-center text-[8px] font-bold text-white/80 mt-1">
+        <div className={`flex justify-between items-center text-[8px] font-bold mt-1 ${isMe ? 'text-white/80' : 'text-text-secondary dark:text-white/80'}`}>
           <span>{formatTime(currentTime)}</span>
           <span>{formatTime(duration)}</span>
         </div>
@@ -234,6 +248,7 @@ const VoiceMessagePlayer = ({ audioUrl }) => {
     </div>
   );
 };
+
 
 export default function Chat() {
   const { user, socket, socketConnected } = useAuth();
@@ -284,6 +299,55 @@ export default function Chat() {
   const [translateCaptions, setTranslateCaptions] = useState(false);
   const [translatedCaption, setTranslatedCaption] = useState('');
   const recognitionRef = useRef(null);
+
+  const [activeViewOnceMsg, setActiveViewOnceMsg] = useState(null);
+  const [viewOnceCountdown, setViewOnceCountdown] = useState(0);
+  const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  // Handle layout resizing & visual viewport adjustments for mobile keyboards
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+      setViewportHeight(window.visualViewport ? window.visualViewport.height : window.innerHeight);
+    };
+
+    window.addEventListener('resize', handleResize);
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', handleResize);
+    }
+    
+    // Initial trigger
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (window.visualViewport) {
+        window.visualViewport.removeEventListener('resize', handleResize);
+      }
+    };
+  }, []);
+
+  // Trigger countdown when view once message is opened
+  useEffect(() => {
+    if (!activeViewOnceMsg) return;
+    
+    setViewOnceCountdown(8); // 8 seconds to read
+    const interval = setInterval(() => {
+      setViewOnceCountdown(prev => {
+        if (prev <= 1) {
+          clearInterval(interval);
+          // Auto burn
+          handleOpenViewOnce(activeViewOnceMsg._id);
+          setActiveViewOnceMsg(null);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [activeViewOnceMsg]);
 
   // Call History states
   const [leftPanelTab, setLeftPanelTab] = useState('chats');
@@ -716,6 +780,16 @@ export default function Chat() {
   useEffect(() => {
     messageEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, friendIsTyping]);
+
+  // Adjust scroll when visual viewport height changes on mobile (e.g. keyboard opens)
+  useEffect(() => {
+    if (isMobile) {
+      const timer = setTimeout(() => {
+        messageEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+      return () => clearTimeout(timer);
+    }
+  }, [viewportHeight, isMobile]);
 
   // Handle typing input
   const handleInputChange = (e) => {
@@ -1375,13 +1449,311 @@ export default function Chat() {
     });
   };
 
+  // Memoized Messages list for optimizing typing performance
+  const memoizedMessagesList = useMemo(() => {
+    if (loadingMessages) {
+      return (
+        <div className="flex justify-center items-center py-20">
+          <div className="animate-spin rounded-full h-8 w-8 border-4 border-brand-blue border-t-transparent"></div>
+        </div>
+      );
+    }
+    if (messages.length === 0) {
+      return (
+        <div className="text-center py-20 text-text-secondary max-w-sm mx-auto">
+          <MessageSquare className="w-12 h-12 text-text-secondary/40 mx-auto mb-3" />
+          <p className="font-extrabold text-text-main">Send a Greeting!</p>
+          <p className="text-[11px] text-text-secondary mt-0.5">Write your first message to begin your conversation.</p>
+        </div>
+      );
+    }
+    
+    return messages.filter(msg => !msg.deletedForUsers?.includes(user._id)).map((msg) => {
+      const isMe = msg.sender === user._id;
+      return (
+        <div
+          key={msg._id}
+          className={`flex group ${isMe ? 'justify-end' : 'justify-start'}`}
+        >
+          <div className="flex items-end gap-1.5 max-w-[85%] sm:max-w-[75%] md:max-w-[70%]">
+            
+            {/* Hover actions bar: react and delete */}
+            <div className={`opacity-0 group-hover:opacity-100 flex gap-0.5 items-center transition-all self-center ${isMe ? 'mr-1' : 'ml-1 order-last'}`}>
+              {/* Emoji React Button */}
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => setReactingMessageId(reactingMessageId === msg._id ? null : msg._id)}
+                  className="p-1 text-text-secondary/60 hover:text-brand-blue rounded-lg transition-all cursor-pointer"
+                  title="React with Emoji"
+                >
+                  <Smile className="w-4 h-4" />
+                </button>
+                
+                {reactingMessageId === msg._id && (
+                  <div className="absolute bottom-full mb-1 z-50 bg-white dark:bg-bg-card border border-border dark:border-border shadow-xl rounded-full px-2 py-1 flex gap-1.5 animate-scale-up">
+                    {['👍', '❤️', '😂', '😮', '😢', '🙏'].map(emoji => (
+                      <button
+                        type="button"
+                        key={emoji}
+                        onClick={() => {
+                          handleReactMessage(msg._id, emoji);
+                          setReactingMessageId(null);
+                        }}
+                        className="hover:scale-130 transition-transform p-0.5 text-base select-none cursor-pointer"
+                      >
+                        {emoji}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Delete message button */}
+              {isMe && !msg.isDeletedForEveryone && (
+                <div className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setDeletingMessageId(deletingMessageId === msg._id ? null : msg._id)}
+                    className="p-1 text-text-secondary/60 hover:text-brand-red rounded-lg transition-all cursor-pointer"
+                    title="Message Options"
+                  >
+                    <Trash2 className="w-4 h-4" />
+                  </button>
+                  
+                  {deletingMessageId === msg._id && (
+                    <div className="absolute bottom-full mb-1 right-0 z-50 bg-white dark:bg-bg-card border border-border dark:border-border shadow-xl rounded-xl py-1 w-44 animate-scale-up text-xs font-bold flex flex-col overflow-hidden">
+                      {msg.messageType !== 'audio' && msg.messageType !== 'sticker' && msg.messageType !== 'call_log' && (
+                        <button 
+                          type="button" 
+                          onClick={() => handleEditMessage(msg)}
+                          className="w-full text-left px-3 py-2 hover:bg-brand-light flex items-center gap-2 text-text-main cursor-pointer"
+                        >
+                          <Edit2 className="w-3.5 h-3.5" /> Edit Message
+                        </button>
+                      )}
+                      <button 
+                        type="button" 
+                        onClick={() => handleDeleteForMe(msg._id)}
+                        className="w-full text-left px-3 py-2 hover:bg-brand-light flex items-center gap-2 text-text-main cursor-pointer"
+                      >
+                        <Trash className="w-3.5 h-3.5" /> Delete for me
+                      </button>
+                      <button 
+                        type="button" 
+                        onClick={() => handleDeleteForEveryone(msg._id)}
+                        className="w-full text-left px-3 py-2 hover:bg-brand-red/10 flex items-center gap-2 text-brand-red cursor-pointer"
+                      >
+                        <Trash2 className="w-3.5 h-3.5" /> Delete for everyone
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+
+            <div
+              className={`p-3.5 rounded-3xl shadow-sm text-sm border-2 ${
+                msg.messageType === 'sticker'
+                  ? 'bg-transparent border-transparent shadow-none p-1'
+                  : isMe
+                  ? 'bg-brand-blue text-white rounded-br-none border-brand-blue/30 shadow-3d-blue'
+                  : 'bg-white dark:bg-bg-card text-text-main rounded-bl-none border-border dark:border-border shadow-3d-card'
+              }`}
+            >
+              {msg.messageType === 'audio' ? (
+                <div className="flex flex-col gap-2">
+                  <VoiceMessagePlayer audioUrl={msg.audioUrl} isMe={isMe} />
+                  {msg.text && msg.text !== '[Voice Note]' && (
+                    <div className={`rounded-2xl p-3 mt-1.5 border ${
+                      isMe 
+                        ? 'bg-black/15 border-white/10 text-white' 
+                        : 'bg-brand-blue/5 dark:bg-white/5 border-brand-blue/15 dark:border-white/10 text-text-main dark:text-white'
+                    }`}>
+                      <div className="mb-2">
+                        <span className={`text-[9px] uppercase tracking-widest font-black block mb-0.5 ${isMe ? 'text-white/50' : 'text-text-secondary/70 dark:text-white/50'}`}>Original Transcript</span>
+                        <p className="whitespace-pre-wrap break-words text-xs font-bold leading-relaxed">{msg.text}</p>
+                      </div>
+                      {msg.translatedText && (
+                        <div className={`border-t pt-2 ${isMe ? 'border-white/10' : 'border-brand-blue/10 dark:border-white/10'}`}>
+                          <span className={`text-[9px] uppercase tracking-widest font-black block mb-0.5 ${isMe ? 'text-white/50' : 'text-text-secondary/70 dark:text-white/50'}`}>Translation</span>
+                          <p className="whitespace-pre-wrap break-words text-xs font-bold leading-relaxed italic">{msg.translatedText}</p>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              ) : msg.messageType === 'sticker' ? (
+                (() => {
+                  const sticker = STICKERS[msg.stickerUrl];
+                  if (sticker) {
+                    return (
+                      <div className="w-24 h-24 p-1 flex justify-center items-center bg-white/10 rounded-2xl border border-border dark:border-border shadow-sm backdrop-blur-sm hover:scale-105 transition-all cursor-pointer">
+                        {sticker.svg("w-full h-full")}
+                      </div>
+                    );
+                  }
+                  return <p className="font-bold whitespace-pre-wrap break-words">{msg.text}</p>;
+                })()
+              ) : msg.messageType === 'call_log' ? (
+                <div className={`flex flex-col gap-2 p-3 rounded-2xl border min-w-[200px] ${
+                  isMe 
+                    ? 'bg-black/15 border-white/10 text-white' 
+                    : 'bg-brand-blue/5 dark:bg-white/5 border-brand-blue/15 dark:border-white/10 text-text-main dark:text-white'
+                }`}>
+                  <div className="flex items-center gap-2">
+                    {msg.callType === 'audio' ? (
+                      <Phone className={`w-4 h-4 ${isMe ? 'text-white' : 'text-brand-blue'}`} />
+                    ) : (
+                      <Video className={`w-4 h-4 ${isMe ? 'text-white' : 'text-brand-blue'}`} />
+                    )}
+                    <div className="flex-1">
+                      <p className="text-xs font-black leading-snug">{msg.text}</p>
+                      <p className={`text-[8px] font-bold ${isMe ? 'text-white/50' : 'text-text-secondary/70 dark:text-white/50'}`}>
+                        {new Date(msg.createdAt).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+                      </p>
+                    </div>
+                  </div>
+                  {msg.callStatus === 'missed' && msg.sender !== user._id && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        startCall(msg.callType);
+                      }}
+                      className="w-full bg-brand-blue hover:brightness-105 py-1.5 rounded-xl font-extrabold text-[9px] uppercase tracking-wider transition-all text-white flex items-center justify-center gap-1 shadow-sm mt-1 cursor-pointer"
+                    >
+                      <PhoneCall className="w-3 h-3" /> Call Back
+                    </button>
+                  )}
+                </div>
+              ) : msg.isViewOnce && !msg.viewOnceOpened && msg.sender !== user._id ? (
+                <div>
+                  <button
+                    type="button"
+                    onClick={() => setActiveViewOnceMsg(msg)}
+                    className="flex items-center gap-2 px-4 py-2 bg-brand-blue/10 hover:bg-brand-blue/20 text-brand-blue border border-brand-blue/30 rounded-xl transition-all font-bold text-xs shadow-sm cursor-pointer"
+                  >
+                    <ShieldAlert className="w-4 h-4" /> View Once Message
+                  </button>
+                </div>
+              ) : msg.isViewOnce && !msg.viewOnceOpened && msg.sender === user._id ? (
+                <div>
+                  <div className="flex items-center gap-2 px-4 py-2 bg-white/20 text-white rounded-xl font-bold text-xs italic">
+                    <ShieldAlert className="w-4 h-4" /> View Once (Unopened)
+                  </div>
+                </div>
+              ) : msg.viewOnceOpened ? (
+                <div>
+                  <p className="font-bold text-text-secondary/55 dark:text-white/40 italic flex items-center gap-1.5">
+                    <ShieldAlert className="w-3.5 h-3.5" /> Opened View Once Message
+                  </p>
+                </div>
+              ) : (
+                <div>
+                  <p className="font-bold whitespace-pre-wrap break-words">
+                    {msg.translatedText && !showOriginal[msg._id] ? msg.translatedText : msg.text}
+                  </p>
+                  {msg.translatedText && (
+                    <div className={`mt-2 flex flex-wrap items-center justify-between gap-x-2 gap-y-1 border-t pt-1.5 text-[10px] font-black ${
+                      isMe 
+                        ? 'border-white/20 text-white/90' 
+                        : 'border-border/80 dark:border-border/20 text-text-secondary dark:text-white/70'
+                    }`}>
+                      <span className="opacity-80">
+                        {!showOriginal[msg._id] ? `Translated to ${msg.targetLanguage}` : `Original (${msg.originalLanguage})`}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={(e) => { e.stopPropagation(); toggleTranslation(msg._id); }}
+                        className={`underline hover:opacity-85 text-left cursor-pointer ${
+                          isMe ? 'text-white' : 'text-brand-blue dark:text-brand-purple'
+                        }`}
+                      >
+                        {!showOriginal[msg._id] ? 'Show Original' : 'Show Translation'}
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Reactions list */}
+              {msg.reactions && msg.reactions.length > 0 && (
+                <div className="flex flex-wrap gap-1 mt-1.5">
+                  {(() => {
+                    const groups = {};
+                    msg.reactions.forEach(r => {
+                      groups[r.emoji] = groups[r.emoji] || [];
+                      groups[r.emoji].push(r.userId);
+                    });
+                    
+                    return Object.entries(groups).map(([emoji, userIds]) => {
+                      const hasMyReaction = userIds.includes(user._id);
+                      return (
+                        <button
+                          type="button"
+                          key={emoji}
+                          onClick={() => handleReactMessage(msg._id, emoji)}
+                          className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-black border transition-all cursor-pointer ${
+                            hasMyReaction
+                              ? isMe
+                                ? 'bg-white/20 border-white text-white'
+                                : 'bg-brand-blue/10 border-brand-blue text-brand-blue'
+                              : isMe
+                              ? 'bg-white/10 border-white/20 text-white/90 hover:bg-white/20'
+                              : 'bg-bg-main border-border dark:border-border text-text-secondary hover:bg-brand-gray/10'
+                          }`}
+                        >
+                          <span className="select-none text-[11px]">{emoji}</span>
+                          <span>{userIds.length}</span>
+                        </button>
+                      );
+                    });
+                  })()}
+                </div>
+              )}
+              
+              <div className={`flex justify-end items-center gap-1 mt-1.5 text-[9px] font-black ${
+                msg.messageType === 'sticker'
+                  ? 'text-text-secondary/70'
+                  : isMe
+                  ? 'text-white/60'
+                  : 'text-text-secondary/70'
+              }`}>
+                <Clock className="w-2.5 h-2.5" />
+                <span>
+                  {new Date(msg.createdAt).toLocaleTimeString([], {
+                    hour: '2-digit',
+                    minute: '2-digit'
+                  })}
+                </span>
+                {msg.isEdited && <span className="ml-1 opacity-75 italic">(Edited)</span>}
+                {isMe && (
+                  <span>
+                    {msg.isRead ? (
+                      <CheckCheck className={`w-3.5 h-3.5 ${msg.messageType === 'sticker' ? 'text-brand-blue' : 'text-white'} fill-current`} />
+                    ) : (
+                      <Check className={`w-3.5 h-3.5 ${msg.messageType === 'sticker' ? 'text-text-secondary/50' : 'text-white/70'}`} />
+                    )}
+                  </span>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    });
+  }, [messages, loadingMessages, user._id, reactingMessageId, deletingMessageId, showOriginal, onlineStatuses, selectedConv]);
+
   return (
     <AppLayout noPadding={true}>
-      <div className="w-full max-w-6xl mx-auto p-0 md:px-4 md:py-6 h-[calc(100dvh-64px-58px)] md:h-[750px] flex flex-col">
+      <div 
+        style={{ height: isMobile ? `${viewportHeight - 64 - 58}px` : undefined }}
+        className="w-full max-w-6xl mx-auto p-0 md:px-4 md:py-6 h-[calc(100dvh-64px-58px)] md:h-[750px] flex flex-col"
+      >
         <div className="bg-white dark:bg-bg-card md:rounded-[2rem] border-0 md:border-4 border-border overflow-hidden md:shadow-2xl flex flex-col md:flex-row h-full w-full relative">
           
           {/* LEFT SIDEBAR: Conversations List */}
-          <div className={`w-full md:w-80 border-r-4 border-border flex flex-col h-full bg-bg-main/30 dark:bg-bg-main/5 ${selectedConv ? 'hidden md:flex' : 'flex'}`}>
+          <div className={`w-full md:w-64 lg:w-80 border-r-4 border-border flex flex-col h-full bg-bg-main/30 dark:bg-bg-main/5 ${selectedConv ? 'hidden md:flex' : 'flex'}`}>
             
             {/* Search Box */}
             <div className="p-4 border-b-2 border-border bg-white dark:bg-bg-card">
@@ -1415,7 +1787,7 @@ export default function Chat() {
                 className={`flex-1 py-2 rounded-2xl font-black text-[10px] tracking-wider uppercase transition-all ${
                   leftPanelTab === 'chats'
                     ? 'bg-brand-blue text-white shadow-3d-blue'
-                    : 'bg-brand-light text-brand-dark/60 hover:text-text-main'
+                    : 'bg-brand-light text-text-secondary hover:text-text-main'
                 }`}
               >
                 Chats
@@ -1429,7 +1801,7 @@ export default function Chat() {
                 className={`flex-1 py-2 rounded-2xl font-black text-[10px] tracking-wider uppercase transition-all ${
                   leftPanelTab === 'calls'
                     ? 'bg-brand-blue text-white shadow-3d-blue'
-                    : 'bg-brand-light text-brand-dark/60 hover:text-text-main'
+                    : 'bg-brand-light text-text-secondary hover:text-text-main'
                 }`}
               >
                 Calls
@@ -1444,10 +1816,10 @@ export default function Chat() {
                     <div className="animate-spin rounded-full h-8 w-8 border-4 border-brand-blue border-t-transparent"></div>
                   </div>
                 ) : conversations.length === 0 ? (
-                  <div className="text-center py-12 px-4 text-brand-dark/50">
-                    <MessageCircle className="w-10 h-10 mx-auto mb-2 text-brand-dark/25" />
+                  <div className="text-center py-12 px-4 text-text-secondary">
+                    <MessageCircle className="w-10 h-10 mx-auto mb-2 text-text-secondary/35" />
                     <p className="text-xs font-bold">No active conversations.</p>
-                    <p className="text-[10px] text-brand-dark/40 mt-1">Start a chat via the Friends menu!</p>
+                    <p className="text-[10px] text-text-secondary/70 mt-1">Start a chat via the Friends menu!</p>
                   </div>
                 ) : (
                   conversations.map((conv) => {
@@ -1487,7 +1859,7 @@ export default function Chat() {
                               <span>{langFlags[conv.otherUser.targetLanguage] || '🌐'}</span>
                             </h4>
                             {conv.lastMessage && (
-                              <span className="text-[9px] font-bold text-brand-dark/40 flex-shrink-0">
+                              <span className="text-[9px] font-bold text-text-secondary/70 flex-shrink-0">
                                 {new Date(conv.lastMessage.createdAt).toLocaleTimeString([], {
                                   hour: '2-digit',
                                   minute: '2-digit'
@@ -1495,7 +1867,7 @@ export default function Chat() {
                               </span>
                             )}
                           </div>
-                          <p className="text-xs font-bold text-brand-dark/50 truncate mt-1">
+                          <p className="text-xs font-bold text-text-secondary truncate mt-1">
                             {conv.lastMessage ? conv.lastMessage.text : 'Start chatting!'}
                           </p>
                         </div>
@@ -1521,10 +1893,10 @@ export default function Chat() {
                     <div className="animate-spin rounded-full h-8 w-8 border-4 border-brand-blue border-t-transparent"></div>
                   </div>
                 ) : callsHistory.length === 0 ? (
-                  <div className="text-center py-12 px-4 text-brand-dark/50">
-                    <PhoneCall className="w-10 h-10 mx-auto mb-2 text-brand-dark/25 animate-pulse" />
+                  <div className="text-center py-12 px-4 text-text-secondary">
+                    <PhoneCall className="w-10 h-10 mx-auto mb-2 text-text-secondary/35 animate-pulse" />
                     <p className="text-xs font-bold">No call history logs.</p>
-                    <p className="text-[10px] text-brand-dark/40 mt-1">Directly call friends on Chat views!</p>
+                    <p className="text-[10px] text-text-secondary/70 mt-1">Directly call friends on Chat views!</p>
                   </div>
                 ) : (
                   callsHistory.map((call) => {
@@ -1565,7 +1937,7 @@ export default function Chat() {
                                     : `Connected (${formatCallDuration(call.duration)})`}
                               </span>
                             </div>
-                            <p className="text-[8px] font-black text-brand-dark/40 mt-0.5">
+                            <p className="text-[8px] font-black text-text-secondary/70 mt-0.5">
                               {new Date(call.createdAt).toLocaleDateString()} {new Date(call.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                             </p>
                           </div>
@@ -1605,7 +1977,7 @@ export default function Chat() {
                   <div className="flex items-center gap-3 min-w-0">
                     <button
                       onClick={() => setSelectedConv(null)}
-                      className="md:hidden p-1.5 hover:bg-bg-main dark:hover:bg-bg-main/10 rounded-xl text-text-main"
+                      className="md:hidden w-11 h-11 flex-shrink-0 flex items-center justify-center hover:bg-bg-main dark:hover:bg-bg-main/10 rounded-xl text-text-main cursor-pointer"
                     >
                       <ArrowLeft className="w-5 h-5 text-text-main" />
                     </button>
@@ -1627,14 +1999,14 @@ export default function Chat() {
                       />
                     </div>
 
-                    <div className="min-w-0">
-                      <h3 className="font-extrabold text-text-main flex items-center gap-1.5">
-                        {selectedConv.otherUser.username}
-                        <span title={`Learning ${selectedConv.otherUser.targetLanguage}`} className="text-sm">
+                    <div className="min-w-0 flex-1">
+                      <h3 className="font-extrabold text-text-main flex items-center gap-1.5 text-sm sm:text-base truncate">
+                        <span className="truncate">{selectedConv.otherUser.username}</span>
+                        <span title={`Learning ${selectedConv.otherUser.targetLanguage}`} className="text-xs sm:text-sm flex-shrink-0">
                           {langFlags[selectedConv.otherUser.targetLanguage] || '🌐'}
                         </span>
                       </h3>
-                      <span className="text-[10px] font-bold text-brand-dark/45 block">
+                      <span className="text-[10px] font-bold text-text-secondary block truncate">
                         {(() => {
                           const status = onlineStatuses[selectedConv.otherUser._id];
                           const isOnline = status ? (typeof status === 'object' ? status.isOnline : status) : selectedConv.otherUser.isOnline;
@@ -1650,13 +2022,13 @@ export default function Chat() {
                   </div>
 
                   {/* Right elements: Live WebRTC Calls */}
-                  <div className="flex gap-1.5 flex-shrink-0">
+                  <div className="flex gap-2 flex-shrink-0">
                     <button
                       disabled={selectedConv.isLocked}
                       onClick={() => startCall('audio')}
-                      className={`p-2.5 rounded-xl border-2 shadow-3d-card transition-all ${
+                      className={`w-11 h-11 flex items-center justify-center rounded-xl sm:rounded-2xl border-2 shadow-3d-card transition-all cursor-pointer ${
                         selectedConv.isLocked
-                          ? 'border-brand-gray text-brand-dark/25 cursor-not-allowed bg-brand-light'
+                          ? 'border-border dark:border-border/20 text-text-secondary/40 cursor-not-allowed bg-brand-light/10 dark:bg-white/5'
                           : 'border-brand-blue/30 text-brand-blue hover:bg-brand-blue/5 hover:-translate-y-0.5'
                       }`}
                       title={selectedConv.isLocked ? "Unlock chat by becoming friends first!" : "Start Audio Call"}
@@ -1666,9 +2038,9 @@ export default function Chat() {
                     <button
                       disabled={selectedConv.isLocked}
                       onClick={() => startCall('video')}
-                      className={`p-2.5 rounded-xl border-2 shadow-3d-card transition-all ${
+                      className={`w-11 h-11 flex items-center justify-center rounded-xl sm:rounded-2xl border-2 shadow-3d-card transition-all cursor-pointer ${
                         selectedConv.isLocked
-                          ? 'border-brand-gray text-brand-dark/25 cursor-not-allowed bg-brand-light'
+                          ? 'border-border dark:border-border/20 text-text-secondary/40 cursor-not-allowed bg-brand-light/10 dark:bg-white/5'
                           : 'border-brand-blue/30 text-brand-blue hover:bg-brand-blue/5 hover:-translate-y-0.5'
                       }`}
                       title={selectedConv.isLocked ? "Unlock chat by becoming friends first!" : "Start Video Call"}
@@ -1688,276 +2060,7 @@ export default function Chat() {
 
                 {/* Message display area */}
                 <div className="flex-1 overflow-y-auto p-4 space-y-3.5 bg-brand-light/10 custom-scrollbar">
-                  {loadingMessages ? (
-                    <div className="flex justify-center items-center py-20">
-                      <div className="animate-spin rounded-full h-8 w-8 border-4 border-brand-blue border-t-transparent"></div>
-                    </div>
-                  ) : messages.length === 0 ? (
-                    <div className="text-center py-20 text-brand-dark/45 max-w-sm mx-auto">
-                      <MessageSquare className="w-12 h-12 text-brand-dark/20 mx-auto mb-3" />
-                      <p className="font-extrabold">Send a Greeting!</p>
-                      <p className="text-[11px] mt-0.5">Write your first message to begin your conversation.</p>
-                    </div>
-                  ) : (
-                    messages.filter(msg => !msg.deletedForUsers?.includes(user._id)).map((msg) => {
-                      const isMe = msg.sender === user._id;
-                      return (
-                        <div
-                          key={msg._id}
-                          className={`flex group ${isMe ? 'justify-end' : 'justify-start'}`}
-                        >
-                          <div className="flex items-end gap-1.5 max-w-[70%]">
-                            
-                            {/* Hover actions bar: react and delete */}
-                            <div className={`opacity-0 group-hover:opacity-100 flex gap-0.5 items-center transition-all self-center ${isMe ? 'mr-1' : 'ml-1 order-last'}`}>
-                              {/* Emoji React Button */}
-                              <div className="relative">
-                                <button
-                                  type="button"
-                                  onClick={() => setReactingMessageId(reactingMessageId === msg._id ? null : msg._id)}
-                                  className="p-1 text-brand-dark/40 hover:text-brand-blue rounded-lg transition-all"
-                                  title="React with Emoji"
-                                >
-                                  <Smile className="w-4 h-4" />
-                                </button>
-                                
-                                {reactingMessageId === msg._id && (
-                                  <div className="absolute bottom-full mb-1 z-50 bg-white dark:bg-bg-card border border-border dark:border-border shadow-xl rounded-full px-2 py-1 flex gap-1.5 animate-scale-up">
-                                    {['👍', '❤️', '😂', '😮', '😢', '🙏'].map(emoji => (
-                                      <button
-                                        type="button"
-                                        key={emoji}
-                                        onClick={() => {
-                                          handleReactMessage(msg._id, emoji);
-                                          setReactingMessageId(null);
-                                        }}
-                                        className="hover:scale-130 transition-transform p-0.5 text-base select-none"
-                                      >
-                                        {emoji}
-                                      </button>
-                                    ))}
-                                  </div>
-                                )}
-                              </div>
-
-                              {/* Delete message button */}
-                              {isMe && !msg.isDeletedForEveryone && (
-                                <div className="relative">
-                                  <button
-                                    type="button"
-                                    onClick={() => setDeletingMessageId(deletingMessageId === msg._id ? null : msg._id)}
-                                    className="p-1 text-brand-dark/40 hover:text-brand-red rounded-lg transition-all"
-                                    title="Message Options"
-                                  >
-                                    <Trash2 className="w-4 h-4" />
-                                  </button>
-                                  
-                                  {deletingMessageId === msg._id && (
-                                    <div className="absolute bottom-full mb-1 right-0 z-50 bg-white dark:bg-bg-card border border-border dark:border-border shadow-xl rounded-xl py-1 w-44 animate-scale-up text-xs font-bold flex flex-col overflow-hidden">
-                                      {msg.messageType !== 'audio' && msg.messageType !== 'sticker' && msg.messageType !== 'call_log' && (
-                                        <button 
-                                          type="button" 
-                                          onClick={() => handleEditMessage(msg)}
-                                          className="w-full text-left px-3 py-2 hover:bg-brand-light flex items-center gap-2 text-text-main"
-                                        >
-                                          <Edit2 className="w-3.5 h-3.5" /> Edit Message
-                                        </button>
-                                      )}
-                                      <button 
-                                        type="button" 
-                                        onClick={() => handleDeleteForMe(msg._id)}
-                                        className="w-full text-left px-3 py-2 hover:bg-brand-light flex items-center gap-2 text-text-main"
-                                      >
-                                        <Trash className="w-3.5 h-3.5" /> Delete for me
-                                      </button>
-                                      <button 
-                                        type="button" 
-                                        onClick={() => handleDeleteForEveryone(msg._id)}
-                                        className="w-full text-left px-3 py-2 hover:bg-brand-red/10 flex items-center gap-2 text-brand-red"
-                                      >
-                                        <Trash2 className="w-3.5 h-3.5" /> Delete for everyone
-                                      </button>
-                                    </div>
-                                  )}
-                                </div>
-                              )}
-                            </div>
-
-                            <div
-                              className={`p-3.5 rounded-3xl shadow-sm text-sm border-2 ${
-                                msg.messageType === 'sticker'
-                                  ? 'bg-transparent border-transparent shadow-none p-1'
-                                  : isMe
-                                  ? 'bg-brand-blue text-white rounded-br-none border-brand-blue/30 shadow-3d-blue'
-                                  : 'bg-white dark:bg-bg-card text-text-main rounded-bl-none border-border dark:border-border shadow-3d-card'
-                              }`}
-                            >
-                              {msg.messageType === 'audio' ? (
-                                <div className="flex flex-col gap-2">
-                                  <VoiceMessagePlayer audioUrl={msg.audioUrl} />
-                                  {msg.text && msg.text !== '[Voice Note]' && (
-                                    <div className="bg-black/15 rounded-2xl p-3 mt-1.5 border border-white/10 text-white">
-                                      <div className="mb-2">
-                                        <span className="text-[9px] uppercase tracking-widest font-black text-white/50 block mb-0.5">Original Transcript</span>
-                                        <p className="whitespace-pre-wrap break-words text-xs font-bold leading-relaxed">{msg.text}</p>
-                                      </div>
-                                      {msg.translatedText && (
-                                        <div className="border-t border-white/10 pt-2">
-                                          <span className="text-[9px] uppercase tracking-widest font-black text-white/50 block mb-0.5">Translation</span>
-                                          <p className="whitespace-pre-wrap break-words text-xs font-bold leading-relaxed italic text-white/95">{msg.translatedText}</p>
-                                        </div>
-                                      )}
-                                    </div>
-                                  )}
-                                </div>
-                              ) : msg.messageType === 'sticker' ? (
-                                (() => {
-                                  const sticker = STICKERS[msg.stickerUrl];
-                                  if (sticker) {
-                                    return (
-                                      <div className="w-24 h-24 p-1 flex justify-center items-center bg-white/10 rounded-2xl border border-border dark:border-border shadow-sm backdrop-blur-sm hover:scale-105 transition-all cursor-pointer">
-                                        {sticker.svg("w-full h-full")}
-                                      </div>
-                                    );
-                                  }
-                                  return <p className="font-bold whitespace-pre-wrap break-words">{msg.text}</p>;
-                                })()
-                              ) : msg.messageType === 'call_log' ? (
-                                <div className="flex flex-col gap-2 p-3 bg-black/15 rounded-2xl border border-white/10 text-white min-w-[200px]">
-                                  <div className="flex items-center gap-2">
-                                    {msg.callType === 'audio' ? (
-                                      <Phone className="w-4 h-4 text-brand-blue" />
-                                    ) : (
-                                      <Video className="w-4 h-4 text-brand-blue" />
-                                    )}
-                                    <div className="flex-1">
-                                      <p className="text-xs font-black leading-snug">{msg.text}</p>
-                                      <p className="text-[8px] font-bold text-white/50">{new Date(msg.createdAt).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</p>
-                                    </div>
-                                  </div>
-                                  {msg.callStatus === 'missed' && msg.sender !== user._id && (
-                                    <button
-                                      type="button"
-                                      onClick={() => {
-                                        startCall(msg.callType);
-                                      }}
-                                      className="w-full bg-brand-blue hover:brightness-105 py-1.5 rounded-xl font-extrabold text-[9px] uppercase tracking-wider transition-all text-white flex items-center justify-center gap-1 shadow-sm mt-1"
-                                    >
-                                      <PhoneCall className="w-3 h-3" /> Call Back
-                                    </button>
-                                  )}
-                                </div>
-                              ) : msg.isViewOnce && !msg.viewOnceOpened && msg.sender !== user._id ? (
-                                <div>
-                                  <button
-                                    type="button"
-                                    onClick={() => handleOpenViewOnce(msg._id)}
-                                    className="flex items-center gap-2 px-4 py-2 bg-brand-blue/10 hover:bg-brand-blue/20 text-brand-blue border border-brand-blue/30 rounded-xl transition-all font-bold text-xs shadow-sm"
-                                  >
-                                    <ShieldAlert className="w-4 h-4" /> View Once Message
-                                  </button>
-                                </div>
-                              ) : msg.isViewOnce && !msg.viewOnceOpened && msg.sender === user._id ? (
-                                <div>
-                                  <div className="flex items-center gap-2 px-4 py-2 bg-white/20 text-white rounded-xl font-bold text-xs italic">
-                                    <ShieldAlert className="w-4 h-4" /> View Once (Unopened)
-                                  </div>
-                                </div>
-                              ) : msg.viewOnceOpened ? (
-                                <div>
-                                  <p className="font-bold text-brand-dark/40 italic flex items-center gap-1.5">
-                                    <ShieldAlert className="w-3.5 h-3.5" /> Opened View Once Message
-                                  </p>
-                                </div>
-                              ) : (
-                                <div>
-                                  <p className="font-bold whitespace-pre-wrap break-words">
-                                    {msg.translatedText && !showOriginal[msg._id] ? msg.translatedText : msg.text}
-                                  </p>
-                                  {msg.translatedText && (
-                                    <div className="mt-2 flex items-center justify-between border-t border-border dark:border-border pt-1.5">
-                                      <span className="text-[10px] font-black opacity-70">
-                                        {!showOriginal[msg._id] ? `Translated to ${msg.targetLanguage}` : `Original (${msg.originalLanguage})`}
-                                      </span>
-                                      <button
-                                        type="button"
-                                        onClick={(e) => { e.stopPropagation(); toggleTranslation(msg._id); }}
-                                        className="text-[10px] font-black underline hover:opacity-80"
-                                      >
-                                        {!showOriginal[msg._id] ? 'Show Original' : 'Show Translation'}
-                                      </button>
-                                    </div>
-                                  )}
-                                </div>
-                              )}
-
-                              {/* Reactions list */}
-                              {msg.reactions && msg.reactions.length > 0 && (
-                                <div className="flex flex-wrap gap-1 mt-1.5">
-                                  {(() => {
-                                    const groups = {};
-                                    msg.reactions.forEach(r => {
-                                      groups[r.emoji] = groups[r.emoji] || [];
-                                      groups[r.emoji].push(r.userId);
-                                    });
-                                    
-                                    return Object.entries(groups).map(([emoji, userIds]) => {
-                                      const hasMyReaction = userIds.includes(user._id);
-                                      return (
-                                        <button
-                                          type="button"
-                                          key={emoji}
-                                          onClick={() => handleReactMessage(msg._id, emoji)}
-                                          className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-black border transition-all ${
-                                            hasMyReaction
-                                              ? isMe
-                                                ? 'bg-white/20 border-white text-white'
-                                                : 'bg-brand-blue/10 border-brand-blue text-brand-blue'
-                                              : isMe
-                                              ? 'bg-white/10 border-white/20 text-white/90 hover:bg-white/20'
-                                              : 'bg-brand-light border-border dark:border-border text-brand-dark/70 hover:bg-brand-gray/10'
-                                          }`}
-                                        >
-                                          <span className="select-none text-[11px]">{emoji}</span>
-                                          <span>{userIds.length}</span>
-                                        </button>
-                                      );
-                                    });
-                                  })()}
-                                </div>
-                              )}
-                              
-                              <div className={`flex justify-end items-center gap-1 mt-1.5 text-[9px] font-black ${
-                                msg.messageType === 'sticker'
-                                  ? 'text-brand-dark/45'
-                                  : isMe
-                                  ? 'text-white/60'
-                                  : 'text-brand-dark/45'
-                              }`}>
-                                <Clock className="w-2.5 h-2.5" />
-                                <span>
-                                  {new Date(msg.createdAt).toLocaleTimeString([], {
-                                    hour: '2-digit',
-                                    minute: '2-digit'
-                                  })}
-                                </span>
-                                {msg.isEdited && <span className="ml-1 opacity-75 italic">(Edited)</span>}
-                                {isMe && (
-                                  <span>
-                                    {msg.isRead ? (
-                                      <CheckCheck className={`w-3.5 h-3.5 ${msg.messageType === 'sticker' ? 'text-brand-blue' : 'text-white'} fill-current`} />
-                                    ) : (
-                                      <Check className={`w-3.5 h-3.5 ${msg.messageType === 'sticker' ? 'text-brand-dark/40' : 'text-white/70'}`} />
-                                    )}
-                                  </span>
-                                )}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })
-                  )}
+                  {memoizedMessagesList}
 
                   {/* Typing Bubble */}
                   {friendIsTyping && (
@@ -1972,10 +2075,13 @@ export default function Chat() {
                       </div>
                     </div>
                   )}
+
+                  {/* Scroll Anchor */}
+                  <div ref={messageEndRef} />
                 </div>
 
                 {/* Input Text Form */}
-                <div className="p-4 bg-white dark:bg-bg-card border-t-2 border-border relative">
+                <div className="p-2 sm:p-4 bg-white dark:bg-bg-card border-t-2 border-border relative">
                   
                   {/* Emoji / Sticker Drawer */}
                   {showMediaDrawer && !selectedConv.isLocked && (
@@ -1988,7 +2094,7 @@ export default function Chat() {
                           className={`px-4 py-1.5 rounded-xl font-black text-xs transition-all ${
                             activeDrawerTab === 'emoji'
                               ? 'bg-brand-blue text-white shadow-3d-blue'
-                              : 'bg-brand-light text-brand-dark/60 hover:bg-brand-gray/35'
+                              : 'bg-brand-light text-text-secondary hover:bg-brand-gray/35'
                           }`}
                         >
                           Emojis
@@ -1999,7 +2105,7 @@ export default function Chat() {
                           className={`px-4 py-1.5 rounded-xl font-black text-xs transition-all ${
                             activeDrawerTab === 'stickers'
                               ? 'bg-brand-blue text-white shadow-3d-blue'
-                              : 'bg-brand-light text-brand-dark/60 hover:bg-brand-gray/35'
+                              : 'bg-brand-light text-text-secondary hover:bg-brand-gray/35'
                           }`}
                         >
                           LingoStickers
@@ -2031,7 +2137,7 @@ export default function Chat() {
                               <div className="w-12 h-12">
                                 {sticker.svg("w-full h-full")}
                               </div>
-                              <span className="text-[9px] font-black text-brand-dark/50">{sticker.name}</span>
+                              <span className="text-[9px] font-black text-text-secondary">{sticker.name}</span>
                             </div>
                           ))}
                         </div>
@@ -2039,116 +2145,116 @@ export default function Chat() {
                     </div>
                   )}
 
-                  <form onSubmit={handleSendMessage} className="flex gap-3 items-center">
+                  <form onSubmit={handleSendMessage} className="flex flex-nowrap gap-1 sm:gap-3 items-center w-full">
                     {/* Emoji / Media Drawer Toggle Button */}
                     <button
                       type="button"
                       disabled={selectedConv.isLocked}
                       onClick={() => setShowMediaDrawer(prev => !prev)}
-                      className={`p-3 rounded-2xl border-2 transition-all shadow-3d-card ${
+                      className={`w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl sm:rounded-2xl border-2 transition-all shadow-3d-card cursor-pointer ${
                         selectedConv.isLocked
-                          ? 'border-brand-gray bg-brand-light/50 text-brand-dark/20 cursor-not-allowed'
+                          ? 'border-border dark:border-border/20 bg-brand-light/10 dark:bg-white/5 text-text-secondary/35 cursor-not-allowed'
                           : showMediaDrawer
                           ? 'border-brand-blue bg-brand-blue/5 text-brand-blue'
-                          : 'border-border dark:border-border text-brand-dark/50 hover:bg-brand-light'
+                          : 'border-border dark:border-border text-text-secondary hover:bg-brand-light'
                       }`}
                       title="Emojis and Stickers"
                     >
-                      <Smile className="w-4.5 h-4.5" />
+                      <Smile className="w-5 h-5" />
                     </button>
 
-                    <input
-                      disabled={selectedConv.isLocked || isRecording}
-                      type="text"
-                      placeholder={
-                        selectedConv.isLocked
-                          ? "Become friends to unlock chat system"
-                          : isRecording
-                          ? "Voice note recording active..."
-                          : "Type a message..."
-                      }
-                      className={`flex-1 px-4 py-3 border-2 rounded-2xl outline-none font-bold text-sm transition-all shadow-3d-card ${
-                        selectedConv.isLocked || isRecording
-                          ? 'border-brand-gray bg-brand-light/50 text-brand-dark/30 cursor-not-allowed'
-                          : 'border-border dark:border-border text-text-main focus:border-brand-blue'
-                      }`}
-                      value={inputText}
-                      onChange={handleInputChange}
-                    />
-
-                    {editingMessageId && (
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setEditingMessageId(null);
-                          setInputText('');
-                        }}
-                        className="p-2 text-brand-red hover:bg-brand-red/10 rounded-xl transition-all"
-                        title="Cancel Editing"
-                      >
-                        <XCircle className="w-5 h-5" />
-                      </button>
-                    )}
-
-                    {!editingMessageId && !isRecording && (
-                      <button
-                        type="button"
-                        disabled={selectedConv.isLocked}
-                        onClick={() => setIsViewOnce(prev => !prev)}
-                        className={`p-2 rounded-xl transition-all ${
-                          isViewOnce
-                            ? 'text-brand-orange bg-brand-orange/10'
-                            : 'text-brand-dark/40 hover:bg-brand-light'
-                        }`}
-                        title="View Once Mode"
-                      >
-                        <ShieldAlert className="w-5 h-5" />
-                      </button>
-                    )}
-
-                    {/* Voice Recording Panel / Trigger */}
+                    {/* Input field or Recording panel */}
                     {isRecording ? (
-                      <div className="flex items-center gap-2.5 bg-brand-red/10 border-2 border-brand-red/30 rounded-2xl px-3.5 py-2.5 shadow-3d-red">
-                        <span className="w-2.5 h-2.5 rounded-full bg-brand-red animate-ping" />
-                        
-                        {/* Real-time reactive audio levels visualizer */}
-                        <div className="flex items-end gap-1 h-5 px-1 min-w-[36px]">
-                          {audioLevels.map((level, i) => (
-                            <span
-                              key={i}
-                              style={{ height: `${level}%` }}
-                              className="w-1 bg-brand-red rounded-full transition-all duration-75"
-                            />
-                          ))}
+                      <div className="flex-1 flex items-center justify-between gap-1.5 bg-brand-red/10 border-2 border-brand-red/30 rounded-xl sm:rounded-2xl px-2.5 py-1 shadow-3d-red h-11 min-w-0">
+                        <div className="flex items-center gap-1.5 min-w-0">
+                          <span className="w-2 h-2 rounded-full bg-brand-red animate-ping flex-shrink-0" />
+                          
+                          {/* Waveform visualizer */}
+                          <div className="flex items-end gap-0.5 h-4 px-1 min-w-[32px] flex-shrink-0">
+                            {audioLevels.map((level, i) => (
+                              <span
+                                key={i}
+                                style={{ height: `${level}%` }}
+                                className="w-0.75 bg-brand-red rounded-full transition-all duration-75"
+                              />
+                            ))}
+                          </div>
+                          
+                          <span className="text-[10px] font-black text-brand-red select-none flex-shrink-0">
+                            {formatCallDuration(recordingTime)}
+                          </span>
                         </div>
-
-                        <span className="text-xs font-black text-brand-red select-none">{formatCallDuration(recordingTime)}</span>
-                        <button
-                          type="button"
-                          onClick={() => stopRecording(false)} // Cancel
-                          className="p-1 hover:bg-brand-red/10 rounded-lg text-brand-dark/60 hover:text-brand-red transition-all"
-                          title="Cancel Recording"
-                        >
-                          <X className="w-4.5 h-4.5" />
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => stopRecording(true)} // Send
-                          className="bg-brand-red hover:bg-brand-red/90 text-white p-1.5 rounded-xl shadow-md flex items-center justify-center transition-all shadow-3d-red active:translate-y-0.5"
-                          title="Send Voice Note"
-                        >
-                          <Send className="w-3.5 h-3.5" />
-                        </button>
+                        <div className="flex items-center gap-1 flex-shrink-0">
+                          <button
+                            type="button"
+                            onClick={() => stopRecording(false)}
+                            className="w-8 h-8 flex items-center justify-center hover:bg-brand-red/10 rounded-lg text-text-secondary hover:text-brand-red transition-all cursor-pointer"
+                            title="Cancel Recording"
+                          >
+                            <X className="w-4 h-4" />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => stopRecording(true)}
+                            className="bg-brand-red hover:bg-brand-red/90 text-white w-8 h-8 rounded-lg shadow-md flex items-center justify-center transition-all shadow-3d-red active:translate-y-0.5 cursor-pointer"
+                            title="Send Voice Note"
+                          >
+                            <Send className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
                       </div>
                     ) : (
+                      <>
+                        <input
+                          disabled={selectedConv.isLocked}
+                          type="text"
+                          placeholder={selectedConv.isLocked ? "Become friends to unlock chat" : "Type a message..."}
+                          className="flex-1 min-w-0 h-11 px-3 sm:px-4 py-2 border-2 border-border dark:border-border/50 text-text-main focus:border-brand-blue rounded-xl sm:rounded-2xl outline-none font-bold text-xs sm:text-sm transition-all shadow-3d-card bg-white dark:bg-bg-card"
+                          value={inputText}
+                          onChange={handleInputChange}
+                        />
+
+                        {editingMessageId && (
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setEditingMessageId(null);
+                              setInputText('');
+                            }}
+                            className="w-11 h-11 flex-shrink-0 flex items-center justify-center hover:bg-brand-red/10 text-brand-red rounded-xl sm:rounded-2xl transition-all cursor-pointer"
+                            title="Cancel Editing"
+                          >
+                            <XCircle className="w-5 h-5" />
+                          </button>
+                        )}
+
+                        {!editingMessageId && (
+                          <button
+                            type="button"
+                            disabled={selectedConv.isLocked}
+                            onClick={() => setIsViewOnce(prev => !prev)}
+                            className={`w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl sm:rounded-2xl border-2 transition-all shadow-3d-card cursor-pointer ${
+                              isViewOnce
+                                ? 'text-brand-orange bg-brand-orange/10 border-brand-orange/30'
+                                : 'text-text-secondary/70 border-border dark:border-border hover:bg-brand-light'
+                            }`}
+                            title="View Once Mode"
+                          >
+                            <ShieldAlert className="w-5 h-5" />
+                          </button>
+                        )}
+                      </>
+                    )}
+
+                    {!isRecording && (
                       <button
                         type="button"
                         disabled={selectedConv.isLocked}
                         onClick={startRecording}
-                        className={`p-3.5 rounded-2xl text-white font-black shadow-md flex items-center justify-center transition-all ${
+                        className={`w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl sm:rounded-2xl text-white font-black shadow-md flex items-center justify-center transition-all cursor-pointer ${
                           selectedConv.isLocked
-                            ? 'bg-brand-gray/80 shadow-3d-gray cursor-not-allowed'
-                            : 'bg-brand-orange hover:bg-brand-orange/95 shadow-3d-orange hover:translate-y-0.5 active:translate-y-1'
+                            ? 'bg-brand-gray/80 shadow-3d-gray cursor-not-allowed text-white/50'
+                            : 'bg-brand-orange hover:bg-brand-orange/95 shadow-3d-orange active:translate-y-0.5'
                         }`}
                         title="Record Voice Note"
                       >
@@ -2156,15 +2262,14 @@ export default function Chat() {
                       </button>
                     )}
 
-                    {/* Standard Text Send Button */}
                     {!isRecording && (
                       <button
                         type="submit"
                         disabled={selectedConv.isLocked || !inputText.trim()}
-                        className={`p-3.5 rounded-2xl text-white font-black shadow-md flex items-center justify-center transition-all ${
+                        className={`w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl sm:rounded-2xl text-white font-black shadow-md flex items-center justify-center transition-all cursor-pointer ${
                           selectedConv.isLocked || !inputText.trim()
-                            ? 'bg-brand-gray/80 shadow-3d-gray cursor-not-allowed'
-                            : 'bg-brand-blue hover:bg-brand-blue-hover shadow-3d-blue hover:translate-y-0.5 active:translate-y-1'
+                            ? 'bg-brand-gray/80 shadow-3d-gray cursor-not-allowed text-white/50'
+                            : 'bg-brand-blue hover:bg-brand-blue-hover shadow-3d-blue active:translate-y-0.5'
                         }`}
                       >
                         <Send className="w-4.5 h-4.5" />
@@ -2174,10 +2279,10 @@ export default function Chat() {
                 </div>
               </>
             ) : (
-              <div className="flex-1 flex flex-col justify-center items-center p-8 text-center text-brand-dark/55 bg-brand-light/10">
-                <MessageSquare className="w-20 h-20 text-brand-dark/15 mb-4 animate-bounce" />
+              <div className="flex-1 flex flex-col justify-center items-center p-8 text-center text-text-secondary bg-brand-light/10">
+                <MessageSquare className="w-20 h-20 text-text-secondary/20 mb-4 animate-bounce" />
                 <h3 className="text-2xl font-black text-text-main mb-1">Select a Conversation</h3>
-                <p className="text-sm font-bold text-brand-dark/50 max-w-xs">
+                <p className="text-sm font-bold text-text-secondary max-w-xs">
                   Choose an active chat from the sidebar or request a friend to start chatting!
                 </p>
               </div>
@@ -2186,7 +2291,7 @@ export default function Chat() {
 
           {/* WebRTC Video/Audio Call Overlay */}
           {activeCall && (
-            <div className={`absolute inset-0 bg-brand-dark/95 backdrop-blur-md flex flex-col justify-between items-center p-6 z-50 animate-fade-in text-white ${isFullScreen ? 'fixed inset-0 w-screen h-screen z-[999]' : ''}`}>
+            <div className={`absolute inset-0 bg-slate-900/95 dark:bg-slate-950/95 backdrop-blur-md flex flex-col justify-between items-center p-6 z-50 animate-fade-in text-white ${isFullScreen ? 'fixed inset-0 w-screen h-screen z-[999]' : ''}`}>
               
               {/* Header Info */}
               <div className="text-center mt-6 w-full">
@@ -2479,6 +2584,56 @@ export default function Chat() {
                     </button>
                   </div>
                 )}
+              </div>
+            </div>
+          )}
+
+          {/* View Once Message Modal Overlay */}
+          {activeViewOnceMsg && (
+            <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-md p-4 animate-fade-in">
+              <div className="bg-bg-card border border-border dark:border-border/30 rounded-3xl p-6 max-w-md w-full shadow-2xl flex flex-col items-center text-center relative">
+                <div className="w-16 h-16 rounded-full bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 animate-pulse">
+                  <ShieldAlert className="w-8 h-8" />
+                </div>
+                
+                <h3 className="text-lg font-black text-text-main mb-2">View Once Message</h3>
+                <p className="text-xs text-text-secondary mb-6 leading-relaxed">
+                  This message will self-destruct in <span className="text-brand-red font-black text-sm">{viewOnceCountdown}s</span>. It cannot be screenshotted or saved.
+                </p>
+
+                <div className="w-full bg-bg-main border border-border dark:border-border/30 p-4 rounded-2xl mb-6 max-h-[200px] overflow-y-auto">
+                  {activeViewOnceMsg.audioUrl ? (
+                    <div className="flex justify-center">
+                      <VoiceMessagePlayer audioUrl={activeViewOnceMsg.audioUrl} isMe={false} />
+                    </div>
+                  ) : activeViewOnceMsg.stickerUrl ? (
+                    <div className="max-w-[120px] mx-auto animate-bounce">
+                      {(() => {
+                        const sticker = STICKERS[activeViewOnceMsg.stickerUrl];
+                        return sticker ? sticker.svg("w-full h-full") : null;
+                      })()}
+                    </div>
+                  ) : activeViewOnceMsg.imageUrl ? (
+                    <img src={activeViewOnceMsg.imageUrl} alt="Image" className="max-w-full max-h-[160px] rounded-xl object-contain mx-auto" />
+                  ) : (
+                    <p className="font-extrabold text-sm text-text-main break-words select-none pointer-events-none">
+                      {activeViewOnceMsg.translatedText && !showOriginal[activeViewOnceMsg._id] 
+                        ? activeViewOnceMsg.translatedText 
+                        : activeViewOnceMsg.text}
+                    </p>
+                  )}
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    handleOpenViewOnce(activeViewOnceMsg._id);
+                    setActiveViewOnceMsg(null);
+                  }}
+                  className="w-full py-3.5 bg-brand-red hover:bg-brand-red/90 text-white rounded-2xl font-black text-sm transition-all shadow-3d-red active:translate-y-0.5 cursor-pointer"
+                >
+                  Close & Destroy Now ({viewOnceCountdown}s)
+                </button>
               </div>
             </div>
           )}
