@@ -6,6 +6,7 @@ import { allAchievements } from './Achievements';
 import confetti from 'canvas-confetti';
 import toast from 'react-hot-toast';
 import { X, CheckCircle, XCircle, ChevronRight, Star, Zap, RotateCcw, Volume2, Mic, Square, AlertCircle, Heart, Gem, Award, Sparkles, RefreshCw } from 'lucide-react';
+import api from '../services/api';
 
 // --- Progress bar at top of lesson ---
 const LessonProgressBar = ({ current, total }) => {
@@ -53,8 +54,52 @@ const PlayAudioButton = ({ text, language }) => {
   );
 };
 
+// --- Error Boundary for Questions ---
+class QuestionErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error("Error rendering question:", error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="p-6 bg-rose-50 border-2 border-rose-200 text-rose-700 rounded-2xl flex flex-col gap-3 shadow-sm dark:bg-rose-950/20 dark:border-rose-900/30 dark:text-rose-400">
+          <div className="flex items-center gap-2 font-extrabold text-sm text-rose-800 dark:text-rose-300">
+            <AlertCircle size={18} />
+            <span>Failed to load this question</span>
+          </div>
+          <p className="text-xs font-semibold text-rose-600/80 dark:text-rose-400/80">
+            An error occurred while loading this question component: {this.state.error?.message || "Unknown error"}
+          </p>
+          <div className="flex justify-end mt-2">
+            <button
+              type="button"
+              onClick={this.props.onSkip}
+              className="bg-rose-600 hover:bg-rose-700 text-white font-extrabold px-4 py-2 rounded-xl text-xs shadow-md transition cursor-pointer"
+            >
+              Skip Question
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
+
 // --- Individual question renderers ---
-const MultipleChoice = ({ question, onAnswer, answered, selectedAnswer, language }) => (
+
+const MultipleChoice = ({ question, answered, selectedAnswer, setSelectedAnswer, language }) => (
   <div className="flex flex-col gap-3">
     <div className="flex items-center gap-2 mb-2">
       <h2 className="text-xl font-extrabold text-text-main">{question.prompt}</h2>
@@ -63,14 +108,18 @@ const MultipleChoice = ({ question, onAnswer, answered, selectedAnswer, language
     {(question.options || []).map((opt) => {
       let style = 'border-border dark:border-border bg-white dark:bg-bg-card text-text-main hover:bg-brand-light hover:border-brand-blue/50';
       if (answered) {
-        if (opt === question.correctAnswer) style = 'border-brand-green bg-brand-green/10 text-brand-green';
-        else if (opt === selectedAnswer && opt !== question.correctAnswer) style = 'border-brand-red bg-brand-red/10 text-brand-red';
+        const correctAns = question.correctAnswer || question.answer;
+        if (opt === correctAns) style = 'border-brand-green bg-brand-green/10 text-brand-green';
+        else if (opt === selectedAnswer && opt !== correctAns) style = 'border-brand-red bg-brand-red/10 text-brand-red';
         else style = 'border-border dark:border-border bg-brand-light/50 text-brand-dark/40';
+      } else {
+        if (opt === selectedAnswer) style = 'border-brand-blue bg-brand-blue/10 text-brand-blue shadow-3d-blue';
       }
       return (
         <button
           key={opt}
-          onClick={() => !answered && onAnswer(opt)}
+          type="button"
+          onClick={() => !answered && setSelectedAnswer(opt)}
           disabled={answered}
           className={`w-full p-4 border-2 rounded-2xl text-sm font-bold text-left transition-all duration-150 btn-3d shadow-3d-card ${style}`}
         >
@@ -81,36 +130,67 @@ const MultipleChoice = ({ question, onAnswer, answered, selectedAnswer, language
   </div>
 );
 
-const FillBlank = ({ question, onAnswer, answered, selectedAnswer, language }) => {
+const FillBlank = ({ question, answered, userInput, setUserInput, language, onSubmit }) => (
+  <div className="flex flex-col gap-3">
+    <div className="flex items-center gap-2 mb-2">
+      <h2 className="text-xl font-extrabold text-text-main">{question.prompt}</h2>
+      <PlayAudioButton text={question.prompt} language={language} />
+    </div>
+    <input
+      type="text"
+      value={userInput}
+      onChange={(e) => !answered && setUserInput(e.target.value)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          onSubmit && onSubmit();
+        }
+      }}
+      disabled={answered}
+      placeholder="Type your answer..."
+      className="w-full p-4 border-2 border-border dark:border-border rounded-2xl font-semibold text-text-main outline-none focus:border-brand-blue text-sm bg-white dark:bg-bg-card"
+    />
+  </div>
+);
+
+const TrueFalse = ({ question, answered, selectedAnswer, setSelectedAnswer, language }) => {
+  const options = ['True', 'False'];
   return (
     <div className="flex flex-col gap-3">
       <div className="flex items-center gap-2 mb-2">
         <h2 className="text-xl font-extrabold text-text-main">{question.prompt}</h2>
         <PlayAudioButton text={question.prompt} language={language} />
       </div>
-      {(question.options || []).map((opt) => {
-        let style = 'border-border dark:border-border bg-white dark:bg-bg-card text-text-main hover:bg-brand-light hover:border-brand-blue/50';
-        if (answered) {
-          if (opt === question.correctAnswer) style = 'border-brand-green bg-brand-green/10 text-brand-green';
-          else if (opt === selectedAnswer && opt !== question.correctAnswer) style = 'border-brand-red bg-brand-red/10 text-brand-red';
-          else style = 'border-border dark:border-border bg-brand-light/50 text-brand-dark/40';
-        }
-        return (
-          <button
-            key={opt}
-            onClick={() => !answered && onAnswer(opt)}
-            disabled={answered}
-            className={`w-full p-4 border-2 rounded-2xl text-sm font-bold text-left transition-all btn-3d shadow-3d-card ${style}`}
-          >
-            {opt}
-          </button>
-        );
-      })}
+      <div className="grid grid-cols-2 gap-4">
+        {options.map((opt) => {
+          let style = 'border-border dark:border-border bg-white dark:bg-bg-card text-text-main hover:bg-brand-light';
+          if (answered) {
+            const isCorrectOpt = opt.toLowerCase() === (question.correctAnswer || question.answer || '').toLowerCase();
+            const isSelectedOpt = opt.toLowerCase() === (selectedAnswer || '').toLowerCase();
+            if (isCorrectOpt) style = 'border-brand-green bg-brand-green/10 text-brand-green';
+            else if (isSelectedOpt && !isCorrectOpt) style = 'border-brand-red bg-brand-red/10 text-brand-red';
+            else style = 'border-border dark:border-border bg-brand-light/50 text-brand-dark/40';
+          } else {
+            if (opt === selectedAnswer) style = 'border-brand-blue bg-brand-blue/10 text-brand-blue shadow-3d-blue';
+          }
+          return (
+            <button
+              key={opt}
+              type="button"
+              onClick={() => !answered && setSelectedAnswer(opt)}
+              disabled={answered}
+              className={`p-6 border-2 rounded-2xl text-lg font-extrabold text-center transition btn-3d shadow-3d-card ${style}`}
+            >
+              {opt}
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 };
 
-const Translate = ({ question, onAnswer, answered, selectedAnswer, userInput, setUserInput, language }) => (
+const Translate = ({ question, answered, userInput, setUserInput, language, onSubmit }) => (
   <div className="flex flex-col gap-4">
     <div className="flex items-center gap-2">
       <h2 className="text-xl font-extrabold text-text-main">{question.prompt}</h2>
@@ -118,47 +198,55 @@ const Translate = ({ question, onAnswer, answered, selectedAnswer, userInput, se
     </div>
     <textarea
       value={userInput}
-      onChange={(e) => setUserInput(e.target.value)}
+      onChange={(e) => !answered && setUserInput(e.target.value)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
+          onSubmit && onSubmit();
+        }
+      }}
       disabled={answered}
       placeholder="Type your translation here..."
       rows={3}
-      className="w-full p-4 border-2 border-border dark:border-border rounded-2xl font-semibold text-text-main outline-none focus:border-brand-blue resize-none text-sm"
+      className="w-full p-4 border-2 border-border dark:border-border rounded-2xl font-semibold text-text-main outline-none focus:border-brand-blue resize-none text-sm bg-white dark:bg-bg-card"
     />
-    {!answered && (
-      <button
-        onClick={() => onAnswer(userInput.trim())}
-        disabled={!userInput.trim()}
-        className="bg-brand-blue text-white font-extrabold py-3 px-8 rounded-2xl btn-3d shadow-3d-blue hover:bg-brand-blue-hover disabled:opacity-40 text-sm self-end"
-      >
-        Check Answer
-      </button>
-    )}
-    {answered && (
-      <div className={`p-4 rounded-2xl border-2 ${selectedAnswer.toLowerCase().trim() === question.correctAnswer.toLowerCase().trim() ? 'border-brand-green/30 bg-brand-green/10 text-brand-green' : 'border-brand-red/30 bg-brand-red/10 text-brand-red'}`}>
-        <p className="font-bold text-sm">Correct answer: <span className="font-extrabold">{question.correctAnswer}</span></p>
-      </div>
-    )}
   </div>
 );
 
-const SpeakQuestion = ({ question, onAnswer, answered, language }) => {
+const SpeakQuestion = ({ question, answered, selectedAnswer, setSelectedAnswer, language }) => {
   const [isListening, setIsListening] = useState(false);
-  const [transcript, setTranscript] = useState('');
-  const [recognition, setRecognition] = useState(null);
   const [micError, setMicError] = useState(null);
   const [isSupported, setIsSupported] = useState(true);
+  const recognitionRef = React.useRef(null);
 
   useEffect(() => {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognition) {
       setIsSupported(false);
-      return;
+    }
+    return () => {
+      if (recognitionRef.current) {
+        try {
+          recognitionRef.current.abort();
+        } catch(e) {}
+      }
+    };
+  }, []);
+
+  const startListening = () => {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) return;
+
+    if (recognitionRef.current) {
+      try {
+        recognitionRef.current.abort();
+      } catch(e) {}
     }
 
     const rec = new SpeechRecognition();
+    recognitionRef.current = rec;
     rec.continuous = false;
     rec.interimResults = false;
-    
     const langMap = {
       Spanish: 'es-ES',
       French: 'fr-FR',
@@ -172,7 +260,7 @@ const SpeakQuestion = ({ question, onAnswer, answered, language }) => {
     rec.onstart = () => {
       setIsListening(true);
       setMicError(null);
-      setTranscript('');
+      setSelectedAnswer('');
     };
 
     rec.onerror = (event) => {
@@ -193,31 +281,18 @@ const SpeakQuestion = ({ question, onAnswer, answered, language }) => {
 
     rec.onresult = (event) => {
       const resultText = event.results[0][0].transcript;
-      setTranscript(resultText);
-      onAnswer(resultText);
+      setSelectedAnswer(resultText);
     };
 
-    setRecognition(rec);
-  }, [question, language]);
-
-  const startListening = () => {
-    if (recognition && !isListening) {
-      try {
-        recognition.start();
-      } catch (err) {
-        console.error(err);
-      }
-    }
-  };
-
-  const stopListening = () => {
-    if (recognition && isListening) {
-      recognition.stop();
+    try {
+      rec.start();
+    } catch (err) {
+      console.error(err);
     }
   };
 
   const playTTS = () => {
-    const utterance = new SpeechSynthesisUtterance(question.correctAnswer);
+    const utterance = new SpeechSynthesisUtterance(question.correctAnswer || question.answer || '');
     const langMap = {
       Spanish: 'es-ES',
       French: 'fr-FR',
@@ -240,6 +315,7 @@ const SpeakQuestion = ({ question, onAnswer, answered, language }) => {
       <div className="flex justify-between items-center">
         <h2 className="text-xl font-extrabold text-text-main">{question.prompt}</h2>
         <button
+          type="button"
           onClick={playTTS}
           className="flex items-center gap-1.5 text-xs font-bold text-brand-purple bg-brand-purple/10 border-2 border-brand-purple/20 px-3 py-1.5 rounded-full hover:bg-brand-purple/20 transition cursor-pointer"
         >
@@ -247,15 +323,15 @@ const SpeakQuestion = ({ question, onAnswer, answered, language }) => {
         </button>
       </div>
 
-      <div className="bg-brand-light/60 border-2 border-border dark:border-border rounded-2xl p-5 text-center flex flex-col items-center justify-center gap-3">
+      <div className="bg-brand-light/60 dark:bg-brand-gray/5 border-2 border-border dark:border-border rounded-2xl p-5 text-center flex flex-col items-center justify-center gap-3">
         <div className="text-lg font-extrabold text-text-main italic bg-white dark:bg-bg-card border border-border dark:border-border px-4 py-2.5 rounded-2xl shadow-sm">
-          "{question.correctAnswer}"
+          "{question.correctAnswer || question.answer}"
         </div>
         
-        {transcript && (
+        {selectedAnswer && (
           <div className="mt-2 w-full text-center">
             <p className="text-[10px] font-extrabold text-brand-dark/40 uppercase tracking-wider">You said:</p>
-            <p className="text-md font-bold text-brand-blue italic">"{transcript}"</p>
+            <p className="text-md font-bold text-brand-blue italic">"{selectedAnswer}"</p>
           </div>
         )}
 
@@ -272,10 +348,11 @@ const SpeakQuestion = ({ question, onAnswer, answered, language }) => {
           <span>⚠️ Voice recognition is not supported on this browser (use Chrome or Edge). You can still proceed manually:</span>
           {!answered && (
             <button
-              onClick={() => onAnswer(question.correctAnswer)}
-              className="bg-brand-green text-white font-extrabold py-3 px-8 rounded-2xl btn-3d shadow-3d-green text-xs w-full"
+              type="button"
+              onClick={() => setSelectedAnswer(question.correctAnswer || question.answer)}
+              className="bg-brand-green text-white font-extrabold py-3 px-8 rounded-2xl btn-3d shadow-3d-green text-xs w-full cursor-pointer"
             >
-              Mark Done ✓
+              Use Correct Answer text ✓
             </button>
           )}
         </div>
@@ -285,13 +362,15 @@ const SpeakQuestion = ({ question, onAnswer, answered, language }) => {
         <div className="flex flex-col gap-2 items-center">
           {isListening ? (
             <button
-              onClick={stopListening}
-              className="w-full flex items-center justify-center gap-2 bg-brand-red text-white font-extrabold py-4 px-8 rounded-2xl btn-3d shadow-3d-red text-sm animate-pulse cursor-pointer"
+              type="button"
+              disabled
+              className="w-full flex items-center justify-center gap-2 bg-brand-red text-white font-extrabold py-4 px-8 rounded-2xl btn-3d shadow-3d-red text-sm animate-pulse cursor-not-allowed"
             >
-              <Square size={16} /> Stop Recording...
+              <Square size={16} /> Recording... Speak Now
             </button>
           ) : (
             <button
+              type="button"
               onClick={startListening}
               className="w-full flex items-center justify-center gap-2 bg-brand-blue text-white font-extrabold py-4 px-8 rounded-2xl btn-3d shadow-3d-blue text-sm cursor-pointer"
             >
@@ -304,7 +383,93 @@ const SpeakQuestion = ({ question, onAnswer, answered, language }) => {
   );
 };
 
-// --- Match Exercise Renderer ---
+const ListenQuestion = ({ question, answered, selectedAnswer, setSelectedAnswer, userInput, setUserInput, language, onSubmit }) => {
+  const playTTS = useCallback(() => {
+    const textToPlay = question.audioText || question.prompt || question.correctAnswer || question.answer || "";
+    if (!textToPlay) return;
+    const utterance = new SpeechSynthesisUtterance(textToPlay);
+    const langMap = {
+      Spanish: 'es-ES',
+      French: 'fr-FR',
+      German: 'de-DE',
+      Italian: 'it-IT',
+      English: 'en-US',
+      Arabic: 'ar-SA'
+    };
+    utterance.lang = langMap[language] || 'es-ES';
+    
+    const voices = window.speechSynthesis.getVoices();
+    const voice = voices.find(v => v.lang.startsWith(utterance.lang.substring(0, 2)));
+    if (voice) utterance.voice = voice;
+
+    window.speechSynthesis.speak(utterance);
+  }, [question, language]);
+
+  useEffect(() => {
+    playTTS();
+  }, [playTTS]);
+
+  const hasOptions = question.options && question.options.length > 0;
+
+  return (
+    <div className="flex flex-col gap-4">
+      <div className="flex flex-col items-center justify-center p-6 bg-brand-light/60 dark:bg-brand-gray/5 border-2 border-border dark:border-border rounded-3xl gap-3">
+        <button
+          type="button"
+          onClick={playTTS}
+          className="w-20 h-20 bg-brand-purple hover:bg-brand-purple/90 text-white rounded-full flex items-center justify-center shadow-3d-purple transition cursor-pointer transform hover:scale-105"
+          title="Play Audio"
+        >
+          <Volume2 size={36} />
+        </button>
+        <span className="text-xs font-bold text-brand-purple">Click to play audio</span>
+      </div>
+
+      {hasOptions ? (
+        <div className="flex flex-col gap-3">
+          {question.options.map((opt) => {
+            let style = 'border-border dark:border-border bg-white dark:bg-bg-card text-text-main hover:bg-brand-light hover:border-brand-blue/50';
+            if (answered) {
+              const correctAns = question.correctAnswer || question.answer;
+              if (opt === correctAns) style = 'border-brand-green bg-brand-green/10 text-brand-green';
+              else if (opt === selectedAnswer && opt !== correctAns) style = 'border-brand-red bg-brand-red/10 text-brand-red';
+              else style = 'border-border dark:border-border bg-brand-light/50 text-brand-dark/40';
+            } else {
+              if (opt === selectedAnswer) style = 'border-brand-blue bg-brand-blue/10 text-brand-blue shadow-3d-blue';
+            }
+            return (
+              <button
+                key={opt}
+                type="button"
+                onClick={() => !answered && setSelectedAnswer(opt)}
+                disabled={answered}
+                className={`w-full p-4 border-2 rounded-2xl text-sm font-bold text-left transition-all duration-150 btn-3d shadow-3d-card ${style}`}
+              >
+                {opt}
+              </button>
+            );
+          })}
+        </div>
+      ) : (
+        <input
+          type="text"
+          value={userInput}
+          onChange={(e) => !answered && setUserInput(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              onSubmit && onSubmit();
+            }
+          }}
+          disabled={answered}
+          placeholder="Type what you hear..."
+          className="w-full p-4 border-2 border-border dark:border-border rounded-2xl font-semibold text-text-main outline-none focus:border-brand-blue text-sm bg-white dark:bg-bg-card"
+        />
+      )}
+    </div>
+  );
+};
+
 const MatchQuestion = ({ question, onAnswer, answered, language }) => {
   const pairs = React.useMemo(() => {
     return (question.options || []).map(opt => {
@@ -354,7 +519,7 @@ const MatchQuestion = ({ question, onAnswer, answered, language }) => {
       setSelectedRight(null);
       
       if (newMatchedLeft.length === pairs.length) {
-        onAnswer(question.correctAnswer);
+        onAnswer(question.correctAnswer || question.answer);
       }
     } else {
       setWrongMatch({ left, right });
@@ -388,6 +553,7 @@ const MatchQuestion = ({ question, onAnswer, answered, language }) => {
             return (
               <button
                 key={item}
+                type="button"
                 onClick={() => handleLeftClick(item)}
                 className={`p-4 border-2 rounded-2xl text-sm font-bold text-center transition btn-3d shadow-3d-card ${btnClass}`}
               >
@@ -412,6 +578,7 @@ const MatchQuestion = ({ question, onAnswer, answered, language }) => {
             return (
               <button
                 key={item}
+                type="button"
                 onClick={() => handleRightClick(item)}
                 className={`p-4 border-2 rounded-2xl text-sm font-bold text-center transition btn-3d shadow-3d-card ${btnClass}`}
               >
@@ -507,6 +674,7 @@ const LessonRunner = () => {
   const [showResult, setShowResult] = useState(false);
   const [resultData, setResultData] = useState(null);
   const [feedback, setFeedback] = useState(null); // 'correct' | 'wrong'
+  const [validationError, setValidationError] = useState('');
   const getHeartsCount = (u) => typeof u?.hearts === 'object' ? (u?.hearts?.current ?? 5) : (u?.hearts ?? 5);
 
   const [lessonHearts, setLessonHearts] = useState(getHeartsCount(user));
@@ -546,10 +714,17 @@ const LessonRunner = () => {
   const currentQ = lesson?.questions?.[currentIndex];
   const totalQ = lesson?.questions?.length || 0;
 
+  const getCorrectAnswer = useCallback((q) => {
+    if (!q) return '';
+    return q.correctAnswer || q.answer || '';
+  }, []);
+
   const handleAnswer = useCallback((userAnswer) => {
     if (answered) return;
     setSelectedAnswer(userAnswer);
     setAnswered(true);
+
+    const correctAns = getCorrectAnswer(currentQ);
 
     // Check correctness
     const isCorrect =
@@ -557,12 +732,12 @@ const LessonRunner = () => {
         ? (userAnswer ? (
             (() => {
               const clean = (str) => str.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?¿¡]/g,"").replace(/\s+/g," ").trim();
-              const targetClean = clean(currentQ.correctAnswer);
+              const targetClean = clean(correctAns);
               const userClean = clean(userAnswer);
               return userClean === targetClean || userClean.includes(targetClean) || targetClean.includes(userClean);
             })()
           ) : false)
-        : userAnswer.toLowerCase().trim() === currentQ.correctAnswer.toLowerCase().trim();
+        : userAnswer.toLowerCase().trim() === correctAns.toLowerCase().trim();
 
     setFeedback(isCorrect ? 'correct' : 'wrong');
     if (!isCorrect) {
@@ -586,7 +761,66 @@ const LessonRunner = () => {
     }
 
     setAnswers(prev => [...prev, { questionIndex: currentIndex, isCorrect, userAnswer, question: currentQ }]);
-  }, [answered, currentQ, currentIndex]);
+  }, [answered, currentQ, currentIndex, user, setUser, getCorrectAnswer]);
+
+  const hasProvidedAnswer = useCallback(() => {
+    if (!currentQ) return false;
+    const type = currentQ.type;
+    if (type === 'multiple-choice' || type === 'quiz' || type === 'true-false' || type === 'true_false' || type === 'true/false' || type === 'true-or-false' || type === 'speak') {
+      return !!selectedAnswer;
+    }
+    if (type === 'translate' || type === 'fill-blank') {
+      return !!userInput.trim();
+    }
+    if (type === 'listen') {
+      const hasOptions = currentQ.options && currentQ.options.length > 0;
+      return hasOptions ? !!selectedAnswer : !!userInput.trim();
+    }
+    if (type === 'match') {
+      return !!selectedAnswer;
+    }
+    return false;
+  }, [currentQ, selectedAnswer, userInput]);
+
+  const isAnswerProvided = hasProvidedAnswer();
+
+  useEffect(() => {
+    if (selectedAnswer || userInput) {
+      setValidationError('');
+    }
+  }, [selectedAnswer, userInput]);
+
+  const checkAnswer = useCallback(() => {
+    if (answered) return;
+    if (!hasProvidedAnswer()) {
+      setValidationError("Please select or type an answer to continue.");
+      toast.error("Please select or type an answer to continue.");
+      return;
+    }
+    setValidationError('');
+    
+    let answerToSubmit = '';
+    const type = currentQ.type;
+    if (type === 'multiple-choice' || type === 'quiz' || type === 'true-false' || type === 'true_false' || type === 'true/false' || type === 'true-or-false' || type === 'speak' || type === 'match') {
+      answerToSubmit = selectedAnswer;
+    } else if (type === 'translate' || type === 'fill-blank') {
+      answerToSubmit = userInput.trim();
+    } else if (type === 'listen') {
+      const hasOptions = currentQ.options && currentQ.options.length > 0;
+      answerToSubmit = hasOptions ? selectedAnswer : userInput.trim();
+    }
+
+    handleAnswer(answerToSubmit);
+  }, [answered, hasProvidedAnswer, currentQ, selectedAnswer, userInput, handleAnswer]);
+
+  const handleCheckClick = useCallback(() => {
+    if (!hasProvidedAnswer()) {
+      setValidationError("Please select or type an answer to continue.");
+      toast.error("Please select or type an answer to continue.");
+      return;
+    }
+    checkAnswer();
+  }, [hasProvidedAnswer, checkAnswer]);
 
   const handleNext = useCallback(async () => {
     if (currentIndex < totalQ - 1) {
@@ -782,93 +1016,178 @@ const LessonRunner = () => {
           </div>
 
           {/* Question Type Renderer */}
-          {currentQ?.type === 'multiple-choice' || currentQ?.type === 'listen' ? (
-            <MultipleChoice
-              question={currentQ}
-              onAnswer={handleAnswer}
-              answered={answered}
-              selectedAnswer={selectedAnswer}
-              language={lesson?.language}
-            />
-          ) : currentQ?.type === 'fill-blank' ? (
-            <FillBlank
-              question={currentQ}
-              onAnswer={handleAnswer}
-              answered={answered}
-              selectedAnswer={selectedAnswer}
-              language={lesson?.language}
-            />
-          ) : currentQ?.type === 'translate' ? (
-            <Translate
-              question={currentQ}
-              onAnswer={handleAnswer}
-              answered={answered}
-              selectedAnswer={selectedAnswer}
-              userInput={userInput}
-              setUserInput={setUserInput}
-              language={lesson?.language}
-            />
-          ) : currentQ?.type === 'speak' ? (
-            <SpeakQuestion
-              question={currentQ}
-              onAnswer={handleAnswer}
-              answered={answered}
-              language={lesson?.language}
-            />
-          ) : currentQ?.type === 'match' ? (
-            <MatchQuestion
-              question={currentQ}
-              onAnswer={handleAnswer}
-              answered={answered}
-              language={lesson?.language}
-            />
-          ) : null}
+          <QuestionErrorBoundary onSkip={() => handleAnswer('')}>
+            {(() => {
+              if (!currentQ) {
+                return (
+                  <div className="p-4 bg-amber-50 dark:bg-amber-950/20 text-amber-700 dark:text-amber-400 border border-amber-300 dark:border-amber-900/30 rounded-xl font-bold">
+                    No question data available for this step.
+                  </div>
+                );
+              }
+              const type = currentQ.type;
+              if (type === 'multiple-choice' || type === 'quiz') {
+                return (
+                  <MultipleChoice
+                    question={currentQ}
+                    answered={answered}
+                    selectedAnswer={selectedAnswer}
+                    setSelectedAnswer={setSelectedAnswer}
+                    language={lesson?.language}
+                  />
+                );
+              }
+              if (type === 'fill-blank') {
+                return (
+                  <FillBlank
+                    question={currentQ}
+                    answered={answered}
+                    userInput={userInput}
+                    setUserInput={setUserInput}
+                    language={lesson?.language}
+                    onSubmit={handleCheckClick}
+                  />
+                );
+              }
+              if (type === 'true-false' || type === 'true_false' || type === 'true/false' || type === 'true-or-false') {
+                return (
+                  <TrueFalse
+                    question={currentQ}
+                    answered={answered}
+                    selectedAnswer={selectedAnswer}
+                    setSelectedAnswer={setSelectedAnswer}
+                    language={lesson?.language}
+                  />
+                );
+              }
+              if (type === 'translate') {
+                return (
+                  <Translate
+                    question={currentQ}
+                    answered={answered}
+                    userInput={userInput}
+                    setUserInput={setUserInput}
+                    language={lesson?.language}
+                    onSubmit={handleCheckClick}
+                  />
+                );
+              }
+              if (type === 'speak') {
+                return (
+                  <SpeakQuestion
+                    question={currentQ}
+                    answered={answered}
+                    selectedAnswer={selectedAnswer}
+                    setSelectedAnswer={setSelectedAnswer}
+                    language={lesson?.language}
+                  />
+                );
+              }
+              if (type === 'listen') {
+                return (
+                  <ListenQuestion
+                    question={currentQ}
+                    answered={answered}
+                    selectedAnswer={selectedAnswer}
+                    setSelectedAnswer={setSelectedAnswer}
+                    userInput={userInput}
+                    setUserInput={setUserInput}
+                    language={lesson?.language}
+                    onSubmit={handleCheckClick}
+                  />
+                );
+              }
+              if (type === 'match') {
+                return (
+                  <MatchQuestion
+                    question={currentQ}
+                    onAnswer={handleAnswer}
+                    answered={answered}
+                    language={lesson?.language}
+                  />
+                );
+              }
+              // Fallback error for unsupported types
+              throw new Error(`Unrecognized or unsupported question type: "${type}"`);
+            })()}
+          </QuestionErrorBoundary>
         </div>
       </div>
 
       {/* Feedback Footer */}
-      {answered && (
-        <div className={`sticky bottom-0 border-t-2 px-4 md:px-8 py-5 ${
-          feedback === 'correct'
-            ? 'bg-brand-green/10 border-brand-green/30'
-            : 'bg-brand-red/10 border-brand-red/30'
-        }`}>
-          <div className="max-w-2xl mx-auto flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              {feedback === 'correct' ? (
-                <>
-                  <CheckCircle size={28} className="text-brand-green" />
-                  <div>
-                    <p className="font-extrabold text-brand-green">Correct! 🎉</p>
-                    <p className="text-xs font-semibold text-brand-green/70">Keep it up!</p>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <XCircle size={28} className="text-brand-red" />
-                  <div>
-                    <p className="font-extrabold text-brand-red">Incorrect</p>
-                    <p className="text-xs font-semibold text-brand-red/70">
-                      Correct: <strong>{currentQ?.correctAnswer}</strong>
-                    </p>
-                  </div>
-                </>
-              )}
-            </div>
-            <button
-              onClick={handleNext}
-              className={`flex items-center gap-2 font-extrabold py-3 px-6 rounded-2xl btn-3d text-white text-sm ${
-                feedback === 'correct'
-                  ? 'bg-brand-green shadow-3d-green'
-                  : 'bg-brand-red shadow-3d-red'
-              }`}
-            >
-              {currentIndex < totalQ - 1 ? 'Continue' : 'Finish'}
-              <ChevronRight size={18} />
-            </button>
-          </div>
+      <div className={`sticky bottom-0 border-t-2 px-4 md:px-8 py-5 z-20 transition-colors duration-150 ${
+        answered
+          ? feedback === 'correct'
+            ? 'bg-brand-green/10 border-brand-green/30 dark:bg-green-950/20 dark:border-brand-green/20'
+            : 'bg-brand-red/10 border-brand-red/30 dark:bg-red-950/20 dark:border-brand-red/20'
+          : 'bg-white dark:bg-bg-card border-border dark:border-border'
+      }`}>
+        <div className="max-w-2xl mx-auto flex items-center justify-between gap-4">
+          {answered ? (
+            <>
+              <div className="flex items-center gap-3">
+                {feedback === 'correct' ? (
+                  <>
+                    <CheckCircle size={28} className="text-brand-green" />
+                    <div>
+                      <p className="font-extrabold text-brand-green">Correct! 🎉</p>
+                      <p className="text-xs font-semibold text-brand-green/70">Keep it up!</p>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <XCircle size={28} className="text-brand-red" />
+                    <div>
+                      <p className="font-extrabold text-brand-red">Incorrect</p>
+                      <p className="text-xs font-semibold text-brand-red/70">
+                        Correct: <strong>{getCorrectAnswer(currentQ)}</strong>
+                      </p>
+                    </div>
+                  </>
+                )}
+              </div>
+              <button
+                onClick={handleNext}
+                className={`flex items-center gap-2 font-extrabold py-3 px-6 rounded-2xl btn-3d text-white text-sm transition cursor-pointer ${
+                  feedback === 'correct'
+                    ? 'bg-brand-green shadow-3d-green hover:bg-brand-green-hover'
+                    : 'bg-brand-red shadow-3d-red hover:bg-brand-red-hover'
+                }`}
+              >
+                {currentIndex < totalQ - 1 ? 'Continue' : 'Finish'}
+                <ChevronRight size={18} />
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                onClick={() => handleAnswer('')}
+                className="font-extrabold py-3 px-6 rounded-2xl border-2 border-border dark:border-border bg-white dark:bg-bg-card text-brand-dark/60 hover:bg-brand-light transition text-sm cursor-pointer"
+              >
+                Skip
+              </button>
+
+              <div className="flex flex-col items-end gap-1">
+                {validationError && (
+                  <span className="text-[10px] font-bold text-brand-red animate-pulse mb-1">
+                    {validationError}
+                  </span>
+                )}
+                <button
+                  onClick={handleCheckClick}
+                  className={`font-extrabold py-3 px-8 rounded-2xl btn-3d text-white text-sm transition-all duration-200 ${
+                    isAnswerProvided
+                      ? 'bg-brand-blue shadow-3d-blue hover:bg-brand-blue-hover cursor-pointer'
+                      : 'bg-brand-gray/40 text-brand-dark/30 shadow-none cursor-not-allowed opacity-60'
+                  }`}
+                >
+                  Check Answer
+                </button>
+              </div>
+            </>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 };
