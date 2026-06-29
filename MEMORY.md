@@ -176,6 +176,37 @@ This file serves as the memory log for the LingoLeap language learning platform 
 - [x] **Mobile Admin Panel Navigation**: Embedded the Admin Panel link dynamically within the mobile `BottomNavbar.jsx` (under a ShieldAlert icon) for admin users. Also added a dedicated fallback Admin Panel button directly inside `Profile.jsx` for admins.
 - [x] **Button Click Loading feedback**: Integrated loading spinner states (`loadingLessonId` with `Loader2`) inside the `Learn.jsx` Skill Tree nodes and the `Dashboard.jsx` "Continue Learning" button, providing users with instant feedback after clicking.
 
+### Phase 21: Learning Engine Redesign & Image-Based Learning (Phase 1 & Phase 2) (Completed)
+- [x] **Database Schema Update**: Relaxed Enum constraints on `Lesson.category`, and added a new `words` array schema to store `picture`, `targetWord`, `pronunciation`, `meaning`, `exampleSentence`, and `audioUrl`.
+- [x] **Flashcard Learning Engine (Phase 1)**: Injected `WordCard` into `LessonRunner.jsx` and updated state management to sequentially flow from reading target language flashcards to taking interactive quizzes, complete with TTS playback on every word.
+- [x] **Image-Based Quiz Types (Phase 2)**: Modified `Lesson.js` schema to accept `promptImage` and `imageOptions`. Created a new `ImageChoice` grid component for visual learning.
+- [x] **Visual Question Support**: Retrofitted `MultipleChoice` and `ListenQuestion` inside `LessonRunner.jsx` to dynamically render large images in prompts or 2x2 image grids in answer choices if `imageOptions` are provided.
+- [x] **Curriculum Generator**: Built `generate_lessons.js` to seed the database with emoji-driven image flashcards and randomly-sorted visual questions (e.g. "What is the word for this?", "What does this mean?", "Select [Word]", "Listen carefully") for multiple languages.
+
+### Phase 22: Native Audio & AI Voice Teacher (Phase 3) (Completed)
+- [x] **Audio Teacher Service**: Built a dedicated `audioTeacher.js` service wrapping the `window.speechSynthesis` API. Includes robust queuing (by omitting `cancel()` during sequential plays), automatic language mapping, speed adjustments, and intelligent voice-gender selection heuristics (detecting 'male'/'female' in system voice names).
+- [x] **Intelligent Auto-Play**: Integrated React `useEffect` hooks in `LessonRunner.jsx` to automatically play AI Teacher prompts (e.g. "Welcome back! Today we're going to learn Spanish words. Let's begin.") upon lesson start.
+- [x] **Interactive Feedback**: Mapped correct/incorrect validation states inside `handleAnswer` to trigger dynamic, randomized AI voice encouragements ("Amazing!", "Fantastic!") or correction prompts ("Good try. The correct answer is... Repeat after me.").
+- [x] **Voice Controls UI**: Added a new 'Voice & Audio' section in `Settings.jsx` (with `Volume2` icons), allowing users to persistently mute the AI, adjust speech playback speed via a slider range, and toggle between male/female preferred teacher voice types.
+- [x] **Speaking & Reading Generation**: Extended `generate_lessons.js` to automatically seed Example 5 (Speaking Practice - "Now say [word]") and Example 6 (Sentence Reading - "What does this sentence mean?").
+
+### Phase 23: AI Conversation & Real-Life Language Practice (Phase 4) (Completed)
+- [x] **AI Conversation Mode**: Integrated a dedicated native speaker tutor mode (Korean Teacher, Japanese Teacher, Spanish Teacher, French Teacher, etc.) adjusting to the learner's level.
+- [x] **Level Adaptations**: Implemented multiple-choice action options for Beginners, writing checks + instant corrections for Intermediates, and immersive roleplay scenario prompts for Advanced learners.
+- [x] **Hands-Free Speaking & Audio controls**: Equipped with Speech Recognition (mic input) and Speech Synthesis supporting speed controls (slow 0.6x toggle), auto-play, and audio re-generation.
+- [x] **Action Bubble Utility**: Created inline buttons for Message Translation, Speak (native voice), Slow Speak (0.6x), Clipboard Copy, and Sentence Bookmarking.
+- [x] **Vocabulary Tap-to-Define**: Developed inline word split click triggers querying dictionary descriptions (pronunciation, definition, translation, grammar category, example, synonyms, related terms) with bookmarking support.
+- [x] **Reward Summary & Statistics**: Evaluates user dialogues across 5-dimensional scores (Fluency, Grammar, Vocabulary, Pronunciation, Listening), awards XP/Gems, details corrections, and recommends review items.
+- [x] **Global Memory Injection**: Updates DB arrays (pronunciation mistakes, listening mistakes, forgotten words, saved words, saved phrases) to steer future prompt generations dynamically.
+- [x] **Routing & Nav Integration**: Registered protected path `/ai-conversation` and added links with standard translation support to `Sidebar.jsx` and `BottomNavbar.jsx`.
+
+### Phase 24: Natural Language Acquisition System (Phase 6) (Completed)
+- [x] **Ambient Visual Environments**: Loaded dynamic theme scenes and gradients inside the lesson runner corresponding to lesson categories (e.g. café scenarios, airport environments, hotel desks).
+- [x] **Named AI Character Tutors**: Registered named recurrent characters (Yuki, Min-Jun, Sofia, Marie, Hans, Ahmed, Giovanni, Emma) acting as native speaker guides with custom visual avatars.
+- [x] **Acquisition Pipeline**: Added step progression tracks tracking Observe 👁️ → Hear 🔊 → Repeat 🗣️ → Recognize 🎯 → Understand 💡 → Use ✍️ states depending on current card/question types.
+- [x] **Clue & Retry mistakes flow**: Configured a first-attempt retry loop. First incorrect answers prompt the named AI guide to give custom contextual patterns/hints without deducting hearts, letting learners correct inputs. Hearts are deducted only on repeated errors.
+- [x] **Gradual level immersion**: AI character dialogues scale automatically (Beginner: English; Intermediate: 50% target language; Advanced: 100% target language immersion) matching proficiency scores.
+
 ---
 
 
@@ -204,6 +235,7 @@ This file serves as the memory log for the LingoLeap language learning platform 
 7. **Unified Brevo SDK (v5.x/v6.x)**: Switched initialization to use the modernized `BrevoClient` wrapper instance resolving constructor instantiation mismatches in Node ESM modules.
 8. **Startup Presence Resets**: Erasing stale `isOnline` states upon system boots to ensure accurate presence indicators instead of stuck "online" sessions.
 9. **Mic Analyser Feedback**: Utilizing browser native `AudioContext` and `AnalyserNode` frequency maps inside client-side recorder callbacks to show a jumping waveform amplitude bar visualizer during active talk recordings.
+10. **Startup User Sync**: Local user records from the offline fallback `db.json` file are automatically synced to the remote MongoDB Atlas cluster on startup via direct collection operations, bypassing pre-save hooks so that existing local passwords are not double-hashed.
 
 ## 🖥️ Run Scripts
 * **Backend (`server`)**: `npm run dev`

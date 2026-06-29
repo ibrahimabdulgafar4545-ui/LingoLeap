@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import api from '../../services/api';
 import { allAchievements } from '../../pages/Achievements';
+import Button from './Button';
 
 const langFlags = {
   Spanish: '🇪🇸', French: '🇫🇷', English: '🇬🇧',
@@ -203,22 +204,24 @@ const UserProfileModal = ({ userId, isOpen, onClose }) => {
                 <div className="grid grid-cols-2 gap-2">
                   {/* Friend Button */}
                   {profile.relationship === 'friends' && (
-                    <button
+                    <Button
+                      variant="custom"
                       onClick={handleRemoveFriend}
                       disabled={actionLoading}
                       className="flex items-center justify-center gap-1.5 bg-red-500/10 border-2 border-red-500/20 text-red-500 hover:bg-red-500/20 font-black py-2.5 rounded-2xl text-xs transition cursor-pointer"
                     >
                       <UserMinus size={14} /> Remove Friend
-                    </button>
+                    </Button>
                   )}
                   {profile.relationship === 'none' && (
-                    <button
+                    <Button
+                      variant="custom"
                       onClick={handleAddFriend}
                       disabled={actionLoading}
                       className="flex items-center justify-center gap-1.5 bg-primary text-white hover:bg-primary-hover font-black py-2.5 rounded-2xl text-xs transition cursor-pointer"
                     >
                       <UserPlus size={14} /> Add Friend
-                    </button>
+                    </Button>
                   )}
                   {profile.relationship === 'sent_pending' && (
                     <button
@@ -229,17 +232,19 @@ const UserProfileModal = ({ userId, isOpen, onClose }) => {
                     </button>
                   )}
                   {profile.relationship === 'received_pending' && (
-                    <button
+                    <Button
+                      variant="custom"
                       onClick={handleAcceptRequest}
                       disabled={actionLoading}
                       className="flex items-center justify-center gap-1.5 bg-secondary text-white hover:bg-secondary-hover font-black py-2.5 rounded-2xl text-xs transition cursor-pointer"
                     >
                       <UserCheck size={14} /> Accept Request
-                    </button>
+                    </Button>
                   )}
 
                   {/* Message Button */}
-                  <button
+                  <Button
+                    variant="custom"
                     onClick={handleMessageUser}
                     disabled={actionLoading || profile.relationship !== 'friends'}
                     className={`flex items-center justify-center gap-1.5 font-black py-2.5 rounded-2xl text-xs transition cursor-pointer ${
@@ -250,17 +255,18 @@ const UserProfileModal = ({ userId, isOpen, onClose }) => {
                     title={profile.relationship === 'friends' ? 'Send a message' : 'You must be friends to chat'}
                   >
                     <MessageSquare size={14} /> Message
-                  </button>
+                  </Button>
                 </div>
 
                 {/* Block Button */}
-                <button
+                <Button
+                  variant="custom"
                   onClick={handleBlockUser}
                   disabled={actionLoading}
                   className="flex items-center justify-center gap-1.5 bg-red-50 hover:bg-red-100 text-red-500 font-bold py-2 rounded-2xl text-xs transition cursor-pointer border border-red-200"
                 >
                   <Ban size={13} /> Block User
-                </button>
+                </Button>
               </div>
 
               {/* Achievements Section */}

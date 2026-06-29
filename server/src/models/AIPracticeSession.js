@@ -28,6 +28,9 @@ const aiPracticeSessionSchema = new mongoose.Schema({
       type: String,
       required: true
     },
+    options: [{
+      type: String
+    }],
     timestamp: {
       type: Date,
       default: Date.now
@@ -36,7 +39,10 @@ const aiPracticeSessionSchema = new mongoose.Schema({
   score: {
     fluency: { type: Number, default: 0 },
     grammar: { type: Number, default: 0 },
-    vocabulary: { type: Number, default: 0 }
+    vocabulary: { type: Number, default: 0 },
+    pronunciation: { type: Number, default: 0 },
+    listening: { type: Number, default: 0 },
+    rating: { type: Number, default: 0 }
   },
   feedback: {
     suggestions: { type: String, default: '' },
@@ -48,8 +54,11 @@ const aiPracticeSessionSchema = new mongoose.Schema({
     recommendedVocab: [{
       word: String,
       translation: String,
+      pronunciation: String,
       example: String
-    }]
+    }],
+    newWordsLearned: [{ type: String }],
+    suggestedReview: [{ type: String }]
   },
   createdAt: {
     type: Date,

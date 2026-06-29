@@ -12,6 +12,7 @@ import {
   RotateCcw, Maximize2, Minimize2, Languages, BookOpen, Globe,
   Edit2, Trash, XCircle
 } from 'lucide-react';
+import Button from '../components/common/Button';
 
 const langFlags = {
   Spanish: '🇪🇸', French: '🇫🇷', English: '🇬🇧',
@@ -200,7 +201,7 @@ const VoiceMessagePlayer = ({ audioUrl, isMe }) => {
     : "bg-brand-blue text-white dark:bg-white/20 dark:text-white";
 
   return (
-    <div className={`flex items-center gap-3 p-2.5 rounded-2xl border min-w-[200px] select-none ${containerBg}`} onClick={(e) => e.stopPropagation()}>
+    <div className={`flex items-center gap-3 p-2.5 rounded-2xl border min-w-[160px] sm:min-w-[200px] max-w-full select-none ${containerBg}`} onClick={(e) => e.stopPropagation()}>
       <audio ref={audioRef} src={audioUrl} preload="metadata" className="hidden" />
       <button
         type="button"
@@ -266,6 +267,8 @@ export default function Chat() {
   const [editingMessageId, setEditingMessageId] = useState(null);
   const [deletingMessageId, setDeletingMessageId] = useState(null);
   const [isViewOnce, setIsViewOnce] = useState(false);
+  const [isSendingMsg, setIsSendingMsg] = useState(false);
+  const [isSendingVoice, setIsSendingVoice] = useState(false);
 
   // Sockets & Activity
   const [isTyping, setIsTyping] = useState(false);
@@ -723,7 +726,11 @@ export default function Chat() {
           // Drain queued candidates
           while (iceCandidatesQueueRef.current.length > 0) {
             const candidate = iceCandidatesQueueRef.current.shift();
-            await peerConnectionRef.current.addIceCandidate(new RTCIceCandidate(candidate));
+            try {
+              await peerConnectionRef.current.addIceCandidate(new RTCIceCandidate(candidate));
+            } catch (e) {
+              console.error('Failed to add queued candidate:', e);
+            }
           }
         } catch (err) {
           console.error('Error setting remote description:', err);
@@ -747,7 +754,11 @@ export default function Chat() {
             // Drain queue
             while (iceCandidatesQueueRef.current.length > 0) {
               const candidate = iceCandidatesQueueRef.current.shift();
-              await peerConnectionRef.current.addIceCandidate(new RTCIceCandidate(candidate));
+              try {
+                await peerConnectionRef.current.addIceCandidate(new RTCIceCandidate(candidate));
+              } catch (e) {
+                console.error('Failed to add queued candidate:', e);
+              }
             }
           }
         }
@@ -835,13 +846,13 @@ export default function Chat() {
   };
 
   // Send message
-  const handleSendMessage = (e) => {
-    e.preventDefault();
-    if (!inputText.trim() || !selectedConv) return;
+  const handleSendMessage = async (e) => {
+    e?.preventDefault();
+    if (!inputText.trim() || !selectedConv) return Promise.resolve();
 
     if (!socket || !socketConnected) {
       toast.error('Chat connection is offline. Trying to reconnect...');
-      return;
+      return Promise.resolve();
     }
 
     // Stop typing timeout
@@ -853,36 +864,43 @@ export default function Chat() {
       isTyping: false
     });
 
-    if (editingMessageId) {
-      socket.emit('edit_message', {
-        messageId: editingMessageId,
-        conversationId: selectedConv._id,
-        recipientId: selectedConv.otherUser._id,
-        newText: inputText.trim()
-      }, (response) => {
-        if (response.success) {
-          setInputText('');
-          setEditingMessageId(null);
-          toast.success('Message edited');
-        } else {
-          toast.error(response.error || 'Failed to edit message');
-        }
-      });
-    } else {
-      socket.emit('send_message', {
-        conversationId: selectedConv._id,
-        recipientId: selectedConv.otherUser._id,
-        text: inputText.trim(),
-        isViewOnce
-      }, (response) => {
-        if (response.success) {
-          setInputText('');
-          setIsViewOnce(false);
-        } else {
-          toast.error(response.error || 'Failed to send message');
-        }
-      });
-    }
+    setIsSendingMsg(true);
+    return new Promise((resolve) => {
+      if (editingMessageId) {
+        socket.emit('edit_message', {
+          messageId: editingMessageId,
+          conversationId: selectedConv._id,
+          recipientId: selectedConv.otherUser._id,
+          newText: inputText.trim()
+        }, (response) => {
+          if (response?.success) {
+            setInputText('');
+            setEditingMessageId(null);
+            toast.success('Message edited');
+          } else {
+            toast.error(response?.error || 'Failed to edit message');
+          }
+          setIsSendingMsg(false);
+          resolve();
+        });
+      } else {
+        socket.emit('send_message', {
+          conversationId: selectedConv._id,
+          recipientId: selectedConv.otherUser._id,
+          text: inputText.trim(),
+          isViewOnce
+        }, (response) => {
+          if (response?.success) {
+            setInputText('');
+            setIsViewOnce(false);
+          } else {
+            toast.error(response?.error || 'Failed to send message');
+          }
+          setIsSendingMsg(false);
+          resolve();
+        });
+      }
+    });
   };
 
   const handleOpenViewOnce = (messageId) => {
@@ -1017,7 +1035,7 @@ export default function Chat() {
       pc.ontrack = (event) => {
         if (event.streams && event.streams[0]) {
           setRemoteStream(event.streams[0]);
-          if (remoteVideoRef.current) {
+          if (remoteVideoRef.current && remoteVideoRef.current.srcObject !== event.streams[0]) {
             remoteVideoRef.current.srcObject = event.streams[0];
           }
         }
@@ -1090,7 +1108,7 @@ export default function Chat() {
       pc.ontrack = (event) => {
         if (event.streams && event.streams[0]) {
           setRemoteStream(event.streams[0]);
-          if (remoteVideoRef.current) {
+          if (remoteVideoRef.current && remoteVideoRef.current.srcObject !== event.streams[0]) {
             remoteVideoRef.current.srcObject = event.streams[0];
           }
         }
@@ -1102,7 +1120,11 @@ export default function Chat() {
       // Drain queued candidates
       while (iceCandidatesQueueRef.current.length > 0) {
         const candidate = iceCandidatesQueueRef.current.shift();
-        await pc.addIceCandidate(new RTCIceCandidate(candidate));
+        try {
+          await pc.addIceCandidate(new RTCIceCandidate(candidate));
+        } catch (e) {
+          console.error('Failed to add queued candidate:', e);
+        }
       }
 
       // Create SDP answer
@@ -1417,6 +1439,7 @@ export default function Chat() {
 
   const stopRecording = (shouldSend = true) => {
     if (!mediaRecorderRef.current) return;
+    if (shouldSend) setIsSendingVoice(true);
     
     if (recordingIntervalRef.current) clearInterval(recordingIntervalRef.current);
     if (animationFrameRef.current) cancelAnimationFrame(animationFrameRef.current);
@@ -1446,22 +1469,26 @@ export default function Chat() {
   };
 
   const sendAudioMessage = (base64Audio) => {
-    if (!selectedConv) return;
+    if (!selectedConv) return Promise.resolve();
     
-    socket.emit('send_message', {
-      conversationId: selectedConv._id,
-      recipientId: selectedConv.otherUser._id,
-      text: '[Voice Note]',
-      messageType: 'audio',
-      audioUrl: base64Audio
-    }, (response) => {
-      if (response.success) {
-        setIsRecording(false);
-        toast.success('🎙️ Voice Note sent successfully!');
-      } else {
-        toast.error(response.error || 'Failed to send Voice Note');
-        setIsRecording(false);
-      }
+    return new Promise((resolve) => {
+      socket.emit('send_message', {
+        conversationId: selectedConv._id,
+        recipientId: selectedConv.otherUser._id,
+        text: '[Voice Note]',
+        messageType: 'audio',
+        audioUrl: base64Audio
+      }, (response) => {
+        if (response?.success) {
+          setIsRecording(false);
+          toast.success('🎙️ Voice Note sent successfully!');
+        } else {
+          toast.error(response?.error || 'Failed to send Voice Note');
+          setIsRecording(false);
+        }
+        setIsSendingVoice(false);
+        resolve();
+      });
     });
   };
 
@@ -1690,7 +1717,7 @@ export default function Chat() {
                     {msg.translatedText && !showOriginal[msg._id] ? msg.translatedText : msg.text}
                   </p>
                   {msg.translatedText && (
-                    <div className={`mt-2 flex flex-wrap items-center justify-between gap-x-2 gap-y-1 border-t pt-1.5 text-[10px] font-black ${
+                    <div className={`mt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-x-2 gap-y-1 border-t pt-1.5 text-[10px] font-black ${
                       isMe 
                         ? 'border-white/20 text-white/90' 
                         : 'border-border/80 dark:border-border/20 text-text-secondary dark:text-white/70'
@@ -2013,7 +2040,7 @@ export default function Chat() {
                   <div className="flex items-center gap-3 min-w-0">
                     <button
                       onClick={() => setSelectedConv(null)}
-                      className="md:hidden w-11 h-11 flex-shrink-0 flex items-center justify-center hover:bg-bg-main dark:hover:bg-bg-main/10 rounded-xl text-text-main cursor-pointer"
+                      className="md:hidden w-9 h-9 sm:w-11 sm:h-11 flex-shrink-0 flex items-center justify-center hover:bg-bg-main dark:hover:bg-bg-main/10 rounded-xl text-text-main cursor-pointer"
                     >
                       <ArrowLeft className="w-5 h-5 text-text-main" />
                     </button>
@@ -2022,7 +2049,7 @@ export default function Chat() {
                       <img
                         src={selectedConv.otherUser.avatarUrl}
                         alt={selectedConv.otherUser.username}
-                        className="w-12 h-12 rounded-xl bg-brand-light border border-border dark:border-border"
+                        className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl bg-brand-light border border-border dark:border-border"
                       />
                       <div
                         className={`absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full border-2 border-white ${
@@ -2059,10 +2086,11 @@ export default function Chat() {
 
                   {/* Right elements: Live WebRTC Calls */}
                   <div className="flex gap-2 flex-shrink-0">
-                    <button
-                      disabled={selectedConv.isLocked}
+                    <Button
+                      variant="custom"
+                      disabled={selectedConv.isLocked || activeCall}
                       onClick={() => startCall('audio')}
-                      className={`w-11 h-11 flex items-center justify-center rounded-xl sm:rounded-2xl border-2 shadow-3d-card transition-all cursor-pointer ${
+                      className={`w-9 h-9 sm:w-11 sm:h-11 flex-shrink-0 flex items-center justify-center rounded-xl sm:rounded-2xl border-2 shadow-3d-card transition-all cursor-pointer ${
                         selectedConv.isLocked
                           ? 'border-border dark:border-border/20 text-text-secondary/40 cursor-not-allowed bg-brand-light/10 dark:bg-white/5'
                           : 'border-brand-blue/30 text-brand-blue hover:bg-brand-blue/5 hover:-translate-y-0.5'
@@ -2070,11 +2098,12 @@ export default function Chat() {
                       title={selectedConv.isLocked ? "Unlock chat by becoming friends first!" : "Start Audio Call"}
                     >
                       <Phone className="w-4.5 h-4.5" />
-                    </button>
-                    <button
-                      disabled={selectedConv.isLocked}
+                    </Button>
+                    <Button
+                      variant="custom"
+                      disabled={selectedConv.isLocked || activeCall}
                       onClick={() => startCall('video')}
-                      className={`w-11 h-11 flex items-center justify-center rounded-xl sm:rounded-2xl border-2 shadow-3d-card transition-all cursor-pointer ${
+                      className={`w-9 h-9 sm:w-11 sm:h-11 flex-shrink-0 flex items-center justify-center rounded-xl sm:rounded-2xl border-2 shadow-3d-card transition-all cursor-pointer ${
                         selectedConv.isLocked
                           ? 'border-border dark:border-border/20 text-text-secondary/40 cursor-not-allowed bg-brand-light/10 dark:bg-white/5'
                           : 'border-brand-blue/30 text-brand-blue hover:bg-brand-blue/5 hover:-translate-y-0.5'
@@ -2082,7 +2111,7 @@ export default function Chat() {
                       title={selectedConv.isLocked ? "Unlock chat by becoming friends first!" : "Start Video Call"}
                     >
                       <Video className="w-4.5 h-4.5" />
-                    </button>
+                    </Button>
                   </div>
                 </div>
 
@@ -2187,7 +2216,7 @@ export default function Chat() {
                       type="button"
                       disabled={selectedConv.isLocked}
                       onClick={() => setShowMediaDrawer(prev => !prev)}
-                      className={`w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl sm:rounded-2xl border-2 transition-all shadow-3d-card cursor-pointer ${
+                      className={`w-9 h-9 sm:w-11 sm:h-11 flex-shrink-0 flex items-center justify-center rounded-xl sm:rounded-2xl border-2 transition-all shadow-3d-card cursor-pointer ${
                         selectedConv.isLocked
                           ? 'border-border dark:border-border/20 bg-brand-light/10 dark:bg-white/5 text-text-secondary/35 cursor-not-allowed'
                           : showMediaDrawer
@@ -2229,14 +2258,16 @@ export default function Chat() {
                           >
                             <X className="w-4 h-4" />
                           </button>
-                          <button
+                          <Button
+                            variant="custom"
                             type="button"
                             onClick={() => stopRecording(true)}
+                            loading={isSendingVoice}
                             className="bg-brand-red hover:bg-brand-red/90 text-white w-8 h-8 rounded-lg shadow-md flex items-center justify-center transition-all shadow-3d-red active:translate-y-0.5 cursor-pointer"
                             title="Send Voice Note"
                           >
                             <Send className="w-3.5 h-3.5" />
-                          </button>
+                          </Button>
                         </div>
                       </div>
                     ) : (
@@ -2245,7 +2276,7 @@ export default function Chat() {
                           disabled={selectedConv.isLocked}
                           type="text"
                           placeholder={selectedConv.isLocked ? "Become friends to unlock chat" : "Type a message..."}
-                          className="flex-1 min-w-0 h-11 px-3 sm:px-4 py-2 border-2 border-border dark:border-border/50 text-text-main focus:border-brand-blue rounded-xl sm:rounded-2xl outline-none font-bold text-xs sm:text-sm transition-all shadow-3d-card bg-white dark:bg-bg-card"
+                          className="flex-1 min-w-0 h-9 sm:h-11 px-2.5 sm:px-4 py-2 border-2 border-border dark:border-border/50 text-text-main focus:border-brand-blue rounded-xl sm:rounded-2xl outline-none font-bold text-[11px] sm:text-sm transition-all shadow-3d-card bg-white dark:bg-bg-card"
                           value={inputText}
                           onChange={handleInputChange}
                         />
@@ -2257,7 +2288,7 @@ export default function Chat() {
                               setEditingMessageId(null);
                               setInputText('');
                             }}
-                            className="w-11 h-11 flex-shrink-0 flex items-center justify-center hover:bg-brand-red/10 text-brand-red rounded-xl sm:rounded-2xl transition-all cursor-pointer"
+                            className="w-9 h-9 sm:w-11 sm:h-11 flex-shrink-0 flex items-center justify-center hover:bg-brand-red/10 text-brand-red rounded-xl sm:rounded-2xl transition-all cursor-pointer"
                             title="Cancel Editing"
                           >
                             <XCircle className="w-5 h-5" />
@@ -2269,7 +2300,7 @@ export default function Chat() {
                             type="button"
                             disabled={selectedConv.isLocked}
                             onClick={() => setIsViewOnce(prev => !prev)}
-                            className={`w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl sm:rounded-2xl border-2 transition-all shadow-3d-card cursor-pointer ${
+                            className={`w-9 h-9 sm:w-11 sm:h-11 flex-shrink-0 flex items-center justify-center rounded-xl sm:rounded-2xl border-2 transition-all shadow-3d-card cursor-pointer ${
                               isViewOnce
                                 ? 'text-brand-orange bg-brand-orange/10 border-brand-orange/30'
                                 : 'text-text-secondary/70 border-border dark:border-border hover:bg-brand-light'
@@ -2287,7 +2318,7 @@ export default function Chat() {
                         type="button"
                         disabled={selectedConv.isLocked}
                         onClick={startRecording}
-                        className={`w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl sm:rounded-2xl text-white font-black shadow-md flex items-center justify-center transition-all cursor-pointer ${
+                        className={`w-9 h-9 sm:w-11 sm:h-11 flex-shrink-0 flex items-center justify-center rounded-xl sm:rounded-2xl text-white font-black shadow-md flex items-center justify-center transition-all cursor-pointer ${
                           selectedConv.isLocked
                             ? 'bg-brand-gray/80 shadow-3d-gray cursor-not-allowed text-white/50'
                             : 'bg-brand-orange hover:bg-brand-orange/95 shadow-3d-orange active:translate-y-0.5'
@@ -2299,17 +2330,20 @@ export default function Chat() {
                     )}
 
                     {!isRecording && (
-                      <button
+                      <Button
+                        variant="custom"
                         type="submit"
+                        loading={isSendingMsg}
                         disabled={selectedConv.isLocked || !inputText.trim()}
-                        className={`w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl sm:rounded-2xl text-white font-black shadow-md flex items-center justify-center transition-all cursor-pointer ${
+                        className={`w-9 h-9 sm:w-11 sm:h-11 flex-shrink-0 flex items-center justify-center rounded-xl sm:rounded-2xl text-white font-black shadow-md transition-all cursor-pointer ${
                           selectedConv.isLocked || !inputText.trim()
                             ? 'bg-brand-gray/80 shadow-3d-gray cursor-not-allowed text-white/50'
                             : 'bg-brand-blue hover:bg-brand-blue-hover shadow-3d-blue active:translate-y-0.5'
                         }`}
+                        title={editingMessageId ? 'Save Edit' : 'Send'}
                       >
-                        <Send className="w-4.5 h-4.5" />
-                      </button>
+                        {editingMessageId ? <Check className="w-4.5 h-4.5" /> : <Send className="w-4.5 h-4.5 translate-x-[-1px] translate-y-[1px]" />}
+                      </Button>
                     )}
                   </form>
                 </div>

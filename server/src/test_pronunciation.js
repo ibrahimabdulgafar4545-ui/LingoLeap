@@ -9,7 +9,7 @@ import User from './models/User.js';
 import { 
   evaluatePronunciation,
   getPronunciationHistory
-} from './controllers/ai.controller.js';
+} from './controllers/ai.controller.new.js';
 
 dotenv.config();
 

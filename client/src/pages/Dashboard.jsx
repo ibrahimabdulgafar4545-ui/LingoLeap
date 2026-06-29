@@ -10,6 +10,7 @@ import {
   ChevronRight, TrendingUp, Bot, Globe, Gem, ShoppingCart, Users, Activity,
   Heart, CalendarDays, Shield, Gift, Sparkles, CheckCircle2, Award, HeartHandshake, Loader2
 } from 'lucide-react';
+import Button from '../components/common/Button';
 import { socialService } from '../services/socialService';
 import LingoLeapLogo from '../components/common/LingoLeapLogo';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -803,7 +804,8 @@ const Dashboard = () => {
                         </p>
                         <p className="text-[10px] font-extrabold text-text-secondary mt-0.5">+{quest.xpReward} XP / +{quest.gemsReward} 💎</p>
                       </div>
-                      <button
+                      <Button
+                        variant="custom"
                         disabled={!quest.completed || quest.claimed}
                         onClick={async () => {
                           const result = await claimDailyQuest(quest.id);
@@ -817,7 +819,7 @@ const Dashboard = () => {
                         }`}
                       >
                         {quest.claimed ? 'Claimed' : quest.completed ? 'Claim' : `${quest.current}/${quest.target}`}
-                      </button>
+                      </Button>
                     </div>
                     <div className="h-1.5 bg-bg-main dark:bg-bg-card rounded-full overflow-hidden border border-border">
                       <div className="h-full bg-primary rounded-full transition-all" style={{ width: `${quest.progressPct}%` }} />

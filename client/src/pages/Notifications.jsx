@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import AppLayout from '../components/common/AppLayout';
-import { Bell, Trash2, Check, ExternalLink, Sparkles, Gift, Gem, Heart, Trophy, Megaphone, UserPlus, MessageSquare } from 'lucide-react';
+import { Bell, Trash2, Check, ExternalLink, Sparkles, Gift, Gem, Heart, Trophy, Megaphone, UserPlus, MessageSquare, Loader2 } from 'lucide-react';
+import Button from '../components/common/Button';
 import { motion, AnimatePresence } from 'framer-motion';
 import toast from 'react-hot-toast';
 import confetti from 'canvas-confetti';
@@ -216,14 +217,13 @@ const Notifications = () => {
                         <Check size={12} /> Claimed & Applied
                       </span>
                     ) : (
-                      <motion.button
-                        whileHover={{ scale: 1.03 }}
-                        whileTap={{ scale: 0.97 }}
-                        onClick={(e) => { e.stopPropagation(); handleClaimReward(notif._id || notif.id); }}
+                      <Button
+                        variant="custom"
+                        onClick={(e) => { e.stopPropagation(); return handleClaimReward(notif._id || notif.id); }}
                         className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-hover text-white text-xs font-black px-4 py-2 rounded-2xl border-0 cursor-pointer shadow-sm btn-3d shadow-3d-primary animate-pulse"
                       >
                         <Gift size={13} /> Claim Reward
-                      </motion.button>
+                      </Button>
                     )}
                   </div>
                 )}
@@ -278,20 +278,22 @@ const Notifications = () => {
 
           <div className="flex items-center gap-2">
             {unreadCount > 0 && (
-              <button
+             <Button
+                variant="custom"
                 onClick={handleMarkAllRead}
                 className="px-4 py-2.5 bg-bg-card dark:bg-bg-card border-2 border-border text-text-main font-extrabold text-xs rounded-2xl flex items-center gap-1.5 cursor-pointer shadow-sm hover:bg-bg-main transition"
               >
                 <Check size={14} /> Mark all read
-              </button>
+              </Button>
             )}
             {notifications.length > 0 && (
-              <button
+              <Button
+                variant="custom"
                 onClick={handleClearAll}
                 className="px-4 py-2.5 bg-red-500/10 hover:bg-red-500/20 text-red-500 font-extrabold text-xs rounded-2xl flex items-center gap-1.5 cursor-pointer border-0 transition"
               >
                 <Trash2 size={14} /> Clear history
-              </button>
+              </Button>
             )}
           </div>
         </div>

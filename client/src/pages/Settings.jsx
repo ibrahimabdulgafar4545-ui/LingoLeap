@@ -3,15 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useTranslation } from '../context/LanguageContext';
 import AppLayout from '../components/common/AppLayout';
+import Button from '../components/common/Button';
 import api from '../services/api';
 import { 
   Settings as SettingsIcon, Globe, Target, Loader2, CheckCircle, 
-  Camera, Upload, Shuffle, User, Sun, Moon, ChevronDown, ChevronUp, LogOut, Trash2, ShieldAlert
+  Camera, Upload, Shuffle, User, Sun, Moon, ChevronDown, ChevronUp, LogOut, Trash2, ShieldAlert, Volume2
 } from 'lucide-react';
 
 const langFlags = {
   Spanish: '🇪🇸', French: '🇫🇷', English: '🇬🇧',
-  German: '🇩🇪', Arabic: '🇸🇦', Italian: '🇮🇹'
+  German: '🇩🇪', Arabic: '🇸🇦', Italian: '🇮🇹',
+  Korean: '🇰🇷', Japanese: '🇯🇵'
 };
 
 const goalOptions = [
@@ -41,6 +43,17 @@ const Settings = () => {
   const [saved, setSaved] = useState(false);
   const [avatarTab, setAvatarTab] = useState('dicebear');
   const fileInputRef = useRef(null);
+
+  const [voiceSettings, setVoiceSettings] = useState(() => {
+    const saved = localStorage.getItem('lingoleap_voice_settings');
+    return saved ? JSON.parse(saved) : { muted: false, speed: 1.0, voiceType: 'female' };
+  });
+
+  const updateVoiceSetting = (key, value) => {
+    const next = { ...voiceSettings, [key]: value };
+    setVoiceSettings(next);
+    localStorage.setItem('lingoleap_voice_settings', JSON.stringify(next));
+  };
 
   const [darkMode, setDarkMode] = useState(() => {
     return document.documentElement.classList.contains('dark');
@@ -116,10 +129,12 @@ const Settings = () => {
       if (!mobile) {
         setExpanded({
           profile: true,
-          language: true,
-          goal: true,
-          privacy: true,
-          appearance: true
+          language: false,
+          goal: false,
+          privacy: false,
+          voice: false,
+          appearance: false,
+          account: false
         });
       }
     };
@@ -363,19 +378,21 @@ const Settings = () => {
                       <p className="text-[10px] font-black text-text-main">Generated Preview</p>
                       <p className="text-[9px] text-text-secondary leading-none mt-0.5 truncate">{avatarStyle} seed: {avatarSeed}</p>
                     </div>
-                    <button
+                    <Button
+                      variant="custom"
                       onClick={handleDiceBearApply}
                       className="bg-secondary text-white px-3.5 py-1.5 rounded-lg font-black text-[10px] cursor-pointer hover:bg-secondary-hover"
                     >
                       APPLY
-                    </button>
+                    </Button>
                   </div>
-                  <button
+                  <Button
+                    variant="custom"
                     onClick={handleRemoveAvatar}
                     className="w-full flex justify-center items-center gap-1.5 bg-red-50 text-red-500 font-bold py-2 rounded-xl text-xs cursor-pointer hover:bg-red-100 transition mt-2"
                   >
                     <Trash2 size={14} /> Remove Profile Picture
-                  </button>
+                  </Button>
                 </div>
               )}
 
@@ -404,12 +421,13 @@ const Settings = () => {
                     </div>
                   </div>
                   {uploadPreview && (
-                    <button
+                    <Button
+                      variant="custom"
                       onClick={handleUploadSave}
                       className="w-full bg-secondary text-white font-black py-2 rounded-xl text-xs cursor-pointer hover:bg-secondary-hover"
                     >
                       SAVE PHOTO
-                    </button>
+                    </Button>
                   )}
                 </div>
               )}
@@ -559,7 +577,72 @@ const Settings = () => {
           )}
         </div>
 
-        {/* ── 5. SYSTEM INTERFACE PREFERENCES (THEME & WEBSITE LANGUAGE) ── */}
+        {/* ── 5. VOICE & AUDIO PREFERENCES ── */}
+        <div className="bg-white dark:bg-bg-card rounded-2xl border-2 border-border p-4 md:p-6 shadow-sm">
+          <CardHeader icon={<Volume2 size={18} />} title="Voice & Audio" sectionKey="voice" />
+          
+          {(expanded.voice || !isMobile) && (
+            <div className="mt-2 border-t border-border/60 pt-4 animate-[fadeIn_0.2s_ease-out] flex flex-col gap-5">
+              
+              {/* Mute Toggle */}
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-[10.5px] font-black text-text-secondary uppercase tracking-wider mb-0.5">Mute AI Voice</p>
+                  <p className="text-[10px] font-semibold text-text-secondary/70">Disable automatic voice playback</p>
+                </div>
+                <button
+                  onClick={() => updateVoiceSetting('muted', !voiceSettings.muted)}
+                  className={`w-12 h-6 rounded-full flex items-center px-1 transition-colors cursor-pointer ${voiceSettings.muted ? 'bg-secondary' : 'bg-border/60'}`}
+                >
+                  <div className={`w-4 h-4 bg-white rounded-full shadow-sm transition-transform ${voiceSettings.muted ? 'translate-x-6' : 'translate-x-0'}`} />
+                </button>
+              </div>
+
+              {/* Voice Type */}
+              <div>
+                <p className="text-[10.5px] font-black text-text-secondary uppercase tracking-wider mb-2">Teacher Voice Type</p>
+                <div className="grid grid-cols-2 gap-2.5">
+                  <button
+                    onClick={() => updateVoiceSetting('voiceType', 'female')}
+                    className={`py-2 px-1 border-2 rounded-xl text-center text-xs font-bold transition flex items-center justify-center gap-1.5 cursor-pointer ${
+                      voiceSettings.voiceType === 'female' ? 'border-primary bg-primary/5 text-primary' : 'border-border text-text-secondary hover:bg-bg-main'
+                    }`}
+                  >
+                    <span>Female</span>
+                  </button>
+                  <button
+                    onClick={() => updateVoiceSetting('voiceType', 'male')}
+                    className={`py-2 px-1 border-2 rounded-xl text-center text-xs font-bold transition flex items-center justify-center gap-1.5 cursor-pointer ${
+                      voiceSettings.voiceType === 'male' ? 'border-secondary bg-secondary/5 text-secondary' : 'border-border text-text-secondary hover:bg-bg-main'
+                    }`}
+                  >
+                    <span>Male</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Speech Speed */}
+              <div>
+                <p className="text-[10.5px] font-black text-text-secondary uppercase tracking-wider mb-2">Speech Speed</p>
+                <div className="flex items-center gap-3">
+                  <span className="text-[10px] font-bold text-text-secondary">Slow</span>
+                  <input
+                    type="range"
+                    min="0.5"
+                    max="1.5"
+                    step="0.1"
+                    value={voiceSettings.speed}
+                    onChange={(e) => updateVoiceSetting('speed', parseFloat(e.target.value))}
+                    className="flex-1 accent-primary"
+                  />
+                  <span className="text-[10px] font-bold text-text-secondary">Fast</span>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* ── 6. SYSTEM INTERFACE PREFERENCES (THEME & WEBSITE LANGUAGE) ── */}
         <div className="bg-white dark:bg-bg-card rounded-2xl border-2 border-border p-4 md:p-6 shadow-sm">
           <CardHeader icon={<Sun size={18} />} title="System & Preferences" sectionKey="appearance" />
           
@@ -629,7 +712,8 @@ const Settings = () => {
         )}
 
         <div className="md:hidden mt-4">
-          <button
+          <Button
+            variant="custom"
             onClick={async () => {
               if (logout) await logout();
               navigate('/login');
@@ -637,7 +721,7 @@ const Settings = () => {
             className="w-full flex items-center justify-center gap-3 px-4 py-3.5 bg-red-500/10 text-red-500 rounded-2xl font-black text-sm hover:bg-red-500/20 transition cursor-pointer"
           >
             <LogOut size={18} /> Log Out / Change Account
-          </button>
+          </Button>
         </div>
 
       </div>

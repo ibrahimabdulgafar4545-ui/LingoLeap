@@ -5,6 +5,7 @@ import { useAuth } from '../context/AuthContext';
 import api from '../services/api';
 import toast from 'react-hot-toast';
 import { Gem, ShoppingCart, Shield, Zap, Heart, Lightbulb, Trophy, RefreshCw, CheckCircle, Lock, Sparkles } from 'lucide-react';
+import Button from '../components/common/Button';
 
 const ITEM_ICONS = {
   streak_freeze: <span className="text-3xl">🧊</span>,
@@ -27,7 +28,6 @@ const Shop = () => {
   const navigate = useNavigate();
   const [shopData, setShopData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [buying, setBuying] = useState(null);
   const [activeCategory, setActiveCategory] = useState('all');
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
@@ -54,7 +54,6 @@ const Shop = () => {
   }, []);
 
   const handleBuy = async (item) => {
-    if (buying) return;
     const gems = shopData?.gems ?? 0;
     if (gems < item.price && item.price > 0) {
       toast.error(`Need ${item.price - gems} more gems!`);
@@ -62,7 +61,6 @@ const Shop = () => {
     }
 
     const itemKey = item.itemId || item._id;
-    setBuying(itemKey);
     try {
       const res = await api.post('/shop/buy', { itemId: itemKey });
       if (res.data.success) {
@@ -81,8 +79,6 @@ const Shop = () => {
       }
     } catch (err) {
       toast.error(err.response?.data?.message || 'Purchase failed.');
-    } finally {
-      setBuying(null);
     }
   };
 
@@ -142,12 +138,13 @@ const Shop = () => {
             <p className="text-[10px] sm:text-xs font-semibold text-white/80 mt-0.5">Get 500, 1000, 2500, or 5000 Gems instantly using your Card!</p>
           </div>
         </div>
-        <button
+        <Button
+          variant="custom"
           onClick={() => navigate('/buy-gems')}
           className="w-full sm:w-auto bg-bg-card text-brand-purple px-5 py-2.5 rounded-xl font-extrabold text-xs sm:text-sm hover:bg-brand-light transition duration-150 flex items-center justify-center gap-1.5 shadow-md border-0 shrink-0 cursor-pointer font-sans"
         >
           <Sparkles size={14} /> Buy Gems Pack
-        </button>
+        </Button>
       </div>
 
       {/* Category filter tabs - horizontal scroll on mobile, flex wrap on desktop */}
@@ -224,25 +221,20 @@ const Shop = () => {
                         Maxed
                       </span>
                     ) : (
-                      <button
+                      <Button
+                        variant="custom"
                         onClick={() => handleBuy(item)}
-                        disabled={!canAfford || isBuying}
+                        disabled={!canAfford}
                         className={`flex items-center justify-center gap-1 py-2 px-3 rounded-xl text-[11px] font-black btn-3d transition-all shrink-0 ${
                           canAfford
                             ? 'bg-brand-purple text-white shadow-3d-purple hover:opacity-90'
                             : 'bg-brand-gray/30 text-brand-dark/40 cursor-not-allowed'
                         }`}
                       >
-                        {isBuying ? (
-                          <RefreshCw size={12} className="animate-spin" />
-                        ) : (
-                          <>
-                            <Gem size={11} />
-                            <span>{item.price === 0 ? 'Free' : item.price}</span>
-                            {!canAfford && <Lock size={9} />}
-                          </>
-                        )}
-                      </button>
+                        <Gem size={11} />
+                        <span>{item.price === 0 ? 'Free' : item.price}</span>
+                        {!canAfford && <Lock size={9} />}
+                      </Button>
                     )}
                   </div>
                 </div>
@@ -258,7 +250,7 @@ const Shop = () => {
               const isMaxed = ownedCount >= item.maxOwnable;
               const canAfford = gems >= item.price || item.price === 0;
               const catMeta = CATEGORY_LABELS[item.category] || CATEGORY_LABELS.tools;
-              const isBuying = buying === itemKey;
+              
 
               return (
                 <div
@@ -293,25 +285,20 @@ const Shop = () => {
                       <CheckCircle size={16} /> Maxed Out
                     </div>
                   ) : (
-                    <button
+                    <Button
+                      variant="custom"
                       onClick={() => handleBuy(item)}
-                      disabled={!canAfford || isBuying}
+                      disabled={!canAfford}
                       className={`flex items-center justify-center gap-2 py-3 px-4 rounded-2xl text-sm font-extrabold btn-3d transition-all ${
                         canAfford
                           ? 'bg-brand-purple text-white shadow-3d-purple hover:opacity-90'
                           : 'bg-brand-gray/30 text-brand-dark/40 cursor-not-allowed'
                       }`}
                     >
-                      {isBuying ? (
-                        <RefreshCw size={16} className="animate-spin" />
-                      ) : (
-                        <>
-                          <Gem size={15} />
-                          {item.price === 0 ? 'Claim Free' : `${item.price} gems`}
-                          {!canAfford && <Lock size={13} />}
-                        </>
-                      )}
-                    </button>
+                      <Gem size={15} />
+                      {item.price === 0 ? 'Claim Free' : `${item.price} gems`}
+                      {!canAfford && <Lock size={13} />}
+                    </Button>
                   )}
                 </div>
               );

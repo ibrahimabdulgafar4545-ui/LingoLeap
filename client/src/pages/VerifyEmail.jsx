@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import { CheckCircle2, XCircle, Loader2, Mail, RefreshCw, ArrowLeft, Key } from 'lucide-react';
+import Button from '../components/common/Button';
 import { useAuth } from '../context/AuthContext';
 import api from '../services/api';
 
@@ -191,13 +192,14 @@ export const VerifyEmailPage = () => {
               onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.12)'}
             />
 
-            <button
+            <Button
+              variant="custom"
               onClick={() => verifyCode()}
               disabled={loading || code.length !== 6}
               className="w-full py-4 bg-brand-purple text-white rounded-2xl font-extrabold text-sm flex items-center justify-center gap-2 btn-3d shadow-3d-purple disabled:opacity-40 transition-all"
             >
               {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Confirm Verification Code'}
-            </button>
+            </Button>
           </div>
 
           {/* Resend actions block */}
@@ -206,7 +208,8 @@ export const VerifyEmailPage = () => {
               <p className="text-[11px] font-bold text-indigo-400 mb-2">{resendStatus}</p>
             )}
             <div className="flex items-center justify-center gap-4 text-xs font-bold text-white/50">
-              <button
+              <Button
+                variant="custom"
                 onClick={handleResend}
                 disabled={cooldown > 0}
                 className={`flex items-center gap-1.5 transition ${
@@ -215,11 +218,11 @@ export const VerifyEmailPage = () => {
               >
                 <RefreshCw size={12} />
                 {cooldown > 0 ? `Resend Code (${cooldown}s)` : 'Resend Code'}
-              </button>
+              </Button>
               <span>·</span>
-              <button onClick={logoutAndRedirect} className="text-red-400 hover:text-red-300">
+              <Button variant="custom" onClick={logoutAndRedirect} className="text-red-400 hover:text-red-300">
                 Cancel & Logout
-              </button>
+              </Button>
             </div>
           </div>
         </>
@@ -289,7 +292,7 @@ export const ResendVerificationPage = () => {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4 text-left">
+          <form className="flex flex-col gap-4 text-left">
             <div>
               <label className="text-[10px] font-black text-white/50 mb-1.5 block ml-1 tracking-wider">EMAIL ADDRESS</label>
               <div className="relative">
@@ -309,13 +312,15 @@ export const ResendVerificationPage = () => {
                 />
               </div>
             </div>
-            <button
-              type="submit"
+            <Button
+              variant="custom"
+              type="button"
+              onClick={handleSubmit}
               disabled={loading}
               className="w-full py-4 bg-brand-purple text-white rounded-2xl font-extrabold text-sm flex items-center justify-center gap-2 btn-3d shadow-3d-purple transition-all duration-200 mt-2"
             >
               {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <><RefreshCw className="w-4 h-4" /> Send Verification Code</>}
-            </button>
+            </Button>
           </form>
 
           <Link to="/login" className="block mt-6 text-white/40 hover:text-white/70 text-xs font-bold transition">

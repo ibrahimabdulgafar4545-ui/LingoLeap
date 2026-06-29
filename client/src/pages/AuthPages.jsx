@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { Globe, Mail, Lock, User, AlertCircle, Loader2 } from 'lucide-react';
 import LingoLeapLogo from '../components/common/LingoLeapLogo';
+import Button from '../components/common/Button';
 
 const AuthPages = () => {
   const navigate = useNavigate();
@@ -177,23 +178,14 @@ const AuthPages = () => {
           )}
 
           {/* Submit Button */}
-          <button
+          <Button
             type="submit"
-            disabled={loading}
-            className={`w-full py-4 text-white font-extrabold rounded-2xl text-sm flex items-center justify-center gap-2 btn-3d mt-4 ${
-              isLoginMode 
-                ? 'bg-brand-blue shadow-3d-blue hover:bg-brand-blue-hover' 
-                : 'bg-brand-green shadow-3d-green hover:bg-brand-green-hover'
-            }`}
+            loading={loading}
+            variant={isLoginMode ? 'blue' : 'primary'}
+            className="w-full mt-4"
           >
-            {loading ? (
-              <Loader2 className="w-5 h-5 animate-spin" />
-            ) : isLoginMode ? (
-              'LOG IN'
-            ) : (
-              'CREATE ACCOUNT'
-            )}
-          </button>
+            {isLoginMode ? 'LOG IN' : 'CREATE ACCOUNT'}
+          </Button>
         </form>
 
         {/* Footer toggling login / register */}

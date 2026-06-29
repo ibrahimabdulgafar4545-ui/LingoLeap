@@ -12,7 +12,7 @@ import {
 } from '../services/db.service.js';
 import fs from 'fs';
 import path from 'path';
-import { callAIService } from './ai.controller.js';
+import { callAIService } from './ai.controller.new.js';
 
 const dailyQuestTemplates = [
   { id: 'lessons_3', title: 'Complete 3 lessons', type: 'lessonsCompleted', target: 3, xpReward: 20, gemsReward: 5 },
@@ -248,36 +248,40 @@ export const getLessonById = async (req, res) => {
         const apiKey = process.env.GROK_API_KEY || process.env.XAI_API_KEY || process.env.GEMINI_API_KEY;
         if (apiKey && !apiKey.includes('your_')) {
           // Dynamic Prompt for Grok
-          const systemPrompt = `You are a professional language tutor for LingoLeap.
-Generate a fresh, personalized, and randomized language lesson for a student.
+          const systemPrompt = `You are LingoLeap's immersive language tutor.
+CRITICAL: We are transforming LingoLeap from a "school quiz app" into a natural language immersion platform (like Duolingo). The application should NEVER feel like a school examination. It must help the learner speak, understand, read, and write in real-life situations.
+
+Generate an immersive, personalized language lesson.
 Student profile:
 - Target Language: ${language}
-- Skill Level: ${level} (Beginner, Intermediate, Advanced)
-- Weak vocabulary words/phrases to review: ${JSON.stringify(weakVocabulary)}
-- Weak grammar topics/concepts to review: ${JSON.stringify(weakGrammar)}
+- Skill Level: ${level}
+- Weak vocabulary/phrases to review: ${JSON.stringify(weakVocabulary)}
+- Weak grammar concepts to review: ${JSON.stringify(weakGrammar)}
 
-Lesson blueprint to customize:
+Lesson Context:
 - Lesson Title: "${lessonObj.title}"
-- Lesson Category: "${lessonObj.category}" (e.g. Vocabulary, Grammar, Reading, Listening, Speaking, Translation, Quiz)
-- Unit Title: "${lessonObj.unitTitle}"
+- Unit Context: "${lessonObj.unitTitle}"
 
-You MUST generate exactly 5 exercises/questions of various types. Include:
-1. Vocabulary questions (type: "multiple-choice" or "fill-blank")
-2. Grammar questions (type: "multiple-choice" or "fill-blank")
-3. Translation exercises (type: "translate")
-4. Sentence-building exercises (type: "multiple-choice" where prompt asks to reorder or choose correct syntax, or "fill-blank")
-5. Conversation exercises (type: "speak" or "multiple-choice" dialogue)
+Generate EXACTLY 5 practical, scenario-based exercises:
+1. "listen": A natural spoken phrase the user must transcribe or respond to.
+2. "speak": A realistic role-play prompt where the user must say a phrase aloud (e.g., "Order a coffee").
+3. "match": Match 4 realistic conversational pairs (e.g., Question/Answer or English/Target). Format: "Foreign - English" OR "Foreign - ForeignResponse".
+4. "translate": Translate a highly useful everyday sentence.
+5. "multiple-choice" or "fill-blank": A situational dialogue where the user picks the natural response.
 
 Guidelines:
-- Incorporate the user's weak vocabulary words or grammar concepts if any are available.
-- Randomize and shuffle the answer options. Shuffled answers are crucial, ensure the correct answer is not always the first option.
-- Every question must follow the required JSON structure.
-- You MUST reply strictly with a JSON object. Do not add any markdown block format (no \`\`\`json ... \`\`\`).
-The JSON object must have a single key "questions" containing an array of objects. Each question object must contain:
-1. "type": one of "multiple-choice", "fill-blank", "translate", "speak", "listen", "match"
-2. "prompt": (string) instructions or sentence to act on
-3. "options": (array of strings) 3-4 options for choice questions, or empty for others. For "match", provide exactly 4 items in the format "ForeignWord - EnglishWord" (e.g. ["hola - hello", "gracias - thank you"]).
-4. "correctAnswer": (string) the correct answer. For "match", this can match the first paired option or be a dummy string like "Matched successfully".
+- NO dry academic grammar questions (e.g. "What is the conjugation of..."). Teach grammar implicitly through real sentences.
+- NO isolated obscure vocabulary. Use words in context.
+- Weave the user's weak vocabulary into natural dialogues.
+- For multiple-choice, shuffle options to prevent patterns.
+- You MUST reply strictly with a JSON object. Do NOT add markdown blocks (no \`\`\`json ... \`\`\`).
+
+The JSON object must have a single key "questions" containing an array of 5 objects.
+Each question object MUST contain:
+1. "type": "multiple-choice", "fill-blank", "translate", "speak", "listen", or "match"
+2. "prompt": The real-life scenario or instruction.
+3. "options": Array of 3-4 strings (for choice questions), or exactly 4 pairs for match (e.g. ["hola - hello", "adiós - goodbye"]), or empty array [] for others.
+4. "correctAnswer": The correct string. (For "match", just return "Matched successfully").
 `;
 
           const contents = [{ role: 'user', parts: [{ text: `Generate questions matching unit title: "${lessonObj.unitTitle}" and lesson title: "${lessonObj.title}"` }] }];

@@ -59,9 +59,11 @@ const Practice = () => {
         English: 'en-US',
         German: 'de-DE',
         Arabic: 'ar-SA',
-        Italian: 'it-IT'
+        Italian: 'it-IT',
+        Korean: 'ko-KR',
+        Japanese: 'ja-JP'
       };
-      utterance.lang = langCodes[user?.targetLanguage || 'Spanish'] || 'es-ES';
+      utterance.lang = langCodes[user?.targetLanguage || 'Spanish'] || 'en-US';
       window.speechSynthesis.speak(utterance);
     }
   };

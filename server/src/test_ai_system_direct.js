@@ -12,7 +12,7 @@ import {
   grammarCheckDirect,
   vocabularyHelpDirect,
   pronunciationHelpDirect
-} from './controllers/ai.controller.js';
+} from './controllers/ai.controller.new.js';
 
 dotenv.config();
 

@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema({
   },
   targetLanguage: {
     type: String,
-    enum: ['English', 'French', 'Spanish', 'German', 'Arabic', 'Italian'],
+    enum: ['English', 'French', 'Spanish', 'German', 'Arabic', 'Italian', 'Korean', 'Japanese'],
     default: 'Spanish'
   },
   xp: {
@@ -231,6 +231,36 @@ const userSchema = new mongoose.Schema({
   weakGrammar: [{
     type: String
   }],
+  pronunciationMistakes: [{
+    type: String
+  }],
+  listeningMistakes: [{
+    type: String
+  }],
+  forgottenWords: [{
+    type: String
+  }],
+  savedWords: [{
+    word: String,
+    translation: String,
+    pronunciation: String,
+    meaning: String,
+    grammar: String,
+    example: String,
+    synonyms: [String],
+    language: String,
+    createdAt: { type: Date, default: Date.now }
+  }],
+  savedPhrases: [{
+    phrase: String,
+    translation: String,
+    language: String,
+    createdAt: { type: Date, default: Date.now }
+  }],
+  conversationMemory: {
+    type: String,
+    default: ''
+  },
   recentQuestions: [{
     type: String
   }],

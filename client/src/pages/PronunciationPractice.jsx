@@ -3,6 +3,7 @@ import AppLayout from '../components/common/AppLayout';
 import { useAuth } from '../context/AuthContext';
 import { Mic, Square, Play, RotateCcw, Activity, Award, BarChart2, Star, CheckCircle, Volume2, TrendingUp } from 'lucide-react';
 import toast from 'react-hot-toast';
+import Button from '../components/common/Button';
 import api from '../services/api';
 
 const languagePhrases = {
@@ -495,13 +496,14 @@ const PronunciationPractice = () => {
               )}
 
               {audioUrl && !evaluation && !isRecording && (
-                <button
+                <Button
+                  variant="custom"
                   onClick={submitAudio}
                   disabled={loading}
-                  className="mt-6 bg-brand-green text-white font-black py-3.5 px-10 rounded-2xl btn-3d shadow-3d-green text-sm tracking-wide"
+                  className="mt-6 bg-brand-green text-white font-black py-3.5 px-10 rounded-2xl btn-3d shadow-3d-green text-sm tracking-wide cursor-pointer"
                 >
-                  {loading ? 'Analyzing with AI...' : 'Evaluate Pronunciation'}
-                </button>
+                  Evaluate Pronunciation
+                </Button>
               )}
             </div>
           </div>
@@ -563,12 +565,13 @@ const PronunciationPractice = () => {
                 </div>
               )}
 
-              <button
+              <Button
+                variant="custom"
                 onClick={nextPhrase}
-                className="mt-6 w-full bg-brand-blue text-white font-extrabold py-3.5 rounded-2xl btn-3d shadow-3d-blue flex items-center justify-center gap-2 text-sm uppercase tracking-wider"
+                className="mt-6 w-full bg-brand-blue text-white font-extrabold py-3.5 rounded-2xl btn-3d shadow-3d-blue flex items-center justify-center gap-2 text-sm uppercase tracking-wider cursor-pointer"
               >
                 Next Phrase <RotateCcw size={18} />
-              </button>
+              </Button>
             </div>
           )}
         </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, ArrowLeft, Loader2, CheckCircle2, XCircle, KeyRound } from 'lucide-react';
 import api from '../services/api';
+import Button from '../components/common/Button';
 
 /* ──────────────────────────────────────────────
    Shared page shell
@@ -180,10 +181,12 @@ const ForgotPassword = () => {
         </div>
 
         {/* Submit */}
-        <button
+        <Button
           type="submit"
           id="forgot-submit"
-          disabled={loading}
+          loading={loading}
+          icon={<Mail className="w-4 h-4" />}
+          variant="custom"
           className="w-full py-4 rounded-2xl font-bold text-sm text-white flex items-center justify-center gap-2 transition-all duration-200 mt-2"
           style={{
             background: 'linear-gradient(135deg,#4f46e5,#7c3aed)',
@@ -191,15 +194,8 @@ const ForgotPassword = () => {
             opacity: loading ? 0.7 : 1,
           }}
         >
-          {loading ? (
-            <Loader2 className="w-5 h-5 animate-spin" />
-          ) : (
-            <>
-              <Mail className="w-4 h-4" />
-              Send Reset Link
-            </>
-          )}
-        </button>
+          Send Reset Link
+        </Button>
       </form>
 
       {/* Footer link */}

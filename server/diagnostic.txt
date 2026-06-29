@@ -1,0 +1,19 @@
+=== STARTUP DIAGNOSTIC AT 2026-06-29T15:46:50.297Z ===
+Loaded db.json successfully. User count: 6
+User: testuser_1781852838739 (test_1781852838739@example.com)
+  Existing Hash: $2a$10$Sn7ApPhD44CA5KiyXPdr0.2/4S70lrF5PzvY9s.T0lDTZNNRXsBxO
+  Matches 'password123'? true
+User: marybro (ibrahimabdulgafar4545@gmail.com)
+  Existing Hash: $2a$10$fyv8fOdxUpP03ABTby1dauRgIuR.ZEmauDL68Z.C0yBwO1OIt9DjK
+  Matches 'password123'? true
+User: father (ibrahimabdulgafar@gmail.com)
+  Existing Hash: $2a$10$5qXRR9iM1dwgDB8iSfcCOOJLkNClUoouHHr1.0stT4/U.rzn0Im1a
+  Matches 'password123'? true
+User: admin (admin@lingoleap.com) - Skipped resetting admin
+User: gshfhn (kgf@gmail.com)
+  Existing Hash: $2a$10$cAh/utIrqy5EwuJBDexTYOQJwpgzg3Y5fPJRHbHIoiMvi43v/QsVi
+  Matches 'password123'? true
+User: erdfc (fdcx@gmail.com)
+  Existing Hash: $2a$10$.fpPiFQCjUzKixIaQNuEl.AJZLUtN82PjpV.Wwe7qP7pgtLb9ttLe
+  Matches 'password123'? true
+No password updates required in db.json.

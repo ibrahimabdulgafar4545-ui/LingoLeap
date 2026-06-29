@@ -2,11 +2,11 @@
   "name": "lingoleap-server",
   "version": "1.0.0",
   "description": "LingoLeap AI-Powered Language Learning Platform Backend",
-  "main": "src/server.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node src/server.js",
-    "dev": "nodemon --ignore data/ src/server.js"
+    "start": "node server.js",
+    "dev": "nodemon --ignore data/ --ignore src/data/ server.js"
   },
   "dependencies": {
     "@getbrevo/brevo": "^5.0.4",

@@ -26,7 +26,9 @@ const targetLanguages = [
   { name: 'French', flag: '🇫🇷', desc: 'Art & romance' },
   { name: 'German', flag: '🇩🇪', desc: 'Science & business' },
   { name: 'Arabic', flag: '🇸🇦', desc: 'Rich heritage' },
-  { name: 'Italian', flag: '🇮🇹', desc: 'History & cuisine' }
+  { name: 'Italian', flag: '🇮🇹', desc: 'History & cuisine' },
+  { name: 'Korean', flag: '🇰🇷', desc: 'South Korea, K-Pop & culture' },
+  { name: 'Japanese', flag: '🇯🇵', desc: 'Japan, Anime & traditions' }
 ];
 
 const learningGoals = [

@@ -11,8 +11,13 @@ import {
   vocabularyHelpDirect,
   pronunciationHelpDirect,
   evaluatePronunciation,
-  getPronunciationHistory
-} from '../controllers/ai.controller.js';
+  getPronunciationHistory,
+  saveWord,
+  unsaveWord,
+  savePhrase,
+  unsavePhrase,
+  getSavedItems
+} from '../controllers/ai.controller.new.js';
 import { protect } from '../middleware/auth.middleware.js';
 
 const router = express.Router();
@@ -30,5 +35,12 @@ router.post('/session/:sessionId/complete', protect, completeSession);
 router.get('/sessions', protect, getUserSessions);
 router.get('/stats', protect, getUserStats);
 router.get('/test', testGeminiConnection); // Public — no auth required
+
+// Saved items/Bookmarks endpoints
+router.post('/save-word', protect, saveWord);
+router.post('/unsave-word', protect, unsaveWord);
+router.post('/save-phrase', protect, savePhrase);
+router.post('/unsave-phrase', protect, unsavePhrase);
+router.get('/saved-items', protect, getSavedItems);
 
 export default router;

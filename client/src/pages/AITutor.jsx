@@ -9,6 +9,8 @@ import {
 } from 'lucide-react';
 import api from '../services/api';
 import confetti from 'canvas-confetti';
+import toast from 'react-hot-toast';
+import Button from '../components/common/Button';
 
 const langFlags = {
   Spanish: '🇪🇸', French: '🇫🇷', English: '🇬🇧',
@@ -503,20 +505,22 @@ const AITutor = () => {
                       <p className="text-xs text-brand-dark/50 font-bold">Wait for them to regenerate or buy a refill.</p>
                     </div>
                   </div>
-                  <button
+                  <Button
+                    variant="custom"
                     onClick={() => navigate('/buy-gems')}
                     className="w-full md:w-auto bg-brand-purple text-white px-6 py-2.5 rounded-xl font-black text-sm hover:bg-purple-600 transition shadow-sm"
                   >
                     Get Hearts
-                  </button>
+                  </Button>
                 </div>
               ) : (
-                <button
+                <Button
+                  variant="custom"
                   onClick={startPracticeSession}
                   className="w-full md:w-auto bg-brand-purple text-white px-8 py-3.5 rounded-2xl font-black text-sm btn-3d shadow-3d-purple flex items-center justify-center gap-2 hover:bg-purple-600 cursor-pointer"
                 >
                   Start AI Practice Session <ChevronRight size={16} />
-                </button>
+                </Button>
               )}
             </div>
           </div>
@@ -551,14 +555,15 @@ const AITutor = () => {
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <button
+                <Button
+                  variant="custom"
                   onClick={finishPracticeSession}
                   disabled={isCompleting || messages.length < 3}
                   className="bg-brand-purple text-white px-4 py-2 rounded-xl text-xs font-extrabold hover:bg-purple-600 disabled:opacity-40 transition-all shadow-sm"
                   title="Needs at least a few messages before completing"
                 >
                   {isCompleting ? 'Evaluating...' : 'Finish & Get Feedback'}
-                </button>
+                </Button>
                 <button
                   onClick={() => {
                     if (confirm('Are you sure you want to exit? Your conversation progress won\'t be saved.')) {
@@ -700,7 +705,8 @@ const AITutor = () => {
                     disabled={isTyping}
                     className="w-full pl-4 pr-12 py-3.5 border-2 border-border dark:border-border/50 rounded-2xl text-sm font-semibold outline-none focus:border-brand-purple disabled:opacity-40 transition bg-bg-main/30 dark:bg-bg-main/10 text-text-main"
                   />
-                  <button
+                  <Button
+                    variant="custom"
                     onClick={checkGrammarOfInput}
                     disabled={!input.trim() || checkingGrammar}
                     className="absolute right-3.5 text-brand-purple hover:scale-110 disabled:opacity-30 transition p-1 hover:bg-brand-purple/5 rounded-lg"
@@ -711,16 +717,17 @@ const AITutor = () => {
                     ) : (
                       <Sparkles className="w-5 h-5" />
                     )}
-                  </button>
+                  </Button>
                 </div>
 
-                <button
+                <Button
+                  variant="custom"
                   onClick={sendMessage}
                   disabled={!input.trim() || isTyping}
                   className="bg-brand-purple text-white px-5 py-3.5 rounded-2xl font-extrabold text-sm flex items-center gap-2 btn-3d shadow-3d-purple disabled:opacity-30 transition hover:bg-purple-600"
                 >
                   <Send size={18} />
-                </button>
+                </Button>
               </div>
             </div>
           </div>
@@ -745,13 +752,14 @@ const AITutor = () => {
                   placeholder="Look up any word..."
                   className="flex-1 px-3 py-2 border-2 border-border rounded-xl text-xs font-bold outline-none focus:border-brand-purple transition bg-bg-main/30 dark:bg-bg-main/10 text-text-main"
                 />
-                <button
+                <Button
+                  variant="custom"
                   onClick={() => lookupWord()}
                   disabled={!dictInput.trim() || searchingDict}
                   className="bg-brand-purple text-white px-3 py-2 rounded-xl text-xs font-extrabold hover:bg-purple-600 disabled:opacity-40 transition"
                 >
                   {searchingDict ? '...' : 'Search'}
-                </button>
+                </Button>
               </div>
 
               {lastTurnVocab.length === 0 ? (

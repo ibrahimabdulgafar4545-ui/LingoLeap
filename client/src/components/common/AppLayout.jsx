@@ -9,7 +9,6 @@ import { useAuth } from '../../context/AuthContext';
 import { WifiOff, CloudLightning, Gem, Heart, Sun, Moon, LogOut } from 'lucide-react';
 
 const AppLayout = ({ children, noPadding = false }) => {
-  const { isOnline, pendingSyncCount, syncOfflineSubmissions } = useLearning();
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const [darkMode, setDarkMode] = React.useState(() => document.documentElement.classList.contains('dark'));
@@ -38,32 +37,6 @@ const AppLayout = ({ children, noPadding = false }) => {
 
   return (
     <div className="min-h-screen bg-bg-main text-text-main flex flex-col font-sans">
-      {/* Offline Status Banner */}
-      {!isOnline && (
-        <div className="sticky top-0 bg-gradient-to-r from-amber-500 to-orange-600 text-white text-xs font-extrabold py-2.5 px-4 flex items-center justify-center gap-2 shadow-md z-50">
-          <WifiOff size={14} className="flex-shrink-0 animate-bounce" />
-          <span>Offline Mode. Progress is saved locally.</span>
-          {pendingSyncCount > 0 && (
-            <span className="bg-white/20 px-2 py-0.5 rounded-full text-[10px] uppercase tracking-wider">
-              {pendingSyncCount} Pending Sync
-            </span>
-          )}
-        </div>
-      )}
-
-      {/* Online syncing status banner */}
-      {isOnline && pendingSyncCount > 0 && (
-        <div className="sticky top-0 bg-gradient-to-r from-secondary to-secondary-hover text-white text-xs font-extrabold py-2.5 px-4 flex items-center justify-center gap-2 shadow-md z-50">
-          <CloudLightning size={14} className="flex-shrink-0 animate-pulse" />
-          <span>Syncing {pendingSyncCount} offline completed lesson(s)...</span>
-          <button 
-            onClick={syncOfflineSubmissions} 
-            className="underline ml-2 bg-white/20 hover:bg-white/30 px-3 py-0.5 rounded-full text-[10px] transition uppercase tracking-wider"
-          >
-            Sync Now
-          </button>
-        </div>
-      )}
 
       <div className="flex-1 flex flex-col md:flex-row">
         <Sidebar />

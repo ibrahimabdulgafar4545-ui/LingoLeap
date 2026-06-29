@@ -3,14 +3,19 @@ import mongoose from 'mongoose';
 const questionSchema = new mongoose.Schema({
   type: {
     type: String,
-    enum: ['multiple-choice', 'fill-blank', 'translate', 'speak', 'listen', 'quiz', 'match'],
     required: true
   },
   prompt: {
     type: String,
     required: true
   },
+  promptImage: {
+    type: String
+  },
   options: [{
+    type: String
+  }],
+  imageOptions: [{
     type: String
   }],
   correctAnswer: {
@@ -22,6 +27,15 @@ const questionSchema = new mongoose.Schema({
   }
 });
 
+const wordSchema = new mongoose.Schema({
+  picture: { type: String }, // emoji or URL
+  targetWord: { type: String, required: true },
+  pronunciation: { type: String },
+  meaning: { type: String, required: true },
+  exampleSentence: { type: String },
+  audioUrl: { type: String }
+});
+
 const lessonSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -29,12 +43,11 @@ const lessonSchema = new mongoose.Schema({
   },
   language: {
     type: String,
-    enum: ['English', 'French', 'Spanish', 'German', 'Arabic', 'Italian'],
+    enum: ['English', 'French', 'Spanish', 'German', 'Arabic', 'Italian', 'Korean', 'Japanese'],
     required: true
   },
   category: {
     type: String,
-    enum: ['Vocabulary', 'Grammar', 'Reading', 'Listening', 'Speaking', 'Translation', 'Quiz'],
     required: true
   },
   difficulty: {
@@ -58,6 +71,7 @@ const lessonSchema = new mongoose.Schema({
     required: true
   },
   questions: [questionSchema],
+  words: [wordSchema],
   createdAt: {
     type: Date,
     default: Date.now

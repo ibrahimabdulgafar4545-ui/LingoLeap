@@ -156,6 +156,12 @@ const ensureUserGameState = (user) => {
   if (!Array.isArray(user.notifications)) user.notifications = [];
   if (!Array.isArray(user.weakVocabulary)) user.weakVocabulary = [];
   if (!Array.isArray(user.weakGrammar)) user.weakGrammar = [];
+  if (!Array.isArray(user.pronunciationMistakes)) user.pronunciationMistakes = [];
+  if (!Array.isArray(user.listeningMistakes)) user.listeningMistakes = [];
+  if (!Array.isArray(user.forgottenWords)) user.forgottenWords = [];
+  if (!Array.isArray(user.savedWords)) user.savedWords = [];
+  if (!Array.isArray(user.savedPhrases)) user.savedPhrases = [];
+  if (user.conversationMemory === undefined) user.conversationMemory = '';
   if (!Array.isArray(user.recentQuestions)) user.recentQuestions = [];
   if (user.isOnline === undefined) user.isOnline = false;
   if (user.lastSeen === undefined) user.lastSeen = new Date().toISOString();
@@ -237,6 +243,9 @@ export const checkDbConnection = async () => {
     // Reset all users to offline on startup
     await User.updateMany({}, { $set: { isOnline: false } });
     console.log('📶 Online presences reset for all MongoDB users on startup.');
+
+    // Sync local JSON users to MongoDB Atlas
+    await syncLocalUsersToMongo();
   } catch (err) {
     console.warn(`\n[WARNING] MongoDB Connection failed: ${err.message}`);
     console.warn('===> FALLING BACK TO LOCAL FILESYSTEM DATABASE (db.json) <===\n');
@@ -259,6 +268,127 @@ export const checkDbConnection = async () => {
 
   // Seed default admin account
   await seedDefaultAdmin();
+};
+
+export const syncLocalUsersToMongo = async () => {
+  const debugLogs = [];
+  debugLogs.push(`=== DB SYNC DEBUG LOG AT ${new Date().toISOString()} ===`);
+  try {
+    const db = readJsonDb();
+    if (!db.users || db.users.length === 0) {
+      debugLogs.push('No local users found in db.json.');
+      fs.writeFileSync(path.join(JSON_DB_DIR, '../debug_log.txt'), debugLogs.join('\n'), 'utf-8');
+      return;
+    }
+
+    debugLogs.push(`Found ${db.users.length} local users in db.json.`);
+    let syncedCount = 0;
+    let updatedCount = 0;
+
+    for (const localUser of db.users) {
+      if (localUser.email === 'admin@lingoleap.com') {
+        debugLogs.push(`Skipping admin@lingoleap.com`);
+        continue;
+      }
+      const email = localUser.email.toLowerCase();
+
+      // Check if user already exists in MongoDB, selecting password explicitly
+      const exists = await User.findOne({ email }).select('+password');
+      
+      let isPwd123Local = false;
+      try {
+        isPwd123Local = bcrypt.compareSync('password123', localUser.password);
+      } catch (err) {
+        isPwd123Local = false;
+      }
+      
+      debugLogs.push(`User: ${localUser.username} (${email})`);
+      debugLogs.push(`  Local password hash: ${localUser.password}`);
+      debugLogs.push(`  Does local password match 'password123'? ${isPwd123Local}`);
+
+      if (!exists) {
+        debugLogs.push(`  Status in Mongo: NOT EXISTS. Syncing...`);
+        let mongoId;
+        try {
+          mongoId = new mongoose.Types.ObjectId(localUser._id);
+        } catch (e) {
+          mongoId = new mongoose.Types.ObjectId();
+        }
+
+        const unlockedLessons = (localUser.unlockedLessons || []).map(id => {
+          try {
+            return new mongoose.Types.ObjectId(id);
+          } catch (e) {
+            return id;
+          }
+        });
+
+        const friends = (localUser.friends || []).map(id => {
+          try {
+            return new mongoose.Types.ObjectId(id);
+          } catch (e) {
+            return id;
+          }
+        });
+
+        const userDoc = {
+          ...localUser,
+          _id: mongoId,
+          email,
+          createdAt: localUser.createdAt ? new Date(localUser.createdAt) : new Date(),
+          lastActiveDate: localUser.lastActiveDate ? new Date(localUser.lastActiveDate) : null,
+          unlockedLessons,
+          friends
+        };
+
+        // Insert directly to bypass pre-save password re-hashing hooks
+        await mongoose.connection.db.collection('users').insertOne(userDoc);
+        syncedCount++;
+        debugLogs.push(`  Successfully inserted user to Mongo.`);
+      } else {
+        let isPwd123Mongo = false;
+        try {
+          isPwd123Mongo = bcrypt.compareSync('password123', exists.password);
+        } catch (err) {
+          isPwd123Mongo = false;
+        }
+        
+        debugLogs.push(`  Status in Mongo: EXISTS`);
+        debugLogs.push(`  Mongo password hash: ${exists.password}`);
+        debugLogs.push(`  Does Mongo password match 'password123'? ${isPwd123Mongo}`);
+
+        if (exists.password !== localUser.password) {
+          debugLogs.push(`  Password hash differs! Updating Mongo hash to match local...`);
+          await mongoose.connection.db.collection('users').updateOne(
+            { _id: exists._id },
+            { $set: { password: localUser.password } }
+          );
+          updatedCount++;
+          debugLogs.push(`  Password hash updated successfully.`);
+        } else {
+          debugLogs.push(`  Password hash matches local.`);
+        }
+      }
+    }
+
+    if (syncedCount > 0 || updatedCount > 0) {
+      console.log(`✅ User sync complete: ${syncedCount} inserted, ${updatedCount} password hashes corrected in MongoDB Atlas.`);
+      debugLogs.push(`User sync complete: ${syncedCount} inserted, ${updatedCount} password hashes corrected.`);
+    } else {
+      console.log(`ℹ️ All local users are already present and correctly configured in MongoDB Atlas.`);
+      debugLogs.push(`All local users are already present and correctly configured.`);
+    }
+  } catch (err) {
+    console.error('❌ Failed to sync local users to MongoDB Atlas:', err.message);
+    debugLogs.push(`Error during sync: ${err.message}`);
+  }
+
+  try {
+    fs.writeFileSync(path.join(JSON_DB_DIR, '../debug_log.txt'), debugLogs.join('\n'), 'utf-8');
+    console.log(`📝 Debug log written to server/debug_log.txt`);
+  } catch (logErr) {
+    console.error('Failed to write debug log:', logErr.message);
+  }
 };
 
 export const isFallbackMode = () => useFallbackDb;
@@ -874,7 +1004,20 @@ export async function seedDefaultAdmin() {
       });
       console.log('✅ Default admin user created successfully.');
     } else {
-      console.log('👑 Default admin already exists.');
+      console.log('👑 Default admin already exists. Synchronizing password to adminPassword on startup...');
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(adminPassword, salt);
+      if (!useFallbackDb) {
+        await User.updateOne({ email: adminEmail }, { $set: { password: hashedPassword } });
+      } else {
+        const db = readJsonDb();
+        const idx = db.users.findIndex(u => u.email === adminEmail);
+        if (idx !== -1) {
+          db.users[idx].password = hashedPassword;
+          writeJsonDb(db);
+        }
+      }
+      console.log('✅ Default admin password synchronized successfully.');
     }
   } catch (err) {
     console.error('❌ Failed to seed default admin:', err.message);

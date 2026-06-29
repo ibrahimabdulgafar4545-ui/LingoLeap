@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, BookOpen, Zap, Bot, User, ShieldAlert } from 'lucide-react';
+import { LayoutDashboard, BookOpen, Zap, Bot, User, ShieldAlert, Globe } from 'lucide-react';
 import { useTranslation } from '../../context/LanguageContext';
 import { useAuth } from '../../context/AuthContext';
 
@@ -9,6 +9,7 @@ const bottomNavItems = [
   { to: '/learn', icon: <BookOpen size={18} />, key: 'learn' },
   { to: '/practice', icon: <Zap size={18} />, key: 'practice' },
   { to: '/ai-tutor', icon: <Bot size={18} />, key: 'ai_tutor' },
+  { to: '/ai-conversation', icon: <Globe size={18} />, key: 'ai_conversation' },
   { to: '/profile', icon: <User size={18} />, key: 'profile' },
 ];
 

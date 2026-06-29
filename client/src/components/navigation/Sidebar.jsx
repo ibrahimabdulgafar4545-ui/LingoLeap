@@ -2,9 +2,10 @@ import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useTranslation } from '../../context/LanguageContext';
+import Button from '../common/Button';
 import {
   LayoutDashboard, BookOpen, Zap, Trophy, BarChart2,
-  User, Settings, LogOut, Bot, ShoppingCart, Gem, Users, ShieldAlert
+  User, Settings, LogOut, Bot, ShoppingCart, Gem, Users, ShieldAlert, Globe
 } from 'lucide-react';
 import LingoLeapLogo from '../common/LingoLeapLogo';
 
@@ -13,6 +14,7 @@ const navItems = [
   { to: '/learn', icon: <BookOpen size={22} />, key: 'learn' },
   { to: '/practice', icon: <Zap size={22} />, key: 'practice' },
   { to: '/ai-tutor', icon: <Bot size={22} />, key: 'ai_tutor' },
+  { to: '/ai-conversation', icon: <Globe size={22} />, key: 'ai_conversation' },
   { to: '/achievements', icon: <Trophy size={22} />, key: 'achievements' },
   { to: '/leaderboard', icon: <BarChart2 size={22} />, key: 'leaderboard' },
   { to: '/friends', icon: <Users size={22} />, key: 'friends' },
@@ -88,13 +90,14 @@ const Sidebar = () => {
               </p>
             </div>
           </div>
-          <button
+          <Button
+            variant="custom"
             onClick={handleLogout}
-            className="w-full flex items-center gap-3 px-4 py-2.5 rounded-2xl text-sm font-bold text-red-500 hover:bg-red-500/10 transition border-2 border-transparent"
+            className="w-full flex items-center gap-3 px-4 py-2.5 rounded-2xl text-sm font-bold text-red-500 hover:bg-red-500/10 transition border-2 border-transparent cursor-pointer"
           >
             <LogOut size={18} />
             {t('log_out')}
-          </button>
+          </Button>
         </div>
       )}
     </aside>

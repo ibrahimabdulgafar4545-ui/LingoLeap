@@ -15,7 +15,7 @@ import {
   getUserSessions, 
   getUserStats, 
   testGeminiConnection 
-} from './controllers/ai.controller.js';
+} from './controllers/ai.controller.new.js';
 
 dotenv.config();
 

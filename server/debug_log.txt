@@ -1,0 +1,39 @@
+=== DB SYNC DEBUG LOG AT 2026-06-29T15:46:54.466Z ===
+Found 6 local users in db.json.
+User: testuser_1781852838739 (test_1781852838739@example.com)
+  Local password hash: $2a$10$Sn7ApPhD44CA5KiyXPdr0.2/4S70lrF5PzvY9s.T0lDTZNNRXsBxO
+  Does local password match 'password123'? true
+  Status in Mongo: EXISTS
+  Mongo password hash: $2a$10$Sn7ApPhD44CA5KiyXPdr0.2/4S70lrF5PzvY9s.T0lDTZNNRXsBxO
+  Does Mongo password match 'password123'? true
+  Password hash matches local.
+User: marybro (ibrahimabdulgafar4545@gmail.com)
+  Local password hash: $2a$10$fyv8fOdxUpP03ABTby1dauRgIuR.ZEmauDL68Z.C0yBwO1OIt9DjK
+  Does local password match 'password123'? true
+  Status in Mongo: EXISTS
+  Mongo password hash: $2a$10$fyv8fOdxUpP03ABTby1dauRgIuR.ZEmauDL68Z.C0yBwO1OIt9DjK
+  Does Mongo password match 'password123'? true
+  Password hash matches local.
+User: father (ibrahimabdulgafar@gmail.com)
+  Local password hash: $2a$10$5qXRR9iM1dwgDB8iSfcCOOJLkNClUoouHHr1.0stT4/U.rzn0Im1a
+  Does local password match 'password123'? true
+  Status in Mongo: EXISTS
+  Mongo password hash: $2a$10$5qXRR9iM1dwgDB8iSfcCOOJLkNClUoouHHr1.0stT4/U.rzn0Im1a
+  Does Mongo password match 'password123'? true
+  Password hash matches local.
+Skipping admin@lingoleap.com
+User: gshfhn (kgf@gmail.com)
+  Local password hash: $2a$10$cAh/utIrqy5EwuJBDexTYOQJwpgzg3Y5fPJRHbHIoiMvi43v/QsVi
+  Does local password match 'password123'? true
+  Status in Mongo: EXISTS
+  Mongo password hash: $2a$10$cAh/utIrqy5EwuJBDexTYOQJwpgzg3Y5fPJRHbHIoiMvi43v/QsVi
+  Does Mongo password match 'password123'? true
+  Password hash matches local.
+User: erdfc (fdcx@gmail.com)
+  Local password hash: $2a$10$.fpPiFQCjUzKixIaQNuEl.AJZLUtN82PjpV.Wwe7qP7pgtLb9ttLe
+  Does local password match 'password123'? true
+  Status in Mongo: EXISTS
+  Mongo password hash: $2a$10$.fpPiFQCjUzKixIaQNuEl.AJZLUtN82PjpV.Wwe7qP7pgtLb9ttLe
+  Does Mongo password match 'password123'? true
+  Password hash matches local.
+All local users are already present and correctly configured.

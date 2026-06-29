@@ -4,6 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import AppLayout from '../components/common/AppLayout';
 import { Trophy, Target, Sparkles, User, LogOut, Camera, ShieldAlert } from 'lucide-react';
 import api from '../services/api';
+import Button from '../components/common/Button';
 
 const langFlags = {
   Spanish: '🇪🇸', French: '🇫🇷', English: '🇬🇧',
@@ -231,22 +232,25 @@ const Profile = () => {
             ))}
           </div>
           {user.role === 'admin' && (
-            <button
+            <Button
+              variant="custom"
               onClick={() => navigate('/admin')}
               className="mt-4 w-full flex items-center justify-center gap-2 bg-purple-500/10 text-purple-500 border-2 border-purple-500/20 py-2.5 rounded-2xl font-extrabold text-xs hover:bg-purple-500/20 transition cursor-pointer"
             >
               <ShieldAlert size={14} /> Admin Panel
-            </button>
+            </Button>
           )}
 
-          <button
+          <Button
+            variant="custom"
             onClick={() => navigate('/settings')}
             className="mt-2 w-full flex items-center justify-center gap-2 bg-secondary/10 text-secondary border-2 border-secondary/20 py-2.5 rounded-2xl font-extrabold text-xs hover:bg-secondary/20 transition cursor-pointer"
           >
             <Camera size={14} /> Edit Profile & Settings
-          </button>
+          </Button>
           
-          <button
+          <Button
+            variant="custom"
             onClick={async () => {
               await logout();
               navigate('/');
@@ -254,7 +258,7 @@ const Profile = () => {
             className="mt-2 w-full flex items-center justify-center gap-2 bg-red-500/10 text-red-500 border-2 border-red-500/20 py-2.5 rounded-2xl font-extrabold text-xs hover:bg-red-500/20 transition cursor-pointer"
           >
             <LogOut size={14} /> Logout
-          </button>
+          </Button>
         </div>
       </div>
     </AppLayout>

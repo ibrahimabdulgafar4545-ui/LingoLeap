@@ -1,0 +1,10 @@
+Total lessons in MongoDB: 152
+Languages present: Arabic, English, French, German, Italian, Japanese, Korean, Spanish
+ - Arabic: 19 lessons (Lesson 1 words length: 6)
+ - English: 19 lessons (Lesson 1 words length: 6)
+ - French: 19 lessons (Lesson 1 words length: 6)
+ - German: 19 lessons (Lesson 1 words length: 6)
+ - Italian: 19 lessons (Lesson 1 words length: 6)
+ - Japanese: 19 lessons (Lesson 1 words length: 6)
+ - Korean: 19 lessons (Lesson 1 words length: 6)
+ - Spanish: 19 lessons (Lesson 1 words length: 6)

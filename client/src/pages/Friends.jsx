@@ -9,6 +9,7 @@ import { socialService } from '../services/socialService';
 import AppLayout from '../components/common/AppLayout';
 import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
+import Button from '../components/common/Button';
 
 // Language flags map
 const langFlags = {
@@ -486,20 +487,22 @@ export default function Friends() {
 
                         {/* Friend Action Panel */}
                         <div className="flex items-center gap-0.5 sm:gap-1 flex-shrink-0">
-                          <button
+                          <Button
+                            variant="custom"
                             onClick={() => handleRemoveFriend(friend._id)}
                             className="p-1.5 sm:p-2 text-text-secondary hover:text-brand-red hover:bg-brand-red/10 border-2 border-transparent hover:border-brand-red/20 rounded-xl transition-all"
                             title="Remove Friend"
                           >
                             <UserMinus className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
-                          </button>
-                          <button
+                          </Button>
+                          <Button
+                            variant="custom"
                             onClick={() => handleBlockUser(friend._id)}
                             className="p-1.5 sm:p-2 text-text-secondary hover:text-brand-red hover:bg-brand-red/10 border-2 border-transparent hover:border-brand-red/20 rounded-xl transition-all"
                             title="Block User"
                           >
                             <Ban className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
-                          </button>
+                          </Button>
                         </div>
                       </div>
                     ))
@@ -605,52 +608,56 @@ export default function Friends() {
                                   <Clock className="w-3.5 h-3.5" />
                                   Request Sent
                                 </span>
-                                <button
+                                <Button
+                                  variant="custom"
                                   onClick={(e) => {
                                     e.stopPropagation();
-                                    handleCancelRequest(user._id);
+                                    return handleCancelRequest(user._id);
                                   }}
                                   className="text-[10px] font-bold text-brand-dark/45 hover:text-brand-red hover:underline"
                                 >
                                   Cancel Request
-                                </button>
+                                </Button>
                               </div>
                             )}
 
                             {user.relationship === 'received_pending' && (
                               <div className="flex gap-2">
-                                <button
+                                <Button
+                                  variant="custom"
                                   onClick={(e) => {
                                     e.stopPropagation();
-                                    handleAcceptRequest(user._id);
+                                    return handleAcceptRequest(user._id);
                                   }}
                                   className="bg-brand-green hover:bg-brand-green-hover text-white px-3 py-2 rounded-xl text-xs font-black shadow-3d-green hover:translate-y-0.5 active:translate-y-1 transition-all"
                                 >
                                   Accept
-                                </button>
-                                <button
+                                </Button>
+                                <Button
+                                  variant="custom"
                                   onClick={(e) => {
                                     e.stopPropagation();
-                                    handleRejectRequest(user._id);
+                                    return handleRejectRequest(user._id);
                                   }}
                                   className="bg-brand-red hover:bg-brand-red/90 text-white px-3 py-2 rounded-xl text-xs font-black shadow-3d-red hover:translate-y-0.5 active:translate-y-1 transition-all"
                                 >
                                   Reject
-                                </button>
+                                </Button>
                               </div>
                             )}
 
                             {user.relationship === 'none' && (
-                              <button
+                              <Button
+                                variant="custom"
                                 onClick={(e) => {
                                   e.stopPropagation();
-                                  handleSendRequest(user._id);
+                                  return handleSendRequest(user._id);
                                 }}
                                 className="bg-brand-blue hover:bg-brand-blue-hover text-white px-3.5 py-2 rounded-xl text-xs font-black shadow-3d-blue flex items-center justify-center gap-1 hover:translate-y-0.5 active:translate-y-1 transition-all"
                               >
                                 <UserPlus className="w-4 h-4" />
                                 Add Friend
-                              </button>
+                              </Button>
                             )}
 
                             {user.relationship === 'blocked' && (
@@ -673,12 +680,13 @@ export default function Friends() {
                   <div className="flex justify-between items-center mb-2">
                     <h3 className="font-extrabold text-text-main text-lg">Recent Social Alerts</h3>
                     {notifications.some(n => !n.read) && (
-                      <button
+                      <Button
+                        variant="custom"
                         onClick={handleMarkAllRead}
-                        className="text-xs font-bold text-brand-blue hover:underline bg-brand-blue/5 border border-brand-blue/20 rounded-lg px-2.5 py-1"
+                        className="text-xs font-bold text-brand-blue hover:underline bg-brand-blue/5 border border-brand-blue/20 rounded-lg px-2.5 py-1 cursor-pointer"
                       >
                         Mark all as read
-                      </button>
+                      </Button>
                     )}
                   </div>
 
@@ -720,18 +728,20 @@ export default function Friends() {
                         {/* Action details if friend_request */}
                         {noti.type === 'friend_request' && (
                           <div className="flex gap-1.5 flex-shrink-0">
-                            <button
+                            <Button
+                              variant="custom"
                               onClick={() => handleAcceptRequest(noti.sender?._id)}
                               className="bg-brand-green hover:bg-brand-green-hover text-white px-3.5 py-2 rounded-xl text-xs font-black shadow-3d-green"
                             >
                               Accept
-                            </button>
-                            <button
+                            </Button>
+                            <Button
+                              variant="custom"
                               onClick={() => handleRejectRequest(noti.sender?._id)}
                               className="bg-brand-light border-2 border-brand-gray text-text-main px-3.5 py-2 rounded-xl text-xs font-black shadow-3d-gray"
                             >
                               Ignore
-                            </button>
+                            </Button>
                           </div>
                         )}
                       </div>
@@ -779,13 +789,14 @@ export default function Friends() {
                       </span>
                     )}
                     {selectedFriend.relationship === 'none' && (
-                      <button
+                      <Button
+                        variant="custom"
                         onClick={() => handleSendRequest(selectedFriend._id)}
                         className="bg-brand-blue hover:bg-brand-blue-hover text-white px-4 py-2 rounded-xl text-xs font-black shadow-3d-blue flex items-center gap-1 transition-all"
                       >
                         <UserPlus className="w-3.5 h-3.5" />
                         Add Friend
-                      </button>
+                      </Button>
                     )}
                   </div>
                 </div>
@@ -985,27 +996,29 @@ export default function Friends() {
                 {/* Block option at bottom */}
                 <div className="mt-6 pt-4 border-t border-brand-gray flex justify-between items-center flex-wrap gap-2">
                   <div className="flex gap-3">
-                    <button
-                      onClick={() => {
-                        handleBlockUser(selectedFriend._id);
+                    <Button
+                      variant="custom"
+                      onClick={async () => {
+                        await handleBlockUser(selectedFriend._id);
                         setShowProfileModal(false);
                       }}
-                      className="text-xs font-black text-brand-red hover:underline flex items-center gap-1"
+                      className="text-xs font-black text-brand-red hover:underline flex items-center gap-1 border-0 bg-transparent cursor-pointer"
                     >
                       <Ban className="w-3.5 h-3.5" />
                       Block User
-                    </button>
+                    </Button>
                     {selectedFriend.relationship === 'friends' && (
-                      <button
-                        onClick={() => {
-                          handleRemoveFriend(selectedFriend._id);
+                      <Button
+                        variant="custom"
+                        onClick={async () => {
+                          await handleRemoveFriend(selectedFriend._id);
                           setShowProfileModal(false);
                         }}
-                        className="text-xs font-black text-brand-red hover:underline flex items-center gap-1"
+                        className="text-xs font-black text-brand-red hover:underline flex items-center gap-1 border-0 bg-transparent cursor-pointer"
                       >
                         <UserMinus className="w-3.5 h-3.5" />
                         Remove Friend
-                      </button>
+                      </Button>
                     )}
                   </div>
                   <button

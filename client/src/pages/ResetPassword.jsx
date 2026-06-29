@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import { Lock, Eye, EyeOff, ArrowLeft, Loader2, CheckCircle2, XCircle, ShieldCheck } from 'lucide-react';
 import api from '../services/api';
+import Button from '../components/common/Button';
 
 /* ──────────────────────────────────────────────
    Shared page shell
@@ -276,10 +277,12 @@ const ResetPassword = () => {
         </div>
 
         {/* Submit */}
-        <button
+        <Button
           type="submit"
           id="reset-submit"
-          disabled={loading}
+          loading={loading}
+          icon={<ShieldCheck className="w-4 h-4" />}
+          variant="custom"
           className="w-full py-4 rounded-2xl font-bold text-sm text-white flex items-center justify-center gap-2 transition-all duration-200 mt-1"
           style={{
             background: 'linear-gradient(135deg,#4f46e5,#7c3aed)',
@@ -287,15 +290,8 @@ const ResetPassword = () => {
             opacity: loading ? 0.7 : 1,
           }}
         >
-          {loading ? (
-            <Loader2 className="w-5 h-5 animate-spin" />
-          ) : (
-            <>
-              <ShieldCheck className="w-4 h-4" />
-              Reset Password
-            </>
-          )}
-        </button>
+          Reset Password
+        </Button>
       </form>
 
       {/* Footer */}

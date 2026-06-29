@@ -7,10 +7,10 @@ import { Lock, Check, BookOpen, ChevronDown, ChevronUp, Trophy, Star, Play, Spar
 
 const langFlags = {
   Spanish: '🇪🇸', French: '🇫🇷', English: '🇬🇧',
-  German: '🇩🇪', Arabic: '🇸🇦', Italian: '🇮🇹'
+  German: '🇩🇪', Arabic: '🇸🇦', Italian: '🇮🇹', Korean: '🇰🇷', Japanese: '🇯🇵'
 };
 
-const allLanguages = ['Spanish', 'French', 'English', 'German', 'Arabic', 'Italian'];
+const allLanguages = ['Spanish', 'French', 'English', 'German', 'Arabic', 'Italian', 'Korean', 'Japanese'];
 
 const categoryColors = {
   Vocabulary: { bg: 'bg-secondary border-secondary-hover', text: 'text-secondary', shadow: 'shadow-3d-secondary', icon: 'Aa' },
@@ -22,6 +22,126 @@ const categoryColors = {
   Quiz: { bg: 'bg-secondary border-secondary-hover', text: 'text-secondary', shadow: 'shadow-3d-secondary', icon: 'Q' },
 };
 
+const getMissionsForLanguage = (lang, landmark) => ({
+  1: { title: '👋 Lesson 1 — Greetings', category: 'Speaking', location: 'Greeting Hall' },
+  2: { title: '🏠 Lesson 2 — Everyday words', category: 'Vocabulary', location: 'Home & Office' },
+  3: { title: '🐶 Lesson 3 — Animals', category: 'Vocabulary', location: 'Pet Store & Farm' },
+  4: { title: '🍞 Lesson 4 — Food', category: 'Vocabulary', location: 'Kitchen & Table' },
+  5: { title: '👨‍👩‍👧‍👦 Lesson 5 — Family', category: 'Vocabulary', location: 'Family Reunion' },
+  6: { title: '🔢 Lesson 6 — Numbers', category: 'Vocabulary', location: 'Market Stalls' },
+  7: { title: '🎨 Lesson 7 — Colors', category: 'Vocabulary', location: 'Art Studio' },
+  8: { title: '👕 Lesson 8 — Clothing', category: 'Vocabulary', location: 'Shopping Boutique' },
+  9: { title: '👃 Lesson 9 — Body parts', category: 'Vocabulary', location: 'Mirror & Studio' },
+  10: { title: '☀️ Lesson 10 — Weather', category: 'Vocabulary', location: 'Outdoors' },
+  11: { title: '✈️ Mission 11 — Airport Arrival', category: 'Speaking', location: `${landmark} Airport` },
+  12: { title: '🚕 Mission 12 — Taxi Ride', category: 'Speaking', location: `${lang} Taxi` },
+  13: { title: '🏨 Mission 13 — Hotel Check-in', category: 'Vocabulary', location: 'Hotel Desk' },
+  14: { title: '🍲 Mission 14 — Café & Restaurant', category: 'Vocabulary', location: 'Bistro & Cafe' },
+  15: { title: '🛍️ Mission 15 — Shopping', category: 'Speaking', location: 'Shopping Mall' },
+  16: { title: '🏫 Mission 16 — School & Education', category: 'Vocabulary', location: 'Classroom' },
+  17: { title: '🏥 Mission 17 — Hospital & Medical', category: 'Reading', location: 'Medical Center' },
+  18: { title: '🚇 Mission 18 — City & Travel', category: 'Vocabulary', location: 'Transit Station' },
+  19: { title: '🏆 Mission 19 — Grand Challenge', category: 'Quiz', location: 'City Center' }
+});
+
+const storyWorldData = {
+  Korean: {
+    country: 'South Korea',
+    landmark: '🏯 Gyeongbokgung Palace',
+    bgGradient: 'from-indigo-600 to-rose-500',
+    character: 'Min-Jun',
+    role: 'Korean Guide 🇰🇷',
+    avatar: '👨‍💼',
+    greeting: '안녕하세요! Welcome! I am Min-Jun. Let\'s learn Korean starting with basic greetings and vocabulary!',
+    missions: getMissionsForLanguage('Seoul', 'Incheon')
+  },
+  Japanese: {
+    country: 'Japan',
+    landmark: '🗻 Mt. Fuji & Tokyo Tower',
+    bgGradient: 'from-rose-500 to-orange-400',
+    character: 'Yuki',
+    role: 'Japanese Sensei 🇯🇵',
+    avatar: '👩‍🏫',
+    greeting: 'こんにちは! Welcome! I am Yuki, your Japanese Sensei. Let\'s master basic greetings first!',
+    missions: getMissionsForLanguage('Tokyo', 'Narita')
+  },
+  Spanish: {
+    country: 'Spain',
+    landmark: '⛪ Sagrada Família',
+    bgGradient: 'from-amber-500 to-red-500',
+    character: 'Sofia',
+    role: 'Spanish Guide 🇪🇸',
+    avatar: '👩‍⚕️',
+    greeting: '¡Hola! Welcome! I am Sofia, your Spanish guide. Let\'s build your vocabulary step-by-step starting with greetings!',
+    missions: getMissionsForLanguage('Madrid', 'Barajas')
+  },
+  French: {
+    country: 'France',
+    landmark: '🗼 Eiffel Tower',
+    bgGradient: 'from-blue-600 to-rose-500',
+    character: 'Marie',
+    role: 'French Tutor 🇫🇷',
+    avatar: '👩',
+    greeting: 'Bonjour! Welcome! I am Marie, your French tutor. Let\'s learn French starting with the basics!',
+    missions: getMissionsForLanguage('Paris', 'CDG')
+  },
+  German: {
+    country: 'Germany',
+    landmark: '🏛️ Brandenburg Gate',
+    bgGradient: 'from-slate-700 to-orange-600',
+    character: 'Hans',
+    role: 'German Coach 🇩🇪',
+    avatar: '👨‍🔬',
+    greeting: 'Guten Tag! Welcome! I am Hans, your German coach. Let\'s build a solid foundation together!',
+    missions: getMissionsForLanguage('Berlin', 'Berlin')
+  },
+  Arabic: {
+    country: 'Arab World',
+    landmark: '🕌 Sheikh Zayed Mosque',
+    bgGradient: 'from-amber-600 to-orange-500',
+    character: 'Ahmed',
+    role: 'Arabic Host 🇸🇦',
+    avatar: '👨',
+    greeting: 'مرحبا! Welcome! I am Ahmed. Let\'s start our Arabic learning with core greetings and words!',
+    missions: getMissionsForLanguage('Riyadh', 'Riyadh')
+  },
+  Italian: {
+    country: 'Italy',
+    landmark: '🏛️ Colosseum',
+    bgGradient: 'from-green-600 to-orange-500',
+    character: 'Giovanni',
+    role: 'Italian Tutor 🇮🇹',
+    avatar: '👨‍🍳',
+    greeting: 'Ciao! Welcome! I am Giovanni. Let\'s master Italian greetings and everyday words!',
+    missions: getMissionsForLanguage('Rome', 'Fiumicino')
+  },
+  English: {
+    country: 'United Kingdom',
+    landmark: '🗼 Big Ben & London Eye',
+    bgGradient: 'from-blue-700 to-indigo-500',
+    character: 'Emma',
+    role: 'English Tutor 🇬🇧',
+    avatar: '👩‍💼',
+    greeting: 'Hello! Welcome! I am Emma, your English tutor. Let\'s begin with Greetings and Everyday words!',
+    missions: getMissionsForLanguage('London', 'Heathrow')
+  }
+};
+
+const getLessonDetails = (lesson, lang) => {
+  const world = storyWorldData[lang] || storyWorldData['English'];
+  const orderNumber = lesson.order || 1;
+  const mission = world.missions[orderNumber];
+  if (mission) {
+    return {
+      ...lesson,
+      title: mission.title,
+      category: mission.category,
+      location: mission.location
+    };
+  }
+  return lesson;
+};
+
 const fallbackUnitTitles = [
   'First Contact & Basics',
   'Everyday Chats & Coffee',
@@ -29,14 +149,15 @@ const fallbackUnitTitles = [
   'Mastering Deep Conversations'
 ];
 
-const groupLessonsIntoUnits = (items) => {
+const groupLessonsIntoUnits = (items, lang) => {
   const map = new Map();
-  items.forEach((lesson, index) => {
+  items.forEach((rawLesson, index) => {
+    const lesson = getLessonDetails(rawLesson, lang);
     const unitNumber = lesson.unit || Math.floor(index / 4) + 1;
     if (!map.has(unitNumber)) {
       map.set(unitNumber, {
         unitNumber,
-        title: lesson.unitTitle || fallbackUnitTitles[(unitNumber - 1) % fallbackUnitTitles.length],
+        title: lesson.unitTitle || (unitNumber === 1 ? `${lang} Adventure` : `Everyday Life in ${lang}`),
         lessons: []
       });
     }
@@ -131,10 +252,11 @@ const Learn = () => {
     fetchLessons(selectedLanguage);
   }, [selectedLanguage]);
 
-  const completedCount = lessons.filter(l => l.isCompleted).length;
-  const totalLessons = lessons.length;
+  const mappedLessons = lessons.map(l => getLessonDetails(l, selectedLanguage));
+  const completedCount = mappedLessons.filter(l => l.isCompleted).length;
+  const totalLessons = mappedLessons.length;
   const progressPct = totalLessons > 0 ? Math.round((completedCount / totalLessons) * 100) : 0;
-  const units = groupLessonsIntoUnits(lessons);
+  const units = groupLessonsIntoUnits(mappedLessons, selectedLanguage);
 
   return (
     <AppLayout>
@@ -191,6 +313,39 @@ const Learn = () => {
         </div>
       </div>
 
+      {!loading && mappedLessons.length > 0 && (
+        <div className={`relative bg-gradient-to-r ${storyWorldData[selectedLanguage]?.bgGradient || 'from-primary to-secondary'} border-2 border-white/10 rounded-3xl p-5 sm:p-6 text-white shadow-lg overflow-hidden mb-8`}>
+          {/* Decorative background landmark emoji */}
+          <div className="absolute right-4 -bottom-6 text-8xl opacity-15 select-none pointer-events-none">
+            {storyWorldData[selectedLanguage]?.avatar}
+          </div>
+          <div className="relative flex flex-col sm:flex-row items-center gap-4 z-10">
+            <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center text-4xl shadow-md border border-white/10 flex-shrink-0 animate-bounce">
+              {storyWorldData[selectedLanguage]?.avatar}
+            </div>
+            <div className="text-center sm:text-left flex-1">
+              <div className="flex flex-col sm:flex-row items-center gap-2 mb-1">
+                <h3 className="text-lg font-black">{storyWorldData[selectedLanguage]?.character}</h3>
+                <span className="text-[10px] font-black uppercase tracking-wider bg-black/25 px-2 py-0.5 rounded-md">
+                  {storyWorldData[selectedLanguage]?.role}
+                </span>
+              </div>
+              <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-semibold italic">
+                "{storyWorldData[selectedLanguage]?.greeting}"
+              </p>
+              <div className="mt-3 flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                <span className="text-[10px] font-bold bg-white/25 px-2.5 py-1 rounded-full flex items-center gap-1">
+                  📍 Current Place: <span className="underline font-black">{completedCount < totalLessons ? (mappedLessons[completedCount]?.location || 'Airport') : 'Completed'}</span>
+                </span>
+                <span className="text-[10px] font-bold bg-white/25 px-2.5 py-1 rounded-full">
+                  🌍 Landmark: {storyWorldData[selectedLanguage]?.landmark}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {loading ? (
         <div className="flex items-center justify-center py-24">
           <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
@@ -216,7 +371,7 @@ const Learn = () => {
                 <div className={`w-full rounded-3xl border-2 p-4 sm:p-5 mb-6 shadow-3d-card text-white overflow-hidden relative
                   ${unitLocked 
                     ? 'bg-slate-400 dark:bg-slate-700 border-slate-350 dark:border-slate-600 text-slate-200' 
-                    : 'bg-gradient-to-br from-primary to-secondary border-primary-hover shadow-3d-primary'}`}>
+                    : `bg-gradient-to-br ${storyWorldData[selectedLanguage]?.bgGradient || 'from-primary to-secondary'} border-white/10 shadow-3d-primary`}`}>
                   
                   {/* Decorative background circle */}
                   <div className="absolute -right-8 -bottom-8 w-24 h-24 bg-white/10 rounded-full" />

@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import api from '../services/api';
 import toast from 'react-hot-toast';
+import Button from '../components/common/Button';
 
 const AdminDashboard = () => {
   const { logout, user } = useAuth();
@@ -1366,7 +1367,7 @@ const AdminDashboard = () => {
                         </button>
                       </div>
 
-                      <form onSubmit={handleSaveLesson} className="space-y-5 text-xs font-bold text-text-main">
+                      <form className="space-y-5 text-xs font-bold text-text-main">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
                             <label className="block mb-1.5 uppercase font-black text-brand-dark/40 text-[9px]">Lesson Title</label>
@@ -1551,12 +1552,14 @@ const AdminDashboard = () => {
                           >
                             Cancel
                           </button>
-                          <button
-                            type="submit"
+                          <Button
+                            variant="custom"
+                            type="button"
+                            onClick={handleSaveLesson}
                             className="px-5 py-3 bg-brand-green text-text-main font-black rounded-xl shadow-md shadow-brand-green/20"
                           >
                             Save Lesson config
-                          </button>
+                          </Button>
                         </div>
                       </form>
                     </div>
@@ -1683,7 +1686,7 @@ const AdminDashboard = () => {
                         </button>
                       </div>
 
-                      <form onSubmit={handleSaveAchievement} className="space-y-5 text-xs font-bold text-text-main">
+                      <form className="space-y-5 text-xs font-bold text-text-main">
                         <div>
                           <label className="block mb-1.5 uppercase font-black text-brand-dark/40 text-[9px]">Unique ID identifier</label>
                           <input
@@ -1841,7 +1844,7 @@ const AdminDashboard = () => {
                         </button>
                       </div>
 
-                      <form onSubmit={handleSaveStoreItem} className="space-y-4 text-xs font-bold text-text-main">
+                      <div className="space-y-4 text-xs font-bold text-text-main">
                         <div>
                           <label className="block mb-1.5 uppercase font-black text-brand-dark/40 text-[9px]">Item ID (Identifier)</label>
                           <input
@@ -1932,21 +1935,25 @@ const AdminDashboard = () => {
                         </div>
 
                         <div className="flex justify-end gap-2 pt-4 border-t border-border dark:border-border">
-                          <button
+                          <button>
+                          
+                            variant="custom"
                             type="button"
                             onClick={() => setShowStoreModal(false)}
                             className="px-5 py-3 border-2 border-border dark:border-border hover:bg-bg-main font-black rounded-xl cursor-pointer text-xs"
-                          >
+                          
                             Cancel
                           </button>
-                          <button
-                            type="submit"
+                          <Button
+                            variant="custom"
+                            type="button"
+                            onClick={handleSaveStoreItem}
                             className="px-5 py-3 bg-brand-green text-text-main font-black rounded-xl shadow-md shadow-brand-green/20 cursor-pointer text-xs border-0"
                           >
                             Save Item
-                          </button>
+                          </Button>
                         </div>
-                      </form>
+                      </div>
                     </div>
                   </div>
                 )}
@@ -2139,7 +2146,7 @@ const AdminDashboard = () => {
                   <Settings size={16} className="text-brand-purple" /> Global Gamification Config Settings
                 </h3>
 
-                <form onSubmit={handleSaveConfig} className="space-y-4 text-xs font-bold text-text-main">
+                <div className="space-y-4 text-xs font-bold text-text-main">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block mb-1.5 uppercase font-black text-brand-dark/40 text-[9px]">Max Hearts limit</label>
@@ -2180,20 +2187,15 @@ const AdminDashboard = () => {
                     <span className="text-[10px] text-brand-dark/40 font-semibold block mt-1">E.g., 30 minutes adds 1 heart automatically up to the max hearts limit.</span>
                   </div>
 
-                  <button
-                    type="submit"
-                    disabled={savingConfig}
-                    className="w-full bg-brand-purple text-white py-3.5 rounded-2xl font-extrabold text-xs btn-3d shadow-3d-purple border-0 hover:bg-brand-purple/95 transition cursor-pointer flex items-center justify-center gap-1.5"
+                  <Button
+                    variant="custom"
+                    type="button"
+                    onClick={handleSaveConfig}
+                    className="mt-6 px-6 py-3 bg-brand-purple text-white font-black rounded-xl shadow-md shadow-brand-purple/20 flex items-center gap-2 transition hover:bg-purple-600 disabled:opacity-50"
                   >
-                    {savingConfig ? (
-                      <RefreshCw size={14} className="animate-spin" />
-                    ) : (
-                      <>
-                        <Save size={14} /> Save Config Settings
-                      </>
-                    )}
-                  </button>
-                </form>
+                    <Save size={16} /> Save Config Settings
+                  </Button>
+                </div>
               </div>
             )}
 
@@ -2347,7 +2349,7 @@ const AdminDashboard = () => {
                         </button>
                       </div>
 
-                      <form onSubmit={handleSaveOnboarding} className="flex-1 flex flex-col justify-between overflow-hidden">
+                      <form className="flex-1 flex flex-col justify-between overflow-hidden">
                         <div className="flex-1 overflow-y-auto mb-4 font-mono text-[11px] leading-relaxed">
                           <p className="text-[10px] font-bold text-amber-600 mb-2 font-sans">
                             📝 Warning: Please ensure the JSON markup is correct. Ensure keys like `nativeLanguages`, `targetLanguages`, and `learningGoals` remain present.
@@ -2374,12 +2376,14 @@ const AdminDashboard = () => {
                           >
                             Cancel
                           </button>
-                          <button
-                            type="submit"
+                          <Button
+                            variant="custom"
+                            type="button"
+                            onClick={handleSaveOnboarding}
                             className="px-5 py-3 bg-brand-green text-text-main font-black rounded-xl text-xs"
                           >
                             Save Options
-                          </button>
+                          </Button>
                         </div>
                       </form>
                     </div>
@@ -2533,7 +2537,7 @@ const AdminDashboard = () => {
                   Distribute virtual items, gems, hearts, or XP multipliers directly to specific learners, groups of learners, or all active users.
                 </p>
 
-                <form onSubmit={handleGiftRewardsSubmit} className="space-y-5">
+                <form className="space-y-5">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {/* Reward Type */}
                     <div className="space-y-1.5">
@@ -2657,13 +2661,15 @@ const AdminDashboard = () => {
                     </div>
                   )}
 
-                  <button
-                    type="submit"
+                  <Button
+                    variant="custom"
+                    type="button"
+                    onClick={handleGiftRewardsSubmit}
                     disabled={giftingReward}
                     className="w-full md:w-auto px-6 py-3 bg-brand-green text-text-main font-black text-xs rounded-xl cursor-pointer border-0 btn-3d shadow-3d-green hover:bg-brand-green-hover transition shadow-sm uppercase tracking-wider"
                   >
-                    {giftingReward ? 'Gifting...' : 'Distribute Reward Gift'}
-                  </button>
+                    Distribute Reward Gift
+                  </Button>
                 </form>
               </div>
             )}
@@ -2768,7 +2774,7 @@ const AdminDashboard = () => {
                         {isEditingAnnouncement ? 'Edit Announcement' : 'Publish New Announcement'}
                       </h3>
 
-                      <form onSubmit={handleAnnouncementSubmit} className="space-y-4">
+                      <form className="space-y-4">
                         <div className="space-y-1">
                           <label className="text-xs font-black text-brand-dark/60 uppercase">Announcement Title</label>
                           <input
@@ -2893,13 +2899,15 @@ const AdminDashboard = () => {
                           >
                             Cancel
                           </button>
-                          <button
-                            type="submit"
+                          <Button
+                            variant="custom"
+                            type="button"
+                            onClick={handleAnnouncementSubmit}
                             disabled={sendingAnnouncement}
                             className="px-5 py-2.5 bg-brand-green text-text-main font-black text-xs rounded-xl cursor-pointer border-0 btn-3d shadow-3d-green hover:bg-brand-green-hover transition"
                           >
-                            {sendingAnnouncement ? 'Saving...' : 'Save Announcement'}
-                          </button>
+                            Save Announcement
+                          </Button>
                         </div>
                       </form>
                     </div>
