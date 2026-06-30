@@ -187,7 +187,7 @@ const Profile = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
           <div className="bg-red-50 dark:bg-red-900/20 border-2 border-red-200 dark:border-red-800 rounded-2xl p-3 sm:p-4 text-center shadow-3d-card">
             <div className="flex justify-center mb-1.5 sm:mb-2"><span className="text-2xl">❤️</span></div>
-            <p className="text-lg sm:text-xl font-extrabold text-text-main">{(typeof user.hearts === 'object' ? user.hearts?.current : user.hearts) || 0}</p>
+            <p className="text-lg sm:text-xl font-extrabold text-text-main">{((user.hearts && typeof user.hearts === 'object') ? user.hearts.current : user.hearts) || 0}</p>
             <p className="text-[10px] sm:text-xs font-bold text-text-secondary">Hearts</p>
           </div>
           <div className="bg-blue-50 dark:bg-blue-900/20 border-2 border-blue-200 dark:border-blue-800 rounded-2xl p-3 sm:p-4 text-center shadow-3d-card">

@@ -1111,7 +1111,7 @@ const LessonRunner = () => {
       const res = await api.post('/shop/buy', { itemId: 'heart_refill' });
       if (res.data.success) {
         toast.success('Hearts refilled!');
-        setLessonHearts(res.data.user.hearts.current);
+        setLessonHearts(getHeartsCount(res.data.user));
         if (setUser) {
           setUser(res.data.user);
           localStorage.setItem('lingoleap_user', JSON.stringify(res.data.user));

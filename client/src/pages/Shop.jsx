@@ -183,21 +183,21 @@ const Shop = () => {
           /* Mobile List View */
           <div className="flex flex-col gap-3">
             {visibleItems.map(item => {
-              const ownedCount = ownedItems.filter(id => id === item.id).length;
+              const itemKey = item.itemId || item._id;
+              const ownedCount = ownedItems.filter(id => id === itemKey).length;
               const isMaxed = ownedCount >= item.maxOwnable;
               const canAfford = gems >= item.price || item.price === 0;
               const catMeta = CATEGORY_LABELS[item.category] || CATEGORY_LABELS.tools;
-              const isBuying = buying === item.id;
 
               return (
                 <div
-                  key={item.itemId || item._id}
+                  key={itemKey}
                   className={`bg-bg-card dark:bg-bg-card rounded-2xl border-2 p-3 flex items-center gap-3 shadow-sm transition-all ${
                     isMaxed ? 'border-brand-green/20 opacity-80' : 'border-border dark:border-border'
                   }`}
                 >
                   <div className="w-12 h-12 rounded-xl bg-brand-light dark:bg-bg-main/20 flex items-center justify-center border border-border dark:border-border flex-shrink-0">
-                    {ITEM_ICONS[item.itemId || item._id] || <span className="text-2xl">{item.icon}</span>}
+                    {ITEM_ICONS[itemKey] || <span className="text-2xl">{item.icon}</span>}
                   </div>
 
                   <div className="flex-1 min-w-0">

@@ -137,7 +137,7 @@ const Dashboard = () => {
 
   // Next unlocked lesson
   const nextLesson = lessons.find(l => !l.isCompleted && !l.isLocked);
-  const hearts = typeof user.hearts === 'object' ? user.hearts : { current: user.hearts ?? 5, max: 5 };
+  const hearts = (user.hearts && typeof user.hearts === 'object') ? user.hearts : { current: user.hearts ?? 5, max: 5 };
   const quests = learningState?.quests || [];
   const calendar = learningState?.calendar || [];
   const league = learningState?.league?.name || user.league || 'Bronze';

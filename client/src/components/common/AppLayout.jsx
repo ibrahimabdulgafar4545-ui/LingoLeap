@@ -68,7 +68,7 @@ const AppLayout = ({ children, noPadding = false }) => {
                   {/* Hearts Display */}
                   <div className="flex items-center gap-1 bg-brand-red/10 text-brand-red px-2 py-0.5 md:px-2.5 md:py-1 rounded-full text-[10px] md:text-[11px] font-black border border-brand-red/20 shadow-sm">
                     <Heart size={11} className="fill-current text-brand-red animate-pulse" />
-                    <span>{(typeof user.hearts === 'object' ? user.hearts?.current : user.hearts) ?? 5}</span>
+                    <span>{((user.hearts && typeof user.hearts === 'object') ? user.hearts.current : user.hearts) ?? 5}</span>
                   </div>
                 </div>
               )}
