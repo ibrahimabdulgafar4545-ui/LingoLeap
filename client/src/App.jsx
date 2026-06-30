@@ -13,7 +13,6 @@ const Dashboard = React.lazy(() => import('./pages/Dashboard'));
 const Learn = React.lazy(() => import('./pages/Learn'));
 const LessonRunner = React.lazy(() => import('./pages/LessonRunner'));
 const Practice = React.lazy(() => import('./pages/Practice'));
-const AITutor = React.lazy(() => import('./pages/AITutor'));
 const AIConversation = React.lazy(() => import('./pages/AIConversation'));
 const Achievements = React.lazy(() => import('./pages/Achievements'));
 const Leaderboard = React.lazy(() => import('./pages/Leaderboard'));
@@ -139,7 +138,6 @@ function AppRoutes() {
       <Route path="/learn" element={<ProtectedRoute><Learn /></ProtectedRoute>} />
       <Route path="/lesson/:id" element={<ProtectedRoute><LessonRunner /></ProtectedRoute>} />
       <Route path="/practice" element={<ProtectedRoute><Practice /></ProtectedRoute>} />
-      <Route path="/ai-tutor" element={<ProtectedRoute><AITutor /></ProtectedRoute>} />
       <Route path="/ai-conversation" element={<ProtectedRoute><AIConversation /></ProtectedRoute>} />
       <Route path="/achievements" element={<ProtectedRoute><Achievements /></ProtectedRoute>} />
       <Route path="/leaderboard" element={<ProtectedRoute><Leaderboard /></ProtectedRoute>} />

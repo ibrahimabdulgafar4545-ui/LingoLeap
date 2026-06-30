@@ -1,4 +1,4 @@
-=== DB SYNC DEBUG LOG AT 2026-06-29T15:46:54.466Z ===
+=== DB SYNC DEBUG LOG AT 2026-06-30T08:44:32.549Z ===
 Found 6 local users in db.json.
 User: testuser_1781852838739 (test_1781852838739@example.com)
   Local password hash: $2a$10$Sn7ApPhD44CA5KiyXPdr0.2/4S70lrF5PzvY9s.T0lDTZNNRXsBxO

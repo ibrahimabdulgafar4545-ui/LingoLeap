@@ -1,7 +1,7 @@
 import { io } from 'socket.io-client';
 
 const getSocketUrl = () => {
-  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5001';
+  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
   return apiUrl.endsWith('/api') ? apiUrl.slice(0, -4) : apiUrl;
 };
 

@@ -13,7 +13,6 @@ const navItems = [
   { to: '/dashboard', icon: <LayoutDashboard size={22} />, key: 'dashboard' },
   { to: '/learn', icon: <BookOpen size={22} />, key: 'learn' },
   { to: '/practice', icon: <Zap size={22} />, key: 'practice' },
-  { to: '/ai-tutor', icon: <Bot size={22} />, key: 'ai_tutor' },
   { to: '/ai-conversation', icon: <Globe size={22} />, key: 'ai_conversation' },
   { to: '/achievements', icon: <Trophy size={22} />, key: 'achievements' },
   { to: '/leaderboard', icon: <BarChart2 size={22} />, key: 'leaderboard' },

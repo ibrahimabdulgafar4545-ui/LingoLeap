@@ -63,10 +63,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Hello\" mean?",
         "options": [
-          "Hola",
+          "Gracias",
           "Adiós",
           "Por favor",
-          "Gracias"
+          "Hola"
         ],
         "correctAnswer": "Hola"
       },
@@ -74,10 +74,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Adiós\" in English?",
         "options": [
-          "Goodbye",
           "Please",
+          "Thank you",
           "Hello",
-          "Thank you"
+          "Goodbye"
         ],
         "correctAnswer": "Goodbye"
       },
@@ -86,9 +86,9 @@ export const lessonsData = [
         "prompt": "Which image matches \"Thank you\"?",
         "imageOptions": [
           "🙌",
+          "🙏",
           "👋",
-          "👋",
-          "🙏"
+          "👋"
         ],
         "correctAnswer": "🙏"
       },
@@ -97,10 +97,10 @@ export const lessonsData = [
         "prompt": "Listen to the English word and select the matching image.",
         "audioText": "Please",
         "imageOptions": [
+          "🙏",
           "🙌",
           "👋",
-          "👋",
-          "🙏"
+          "👋"
         ],
         "correctAnswer": "🙌"
       },
@@ -113,9 +113,9 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each English word to its meaning.",
         "options": [
-          "Por favor - Please",
-          "Hola - Hello",
           "Adiós - Goodbye",
+          "Hola - Hello",
+          "Por favor - Please",
           "Gracias - Thank you"
         ],
         "correctAnswer": "Matched successfully"
@@ -196,10 +196,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Car\" mean?",
         "options": [
-          "Agua",
           "Manzana",
+          "Casa",
           "Coche",
-          "Casa"
+          "Agua"
         ],
         "correctAnswer": "Coche"
       },
@@ -207,8 +207,8 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Casa\" in English?",
         "options": [
-          "House",
           "Apple",
+          "House",
           "Car",
           "Water"
         ],
@@ -218,10 +218,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Water\"?",
         "imageOptions": [
-          "🍎",
-          "💧",
+          "🚗",
           "🏠",
-          "🚗"
+          "💧",
+          "🍎"
         ],
         "correctAnswer": "💧"
       },
@@ -230,10 +230,10 @@ export const lessonsData = [
         "prompt": "Listen to the English word and select the matching image.",
         "audioText": "Apple",
         "imageOptions": [
-          "🏠",
-          "🚗",
           "🍎",
-          "💧"
+          "💧",
+          "🏠",
+          "🚗"
         ],
         "correctAnswer": "🍎"
       },
@@ -246,8 +246,8 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each English word to its meaning.",
         "options": [
-          "Coche - Car",
           "Casa - House",
+          "Coche - Car",
           "Agua - Water",
           "Manzana - Apple"
         ],
@@ -329,10 +329,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Dog\" mean?",
         "options": [
-          "Pájaro",
           "Perro",
           "Gato",
-          "Cabra"
+          "Cabra",
+          "Pájaro"
         ],
         "correctAnswer": "Perro"
       },
@@ -340,10 +340,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Gato\" in English?",
         "options": [
-          "Dog",
           "Bird",
           "Cat",
-          "Goat"
+          "Goat",
+          "Dog"
         ],
         "correctAnswer": "Cat"
       },
@@ -351,10 +351,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Goat\"?",
         "imageOptions": [
-          "🐶",
-          "🐱",
           "🐦",
-          "🐐"
+          "🐱",
+          "🐐",
+          "🐶"
         ],
         "correctAnswer": "🐐"
       },
@@ -363,10 +363,10 @@ export const lessonsData = [
         "prompt": "Listen to the English word and select the matching image.",
         "audioText": "Bird",
         "imageOptions": [
-          "🐶",
           "🐱",
           "🐐",
-          "🐦"
+          "🐦",
+          "🐶"
         ],
         "correctAnswer": "🐦"
       },
@@ -379,10 +379,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each English word to its meaning.",
         "options": [
-          "Pájaro - Bird",
-          "Cabra - Goat",
+          "Perro - Dog",
           "Gato - Cat",
-          "Perro - Dog"
+          "Cabra - Goat",
+          "Pájaro - Bird"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -462,9 +462,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Rice\" mean?",
         "options": [
-          "Arroz",
           "Carne",
           "Pan",
+          "Arroz",
           "Huevo"
         ],
         "correctAnswer": "Arroz"
@@ -473,10 +473,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Pan\" in English?",
         "options": [
+          "Bread",
           "Egg",
-          "Rice",
           "Meat",
-          "Bread"
+          "Rice"
         ],
         "correctAnswer": "Bread"
       },
@@ -484,10 +484,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Egg\"?",
         "imageOptions": [
-          "🍚",
-          "🥩",
+          "🥚",
           "🍞",
-          "🥚"
+          "🍚",
+          "🥩"
         ],
         "correctAnswer": "🥚"
       },
@@ -496,10 +496,10 @@ export const lessonsData = [
         "prompt": "Listen to the English word and select the matching image.",
         "audioText": "Meat",
         "imageOptions": [
-          "🍞",
           "🍚",
-          "🥚",
-          "🥩"
+          "🥩",
+          "🍞",
+          "🥚"
         ],
         "correctAnswer": "🥩"
       },
@@ -513,9 +513,9 @@ export const lessonsData = [
         "prompt": "Match each English word to its meaning.",
         "options": [
           "Arroz - Rice",
+          "Carne - Meat",
           "Pan - Bread",
-          "Huevo - Egg",
-          "Carne - Meat"
+          "Huevo - Egg"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -595,10 +595,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Mother\" mean?",
         "options": [
-          "Hermana",
-          "Hermano",
+          "Madre",
           "Padre",
-          "Madre"
+          "Hermano",
+          "Hermana"
         ],
         "correctAnswer": "Madre"
       },
@@ -606,9 +606,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Padre\" in English?",
         "options": [
-          "Father",
-          "Mother",
           "Brother",
+          "Mother",
+          "Father",
           "Sister"
         ],
         "correctAnswer": "Father"
@@ -617,10 +617,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Brother\"?",
         "imageOptions": [
-          "👨",
           "👧",
+          "👩",
           "👦",
-          "👩"
+          "👨"
         ],
         "correctAnswer": "👦"
       },
@@ -646,8 +646,8 @@ export const lessonsData = [
         "prompt": "Match each English word to its meaning.",
         "options": [
           "Madre - Mother",
-          "Padre - Father",
           "Hermana - Sister",
+          "Padre - Father",
           "Hermano - Brother"
         ],
         "correctAnswer": "Matched successfully"
@@ -728,10 +728,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"One\" mean?",
         "options": [
-          "Uno",
-          "Dos",
           "Cuatro",
-          "Tres"
+          "Tres",
+          "Dos",
+          "Uno"
         ],
         "correctAnswer": "Uno"
       },
@@ -739,10 +739,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Dos\" in English?",
         "options": [
-          "Two",
-          "Four",
           "Three",
-          "One"
+          "One",
+          "Two",
+          "Four"
         ],
         "correctAnswer": "Two"
       },
@@ -750,10 +750,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Three\"?",
         "imageOptions": [
-          "1️⃣",
+          "3️⃣",
           "2️⃣",
-          "4️⃣",
-          "3️⃣"
+          "1️⃣",
+          "4️⃣"
         ],
         "correctAnswer": "3️⃣"
       },
@@ -762,10 +762,10 @@ export const lessonsData = [
         "prompt": "Listen to the English word and select the matching image.",
         "audioText": "Four",
         "imageOptions": [
-          "1️⃣",
           "2️⃣",
+          "4️⃣",
           "3️⃣",
-          "4️⃣"
+          "1️⃣"
         ],
         "correctAnswer": "4️⃣"
       },
@@ -861,10 +861,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Red\" mean?",
         "options": [
-          "Rojo",
           "Verde",
+          "Azul",
           "Amarillo",
-          "Azul"
+          "Rojo"
         ],
         "correctAnswer": "Rojo"
       },
@@ -872,10 +872,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Azul\" in English?",
         "options": [
-          "Blue",
           "Red",
-          "Green",
-          "Yellow"
+          "Yellow",
+          "Blue",
+          "Green"
         ],
         "correctAnswer": "Blue"
       },
@@ -895,10 +895,10 @@ export const lessonsData = [
         "prompt": "Listen to the English word and select the matching image.",
         "audioText": "Yellow",
         "imageOptions": [
-          "🔴",
           "🟡",
           "🟢",
-          "🔵"
+          "🔵",
+          "🔴"
         ],
         "correctAnswer": "🟡"
       },
@@ -911,10 +911,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each English word to its meaning.",
         "options": [
-          "Amarillo - Yellow",
-          "Verde - Green",
+          "Rojo - Red",
           "Azul - Blue",
-          "Rojo - Red"
+          "Verde - Green",
+          "Amarillo - Yellow"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -994,9 +994,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Shirt\" mean?",
         "options": [
-          "Sombrero",
-          "Zapatos",
           "Pantalones",
+          "Zapatos",
+          "Sombrero",
           "Camisa"
         ],
         "correctAnswer": "Camisa"
@@ -1005,10 +1005,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Pantalones\" in English?",
         "options": [
+          "Pants",
           "Hat",
-          "Shoes",
           "Shirt",
-          "Pants"
+          "Shoes"
         ],
         "correctAnswer": "Pants"
       },
@@ -1018,8 +1018,8 @@ export const lessonsData = [
         "imageOptions": [
           "👕",
           "👖",
-          "👞",
-          "👒"
+          "👒",
+          "👞"
         ],
         "correctAnswer": "👞"
       },
@@ -1029,9 +1029,9 @@ export const lessonsData = [
         "audioText": "Hat",
         "imageOptions": [
           "👒",
-          "👞",
           "👕",
-          "👖"
+          "👖",
+          "👞"
         ],
         "correctAnswer": "👒"
       },
@@ -1044,10 +1044,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each English word to its meaning.",
         "options": [
-          "Camisa - Shirt",
           "Pantalones - Pants",
-          "Zapatos - Shoes",
-          "Sombrero - Hat"
+          "Sombrero - Hat",
+          "Camisa - Shirt",
+          "Zapatos - Shoes"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -1127,10 +1127,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Head\" mean?",
         "options": [
-          "Oreja",
           "Cabeza",
           "Cara",
-          "Ojo"
+          "Ojo",
+          "Oreja"
         ],
         "correctAnswer": "Cabeza"
       },
@@ -1138,8 +1138,8 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Cara\" in English?",
         "options": [
-          "Face",
           "Head",
+          "Face",
           "Eye",
           "Ear"
         ],
@@ -1149,9 +1149,9 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Eye\"?",
         "imageOptions": [
+          "👂",
           "👁️",
           "😊",
-          "👂",
           "👤"
         ],
         "correctAnswer": "👁️"
@@ -1161,9 +1161,9 @@ export const lessonsData = [
         "prompt": "Listen to the English word and select the matching image.",
         "audioText": "Ear",
         "imageOptions": [
-          "👁️",
-          "😊",
           "👂",
+          "😊",
+          "👁️",
           "👤"
         ],
         "correctAnswer": "👂"
@@ -1179,8 +1179,8 @@ export const lessonsData = [
         "options": [
           "Ojo - Eye",
           "Cara - Face",
-          "Oreja - Ear",
-          "Cabeza - Head"
+          "Cabeza - Head",
+          "Oreja - Ear"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -1260,10 +1260,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Sun\" mean?",
         "options": [
-          "Viento",
           "Nieve",
-          "Sol",
-          "Lluvia"
+          "Viento",
+          "Lluvia",
+          "Sol"
         ],
         "correctAnswer": "Sol"
       },
@@ -1271,10 +1271,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Lluvia\" in English?",
         "options": [
-          "Snow",
+          "Rain",
           "Sun",
           "Wind",
-          "Rain"
+          "Snow"
         ],
         "correctAnswer": "Rain"
       },
@@ -1282,10 +1282,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Wind\"?",
         "imageOptions": [
-          "💨",
+          "☀️",
           "🌧️",
-          "❄️",
-          "☀️"
+          "💨",
+          "❄️"
         ],
         "correctAnswer": "💨"
       },
@@ -1294,10 +1294,10 @@ export const lessonsData = [
         "prompt": "Listen to the English word and select the matching image.",
         "audioText": "Snow",
         "imageOptions": [
-          "☀️",
           "❄️",
+          "💨",
           "🌧️",
-          "💨"
+          "☀️"
         ],
         "correctAnswer": "❄️"
       },
@@ -1311,9 +1311,9 @@ export const lessonsData = [
         "prompt": "Match each English word to its meaning.",
         "options": [
           "Sol - Sun",
-          "Lluvia - Rain",
+          "Viento - Wind",
           "Nieve - Snow",
-          "Viento - Wind"
+          "Lluvia - Rain"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -1393,9 +1393,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Ticket\" mean?",
         "options": [
-          "Pasaporte",
           "Vuelo",
           "Equipaje",
+          "Pasaporte",
           "Billete"
         ],
         "correctAnswer": "Billete"
@@ -1404,8 +1404,8 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Pasaporte\" in English?",
         "options": [
-          "Ticket",
           "Passport",
+          "Ticket",
           "Flight",
           "Luggage"
         ],
@@ -1415,10 +1415,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Flight\"?",
         "imageOptions": [
-          "🎫",
           "🧳",
-          "🛂",
-          "✈️"
+          "✈️",
+          "🎫",
+          "🛂"
         ],
         "correctAnswer": "✈️"
       },
@@ -1427,9 +1427,9 @@ export const lessonsData = [
         "prompt": "Listen to the English word and select the matching image.",
         "audioText": "Luggage",
         "imageOptions": [
+          "🧳",
           "🎫",
           "🛂",
-          "🧳",
           "✈️"
         ],
         "correctAnswer": "🧳"
@@ -1443,10 +1443,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each English word to its meaning.",
         "options": [
-          "Equipaje - Luggage",
           "Billete - Ticket",
+          "Pasaporte - Passport",
           "Vuelo - Flight",
-          "Pasaporte - Passport"
+          "Equipaje - Luggage"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -1526,10 +1526,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Taxi\" mean?",
         "options": [
-          "Dirección",
-          "Conductor",
+          "Taxi",
           "Calle",
-          "Taxi"
+          "Conductor",
+          "Dirección"
         ],
         "correctAnswer": "Taxi"
       },
@@ -1537,9 +1537,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Conductor\" in English?",
         "options": [
-          "Address",
-          "Taxi",
           "Driver",
+          "Taxi",
+          "Address",
           "Street"
         ],
         "correctAnswer": "Driver"
@@ -1549,9 +1549,9 @@ export const lessonsData = [
         "prompt": "Which image matches \"Address\"?",
         "imageOptions": [
           "📍",
+          "👨‍✈️",
           "🚕",
-          "🛣️",
-          "👨‍✈️"
+          "🛣️"
         ],
         "correctAnswer": "📍"
       },
@@ -1560,9 +1560,9 @@ export const lessonsData = [
         "prompt": "Listen to the English word and select the matching image.",
         "audioText": "Street",
         "imageOptions": [
-          "👨‍✈️",
           "📍",
           "🚕",
+          "👨‍✈️",
           "🛣️"
         ],
         "correctAnswer": "🛣️"
@@ -1659,10 +1659,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Room\" mean?",
         "options": [
-          "Llave",
           "Habitación",
-          "Ducha",
-          "Cama"
+          "Llave",
+          "Cama",
+          "Ducha"
         ],
         "correctAnswer": "Habitación"
       },
@@ -1670,10 +1670,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Llave\" in English?",
         "options": [
+          "Bed",
           "Room",
-          "Shower",
           "Key",
-          "Bed"
+          "Shower"
         ],
         "correctAnswer": "Key"
       },
@@ -1681,8 +1681,8 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Bed\"?",
         "imageOptions": [
-          "🔑",
           "🗝️",
+          "🔑",
           "🛏️",
           "🚿"
         ],
@@ -1694,8 +1694,8 @@ export const lessonsData = [
         "audioText": "Shower",
         "imageOptions": [
           "🛏️",
-          "🗝️",
           "🔑",
+          "🗝️",
           "🚿"
         ],
         "correctAnswer": "🚿"
@@ -1709,9 +1709,9 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each English word to its meaning.",
         "options": [
-          "Llave - Key",
           "Cama - Bed",
           "Ducha - Shower",
+          "Llave - Key",
           "Habitación - Room"
         ],
         "correctAnswer": "Matched successfully"
@@ -1792,10 +1792,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Menu\" mean?",
         "options": [
-          "Menú",
-          "Comida",
           "Cuenta",
-          "Agua"
+          "Comida",
+          "Agua",
+          "Menú"
         ],
         "correctAnswer": "Menú"
       },
@@ -1803,10 +1803,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Agua\" in English?",
         "options": [
+          "Food",
           "Water",
           "Menu",
-          "Bill",
-          "Food"
+          "Bill"
         ],
         "correctAnswer": "Water"
       },
@@ -1814,10 +1814,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Bill\"?",
         "imageOptions": [
-          "🍲",
+          "🥤",
           "📜",
-          "🧾",
-          "🥤"
+          "🍲",
+          "🧾"
         ],
         "correctAnswer": "🧾"
       },
@@ -1826,9 +1826,9 @@ export const lessonsData = [
         "prompt": "Listen to the English word and select the matching image.",
         "audioText": "Food",
         "imageOptions": [
-          "🥤",
           "🧾",
           "🍲",
+          "🥤",
           "📜"
         ],
         "correctAnswer": "🍲"
@@ -1843,9 +1843,9 @@ export const lessonsData = [
         "prompt": "Match each English word to its meaning.",
         "options": [
           "Cuenta - Bill",
+          "Agua - Water",
           "Menú - Menu",
-          "Comida - Food",
-          "Agua - Water"
+          "Comida - Food"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -1937,9 +1937,9 @@ export const lessonsData = [
         "prompt": "How do you say \"Precio\" in English?",
         "options": [
           "Buy",
+          "Price",
           "Store",
-          "Money",
-          "Price"
+          "Money"
         ],
         "correctAnswer": "Price"
       },
@@ -1947,10 +1947,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Buy\"?",
         "imageOptions": [
+          "🛍️",
           "🏷️",
-          "🏪",
           "💰",
-          "🛍️"
+          "🏪"
         ],
         "correctAnswer": "🛍️"
       },
@@ -1959,10 +1959,10 @@ export const lessonsData = [
         "prompt": "Listen to the English word and select the matching image.",
         "audioText": "Money",
         "imageOptions": [
+          "🏪",
           "🛍️",
-          "🏷️",
           "💰",
-          "🏪"
+          "🏷️"
         ],
         "correctAnswer": "💰"
       },
@@ -1975,10 +1975,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each English word to its meaning.",
         "options": [
-          "Precio - Price",
           "Tienda - Store",
-          "Dinero - Money",
-          "Comprar - Buy"
+          "Precio - Price",
+          "Comprar - Buy",
+          "Dinero - Money"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -2058,9 +2058,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"School\" mean?",
         "options": [
-          "Profesor",
           "Escuela",
           "Clase",
+          "Profesor",
           "Estudiante"
         ],
         "correctAnswer": "Escuela"
@@ -2069,10 +2069,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Profesor\" in English?",
         "options": [
+          "Teacher",
           "Class",
           "Student",
-          "School",
-          "Teacher"
+          "School"
         ],
         "correctAnswer": "Teacher"
       },
@@ -2080,8 +2080,8 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Student\"?",
         "imageOptions": [
-          "🏫",
           "👩&zwj;🏫",
+          "🏫",
           "📖",
           "🧑&zwj;🎓"
         ],
@@ -2092,8 +2092,8 @@ export const lessonsData = [
         "prompt": "Listen to the English word and select the matching image.",
         "audioText": "Class",
         "imageOptions": [
-          "🏫",
           "📖",
+          "🏫",
           "👩&zwj;🏫",
           "🧑&zwj;🎓"
         ],
@@ -2108,10 +2108,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each English word to its meaning.",
         "options": [
-          "Profesor - Teacher",
+          "Estudiante - Student",
           "Clase - Class",
-          "Escuela - School",
-          "Estudiante - Student"
+          "Profesor - Teacher",
+          "Escuela - School"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -2191,10 +2191,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Hospital\" mean?",
         "options": [
+          "Hospital",
           "Médico",
-          "Enfermo",
           "Medicina",
-          "Hospital"
+          "Enfermo"
         ],
         "correctAnswer": "Hospital"
       },
@@ -2202,10 +2202,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Médico\" in English?",
         "options": [
-          "Doctor",
-          "Hospital",
           "Medicine",
-          "Sick"
+          "Sick",
+          "Hospital",
+          "Doctor"
         ],
         "correctAnswer": "Doctor"
       },
@@ -2213,10 +2213,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Medicine\"?",
         "imageOptions": [
-          "💊",
-          "🥼",
+          "🏥",
           "🤢",
-          "🏥"
+          "💊",
+          "🥼"
         ],
         "correctAnswer": "💊"
       },
@@ -2225,10 +2225,10 @@ export const lessonsData = [
         "prompt": "Listen to the English word and select the matching image.",
         "audioText": "Sick",
         "imageOptions": [
-          "🏥",
-          "🥼",
+          "🤢",
           "💊",
-          "🤢"
+          "🏥",
+          "🥼"
         ],
         "correctAnswer": "🤢"
       },
@@ -2241,9 +2241,9 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each English word to its meaning.",
         "options": [
+          "Enfermo - Sick",
           "Hospital - Hospital",
           "Médico - Doctor",
-          "Enfermo - Sick",
           "Medicina - Medicine"
         ],
         "correctAnswer": "Matched successfully"
@@ -2324,10 +2324,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Travel\" mean?",
         "options": [
-          "Autobús",
           "Viajar",
+          "Tren",
           "Ciudad",
-          "Tren"
+          "Autobús"
         ],
         "correctAnswer": "Viajar"
       },
@@ -2335,10 +2335,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Tren\" in English?",
         "options": [
-          "City",
           "Train",
-          "Travel",
-          "Bus"
+          "Bus",
+          "City",
+          "Travel"
         ],
         "correctAnswer": "Train"
       },
@@ -2346,9 +2346,9 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Bus\"?",
         "imageOptions": [
+          "🚆",
           "🧭",
           "🏙️",
-          "🚆",
           "🚌"
         ],
         "correctAnswer": "🚌"
@@ -2358,9 +2358,9 @@ export const lessonsData = [
         "prompt": "Listen to the English word and select the matching image.",
         "audioText": "City",
         "imageOptions": [
+          "🧭",
           "🚆",
           "🚌",
-          "🧭",
           "🏙️"
         ],
         "correctAnswer": "🏙️"
@@ -2374,10 +2374,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each English word to its meaning.",
         "options": [
-          "Ciudad - City",
-          "Autobús - Bus",
           "Tren - Train",
-          "Viajar - Travel"
+          "Viajar - Travel",
+          "Ciudad - City",
+          "Autobús - Bus"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -2408,10 +2408,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Thank you\" in English?",
         "options": [
-          "Goodbye",
+          "Thank you",
           "Hello",
-          "Please",
-          "Thank you"
+          "Goodbye",
+          "Please"
         ],
         "correctAnswer": "Thank you"
       },
@@ -2419,10 +2419,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image represents \"Car\"?",
         "imageOptions": [
-          "💧",
+          "🚗",
           "🏠",
-          "🍎",
-          "🚗"
+          "💧",
+          "🍎"
         ],
         "correctAnswer": "🚗"
       },
@@ -2433,8 +2433,8 @@ export const lessonsData = [
         "imageOptions": [
           "🐶",
           "🐱",
-          "🐦",
-          "🐐"
+          "🐐",
+          "🐦"
         ],
         "correctAnswer": "🐱"
       },
@@ -2514,8 +2514,8 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Bonjour\" mean?",
         "options": [
-          "Please",
           "Thank you",
+          "Please",
           "Goodbye",
           "Hello"
         ],
@@ -2525,10 +2525,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Goodbye\" in French?",
         "options": [
-          "Merci",
-          "Bonjour",
           "Au revoir",
-          "S'il vous plaît"
+          "S'il vous plaît",
+          "Merci",
+          "Bonjour"
         ],
         "correctAnswer": "Au revoir"
       },
@@ -2537,9 +2537,9 @@ export const lessonsData = [
         "prompt": "Which image matches \"Merci\"?",
         "imageOptions": [
           "👋",
-          "🙌",
+          "👋",
           "🙏",
-          "👋"
+          "🙌"
         ],
         "correctAnswer": "🙏"
       },
@@ -2647,10 +2647,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Voiture\" mean?",
         "options": [
+          "Apple",
           "Car",
-          "House",
           "Water",
-          "Apple"
+          "House"
         ],
         "correctAnswer": "Car"
       },
@@ -2659,9 +2659,9 @@ export const lessonsData = [
         "prompt": "How do you say \"House\" in French?",
         "options": [
           "Pomme",
-          "Eau",
+          "Maison",
           "Voiture",
-          "Maison"
+          "Eau"
         ],
         "correctAnswer": "Maison"
       },
@@ -2682,9 +2682,9 @@ export const lessonsData = [
         "audioText": "Pomme",
         "imageOptions": [
           "🍎",
+          "💧",
           "🏠",
-          "🚗",
-          "💧"
+          "🚗"
         ],
         "correctAnswer": "🍎"
       },
@@ -2781,9 +2781,9 @@ export const lessonsData = [
         "prompt": "What does \"Chien\" mean?",
         "options": [
           "Dog",
-          "Bird",
           "Cat",
-          "Goat"
+          "Goat",
+          "Bird"
         ],
         "correctAnswer": "Dog"
       },
@@ -2792,8 +2792,8 @@ export const lessonsData = [
         "prompt": "How do you say \"Cat\" in French?",
         "options": [
           "Chat",
-          "Chien",
           "Oiseau",
+          "Chien",
           "Chèvre"
         ],
         "correctAnswer": "Chat"
@@ -2804,8 +2804,8 @@ export const lessonsData = [
         "imageOptions": [
           "🐶",
           "🐱",
-          "🐦",
-          "🐐"
+          "🐐",
+          "🐦"
         ],
         "correctAnswer": "🐐"
       },
@@ -2814,9 +2814,9 @@ export const lessonsData = [
         "prompt": "Listen to the French word and select the matching image.",
         "audioText": "Oiseau",
         "imageOptions": [
-          "🐶",
           "🐱",
           "🐦",
+          "🐶",
           "🐐"
         ],
         "correctAnswer": "🐦"
@@ -2830,10 +2830,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each French word to its meaning.",
         "options": [
-          "Goat - Chèvre",
-          "Cat - Chat",
           "Bird - Oiseau",
-          "Dog - Chien"
+          "Cat - Chat",
+          "Dog - Chien",
+          "Goat - Chèvre"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -2913,9 +2913,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Riz\" mean?",
         "options": [
+          "Meat",
           "Rice",
           "Bread",
-          "Meat",
           "Egg"
         ],
         "correctAnswer": "Rice"
@@ -2924,10 +2924,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Bread\" in French?",
         "options": [
-          "Riz",
-          "Pain",
+          "Viande",
           "Œuf",
-          "Viande"
+          "Riz",
+          "Pain"
         ],
         "correctAnswer": "Pain"
       },
@@ -2935,10 +2935,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Œuf\"?",
         "imageOptions": [
-          "🍞",
           "🥩",
-          "🥚",
-          "🍚"
+          "🍚",
+          "🍞",
+          "🥚"
         ],
         "correctAnswer": "🥚"
       },
@@ -2947,9 +2947,9 @@ export const lessonsData = [
         "prompt": "Listen to the French word and select the matching image.",
         "audioText": "Viande",
         "imageOptions": [
-          "🍞",
-          "🥚",
           "🥩",
+          "🥚",
+          "🍞",
           "🍚"
         ],
         "correctAnswer": "🥩"
@@ -2963,10 +2963,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each French word to its meaning.",
         "options": [
+          "Rice - Riz",
           "Bread - Pain",
           "Egg - Œuf",
-          "Meat - Viande",
-          "Rice - Riz"
+          "Meat - Viande"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -3046,10 +3046,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Mère\" mean?",
         "options": [
-          "Mother",
-          "Father",
+          "Sister",
           "Brother",
-          "Sister"
+          "Mother",
+          "Father"
         ],
         "correctAnswer": "Mother"
       },
@@ -3057,10 +3057,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Father\" in French?",
         "options": [
-          "Frère",
-          "Père",
           "Mère",
-          "Sœur"
+          "Sœur",
+          "Père",
+          "Frère"
         ],
         "correctAnswer": "Père"
       },
@@ -3070,8 +3070,8 @@ export const lessonsData = [
         "imageOptions": [
           "👦",
           "👨",
-          "👧",
-          "👩"
+          "👩",
+          "👧"
         ],
         "correctAnswer": "👦"
       },
@@ -3081,8 +3081,8 @@ export const lessonsData = [
         "audioText": "Sœur",
         "imageOptions": [
           "👧",
-          "👨",
           "👩",
+          "👨",
           "👦"
         ],
         "correctAnswer": "👧"
@@ -3096,10 +3096,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each French word to its meaning.",
         "options": [
-          "Sister - Sœur",
           "Mother - Mère",
           "Father - Père",
-          "Brother - Frère"
+          "Brother - Frère",
+          "Sister - Sœur"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -3179,10 +3179,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Un\" mean?",
         "options": [
-          "Three",
-          "Two",
           "One",
-          "Four"
+          "Two",
+          "Four",
+          "Three"
         ],
         "correctAnswer": "One"
       },
@@ -3190,10 +3190,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Two\" in French?",
         "options": [
-          "Quatre",
-          "Trois",
+          "Deux",
           "Un",
-          "Deux"
+          "Trois",
+          "Quatre"
         ],
         "correctAnswer": "Deux"
       },
@@ -3201,10 +3201,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Trois\"?",
         "imageOptions": [
-          "2️⃣",
-          "1️⃣",
           "4️⃣",
-          "3️⃣"
+          "3️⃣",
+          "2️⃣",
+          "1️⃣"
         ],
         "correctAnswer": "3️⃣"
       },
@@ -3213,10 +3213,10 @@ export const lessonsData = [
         "prompt": "Listen to the French word and select the matching image.",
         "audioText": "Quatre",
         "imageOptions": [
-          "1️⃣",
-          "2️⃣",
+          "4️⃣",
           "3️⃣",
-          "4️⃣"
+          "2️⃣",
+          "1️⃣"
         ],
         "correctAnswer": "4️⃣"
       },
@@ -3229,10 +3229,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each French word to its meaning.",
         "options": [
-          "Three - Trois",
-          "Two - Deux",
           "Four - Quatre",
-          "One - Un"
+          "One - Un",
+          "Two - Deux",
+          "Three - Trois"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -3312,10 +3312,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Rouge\" mean?",
         "options": [
-          "Blue",
           "Green",
+          "Red",
           "Yellow",
-          "Red"
+          "Blue"
         ],
         "correctAnswer": "Red"
       },
@@ -3323,10 +3323,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Blue\" in French?",
         "options": [
-          "Jaune",
-          "Vert",
+          "Bleu",
           "Rouge",
-          "Bleu"
+          "Jaune",
+          "Vert"
         ],
         "correctAnswer": "Bleu"
       },
@@ -3334,10 +3334,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Vert\"?",
         "imageOptions": [
-          "🟡",
           "🟢",
-          "🔵",
-          "🔴"
+          "🔴",
+          "🟡",
+          "🔵"
         ],
         "correctAnswer": "🟢"
       },
@@ -3346,10 +3346,10 @@ export const lessonsData = [
         "prompt": "Listen to the French word and select the matching image.",
         "audioText": "Jaune",
         "imageOptions": [
-          "🟡",
-          "🔴",
+          "🟢",
           "🔵",
-          "🟢"
+          "🔴",
+          "🟡"
         ],
         "correctAnswer": "🟡"
       },
@@ -3363,9 +3363,9 @@ export const lessonsData = [
         "prompt": "Match each French word to its meaning.",
         "options": [
           "Red - Rouge",
+          "Green - Vert",
           "Yellow - Jaune",
-          "Blue - Bleu",
-          "Green - Vert"
+          "Blue - Bleu"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -3445,9 +3445,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Chemise\" mean?",
         "options": [
-          "Hat",
-          "Shoes",
           "Pants",
+          "Shoes",
+          "Hat",
           "Shirt"
         ],
         "correctAnswer": "Shirt"
@@ -3456,10 +3456,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Pants\" in French?",
         "options": [
-          "Chaussures",
-          "Pantalon",
           "Chapeau",
-          "Chemise"
+          "Chaussures",
+          "Chemise",
+          "Pantalon"
         ],
         "correctAnswer": "Pantalon"
       },
@@ -3467,10 +3467,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Chaussures\"?",
         "imageOptions": [
-          "👕",
+          "👒",
           "👖",
           "👞",
-          "👒"
+          "👕"
         ],
         "correctAnswer": "👞"
       },
@@ -3479,10 +3479,10 @@ export const lessonsData = [
         "prompt": "Listen to the French word and select the matching image.",
         "audioText": "Chapeau",
         "imageOptions": [
-          "👕",
           "👖",
+          "👒",
           "👞",
-          "👒"
+          "👕"
         ],
         "correctAnswer": "👒"
       },
@@ -3495,10 +3495,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each French word to its meaning.",
         "options": [
-          "Hat - Chapeau",
-          "Shoes - Chaussures",
+          "Shirt - Chemise",
           "Pants - Pantalon",
-          "Shirt - Chemise"
+          "Shoes - Chaussures",
+          "Hat - Chapeau"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -3578,10 +3578,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Tête\" mean?",
         "options": [
-          "Head",
-          "Ear",
+          "Eye",
           "Face",
-          "Eye"
+          "Head",
+          "Ear"
         ],
         "correctAnswer": "Head"
       },
@@ -3589,10 +3589,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Face\" in French?",
         "options": [
-          "Oreille",
+          "Tête",
           "Visage",
           "Œil",
-          "Tête"
+          "Oreille"
         ],
         "correctAnswer": "Visage"
       },
@@ -3600,10 +3600,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Œil\"?",
         "imageOptions": [
+          "👤",
           "👂",
-          "👁️",
           "😊",
-          "👤"
+          "👁️"
         ],
         "correctAnswer": "👁️"
       },
@@ -3612,10 +3612,10 @@ export const lessonsData = [
         "prompt": "Listen to the French word and select the matching image.",
         "audioText": "Oreille",
         "imageOptions": [
-          "👂",
+          "👤",
           "👁️",
           "😊",
-          "👤"
+          "👂"
         ],
         "correctAnswer": "👂"
       },
@@ -3711,8 +3711,8 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Soleil\" mean?",
         "options": [
-          "Wind",
           "Snow",
+          "Wind",
           "Rain",
           "Sun"
         ],
@@ -3722,10 +3722,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Rain\" in French?",
         "options": [
-          "Neige",
           "Pluie",
           "Soleil",
-          "Vent"
+          "Vent",
+          "Neige"
         ],
         "correctAnswer": "Pluie"
       },
@@ -3733,10 +3733,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Vent\"?",
         "imageOptions": [
-          "❄️",
-          "💨",
+          "☀️",
           "🌧️",
-          "☀️"
+          "❄️",
+          "💨"
         ],
         "correctAnswer": "💨"
       },
@@ -3745,8 +3745,8 @@ export const lessonsData = [
         "prompt": "Listen to the French word and select the matching image.",
         "audioText": "Neige",
         "imageOptions": [
-          "💨",
           "❄️",
+          "💨",
           "🌧️",
           "☀️"
         ],
@@ -3761,10 +3761,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each French word to its meaning.",
         "options": [
-          "Sun - Soleil",
-          "Rain - Pluie",
+          "Snow - Neige",
           "Wind - Vent",
-          "Snow - Neige"
+          "Sun - Soleil",
+          "Rain - Pluie"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -3866,10 +3866,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Vol\"?",
         "imageOptions": [
-          "✈️",
+          "🧳",
           "🛂",
-          "🎫",
-          "🧳"
+          "✈️",
+          "🎫"
         ],
         "correctAnswer": "✈️"
       },
@@ -3895,9 +3895,9 @@ export const lessonsData = [
         "prompt": "Match each French word to its meaning.",
         "options": [
           "Luggage - Bagage",
+          "Flight - Vol",
           "Passport - Passeport",
-          "Ticket - Billet",
-          "Flight - Vol"
+          "Ticket - Billet"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -3977,10 +3977,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Taxi\" mean?",
         "options": [
-          "Taxi",
-          "Driver",
+          "Street",
           "Address",
-          "Street"
+          "Driver",
+          "Taxi"
         ],
         "correctAnswer": "Taxi"
       },
@@ -3988,10 +3988,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Driver\" in French?",
         "options": [
-          "Rue",
-          "Chauffeur",
+          "Adresse",
           "Taxi",
-          "Adresse"
+          "Chauffeur",
+          "Rue"
         ],
         "correctAnswer": "Chauffeur"
       },
@@ -3999,10 +3999,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Adresse\"?",
         "imageOptions": [
-          "🛣️",
           "📍",
-          "👨‍✈️",
-          "🚕"
+          "🛣️",
+          "🚕",
+          "👨‍✈️"
         ],
         "correctAnswer": "📍"
       },
@@ -4011,10 +4011,10 @@ export const lessonsData = [
         "prompt": "Listen to the French word and select the matching image.",
         "audioText": "Rue",
         "imageOptions": [
-          "🛣️",
-          "📍",
+          "🚕",
           "👨‍✈️",
-          "🚕"
+          "📍",
+          "🛣️"
         ],
         "correctAnswer": "🛣️"
       },
@@ -4027,10 +4027,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each French word to its meaning.",
         "options": [
-          "Taxi - Taxi",
-          "Driver - Chauffeur",
+          "Street - Rue",
           "Address - Adresse",
-          "Street - Rue"
+          "Driver - Chauffeur",
+          "Taxi - Taxi"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -4111,9 +4111,9 @@ export const lessonsData = [
         "prompt": "What does \"Chambre\" mean?",
         "options": [
           "Shower",
-          "Room",
+          "Bed",
           "Key",
-          "Bed"
+          "Room"
         ],
         "correctAnswer": "Room"
       },
@@ -4121,10 +4121,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Key\" in French?",
         "options": [
-          "Chambre",
-          "Clé",
           "Lit",
-          "Douche"
+          "Douche",
+          "Chambre",
+          "Clé"
         ],
         "correctAnswer": "Clé"
       },
@@ -4132,10 +4132,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Lit\"?",
         "imageOptions": [
-          "🗝️",
-          "🔑",
           "🛏️",
-          "🚿"
+          "🗝️",
+          "🚿",
+          "🔑"
         ],
         "correctAnswer": "🛏️"
       },
@@ -4144,10 +4144,10 @@ export const lessonsData = [
         "prompt": "Listen to the French word and select the matching image.",
         "audioText": "Douche",
         "imageOptions": [
-          "🗝️",
           "🔑",
           "🚿",
-          "🛏️"
+          "🛏️",
+          "🗝️"
         ],
         "correctAnswer": "🚿"
       },
@@ -4160,10 +4160,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each French word to its meaning.",
         "options": [
-          "Bed - Lit",
-          "Key - Clé",
+          "Shower - Douche",
           "Room - Chambre",
-          "Shower - Douche"
+          "Key - Clé",
+          "Bed - Lit"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -4254,10 +4254,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Water\" in French?",
         "options": [
-          "Menu",
+          "Nourriture",
           "Eau",
-          "Addition",
-          "Nourriture"
+          "Menu",
+          "Addition"
         ],
         "correctAnswer": "Eau"
       },
@@ -4265,10 +4265,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Addition\"?",
         "imageOptions": [
-          "🥤",
+          "🧾",
           "🍲",
-          "📜",
-          "🧾"
+          "🥤",
+          "📜"
         ],
         "correctAnswer": "🧾"
       },
@@ -4277,10 +4277,10 @@ export const lessonsData = [
         "prompt": "Listen to the French word and select the matching image.",
         "audioText": "Nourriture",
         "imageOptions": [
-          "📜",
+          "🧾",
           "🥤",
           "🍲",
-          "🧾"
+          "📜"
         ],
         "correctAnswer": "🍲"
       },
@@ -4293,10 +4293,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each French word to its meaning.",
         "options": [
-          "Food - Nourriture",
-          "Bill - Addition",
+          "Menu - Menu",
           "Water - Eau",
-          "Menu - Menu"
+          "Bill - Addition",
+          "Food - Nourriture"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -4376,9 +4376,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Magasin\" mean?",
         "options": [
-          "Store",
-          "Money",
           "Price",
+          "Money",
+          "Store",
           "Buy"
         ],
         "correctAnswer": "Store"
@@ -4387,10 +4387,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Price\" in French?",
         "options": [
-          "Acheter",
           "Prix",
           "Magasin",
-          "Argent"
+          "Argent",
+          "Acheter"
         ],
         "correctAnswer": "Prix"
       },
@@ -4398,10 +4398,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Acheter\"?",
         "imageOptions": [
-          "🏪",
-          "🏷️",
           "🛍️",
-          "💰"
+          "🏷️",
+          "💰",
+          "🏪"
         ],
         "correctAnswer": "🛍️"
       },
@@ -4410,10 +4410,10 @@ export const lessonsData = [
         "prompt": "Listen to the French word and select the matching image.",
         "audioText": "Argent",
         "imageOptions": [
-          "🏷️",
-          "💰",
           "🏪",
-          "🛍️"
+          "🛍️",
+          "🏷️",
+          "💰"
         ],
         "correctAnswer": "💰"
       },
@@ -4428,8 +4428,8 @@ export const lessonsData = [
         "options": [
           "Store - Magasin",
           "Price - Prix",
-          "Money - Argent",
-          "Buy - Acheter"
+          "Buy - Acheter",
+          "Money - Argent"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -4511,8 +4511,8 @@ export const lessonsData = [
         "options": [
           "School",
           "Teacher",
-          "Student",
-          "Class"
+          "Class",
+          "Student"
         ],
         "correctAnswer": "School"
       },
@@ -4520,10 +4520,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Teacher\" in French?",
         "options": [
-          "Professeur",
           "École",
-          "Étudiant",
-          "Classe"
+          "Professeur",
+          "Classe",
+          "Étudiant"
         ],
         "correctAnswer": "Professeur"
       },
@@ -4531,10 +4531,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Étudiant\"?",
         "imageOptions": [
-          "🧑&zwj;🎓",
-          "👩&zwj;🏫",
+          "🏫",
           "📖",
-          "🏫"
+          "👩&zwj;🏫",
+          "🧑&zwj;🎓"
         ],
         "correctAnswer": "🧑&zwj;🎓"
       },
@@ -4543,10 +4543,10 @@ export const lessonsData = [
         "prompt": "Listen to the French word and select the matching image.",
         "audioText": "Classe",
         "imageOptions": [
-          "👩&zwj;🏫",
           "🏫",
-          "📖",
-          "🧑&zwj;🎓"
+          "👩&zwj;🏫",
+          "🧑&zwj;🎓",
+          "📖"
         ],
         "correctAnswer": "📖"
       },
@@ -4560,9 +4560,9 @@ export const lessonsData = [
         "prompt": "Match each French word to its meaning.",
         "options": [
           "Class - Classe",
-          "School - École",
+          "Student - Étudiant",
           "Teacher - Professeur",
-          "Student - Étudiant"
+          "School - École"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -4642,10 +4642,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Hôpital\" mean?",
         "options": [
-          "Sick",
+          "Medicine",
           "Doctor",
-          "Hospital",
-          "Medicine"
+          "Sick",
+          "Hospital"
         ],
         "correctAnswer": "Hospital"
       },
@@ -4653,10 +4653,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Doctor\" in French?",
         "options": [
-          "Hôpital",
-          "Malade",
+          "Medicina",
           "Médecin",
-          "Medicina"
+          "Hôpital",
+          "Malade"
         ],
         "correctAnswer": "Médecin"
       },
@@ -4664,10 +4664,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Medicina\"?",
         "imageOptions": [
-          "💊",
-          "🤢",
+          "🏥",
           "🥼",
-          "🏥"
+          "🤢",
+          "💊"
         ],
         "correctAnswer": "💊"
       },
@@ -4693,9 +4693,9 @@ export const lessonsData = [
         "prompt": "Match each French word to its meaning.",
         "options": [
           "Sick - Malade",
-          "Medicine - Medicina",
+          "Doctor - Médecin",
           "Hospital - Hôpital",
-          "Doctor - Médecin"
+          "Medicine - Medicina"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -4775,10 +4775,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Voyager\" mean?",
         "options": [
-          "Bus",
-          "City",
+          "Travel",
           "Train",
-          "Travel"
+          "Bus",
+          "City"
         ],
         "correctAnswer": "Travel"
       },
@@ -4787,9 +4787,9 @@ export const lessonsData = [
         "prompt": "How do you say \"Train\" in French?",
         "options": [
           "Train",
+          "Ville",
           "Voyager",
-          "Bus",
-          "Ville"
+          "Bus"
         ],
         "correctAnswer": "Train"
       },
@@ -4797,10 +4797,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Bus\"?",
         "imageOptions": [
-          "🧭",
-          "🚆",
           "🚌",
-          "🏙️"
+          "🚆",
+          "🏙️",
+          "🧭"
         ],
         "correctAnswer": "🚌"
       },
@@ -4809,10 +4809,10 @@ export const lessonsData = [
         "prompt": "Listen to the French word and select the matching image.",
         "audioText": "Ville",
         "imageOptions": [
-          "🚆",
           "🧭",
-          "🏙️",
-          "🚌"
+          "🚌",
+          "🚆",
+          "🏙️"
         ],
         "correctAnswer": "🏙️"
       },
@@ -4825,8 +4825,8 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each French word to its meaning.",
         "options": [
-          "Train - Train",
           "Travel - Voyager",
+          "Train - Train",
           "City - Ville",
           "Bus - Bus"
         ],
@@ -4860,9 +4860,9 @@ export const lessonsData = [
         "prompt": "How do you say \"Thank you\" in French?",
         "options": [
           "Au revoir",
+          "S'il vous plaît",
           "Bonjour",
-          "Merci",
-          "S'il vous plaît"
+          "Merci"
         ],
         "correctAnswer": "Merci"
       },
@@ -4870,10 +4870,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image represents \"Voiture\"?",
         "imageOptions": [
-          "🏠",
-          "🚗",
           "🍎",
-          "💧"
+          "💧",
+          "🏠",
+          "🚗"
         ],
         "correctAnswer": "🚗"
       },
@@ -4882,10 +4882,10 @@ export const lessonsData = [
         "prompt": "Listen to the French word and choose the matching image.",
         "audioText": "Chat",
         "imageOptions": [
-          "🐐",
-          "🐶",
           "🐦",
-          "🐱"
+          "🐐",
+          "🐱",
+          "🐶"
         ],
         "correctAnswer": "🐱"
       },
@@ -4965,8 +4965,8 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Hola\" mean?",
         "options": [
-          "Goodbye",
           "Hello",
+          "Goodbye",
           "Thank you",
           "Please"
         ],
@@ -4976,9 +4976,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Goodbye\" in Spanish?",
         "options": [
-          "Hola",
-          "Gracias",
           "Por favor",
+          "Gracias",
+          "Hola",
           "Adiós"
         ],
         "correctAnswer": "Adiós"
@@ -4999,9 +4999,9 @@ export const lessonsData = [
         "prompt": "Listen to the Spanish word and select the matching image.",
         "audioText": "Por favor",
         "imageOptions": [
-          "🙌",
-          "👋",
           "🙏",
+          "👋",
+          "🙌",
           "👋"
         ],
         "correctAnswer": "🙌"
@@ -5015,10 +5015,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Spanish word to its meaning.",
         "options": [
-          "Thank you - Gracias",
-          "Goodbye - Adiós",
           "Hello - Hola",
-          "Please - Por favor"
+          "Please - Por favor",
+          "Goodbye - Adiós",
+          "Thank you - Gracias"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -5099,9 +5099,9 @@ export const lessonsData = [
         "prompt": "What does \"Coche\" mean?",
         "options": [
           "Apple",
+          "House",
           "Car",
-          "Water",
-          "House"
+          "Water"
         ],
         "correctAnswer": "Car"
       },
@@ -5109,10 +5109,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"House\" in Spanish?",
         "options": [
-          "Casa",
           "Manzana",
-          "Agua",
-          "Coche"
+          "Casa",
+          "Coche",
+          "Agua"
         ],
         "correctAnswer": "Casa"
       },
@@ -5132,8 +5132,8 @@ export const lessonsData = [
         "prompt": "Listen to the Spanish word and select the matching image.",
         "audioText": "Manzana",
         "imageOptions": [
-          "🍎",
           "🚗",
+          "🍎",
           "🏠",
           "💧"
         ],
@@ -5232,9 +5232,9 @@ export const lessonsData = [
         "prompt": "What does \"Perro\" mean?",
         "options": [
           "Bird",
-          "Goat",
+          "Dog",
           "Cat",
-          "Dog"
+          "Goat"
         ],
         "correctAnswer": "Dog"
       },
@@ -5242,10 +5242,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Cat\" in Spanish?",
         "options": [
+          "Perro",
           "Gato",
-          "Cabra",
           "Pájaro",
-          "Perro"
+          "Cabra"
         ],
         "correctAnswer": "Gato"
       },
@@ -5253,8 +5253,8 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Cabra\"?",
         "imageOptions": [
-          "🐱",
           "🐶",
+          "🐱",
           "🐐",
           "🐦"
         ],
@@ -5265,10 +5265,10 @@ export const lessonsData = [
         "prompt": "Listen to the Spanish word and select the matching image.",
         "audioText": "Pájaro",
         "imageOptions": [
-          "🐦",
-          "🐶",
+          "🐐",
           "🐱",
-          "🐐"
+          "🐦",
+          "🐶"
         ],
         "correctAnswer": "🐦"
       },
@@ -5281,10 +5281,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Spanish word to its meaning.",
         "options": [
-          "Goat - Cabra",
-          "Dog - Perro",
           "Cat - Gato",
-          "Bird - Pájaro"
+          "Bird - Pájaro",
+          "Dog - Perro",
+          "Goat - Cabra"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -5364,10 +5364,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Arroz\" mean?",
         "options": [
-          "Egg",
           "Bread",
-          "Rice",
-          "Meat"
+          "Egg",
+          "Meat",
+          "Rice"
         ],
         "correctAnswer": "Rice"
       },
@@ -5375,10 +5375,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Bread\" in Spanish?",
         "options": [
-          "Arroz",
+          "Huevo",
           "Carne",
           "Pan",
-          "Huevo"
+          "Arroz"
         ],
         "correctAnswer": "Pan"
       },
@@ -5386,10 +5386,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Huevo\"?",
         "imageOptions": [
-          "🍞",
+          "🥩",
           "🍚",
-          "🥚",
-          "🥩"
+          "🍞",
+          "🥚"
         ],
         "correctAnswer": "🥚"
       },
@@ -5400,8 +5400,8 @@ export const lessonsData = [
         "imageOptions": [
           "🥚",
           "🍞",
-          "🍚",
-          "🥩"
+          "🥩",
+          "🍚"
         ],
         "correctAnswer": "🥩"
       },
@@ -5414,10 +5414,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Spanish word to its meaning.",
         "options": [
-          "Rice - Arroz",
-          "Bread - Pan",
           "Meat - Carne",
-          "Egg - Huevo"
+          "Egg - Huevo",
+          "Bread - Pan",
+          "Rice - Arroz"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -5509,8 +5509,8 @@ export const lessonsData = [
         "prompt": "How do you say \"Father\" in Spanish?",
         "options": [
           "Hermana",
-          "Padre",
           "Madre",
+          "Padre",
           "Hermano"
         ],
         "correctAnswer": "Padre"
@@ -5519,10 +5519,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Hermano\"?",
         "imageOptions": [
+          "👧",
           "👩",
-          "👦",
           "👨",
-          "👧"
+          "👦"
         ],
         "correctAnswer": "👦"
       },
@@ -5531,10 +5531,10 @@ export const lessonsData = [
         "prompt": "Listen to the Spanish word and select the matching image.",
         "audioText": "Hermana",
         "imageOptions": [
-          "👧",
           "👦",
           "👨",
-          "👩"
+          "👩",
+          "👧"
         ],
         "correctAnswer": "👧"
       },
@@ -5548,9 +5548,9 @@ export const lessonsData = [
         "prompt": "Match each Spanish word to its meaning.",
         "options": [
           "Mother - Madre",
+          "Sister - Hermana",
           "Father - Padre",
-          "Brother - Hermano",
-          "Sister - Hermana"
+          "Brother - Hermano"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -5630,10 +5630,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Uno\" mean?",
         "options": [
-          "One",
-          "Three",
+          "Two",
           "Four",
-          "Two"
+          "Three",
+          "One"
         ],
         "correctAnswer": "One"
       },
@@ -5641,10 +5641,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Two\" in Spanish?",
         "options": [
-          "Uno",
           "Dos",
           "Cuatro",
-          "Tres"
+          "Tres",
+          "Uno"
         ],
         "correctAnswer": "Dos"
       },
@@ -5652,10 +5652,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Tres\"?",
         "imageOptions": [
+          "1️⃣",
           "3️⃣",
           "2️⃣",
-          "4️⃣",
-          "1️⃣"
+          "4️⃣"
         ],
         "correctAnswer": "3️⃣"
       },
@@ -5664,10 +5664,10 @@ export const lessonsData = [
         "prompt": "Listen to the Spanish word and select the matching image.",
         "audioText": "Cuatro",
         "imageOptions": [
-          "1️⃣",
           "4️⃣",
-          "2️⃣",
-          "3️⃣"
+          "3️⃣",
+          "1️⃣",
+          "2️⃣"
         ],
         "correctAnswer": "4️⃣"
       },
@@ -5680,10 +5680,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Spanish word to its meaning.",
         "options": [
+          "Four - Cuatro",
           "One - Uno",
           "Two - Dos",
-          "Three - Tres",
-          "Four - Cuatro"
+          "Three - Tres"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -5763,10 +5763,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Rojo\" mean?",
         "options": [
-          "Yellow",
           "Red",
           "Blue",
-          "Green"
+          "Green",
+          "Yellow"
         ],
         "correctAnswer": "Red"
       },
@@ -5774,10 +5774,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Blue\" in Spanish?",
         "options": [
-          "Azul",
-          "Rojo",
+          "Amarillo",
           "Verde",
-          "Amarillo"
+          "Rojo",
+          "Azul"
         ],
         "correctAnswer": "Azul"
       },
@@ -5785,10 +5785,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Verde\"?",
         "imageOptions": [
-          "🟡",
+          "🔴",
           "🟢",
           "🔵",
-          "🔴"
+          "🟡"
         ],
         "correctAnswer": "🟢"
       },
@@ -5797,10 +5797,10 @@ export const lessonsData = [
         "prompt": "Listen to the Spanish word and select the matching image.",
         "audioText": "Amarillo",
         "imageOptions": [
-          "🟢",
-          "🔵",
           "🔴",
-          "🟡"
+          "🟢",
+          "🟡",
+          "🔵"
         ],
         "correctAnswer": "🟡"
       },
@@ -5813,10 +5813,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Spanish word to its meaning.",
         "options": [
-          "Red - Rojo",
           "Yellow - Amarillo",
+          "Green - Verde",
           "Blue - Azul",
-          "Green - Verde"
+          "Red - Rojo"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -5896,10 +5896,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Camisa\" mean?",
         "options": [
-          "Hat",
-          "Shoes",
+          "Shirt",
           "Pants",
-          "Shirt"
+          "Shoes",
+          "Hat"
         ],
         "correctAnswer": "Shirt"
       },
@@ -5930,10 +5930,10 @@ export const lessonsData = [
         "prompt": "Listen to the Spanish word and select the matching image.",
         "audioText": "Sombrero",
         "imageOptions": [
+          "👞",
           "👒",
-          "👕",
           "👖",
-          "👞"
+          "👕"
         ],
         "correctAnswer": "👒"
       },
@@ -5947,9 +5947,9 @@ export const lessonsData = [
         "prompt": "Match each Spanish word to its meaning.",
         "options": [
           "Hat - Sombrero",
-          "Shirt - Camisa",
           "Shoes - Zapatos",
-          "Pants - Pantalones"
+          "Pants - Pantalones",
+          "Shirt - Camisa"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -6029,9 +6029,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Cabeza\" mean?",
         "options": [
-          "Head",
-          "Face",
           "Eye",
+          "Face",
+          "Head",
           "Ear"
         ],
         "correctAnswer": "Head"
@@ -6040,10 +6040,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Face\" in Spanish?",
         "options": [
-          "Cabeza",
           "Cara",
-          "Oreja",
-          "Ojo"
+          "Cabeza",
+          "Ojo",
+          "Oreja"
         ],
         "correctAnswer": "Cara"
       },
@@ -6053,8 +6053,8 @@ export const lessonsData = [
         "imageOptions": [
           "😊",
           "👤",
-          "👁️",
-          "👂"
+          "👂",
+          "👁️"
         ],
         "correctAnswer": "👁️"
       },
@@ -6081,8 +6081,8 @@ export const lessonsData = [
         "options": [
           "Head - Cabeza",
           "Face - Cara",
-          "Eye - Ojo",
-          "Ear - Oreja"
+          "Ear - Oreja",
+          "Eye - Ojo"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -6162,10 +6162,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Sol\" mean?",
         "options": [
-          "Snow",
-          "Wind",
           "Rain",
-          "Sun"
+          "Snow",
+          "Sun",
+          "Wind"
         ],
         "correctAnswer": "Sun"
       },
@@ -6174,8 +6174,8 @@ export const lessonsData = [
         "prompt": "How do you say \"Rain\" in Spanish?",
         "options": [
           "Nieve",
-          "Sol",
           "Lluvia",
+          "Sol",
           "Viento"
         ],
         "correctAnswer": "Lluvia"
@@ -6184,10 +6184,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Viento\"?",
         "imageOptions": [
-          "❄️",
           "☀️",
           "🌧️",
-          "💨"
+          "💨",
+          "❄️"
         ],
         "correctAnswer": "💨"
       },
@@ -6196,10 +6196,10 @@ export const lessonsData = [
         "prompt": "Listen to the Spanish word and select the matching image.",
         "audioText": "Nieve",
         "imageOptions": [
-          "❄️",
-          "💨",
+          "☀️",
           "🌧️",
-          "☀️"
+          "💨",
+          "❄️"
         ],
         "correctAnswer": "❄️"
       },
@@ -6213,9 +6213,9 @@ export const lessonsData = [
         "prompt": "Match each Spanish word to its meaning.",
         "options": [
           "Wind - Viento",
-          "Sun - Sol",
           "Snow - Nieve",
-          "Rain - Lluvia"
+          "Rain - Lluvia",
+          "Sun - Sol"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -6306,10 +6306,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Passport\" in Spanish?",
         "options": [
+          "Pasaporte",
           "Equipaje",
-          "Vuelo",
           "Billete",
-          "Pasaporte"
+          "Vuelo"
         ],
         "correctAnswer": "Pasaporte"
       },
@@ -6318,9 +6318,9 @@ export const lessonsData = [
         "prompt": "Which image matches \"Vuelo\"?",
         "imageOptions": [
           "🛂",
+          "🧳",
           "🎫",
-          "✈️",
-          "🧳"
+          "✈️"
         ],
         "correctAnswer": "✈️"
       },
@@ -6329,10 +6329,10 @@ export const lessonsData = [
         "prompt": "Listen to the Spanish word and select the matching image.",
         "audioText": "Equipaje",
         "imageOptions": [
-          "🎫",
           "🛂",
-          "✈️",
-          "🧳"
+          "🎫",
+          "🧳",
+          "✈️"
         ],
         "correctAnswer": "🧳"
       },
@@ -6345,10 +6345,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Spanish word to its meaning.",
         "options": [
+          "Ticket - Billete",
           "Flight - Vuelo",
           "Luggage - Equipaje",
-          "Passport - Pasaporte",
-          "Ticket - Billete"
+          "Passport - Pasaporte"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -6428,10 +6428,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Taxi\" mean?",
         "options": [
-          "Taxi",
-          "Address",
           "Street",
-          "Driver"
+          "Taxi",
+          "Driver",
+          "Address"
         ],
         "correctAnswer": "Taxi"
       },
@@ -6450,10 +6450,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Dirección\"?",
         "imageOptions": [
-          "🚕",
           "👨‍✈️",
+          "📍",
           "🛣️",
-          "📍"
+          "🚕"
         ],
         "correctAnswer": "📍"
       },
@@ -6462,10 +6462,10 @@ export const lessonsData = [
         "prompt": "Listen to the Spanish word and select the matching image.",
         "audioText": "Calle",
         "imageOptions": [
-          "📍",
-          "🚕",
           "👨‍✈️",
-          "🛣️"
+          "🚕",
+          "🛣️",
+          "📍"
         ],
         "correctAnswer": "🛣️"
       },
@@ -6478,10 +6478,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Spanish word to its meaning.",
         "options": [
+          "Street - Calle",
           "Address - Dirección",
           "Driver - Conductor",
-          "Taxi - Taxi",
-          "Street - Calle"
+          "Taxi - Taxi"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -6561,10 +6561,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Habitación\" mean?",
         "options": [
-          "Room",
+          "Bed",
           "Key",
           "Shower",
-          "Bed"
+          "Room"
         ],
         "correctAnswer": "Room"
       },
@@ -6574,8 +6574,8 @@ export const lessonsData = [
         "options": [
           "Habitación",
           "Ducha",
-          "Llave",
-          "Cama"
+          "Cama",
+          "Llave"
         ],
         "correctAnswer": "Llave"
       },
@@ -6597,8 +6597,8 @@ export const lessonsData = [
         "imageOptions": [
           "🚿",
           "🛏️",
-          "🗝️",
-          "🔑"
+          "🔑",
+          "🗝️"
         ],
         "correctAnswer": "🚿"
       },
@@ -6612,9 +6612,9 @@ export const lessonsData = [
         "prompt": "Match each Spanish word to its meaning.",
         "options": [
           "Shower - Ducha",
+          "Bed - Cama",
           "Room - Habitación",
-          "Key - Llave",
-          "Bed - Cama"
+          "Key - Llave"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -6694,10 +6694,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Menú\" mean?",
         "options": [
+          "Menu",
           "Food",
-          "Bill",
           "Water",
-          "Menu"
+          "Bill"
         ],
         "correctAnswer": "Menu"
       },
@@ -6705,10 +6705,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Water\" in Spanish?",
         "options": [
-          "Agua",
           "Comida",
+          "Cuenta",
           "Menú",
-          "Cuenta"
+          "Agua"
         ],
         "correctAnswer": "Agua"
       },
@@ -6716,10 +6716,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Cuenta\"?",
         "imageOptions": [
-          "🍲",
           "📜",
+          "🧾",
           "🥤",
-          "🧾"
+          "🍲"
         ],
         "correctAnswer": "🧾"
       },
@@ -6728,10 +6728,10 @@ export const lessonsData = [
         "prompt": "Listen to the Spanish word and select the matching image.",
         "audioText": "Comida",
         "imageOptions": [
-          "🍲",
           "📜",
           "🥤",
-          "🧾"
+          "🧾",
+          "🍲"
         ],
         "correctAnswer": "🍲"
       },
@@ -6744,10 +6744,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Spanish word to its meaning.",
         "options": [
+          "Food - Comida",
           "Menu - Menú",
-          "Water - Agua",
           "Bill - Cuenta",
-          "Food - Comida"
+          "Water - Agua"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -6827,10 +6827,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Tienda\" mean?",
         "options": [
-          "Buy",
+          "Store",
           "Price",
-          "Money",
-          "Store"
+          "Buy",
+          "Money"
         ],
         "correctAnswer": "Store"
       },
@@ -6838,10 +6838,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Price\" in Spanish?",
         "options": [
-          "Dinero",
-          "Precio",
+          "Comprar",
           "Tienda",
-          "Comprar"
+          "Precio",
+          "Dinero"
         ],
         "correctAnswer": "Precio"
       },
@@ -6861,10 +6861,10 @@ export const lessonsData = [
         "prompt": "Listen to the Spanish word and select the matching image.",
         "audioText": "Dinero",
         "imageOptions": [
-          "🏪",
-          "🏷️",
           "🛍️",
-          "💰"
+          "💰",
+          "🏷️",
+          "🏪"
         ],
         "correctAnswer": "💰"
       },
@@ -6877,8 +6877,8 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Spanish word to its meaning.",
         "options": [
-          "Buy - Comprar",
           "Money - Dinero",
+          "Buy - Comprar",
           "Price - Precio",
           "Store - Tienda"
         ],
@@ -6971,8 +6971,8 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Teacher\" in Spanish?",
         "options": [
-          "Profesor",
           "Escuela",
+          "Profesor",
           "Estudiante",
           "Clase"
         ],
@@ -6982,9 +6982,9 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Estudiante\"?",
         "imageOptions": [
-          "👩&zwj;🏫",
           "📖",
           "🧑&zwj;🎓",
+          "👩&zwj;🏫",
           "🏫"
         ],
         "correctAnswer": "🧑&zwj;🎓"
@@ -7010,10 +7010,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Spanish word to its meaning.",
         "options": [
-          "Student - Estudiante",
+          "School - Escuela",
           "Class - Clase",
-          "Teacher - Profesor",
-          "School - Escuela"
+          "Student - Estudiante",
+          "Teacher - Profesor"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -7093,10 +7093,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Hospital\" mean?",
         "options": [
-          "Doctor",
           "Hospital",
-          "Sick",
-          "Medicine"
+          "Doctor",
+          "Medicine",
+          "Sick"
         ],
         "correctAnswer": "Hospital"
       },
@@ -7115,9 +7115,9 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Medicina\"?",
         "imageOptions": [
-          "🤢",
           "🏥",
           "🥼",
+          "🤢",
           "💊"
         ],
         "correctAnswer": "💊"
@@ -7128,9 +7128,9 @@ export const lessonsData = [
         "audioText": "Enfermo",
         "imageOptions": [
           "🏥",
+          "💊",
           "🥼",
-          "🤢",
-          "💊"
+          "🤢"
         ],
         "correctAnswer": "🤢"
       },
@@ -7226,10 +7226,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Viajar\" mean?",
         "options": [
-          "Travel",
-          "Train",
           "Bus",
-          "City"
+          "Train",
+          "City",
+          "Travel"
         ],
         "correctAnswer": "Travel"
       },
@@ -7248,10 +7248,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Autobús\"?",
         "imageOptions": [
-          "🧭",
-          "🚆",
+          "🏙️",
           "🚌",
-          "🏙️"
+          "🧭",
+          "🚆"
         ],
         "correctAnswer": "🚌"
       },
@@ -7262,8 +7262,8 @@ export const lessonsData = [
         "imageOptions": [
           "🧭",
           "🚆",
-          "🏙️",
-          "🚌"
+          "🚌",
+          "🏙️"
         ],
         "correctAnswer": "🏙️"
       },
@@ -7276,10 +7276,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Spanish word to its meaning.",
         "options": [
-          "Travel - Viajar",
           "City - Ciudad",
+          "Bus - Autobús",
           "Train - Tren",
-          "Bus - Autobús"
+          "Travel - Viajar"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -7310,10 +7310,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Thank you\" in Spanish?",
         "options": [
-          "Adiós",
           "Hola",
+          "Gracias",
           "Por favor",
-          "Gracias"
+          "Adiós"
         ],
         "correctAnswer": "Gracias"
       },
@@ -7321,10 +7321,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image represents \"Coche\"?",
         "imageOptions": [
-          "🚗",
-          "🏠",
+          "🍎",
           "💧",
-          "🍎"
+          "🏠",
+          "🚗"
         ],
         "correctAnswer": "🚗"
       },
@@ -7334,9 +7334,9 @@ export const lessonsData = [
         "audioText": "Gato",
         "imageOptions": [
           "🐐",
+          "🐱",
           "🐶",
-          "🐦",
-          "🐱"
+          "🐦"
         ],
         "correctAnswer": "🐱"
       },
@@ -7418,8 +7418,8 @@ export const lessonsData = [
         "options": [
           "Hello",
           "Goodbye",
-          "Please",
-          "Thank you"
+          "Thank you",
+          "Please"
         ],
         "correctAnswer": "Hello"
       },
@@ -7429,8 +7429,8 @@ export const lessonsData = [
         "options": [
           "Tschüss",
           "Hallo",
-          "Bitte",
-          "Danke"
+          "Danke",
+          "Bitte"
         ],
         "correctAnswer": "Tschüss"
       },
@@ -7438,9 +7438,9 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Danke\"?",
         "imageOptions": [
+          "👋",
           "🙌",
           "🙏",
-          "👋",
           "👋"
         ],
         "correctAnswer": "🙏"
@@ -7450,9 +7450,9 @@ export const lessonsData = [
         "prompt": "Listen to the German word and select the matching image.",
         "audioText": "Bitte",
         "imageOptions": [
-          "👋",
-          "🙏",
           "🙌",
+          "🙏",
+          "👋",
           "👋"
         ],
         "correctAnswer": "🙌"
@@ -7467,9 +7467,9 @@ export const lessonsData = [
         "prompt": "Match each German word to its meaning.",
         "options": [
           "Hello - Hallo",
+          "Please - Bitte",
           "Goodbye - Tschüss",
-          "Thank you - Danke",
-          "Please - Bitte"
+          "Thank you - Danke"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -7560,10 +7560,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"House\" in German?",
         "options": [
-          "Wasser",
-          "Auto",
           "Apfel",
-          "Haus"
+          "Haus",
+          "Auto",
+          "Wasser"
         ],
         "correctAnswer": "Haus"
       },
@@ -7571,10 +7571,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Wasser\"?",
         "imageOptions": [
-          "🍎",
           "💧",
           "🏠",
-          "🚗"
+          "🚗",
+          "🍎"
         ],
         "correctAnswer": "💧"
       },
@@ -7585,8 +7585,8 @@ export const lessonsData = [
         "imageOptions": [
           "🚗",
           "🏠",
-          "🍎",
-          "💧"
+          "💧",
+          "🍎"
         ],
         "correctAnswer": "🍎"
       },
@@ -7599,10 +7599,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each German word to its meaning.",
         "options": [
-          "Apple - Apfel",
           "Water - Wasser",
+          "House - Haus",
           "Car - Auto",
-          "House - Haus"
+          "Apple - Apfel"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -7704,10 +7704,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Ziege\"?",
         "imageOptions": [
-          "🐐",
           "🐶",
-          "🐱",
-          "🐦"
+          "🐐",
+          "🐦",
+          "🐱"
         ],
         "correctAnswer": "🐐"
       },
@@ -7716,10 +7716,10 @@ export const lessonsData = [
         "prompt": "Listen to the German word and select the matching image.",
         "audioText": "Vogel",
         "imageOptions": [
-          "🐦",
-          "🐐",
           "🐱",
-          "🐶"
+          "🐦",
+          "🐶",
+          "🐐"
         ],
         "correctAnswer": "🐦"
       },
@@ -7732,8 +7732,8 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each German word to its meaning.",
         "options": [
-          "Dog - Hund",
           "Cat - Katze",
+          "Dog - Hund",
           "Goat - Ziege",
           "Bird - Vogel"
         ],
@@ -7815,10 +7815,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Reis\" mean?",
         "options": [
-          "Rice",
-          "Meat",
           "Egg",
-          "Bread"
+          "Bread",
+          "Rice",
+          "Meat"
         ],
         "correctAnswer": "Rice"
       },
@@ -7826,10 +7826,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Bread\" in German?",
         "options": [
-          "Reis",
-          "Brot",
           "Fleisch",
-          "Ei"
+          "Ei",
+          "Brot",
+          "Reis"
         ],
         "correctAnswer": "Brot"
       },
@@ -7837,10 +7837,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Ei\"?",
         "imageOptions": [
-          "🍞",
-          "🥩",
           "🍚",
-          "🥚"
+          "🍞",
+          "🥚",
+          "🥩"
         ],
         "correctAnswer": "🥚"
       },
@@ -7849,10 +7849,10 @@ export const lessonsData = [
         "prompt": "Listen to the German word and select the matching image.",
         "audioText": "Fleisch",
         "imageOptions": [
-          "🥚",
-          "🥩",
+          "🍚",
           "🍞",
-          "🍚"
+          "🥩",
+          "🥚"
         ],
         "correctAnswer": "🥩"
       },
@@ -7865,10 +7865,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each German word to its meaning.",
         "options": [
-          "Egg - Ei",
-          "Rice - Reis",
           "Meat - Fleisch",
-          "Bread - Brot"
+          "Bread - Brot",
+          "Rice - Reis",
+          "Egg - Ei"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -7949,9 +7949,9 @@ export const lessonsData = [
         "prompt": "What does \"Mutter\" mean?",
         "options": [
           "Mother",
+          "Sister",
           "Father",
-          "Brother",
-          "Sister"
+          "Brother"
         ],
         "correctAnswer": "Mother"
       },
@@ -7959,8 +7959,8 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Father\" in German?",
         "options": [
-          "Mutter",
           "Schwester",
+          "Mutter",
           "Vater",
           "Bruder"
         ],
@@ -7982,9 +7982,9 @@ export const lessonsData = [
         "prompt": "Listen to the German word and select the matching image.",
         "audioText": "Schwester",
         "imageOptions": [
-          "👩",
-          "👨",
           "👦",
+          "👨",
+          "👩",
           "👧"
         ],
         "correctAnswer": "👧"
@@ -7998,10 +7998,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each German word to its meaning.",
         "options": [
-          "Brother - Bruder",
-          "Sister - Schwester",
+          "Mother - Mutter",
           "Father - Vater",
-          "Mother - Mutter"
+          "Sister - Schwester",
+          "Brother - Bruder"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -8092,10 +8092,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Two\" in German?",
         "options": [
-          "Vier",
-          "Drei",
           "Eins",
-          "Zwei"
+          "Vier",
+          "Zwei",
+          "Drei"
         ],
         "correctAnswer": "Zwei"
       },
@@ -8115,10 +8115,10 @@ export const lessonsData = [
         "prompt": "Listen to the German word and select the matching image.",
         "audioText": "Vier",
         "imageOptions": [
-          "1️⃣",
-          "2️⃣",
           "4️⃣",
-          "3️⃣"
+          "1️⃣",
+          "3️⃣",
+          "2️⃣"
         ],
         "correctAnswer": "4️⃣"
       },
@@ -8131,10 +8131,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each German word to its meaning.",
         "options": [
-          "One - Eins",
-          "Four - Vier",
           "Two - Zwei",
-          "Three - Drei"
+          "One - Eins",
+          "Three - Drei",
+          "Four - Vier"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -8214,10 +8214,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Rot\" mean?",
         "options": [
-          "Yellow",
+          "Red",
           "Green",
-          "Blue",
-          "Red"
+          "Yellow",
+          "Blue"
         ],
         "correctAnswer": "Red"
       },
@@ -8225,9 +8225,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Blue\" in German?",
         "options": [
-          "Gelb",
-          "Rot",
           "Blau",
+          "Rot",
+          "Gelb",
           "Grün"
         ],
         "correctAnswer": "Blau"
@@ -8236,10 +8236,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Grün\"?",
         "imageOptions": [
-          "🟡",
-          "🟢",
+          "🔴",
           "🔵",
-          "🔴"
+          "🟡",
+          "🟢"
         ],
         "correctAnswer": "🟢"
       },
@@ -8248,9 +8248,9 @@ export const lessonsData = [
         "prompt": "Listen to the German word and select the matching image.",
         "audioText": "Gelb",
         "imageOptions": [
-          "🟡",
-          "🟢",
           "🔵",
+          "🟢",
+          "🟡",
           "🔴"
         ],
         "correctAnswer": "🟡"
@@ -8265,9 +8265,9 @@ export const lessonsData = [
         "prompt": "Match each German word to its meaning.",
         "options": [
           "Yellow - Gelb",
-          "Green - Grün",
+          "Red - Rot",
           "Blue - Blau",
-          "Red - Rot"
+          "Green - Grün"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -8358,9 +8358,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Pants\" in German?",
         "options": [
+          "Hut",
           "Hose",
           "Hemd",
-          "Hut",
           "Schuhe"
         ],
         "correctAnswer": "Hose"
@@ -8369,10 +8369,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Schuhe\"?",
         "imageOptions": [
-          "👕",
-          "👞",
           "👒",
-          "👖"
+          "👕",
+          "👖",
+          "👞"
         ],
         "correctAnswer": "👞"
       },
@@ -8381,10 +8381,10 @@ export const lessonsData = [
         "prompt": "Listen to the German word and select the matching image.",
         "audioText": "Hut",
         "imageOptions": [
-          "👞",
-          "👒",
           "👖",
-          "👕"
+          "👕",
+          "👒",
+          "👞"
         ],
         "correctAnswer": "👒"
       },
@@ -8480,9 +8480,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Kopf\" mean?",
         "options": [
-          "Ear",
           "Eye",
           "Face",
+          "Ear",
           "Head"
         ],
         "correctAnswer": "Head"
@@ -8491,10 +8491,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Face\" in German?",
         "options": [
+          "Gesicht",
           "Ohr",
-          "Auge",
           "Kopf",
-          "Gesicht"
+          "Auge"
         ],
         "correctAnswer": "Gesicht"
       },
@@ -8514,10 +8514,10 @@ export const lessonsData = [
         "prompt": "Listen to the German word and select the matching image.",
         "audioText": "Ohr",
         "imageOptions": [
-          "😊",
-          "👤",
           "👁️",
-          "👂"
+          "👂",
+          "😊",
+          "👤"
         ],
         "correctAnswer": "👂"
       },
@@ -8530,10 +8530,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each German word to its meaning.",
         "options": [
-          "Face - Gesicht",
           "Ear - Ohr",
-          "Head - Kopf",
-          "Eye - Auge"
+          "Eye - Auge",
+          "Face - Gesicht",
+          "Head - Kopf"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -8614,8 +8614,8 @@ export const lessonsData = [
         "prompt": "What does \"Sonne\" mean?",
         "options": [
           "Sun",
-          "Snow",
           "Rain",
+          "Snow",
           "Wind"
         ],
         "correctAnswer": "Sun"
@@ -8625,9 +8625,9 @@ export const lessonsData = [
         "prompt": "How do you say \"Rain\" in German?",
         "options": [
           "Schnee",
+          "Regen",
           "Wind",
-          "Sonne",
-          "Regen"
+          "Sonne"
         ],
         "correctAnswer": "Regen"
       },
@@ -8636,9 +8636,9 @@ export const lessonsData = [
         "prompt": "Which image matches \"Wind\"?",
         "imageOptions": [
           "🌧️",
-          "❄️",
           "☀️",
-          "💨"
+          "💨",
+          "❄️"
         ],
         "correctAnswer": "💨"
       },
@@ -8647,8 +8647,8 @@ export const lessonsData = [
         "prompt": "Listen to the German word and select the matching image.",
         "audioText": "Schnee",
         "imageOptions": [
-          "🌧️",
           "☀️",
+          "🌧️",
           "💨",
           "❄️"
         ],
@@ -8663,10 +8663,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each German word to its meaning.",
         "options": [
-          "Snow - Schnee",
-          "Rain - Regen",
           "Sun - Sonne",
-          "Wind - Wind"
+          "Rain - Regen",
+          "Wind - Wind",
+          "Snow - Schnee"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -8746,10 +8746,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Ticket\" mean?",
         "options": [
-          "Luggage",
-          "Flight",
+          "Ticket",
           "Passport",
-          "Ticket"
+          "Flight",
+          "Luggage"
         ],
         "correctAnswer": "Ticket"
       },
@@ -8757,8 +8757,8 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Passport\" in German?",
         "options": [
-          "Gepäck",
           "Reisepass",
+          "Gepäck",
           "Flug",
           "Ticket"
         ],
@@ -8797,9 +8797,9 @@ export const lessonsData = [
         "prompt": "Match each German word to its meaning.",
         "options": [
           "Ticket - Ticket",
-          "Passport - Reisepass",
           "Flight - Flug",
-          "Luggage - Gepäck"
+          "Luggage - Gepäck",
+          "Passport - Reisepass"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -8879,10 +8879,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Taxi\" mean?",
         "options": [
+          "Taxi",
           "Street",
-          "Address",
           "Driver",
-          "Taxi"
+          "Address"
         ],
         "correctAnswer": "Taxi"
       },
@@ -8892,8 +8892,8 @@ export const lessonsData = [
         "options": [
           "Fahrer",
           "Taxi",
-          "Straße",
-          "Adresse"
+          "Adresse",
+          "Straße"
         ],
         "correctAnswer": "Fahrer"
       },
@@ -8901,9 +8901,9 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Adresse\"?",
         "imageOptions": [
-          "👨‍✈️",
           "🛣️",
           "📍",
+          "👨‍✈️",
           "🚕"
         ],
         "correctAnswer": "📍"
@@ -8913,10 +8913,10 @@ export const lessonsData = [
         "prompt": "Listen to the German word and select the matching image.",
         "audioText": "Straße",
         "imageOptions": [
-          "👨‍✈️",
-          "🛣️",
           "🚕",
-          "📍"
+          "🛣️",
+          "📍",
+          "👨‍✈️"
         ],
         "correctAnswer": "🛣️"
       },
@@ -8929,8 +8929,8 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each German word to its meaning.",
         "options": [
-          "Taxi - Taxi",
           "Street - Straße",
+          "Taxi - Taxi",
           "Driver - Fahrer",
           "Address - Adresse"
         ],
@@ -9014,8 +9014,8 @@ export const lessonsData = [
         "options": [
           "Room",
           "Bed",
-          "Shower",
-          "Key"
+          "Key",
+          "Shower"
         ],
         "correctAnswer": "Room"
       },
@@ -9025,8 +9025,8 @@ export const lessonsData = [
         "options": [
           "Schlüssel",
           "Zimmer",
-          "Dusche",
-          "Bett"
+          "Bett",
+          "Dusche"
         ],
         "correctAnswer": "Schlüssel"
       },
@@ -9047,9 +9047,9 @@ export const lessonsData = [
         "audioText": "Dusche",
         "imageOptions": [
           "🚿",
-          "🛏️",
           "🔑",
-          "🗝️"
+          "🗝️",
+          "🛏️"
         ],
         "correctAnswer": "🚿"
       },
@@ -9145,10 +9145,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Menü\" mean?",
         "options": [
-          "Bill",
           "Menu",
           "Water",
-          "Food"
+          "Food",
+          "Bill"
         ],
         "correctAnswer": "Menu"
       },
@@ -9157,9 +9157,9 @@ export const lessonsData = [
         "prompt": "How do you say \"Water\" in German?",
         "options": [
           "Menü",
-          "Essen",
+          "Rechnung",
           "Wasser",
-          "Rechnung"
+          "Essen"
         ],
         "correctAnswer": "Wasser"
       },
@@ -9167,10 +9167,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Rechnung\"?",
         "imageOptions": [
+          "🍲",
           "📜",
           "🥤",
-          "🧾",
-          "🍲"
+          "🧾"
         ],
         "correctAnswer": "🧾"
       },
@@ -9179,10 +9179,10 @@ export const lessonsData = [
         "prompt": "Listen to the German word and select the matching image.",
         "audioText": "Essen",
         "imageOptions": [
-          "🥤",
-          "📜",
           "🍲",
-          "🧾"
+          "🥤",
+          "🧾",
+          "📜"
         ],
         "correctAnswer": "🍲"
       },
@@ -9195,9 +9195,9 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each German word to its meaning.",
         "options": [
-          "Water - Wasser",
           "Food - Essen",
           "Menu - Menü",
+          "Water - Wasser",
           "Bill - Rechnung"
         ],
         "correctAnswer": "Matched successfully"
@@ -9278,10 +9278,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Geschäft\" mean?",
         "options": [
-          "Money",
-          "Buy",
           "Price",
-          "Store"
+          "Money",
+          "Store",
+          "Buy"
         ],
         "correctAnswer": "Store"
       },
@@ -9289,10 +9289,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Price\" in German?",
         "options": [
-          "Geld",
-          "Preis",
+          "Kaufen",
           "Geschäft",
-          "Kaufen"
+          "Preis",
+          "Geld"
         ],
         "correctAnswer": "Preis"
       },
@@ -9300,10 +9300,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Kaufen\"?",
         "imageOptions": [
+          "🛍️",
           "🏷️",
-          "🏪",
           "💰",
-          "🛍️"
+          "🏪"
         ],
         "correctAnswer": "🛍️"
       },
@@ -9313,9 +9313,9 @@ export const lessonsData = [
         "audioText": "Geld",
         "imageOptions": [
           "💰",
-          "🏪",
+          "🛍️",
           "🏷️",
-          "🛍️"
+          "🏪"
         ],
         "correctAnswer": "💰"
       },
@@ -9413,8 +9413,8 @@ export const lessonsData = [
         "options": [
           "School",
           "Teacher",
-          "Student",
-          "Class"
+          "Class",
+          "Student"
         ],
         "correctAnswer": "School"
       },
@@ -9422,8 +9422,8 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Teacher\" in German?",
         "options": [
-          "Klasse",
           "Schüler",
+          "Klasse",
           "Schule",
           "Lehrer"
         ],
@@ -9435,8 +9435,8 @@ export const lessonsData = [
         "imageOptions": [
           "🏫",
           "👩&zwj;🏫",
-          "📖",
-          "🧑&zwj;🎓"
+          "🧑&zwj;🎓",
+          "📖"
         ],
         "correctAnswer": "🧑&zwj;🎓"
       },
@@ -9545,9 +9545,9 @@ export const lessonsData = [
         "prompt": "What does \"Krankenhaus\" mean?",
         "options": [
           "Doctor",
-          "Sick",
+          "Hospital",
           "Medicine",
-          "Hospital"
+          "Sick"
         ],
         "correctAnswer": "Hospital"
       },
@@ -9555,10 +9555,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Doctor\" in German?",
         "options": [
-          "Krank",
-          "Medizin",
           "Krankenhaus",
-          "Arzt"
+          "Krank",
+          "Arzt",
+          "Medizin"
         ],
         "correctAnswer": "Arzt"
       },
@@ -9567,9 +9567,9 @@ export const lessonsData = [
         "prompt": "Which image matches \"Medizin\"?",
         "imageOptions": [
           "🏥",
-          "🤢",
           "🥼",
-          "💊"
+          "💊",
+          "🤢"
         ],
         "correctAnswer": "💊"
       },
@@ -9578,10 +9578,10 @@ export const lessonsData = [
         "prompt": "Listen to the German word and select the matching image.",
         "audioText": "Krank",
         "imageOptions": [
-          "🏥",
           "💊",
           "🥼",
-          "🤢"
+          "🤢",
+          "🏥"
         ],
         "correctAnswer": "🤢"
       },
@@ -9594,8 +9594,8 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each German word to its meaning.",
         "options": [
-          "Sick - Krank",
           "Doctor - Arzt",
+          "Sick - Krank",
           "Medicine - Medizin",
           "Hospital - Krankenhaus"
         ],
@@ -9677,10 +9677,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Reisen\" mean?",
         "options": [
-          "Travel",
-          "Train",
           "City",
-          "Bus"
+          "Train",
+          "Bus",
+          "Travel"
         ],
         "correctAnswer": "Travel"
       },
@@ -9688,10 +9688,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Train\" in German?",
         "options": [
+          "Zug",
           "Stadt",
           "Bus",
-          "Reisen",
-          "Zug"
+          "Reisen"
         ],
         "correctAnswer": "Zug"
       },
@@ -9699,10 +9699,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Bus\"?",
         "imageOptions": [
-          "🚌",
+          "🧭",
           "🚆",
           "🏙️",
-          "🧭"
+          "🚌"
         ],
         "correctAnswer": "🚌"
       },
@@ -9727,10 +9727,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each German word to its meaning.",
         "options": [
-          "City - Stadt",
-          "Bus - Bus",
+          "Travel - Reisen",
           "Train - Zug",
-          "Travel - Reisen"
+          "Bus - Bus",
+          "City - Stadt"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -9772,10 +9772,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image represents \"Auto\"?",
         "imageOptions": [
-          "🚗",
-          "💧",
+          "🍎",
           "🏠",
-          "🍎"
+          "🚗",
+          "💧"
         ],
         "correctAnswer": "🚗"
       },
@@ -9785,9 +9785,9 @@ export const lessonsData = [
         "audioText": "Katze",
         "imageOptions": [
           "🐱",
+          "🐦",
           "🐶",
-          "🐐",
-          "🐦"
+          "🐐"
         ],
         "correctAnswer": "🐱"
       },
@@ -9867,10 +9867,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"مرحباً\" mean?",
         "options": [
-          "Hello",
-          "Goodbye",
           "Please",
-          "Thank you"
+          "Thank you",
+          "Goodbye",
+          "Hello"
         ],
         "correctAnswer": "Hello"
       },
@@ -9878,10 +9878,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Goodbye\" in Arabic?",
         "options": [
-          "مع السلامة",
-          "شكراً",
           "مرحباً",
-          "من فضلك"
+          "مع السلامة",
+          "من فضلك",
+          "شكراً"
         ],
         "correctAnswer": "مع السلامة"
       },
@@ -9889,10 +9889,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"شكراً\"?",
         "imageOptions": [
-          "👋",
-          "👋",
           "🙏",
-          "🙌"
+          "🙌",
+          "👋",
+          "👋"
         ],
         "correctAnswer": "🙏"
       },
@@ -9917,10 +9917,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Arabic word to its meaning.",
         "options": [
+          "Hello - مرحباً",
           "Please - من فضلك",
-          "Thank you - شكراً",
           "Goodbye - مع السلامة",
-          "Hello - مرحباً"
+          "Thank you - شكراً"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -10000,9 +10000,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"سيارة\" mean?",
         "options": [
-          "Apple",
           "Car",
           "House",
+          "Apple",
           "Water"
         ],
         "correctAnswer": "Car"
@@ -10011,10 +10011,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"House\" in Arabic?",
         "options": [
-          "ماء",
           "تفاحة",
-          "بيت",
-          "سيارة"
+          "ماء",
+          "سيارة",
+          "بيت"
         ],
         "correctAnswer": "بيت"
       },
@@ -10023,8 +10023,8 @@ export const lessonsData = [
         "prompt": "Which image matches \"ماء\"?",
         "imageOptions": [
           "🚗",
-          "🍎",
           "🏠",
+          "🍎",
           "💧"
         ],
         "correctAnswer": "💧"
@@ -10034,9 +10034,9 @@ export const lessonsData = [
         "prompt": "Listen to the Arabic word and select the matching image.",
         "audioText": "تفاحة",
         "imageOptions": [
-          "💧",
-          "🏠",
           "🍎",
+          "🏠",
+          "💧",
           "🚗"
         ],
         "correctAnswer": "🍎"
@@ -10050,8 +10050,8 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Arabic word to its meaning.",
         "options": [
-          "Water - ماء",
           "Apple - تفاحة",
+          "Water - ماء",
           "House - بيت",
           "Car - سيارة"
         ],
@@ -10134,8 +10134,8 @@ export const lessonsData = [
         "prompt": "What does \"كلب\" mean?",
         "options": [
           "Dog",
-          "Bird",
           "Cat",
+          "Bird",
           "Goat"
         ],
         "correctAnswer": "Dog"
@@ -10145,9 +10145,9 @@ export const lessonsData = [
         "prompt": "How do you say \"Cat\" in Arabic?",
         "options": [
           "طائر",
-          "ماعز",
+          "قط",
           "كلب",
-          "قط"
+          "ماعز"
         ],
         "correctAnswer": "قط"
       },
@@ -10155,9 +10155,9 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"ماعز\"?",
         "imageOptions": [
-          "🐶",
-          "🐱",
           "🐐",
+          "🐱",
+          "🐶",
           "🐦"
         ],
         "correctAnswer": "🐐"
@@ -10183,10 +10183,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Arabic word to its meaning.",
         "options": [
-          "Cat - قط",
+          "Goat - ماعز",
           "Dog - كلب",
           "Bird - طائر",
-          "Goat - ماعز"
+          "Cat - قط"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -10266,10 +10266,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"أرز\" mean?",
         "options": [
+          "Rice",
           "Bread",
-          "Egg",
           "Meat",
-          "Rice"
+          "Egg"
         ],
         "correctAnswer": "Rice"
       },
@@ -10277,9 +10277,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Bread\" in Arabic?",
         "options": [
-          "لحم",
           "بيض",
           "أرز",
+          "لحم",
           "خبز"
         ],
         "correctAnswer": "خبز"
@@ -10288,10 +10288,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"بيض\"?",
         "imageOptions": [
+          "🍚",
           "🍞",
-          "🥩",
           "🥚",
-          "🍚"
+          "🥩"
         ],
         "correctAnswer": "🥚"
       },
@@ -10300,10 +10300,10 @@ export const lessonsData = [
         "prompt": "Listen to the Arabic word and select the matching image.",
         "audioText": "لحم",
         "imageOptions": [
-          "🍚",
-          "🍞",
+          "🥩",
           "🥚",
-          "🥩"
+          "🍞",
+          "🍚"
         ],
         "correctAnswer": "🥩"
       },
@@ -10316,10 +10316,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Arabic word to its meaning.",
         "options": [
-          "Meat - لحم",
           "Rice - أرز",
           "Bread - خبز",
-          "Egg - بيض"
+          "Egg - بيض",
+          "Meat - لحم"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -10399,10 +10399,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"أم\" mean?",
         "options": [
-          "Brother",
-          "Sister",
+          "Mother",
           "Father",
-          "Mother"
+          "Brother",
+          "Sister"
         ],
         "correctAnswer": "Mother"
       },
@@ -10410,10 +10410,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Father\" in Arabic?",
         "options": [
-          "أب",
-          "أم",
           "أخت",
-          "أخ"
+          "أخ",
+          "أم",
+          "أب"
         ],
         "correctAnswer": "أب"
       },
@@ -10433,9 +10433,9 @@ export const lessonsData = [
         "prompt": "Listen to the Arabic word and select the matching image.",
         "audioText": "أخت",
         "imageOptions": [
-          "👩",
-          "👧",
           "👨",
+          "👧",
+          "👩",
           "👦"
         ],
         "correctAnswer": "👧"
@@ -10449,10 +10449,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Arabic word to its meaning.",
         "options": [
-          "Mother - أم",
           "Sister - أخت",
+          "Brother - أخ",
           "Father - أب",
-          "Brother - أخ"
+          "Mother - أم"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -10532,10 +10532,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"واحد\" mean?",
         "options": [
-          "Three",
-          "Two",
           "One",
-          "Four"
+          "Three",
+          "Four",
+          "Two"
         ],
         "correctAnswer": "One"
       },
@@ -10543,10 +10543,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Two\" in Arabic?",
         "options": [
-          "أربعة",
-          "ثلاثة",
           "واحد",
-          "اثنان"
+          "اثنان",
+          "أربعة",
+          "ثلاثة"
         ],
         "correctAnswer": "اثنان"
       },
@@ -10554,10 +10554,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"ثلاثة\"?",
         "imageOptions": [
-          "2️⃣",
-          "1️⃣",
           "3️⃣",
-          "4️⃣"
+          "2️⃣",
+          "4️⃣",
+          "1️⃣"
         ],
         "correctAnswer": "3️⃣"
       },
@@ -10566,10 +10566,10 @@ export const lessonsData = [
         "prompt": "Listen to the Arabic word and select the matching image.",
         "audioText": "أربعة",
         "imageOptions": [
-          "2️⃣",
-          "1️⃣",
           "4️⃣",
-          "3️⃣"
+          "3️⃣",
+          "2️⃣",
+          "1️⃣"
         ],
         "correctAnswer": "4️⃣"
       },
@@ -10584,8 +10584,8 @@ export const lessonsData = [
         "options": [
           "Three - ثلاثة",
           "Two - اثنان",
-          "One - واحد",
-          "Four - أربعة"
+          "Four - أربعة",
+          "One - واحد"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -10665,10 +10665,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"أحمر\" mean?",
         "options": [
-          "Yellow",
-          "Green",
+          "Red",
           "Blue",
-          "Red"
+          "Green",
+          "Yellow"
         ],
         "correctAnswer": "Red"
       },
@@ -10676,10 +10676,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Blue\" in Arabic?",
         "options": [
-          "أصفر",
-          "أخضر",
+          "أزرق",
           "أحمر",
-          "أزرق"
+          "أخضر",
+          "أصفر"
         ],
         "correctAnswer": "أزرق"
       },
@@ -10687,10 +10687,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"أخضر\"?",
         "imageOptions": [
-          "🔴",
-          "🔵",
+          "🟢",
           "🟡",
-          "🟢"
+          "🔵",
+          "🔴"
         ],
         "correctAnswer": "🟢"
       },
@@ -10699,10 +10699,10 @@ export const lessonsData = [
         "prompt": "Listen to the Arabic word and select the matching image.",
         "audioText": "أصفر",
         "imageOptions": [
-          "🟢",
+          "🔴",
           "🔵",
-          "🟡",
-          "🔴"
+          "🟢",
+          "🟡"
         ],
         "correctAnswer": "🟡"
       },
@@ -10715,10 +10715,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Arabic word to its meaning.",
         "options": [
-          "Green - أخضر",
-          "Yellow - أصفر",
+          "Red - أحمر",
           "Blue - أزرق",
-          "Red - أحمر"
+          "Green - أخضر",
+          "Yellow - أصفر"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -10798,10 +10798,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"قميص\" mean?",
         "options": [
-          "Pants",
-          "Shoes",
+          "Hat",
           "Shirt",
-          "Hat"
+          "Shoes",
+          "Pants"
         ],
         "correctAnswer": "Shirt"
       },
@@ -10809,9 +10809,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Pants\" in Arabic?",
         "options": [
-          "حذاء",
-          "قميص",
           "بنطال",
+          "قميص",
+          "حذاء",
           "قبعة"
         ],
         "correctAnswer": "بنطال"
@@ -10820,10 +10820,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"حذاء\"?",
         "imageOptions": [
-          "👒",
-          "👞",
+          "👕",
           "👖",
-          "👕"
+          "👒",
+          "👞"
         ],
         "correctAnswer": "👞"
       },
@@ -10832,10 +10832,10 @@ export const lessonsData = [
         "prompt": "Listen to the Arabic word and select the matching image.",
         "audioText": "قبعة",
         "imageOptions": [
+          "👞",
           "👒",
-          "👕",
           "👖",
-          "👞"
+          "👕"
         ],
         "correctAnswer": "👒"
       },
@@ -10850,8 +10850,8 @@ export const lessonsData = [
         "options": [
           "Shirt - قميص",
           "Pants - بنطال",
-          "Shoes - حذاء",
-          "Hat - قبعة"
+          "Hat - قبعة",
+          "Shoes - حذاء"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -10931,9 +10931,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"رأس\" mean?",
         "options": [
+          "Ear",
           "Eye",
           "Face",
-          "Ear",
           "Head"
         ],
         "correctAnswer": "Head"
@@ -10942,10 +10942,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Face\" in Arabic?",
         "options": [
+          "أذن",
           "رأس",
           "وجه",
-          "عين",
-          "أذن"
+          "عين"
         ],
         "correctAnswer": "وجه"
       },
@@ -10965,10 +10965,10 @@ export const lessonsData = [
         "prompt": "Listen to the Arabic word and select the matching image.",
         "audioText": "أذن",
         "imageOptions": [
-          "😊",
-          "👤",
           "👁️",
-          "👂"
+          "👤",
+          "👂",
+          "😊"
         ],
         "correctAnswer": "👂"
       },
@@ -11065,9 +11065,9 @@ export const lessonsData = [
         "prompt": "What does \"شمس\" mean?",
         "options": [
           "Snow",
+          "Sun",
           "Wind",
-          "Rain",
-          "Sun"
+          "Rain"
         ],
         "correctAnswer": "Sun"
       },
@@ -11075,10 +11075,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Rain\" in Arabic?",
         "options": [
-          "ثلج",
-          "ريح",
           "مطر",
-          "شمس"
+          "شمس",
+          "ريح",
+          "ثلج"
         ],
         "correctAnswer": "مطر"
       },
@@ -11087,8 +11087,8 @@ export const lessonsData = [
         "prompt": "Which image matches \"ريح\"?",
         "imageOptions": [
           "❄️",
-          "☀️",
           "🌧️",
+          "☀️",
           "💨"
         ],
         "correctAnswer": "💨"
@@ -11098,10 +11098,10 @@ export const lessonsData = [
         "prompt": "Listen to the Arabic word and select the matching image.",
         "audioText": "ثلج",
         "imageOptions": [
-          "❄️",
           "💨",
-          "🌧️",
-          "☀️"
+          "☀️",
+          "❄️",
+          "🌧️"
         ],
         "correctAnswer": "❄️"
       },
@@ -11114,10 +11114,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Arabic word to its meaning.",
         "options": [
-          "Wind - ريح",
-          "Snow - ثلج",
           "Rain - مطر",
-          "Sun - شمس"
+          "Sun - شمس",
+          "Wind - ريح",
+          "Snow - ثلج"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -11197,9 +11197,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"تذكرة\" mean?",
         "options": [
-          "Luggage",
           "Flight",
           "Passport",
+          "Luggage",
           "Ticket"
         ],
         "correctAnswer": "Ticket"
@@ -11208,10 +11208,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Passport\" in Arabic?",
         "options": [
-          "جواز سفر",
-          "تذكرة",
+          "أمتعة",
           "رحلة",
-          "أمتعة"
+          "تذكرة",
+          "جواز سفر"
         ],
         "correctAnswer": "جواز سفر"
       },
@@ -11219,10 +11219,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"رحلة\"?",
         "imageOptions": [
-          "🎫",
-          "🛂",
           "🧳",
-          "✈️"
+          "✈️",
+          "🛂",
+          "🎫"
         ],
         "correctAnswer": "✈️"
       },
@@ -11231,10 +11231,10 @@ export const lessonsData = [
         "prompt": "Listen to the Arabic word and select the matching image.",
         "audioText": "أمتعة",
         "imageOptions": [
+          "🧳",
           "🎫",
-          "🛂",
           "✈️",
-          "🧳"
+          "🛂"
         ],
         "correctAnswer": "🧳"
       },
@@ -11248,9 +11248,9 @@ export const lessonsData = [
         "prompt": "Match each Arabic word to its meaning.",
         "options": [
           "Luggage - أمتعة",
+          "Ticket - تذكرة",
           "Flight - رحلة",
-          "Passport - جواز سفر",
-          "Ticket - تذكرة"
+          "Passport - جواز سفر"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -11330,10 +11330,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"تاكسي\" mean?",
         "options": [
-          "Street",
-          "Taxi",
           "Address",
-          "Driver"
+          "Street",
+          "Driver",
+          "Taxi"
         ],
         "correctAnswer": "Taxi"
       },
@@ -11341,9 +11341,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Driver\" in Arabic?",
         "options": [
-          "عنوان",
-          "تاكسي",
           "سائق",
+          "تاكسي",
+          "عنوان",
           "شارع"
         ],
         "correctAnswer": "سائق"
@@ -11353,9 +11353,9 @@ export const lessonsData = [
         "prompt": "Which image matches \"عنوان\"?",
         "imageOptions": [
           "🚕",
+          "🛣️",
           "👨‍✈️",
-          "📍",
-          "🛣️"
+          "📍"
         ],
         "correctAnswer": "📍"
       },
@@ -11365,9 +11365,9 @@ export const lessonsData = [
         "audioText": "شارع",
         "imageOptions": [
           "🛣️",
-          "🚕",
+          "📍",
           "👨‍✈️",
-          "📍"
+          "🚕"
         ],
         "correctAnswer": "🛣️"
       },
@@ -11380,10 +11380,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Arabic word to its meaning.",
         "options": [
+          "Street - شارع",
           "Taxi - تاكسي",
           "Driver - سائق",
-          "Address - عنوان",
-          "Street - شارع"
+          "Address - عنوان"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -11463,10 +11463,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"غرفة\" mean?",
         "options": [
-          "Bed",
           "Key",
-          "Room",
-          "Shower"
+          "Shower",
+          "Bed",
+          "Room"
         ],
         "correctAnswer": "Room"
       },
@@ -11474,10 +11474,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Key\" in Arabic?",
         "options": [
-          "دش",
-          "سرير",
+          "مفتاح",
           "غرفة",
-          "مفتاح"
+          "سرير",
+          "دش"
         ],
         "correctAnswer": "مفتاح"
       },
@@ -11497,10 +11497,10 @@ export const lessonsData = [
         "prompt": "Listen to the Arabic word and select the matching image.",
         "audioText": "دش",
         "imageOptions": [
-          "🛏️",
-          "🗝️",
           "🚿",
-          "🔑"
+          "🔑",
+          "🗝️",
+          "🛏️"
         ],
         "correctAnswer": "🚿"
       },
@@ -11513,10 +11513,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Arabic word to its meaning.",
         "options": [
+          "Bed - سرير",
           "Shower - دش",
           "Key - مفتاح",
-          "Room - غرفة",
-          "Bed - سرير"
+          "Room - غرفة"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -11596,10 +11596,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"قائمة\" mean?",
         "options": [
-          "Bill",
           "Food",
+          "Menu",
           "Water",
-          "Menu"
+          "Bill"
         ],
         "correctAnswer": "Menu"
       },
@@ -11607,10 +11607,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Water\" in Arabic?",
         "options": [
-          "طعام",
-          "فاتورة",
+          "ماء",
           "قائمة",
-          "ماء"
+          "فاتورة",
+          "طعام"
         ],
         "correctAnswer": "ماء"
       },
@@ -11618,10 +11618,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"فاتورة\"?",
         "imageOptions": [
-          "📜",
           "🍲",
+          "🧾",
           "🥤",
-          "🧾"
+          "📜"
         ],
         "correctAnswer": "🧾"
       },
@@ -11630,9 +11630,9 @@ export const lessonsData = [
         "prompt": "Listen to the Arabic word and select the matching image.",
         "audioText": "طعام",
         "imageOptions": [
-          "🧾",
-          "🥤",
           "📜",
+          "🥤",
+          "🧾",
           "🍲"
         ],
         "correctAnswer": "🍲"
@@ -11646,10 +11646,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Arabic word to its meaning.",
         "options": [
+          "Food - طعام",
           "Menu - قائمة",
           "Water - ماء",
-          "Bill - فاتورة",
-          "Food - طعام"
+          "Bill - فاتورة"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -11740,8 +11740,8 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Price\" in Arabic?",
         "options": [
-          "سعر",
           "مال",
+          "سعر",
           "متجر",
           "شراء"
         ],
@@ -11763,10 +11763,10 @@ export const lessonsData = [
         "prompt": "Listen to the Arabic word and select the matching image.",
         "audioText": "مال",
         "imageOptions": [
-          "🛍️",
-          "💰",
+          "🏪",
           "🏷️",
-          "🏪"
+          "🛍️",
+          "💰"
         ],
         "correctAnswer": "💰"
       },
@@ -11781,8 +11781,8 @@ export const lessonsData = [
         "options": [
           "Store - متجر",
           "Price - سعر",
-          "Money - مال",
-          "Buy - شراء"
+          "Buy - شراء",
+          "Money - مال"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -11862,10 +11862,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"مدرسة\" mean?",
         "options": [
-          "School",
-          "Teacher",
+          "Class",
           "Student",
-          "Class"
+          "Teacher",
+          "School"
         ],
         "correctAnswer": "School"
       },
@@ -11875,8 +11875,8 @@ export const lessonsData = [
         "options": [
           "صف",
           "طالب",
-          "مدرسة",
-          "معلم"
+          "معلم",
+          "مدرسة"
         ],
         "correctAnswer": "معلم"
       },
@@ -11885,9 +11885,9 @@ export const lessonsData = [
         "prompt": "Which image matches \"طالب\"?",
         "imageOptions": [
           "🏫",
+          "📖",
           "👩&zwj;🏫",
-          "🧑&zwj;🎓",
-          "📖"
+          "🧑&zwj;🎓"
         ],
         "correctAnswer": "🧑&zwj;🎓"
       },
@@ -11896,10 +11896,10 @@ export const lessonsData = [
         "prompt": "Listen to the Arabic word and select the matching image.",
         "audioText": "صف",
         "imageOptions": [
+          "📖",
           "🧑&zwj;🎓",
           "👩&zwj;🏫",
-          "🏫",
-          "📖"
+          "🏫"
         ],
         "correctAnswer": "📖"
       },
@@ -11912,10 +11912,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Arabic word to its meaning.",
         "options": [
-          "Student - طالب",
-          "Teacher - معلم",
+          "School - مدرسة",
           "Class - صف",
-          "School - مدرسة"
+          "Teacher - معلم",
+          "Student - طالب"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -11995,10 +11995,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"مستشفى\" mean?",
         "options": [
-          "Hospital",
-          "Doctor",
+          "Sick",
           "Medicine",
-          "Sick"
+          "Doctor",
+          "Hospital"
         ],
         "correctAnswer": "Hospital"
       },
@@ -12006,10 +12006,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Doctor\" in Arabic?",
         "options": [
-          "مريض",
-          "دواء",
           "مستشفى",
-          "طبيب"
+          "طبيب",
+          "مريض",
+          "دواء"
         ],
         "correctAnswer": "طبيب"
       },
@@ -12017,10 +12017,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"دواء\"?",
         "imageOptions": [
-          "🤢",
-          "💊",
+          "🏥",
           "🥼",
-          "🏥"
+          "💊",
+          "🤢"
         ],
         "correctAnswer": "💊"
       },
@@ -12045,10 +12045,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Arabic word to its meaning.",
         "options": [
-          "Hospital - مستشفى",
-          "Doctor - طبيب",
           "Sick - مريض",
-          "Medicine - دواء"
+          "Medicine - دواء",
+          "Doctor - طبيب",
+          "Hospital - مستشفى"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -12128,10 +12128,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"سفر\" mean?",
         "options": [
-          "City",
           "Travel",
-          "Bus",
-          "Train"
+          "City",
+          "Train",
+          "Bus"
         ],
         "correctAnswer": "Travel"
       },
@@ -12152,8 +12152,8 @@ export const lessonsData = [
         "imageOptions": [
           "🚌",
           "🚆",
-          "🏙️",
-          "🧭"
+          "🧭",
+          "🏙️"
         ],
         "correctAnswer": "🚌"
       },
@@ -12162,10 +12162,10 @@ export const lessonsData = [
         "prompt": "Listen to the Arabic word and select the matching image.",
         "audioText": "مدينة",
         "imageOptions": [
-          "🧭",
-          "🚆",
           "🚌",
-          "🏙️"
+          "🏙️",
+          "🚆",
+          "🧭"
         ],
         "correctAnswer": "🏙️"
       },
@@ -12178,8 +12178,8 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Arabic word to its meaning.",
         "options": [
-          "Bus - حافلة",
           "City - مدينة",
+          "Bus - حافلة",
           "Train - قطار",
           "Travel - سفر"
         ],
@@ -12212,9 +12212,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Thank you\" in Arabic?",
         "options": [
-          "مع السلامة",
-          "مرحباً",
           "من فضلك",
+          "مرحباً",
+          "مع السلامة",
           "شكراً"
         ],
         "correctAnswer": "شكراً"
@@ -12223,10 +12223,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image represents \"سيارة\"?",
         "imageOptions": [
-          "💧",
-          "🍎",
           "🚗",
-          "🏠"
+          "🏠",
+          "💧",
+          "🍎"
         ],
         "correctAnswer": "🚗"
       },
@@ -12235,10 +12235,10 @@ export const lessonsData = [
         "prompt": "Listen to the Arabic word and choose the matching image.",
         "audioText": "قط",
         "imageOptions": [
-          "🐐",
+          "🐶",
           "🐱",
           "🐦",
-          "🐶"
+          "🐐"
         ],
         "correctAnswer": "🐱"
       },
@@ -12318,9 +12318,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Ciao\" mean?",
         "options": [
+          "Goodbye",
           "Please",
           "Hello",
-          "Goodbye",
           "Thank you"
         ],
         "correctAnswer": "Hello"
@@ -12329,10 +12329,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Goodbye\" in Italian?",
         "options": [
+          "Per favore",
           "Grazie",
-          "Arrivederci",
           "Ciao",
-          "Per favore"
+          "Arrivederci"
         ],
         "correctAnswer": "Arrivederci"
       },
@@ -12340,10 +12340,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Grazie\"?",
         "imageOptions": [
-          "🙏",
-          "🙌",
           "👋",
-          "👋"
+          "👋",
+          "🙏",
+          "🙌"
         ],
         "correctAnswer": "🙏"
       },
@@ -12353,9 +12353,9 @@ export const lessonsData = [
         "audioText": "Per favore",
         "imageOptions": [
           "👋",
-          "👋",
+          "🙏",
           "🙌",
-          "🙏"
+          "👋"
         ],
         "correctAnswer": "🙌"
       },
@@ -12368,10 +12368,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Italian word to its meaning.",
         "options": [
-          "Hello - Ciao",
           "Goodbye - Arrivederci",
           "Thank you - Grazie",
-          "Please - Per favore"
+          "Please - Per favore",
+          "Hello - Ciao"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -12462,9 +12462,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"House\" in Italian?",
         "options": [
-          "Macchina",
-          "Acqua",
           "Mela",
+          "Acqua",
+          "Macchina",
           "Casa"
         ],
         "correctAnswer": "Casa"
@@ -12474,9 +12474,9 @@ export const lessonsData = [
         "prompt": "Which image matches \"Acqua\"?",
         "imageOptions": [
           "🚗",
+          "🍎",
           "🏠",
-          "💧",
-          "🍎"
+          "💧"
         ],
         "correctAnswer": "💧"
       },
@@ -12485,10 +12485,10 @@ export const lessonsData = [
         "prompt": "Listen to the Italian word and select the matching image.",
         "audioText": "Mela",
         "imageOptions": [
-          "🍎",
-          "🏠",
           "🚗",
-          "💧"
+          "🏠",
+          "💧",
+          "🍎"
         ],
         "correctAnswer": "🍎"
       },
@@ -12501,9 +12501,9 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Italian word to its meaning.",
         "options": [
+          "Apple - Mela",
           "Water - Acqua",
           "House - Casa",
-          "Apple - Mela",
           "Car - Macchina"
         ],
         "correctAnswer": "Matched successfully"
@@ -12584,10 +12584,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Cane\" mean?",
         "options": [
-          "Bird",
-          "Goat",
           "Cat",
-          "Dog"
+          "Bird",
+          "Dog",
+          "Goat"
         ],
         "correctAnswer": "Dog"
       },
@@ -12595,10 +12595,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Cat\" in Italian?",
         "options": [
-          "Capra",
-          "Uccello",
+          "Gatto",
           "Cane",
-          "Gatto"
+          "Capra",
+          "Uccello"
         ],
         "correctAnswer": "Gatto"
       },
@@ -12608,8 +12608,8 @@ export const lessonsData = [
         "imageOptions": [
           "🐶",
           "🐱",
-          "🐦",
-          "🐐"
+          "🐐",
+          "🐦"
         ],
         "correctAnswer": "🐐"
       },
@@ -12618,10 +12618,10 @@ export const lessonsData = [
         "prompt": "Listen to the Italian word and select the matching image.",
         "audioText": "Uccello",
         "imageOptions": [
-          "🐦",
+          "🐱",
           "🐶",
-          "🐐",
-          "🐱"
+          "🐦",
+          "🐐"
         ],
         "correctAnswer": "🐦"
       },
@@ -12634,10 +12634,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Italian word to its meaning.",
         "options": [
-          "Dog - Cane",
           "Cat - Gatto",
-          "Goat - Capra",
-          "Bird - Uccello"
+          "Bird - Uccello",
+          "Dog - Cane",
+          "Goat - Capra"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -12717,10 +12717,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Riso\" mean?",
         "options": [
-          "Egg",
           "Bread",
           "Rice",
-          "Meat"
+          "Meat",
+          "Egg"
         ],
         "correctAnswer": "Rice"
       },
@@ -12728,10 +12728,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Bread\" in Italian?",
         "options": [
-          "Carne",
-          "Uovo",
+          "Pane",
           "Riso",
-          "Pane"
+          "Carne",
+          "Uovo"
         ],
         "correctAnswer": "Pane"
       },
@@ -12739,10 +12739,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Uovo\"?",
         "imageOptions": [
-          "🥚",
-          "🍞",
           "🥩",
-          "🍚"
+          "🥚",
+          "🍚",
+          "🍞"
         ],
         "correctAnswer": "🥚"
       },
@@ -12751,8 +12751,8 @@ export const lessonsData = [
         "prompt": "Listen to the Italian word and select the matching image.",
         "audioText": "Carne",
         "imageOptions": [
-          "🍚",
           "🥩",
+          "🍚",
           "🍞",
           "🥚"
         ],
@@ -12767,9 +12767,9 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Italian word to its meaning.",
         "options": [
-          "Rice - Riso",
-          "Bread - Pane",
           "Egg - Uovo",
+          "Bread - Pane",
+          "Rice - Riso",
           "Meat - Carne"
         ],
         "correctAnswer": "Matched successfully"
@@ -12850,10 +12850,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Madre\" mean?",
         "options": [
-          "Sister",
-          "Brother",
+          "Mother",
           "Father",
-          "Mother"
+          "Sister",
+          "Brother"
         ],
         "correctAnswer": "Mother"
       },
@@ -12861,10 +12861,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Father\" in Italian?",
         "options": [
-          "Madre",
           "Sorella",
-          "Padre",
-          "Fratello"
+          "Fratello",
+          "Madre",
+          "Padre"
         ],
         "correctAnswer": "Padre"
       },
@@ -12872,10 +12872,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Fratello\"?",
         "imageOptions": [
-          "👨",
           "👧",
-          "👩",
-          "👦"
+          "👦",
+          "👨",
+          "👩"
         ],
         "correctAnswer": "👦"
       },
@@ -12884,10 +12884,10 @@ export const lessonsData = [
         "prompt": "Listen to the Italian word and select the matching image.",
         "audioText": "Sorella",
         "imageOptions": [
-          "👦",
-          "👨",
+          "👩",
           "👧",
-          "👩"
+          "👦",
+          "👨"
         ],
         "correctAnswer": "👧"
       },
@@ -12900,10 +12900,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Italian word to its meaning.",
         "options": [
-          "Sister - Sorella",
-          "Brother - Fratello",
           "Mother - Madre",
-          "Father - Padre"
+          "Father - Padre",
+          "Brother - Fratello",
+          "Sister - Sorella"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -12983,10 +12983,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Uno\" mean?",
         "options": [
+          "Three",
           "One",
-          "Four",
           "Two",
-          "Three"
+          "Four"
         ],
         "correctAnswer": "One"
       },
@@ -12994,10 +12994,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Two\" in Italian?",
         "options": [
-          "Due",
-          "Quattro",
           "Uno",
-          "Tre"
+          "Quattro",
+          "Tre",
+          "Due"
         ],
         "correctAnswer": "Due"
       },
@@ -13017,10 +13017,10 @@ export const lessonsData = [
         "prompt": "Listen to the Italian word and select the matching image.",
         "audioText": "Quattro",
         "imageOptions": [
+          "4️⃣",
           "3️⃣",
           "2️⃣",
-          "1️⃣",
-          "4️⃣"
+          "1️⃣"
         ],
         "correctAnswer": "4️⃣"
       },
@@ -13033,10 +13033,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Italian word to its meaning.",
         "options": [
-          "Four - Quattro",
-          "Three - Tre",
+          "One - Uno",
           "Two - Due",
-          "One - Uno"
+          "Three - Tre",
+          "Four - Quattro"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -13116,10 +13116,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Rosso\" mean?",
         "options": [
-          "Red",
-          "Blue",
           "Green",
-          "Yellow"
+          "Blue",
+          "Yellow",
+          "Red"
         ],
         "correctAnswer": "Red"
       },
@@ -13127,10 +13127,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Blue\" in Italian?",
         "options": [
-          "Verde",
           "Giallo",
+          "Blu",
           "Rosso",
-          "Blu"
+          "Verde"
         ],
         "correctAnswer": "Blu"
       },
@@ -13139,9 +13139,9 @@ export const lessonsData = [
         "prompt": "Which image matches \"Verde\"?",
         "imageOptions": [
           "🟡",
-          "🟢",
+          "🔴",
           "🔵",
-          "🔴"
+          "🟢"
         ],
         "correctAnswer": "🟢"
       },
@@ -13150,9 +13150,9 @@ export const lessonsData = [
         "prompt": "Listen to the Italian word and select the matching image.",
         "audioText": "Giallo",
         "imageOptions": [
+          "🔵",
           "🟡",
           "🔴",
-          "🔵",
           "🟢"
         ],
         "correctAnswer": "🟡"
@@ -13249,8 +13249,8 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Camicia\" mean?",
         "options": [
-          "Hat",
           "Shoes",
+          "Hat",
           "Pants",
           "Shirt"
         ],
@@ -13261,9 +13261,9 @@ export const lessonsData = [
         "prompt": "How do you say \"Pants\" in Italian?",
         "options": [
           "Cappello",
+          "Pantaloni",
           "Camicia",
-          "Scarpe",
-          "Pantaloni"
+          "Scarpe"
         ],
         "correctAnswer": "Pantaloni"
       },
@@ -13272,8 +13272,8 @@ export const lessonsData = [
         "prompt": "Which image matches \"Scarpe\"?",
         "imageOptions": [
           "👒",
-          "👞",
           "👖",
+          "👞",
           "👕"
         ],
         "correctAnswer": "👞"
@@ -13284,9 +13284,9 @@ export const lessonsData = [
         "audioText": "Cappello",
         "imageOptions": [
           "👕",
+          "👒",
           "👖",
-          "👞",
-          "👒"
+          "👞"
         ],
         "correctAnswer": "👒"
       },
@@ -13299,10 +13299,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Italian word to its meaning.",
         "options": [
-          "Hat - Cappello",
           "Shirt - Camicia",
           "Pants - Pantaloni",
-          "Shoes - Scarpe"
+          "Shoes - Scarpe",
+          "Hat - Cappello"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -13382,9 +13382,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Testa\" mean?",
         "options": [
+          "Head",
           "Ear",
           "Face",
-          "Head",
           "Eye"
         ],
         "correctAnswer": "Head"
@@ -13393,10 +13393,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Face\" in Italian?",
         "options": [
-          "Testa",
           "Occhio",
-          "Orecchio",
-          "Viso"
+          "Testa",
+          "Viso",
+          "Orecchio"
         ],
         "correctAnswer": "Viso"
       },
@@ -13404,10 +13404,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Occhio\"?",
         "imageOptions": [
-          "👂",
+          "👤",
           "😊",
-          "👁️",
-          "👤"
+          "👂",
+          "👁️"
         ],
         "correctAnswer": "👁️"
       },
@@ -13417,9 +13417,9 @@ export const lessonsData = [
         "audioText": "Orecchio",
         "imageOptions": [
           "👂",
-          "👁️",
+          "😊",
           "👤",
-          "😊"
+          "👁️"
         ],
         "correctAnswer": "👂"
       },
@@ -13432,8 +13432,8 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Italian word to its meaning.",
         "options": [
-          "Eye - Occhio",
           "Ear - Orecchio",
+          "Eye - Occhio",
           "Face - Viso",
           "Head - Testa"
         ],
@@ -13515,10 +13515,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Sole\" mean?",
         "options": [
+          "Snow",
           "Wind",
           "Rain",
-          "Sun",
-          "Snow"
+          "Sun"
         ],
         "correctAnswer": "Sun"
       },
@@ -13526,9 +13526,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Rain\" in Italian?",
         "options": [
-          "Vento",
-          "Sole",
           "Pioggia",
+          "Sole",
+          "Vento",
           "Neve"
         ],
         "correctAnswer": "Pioggia"
@@ -13537,10 +13537,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Vento\"?",
         "imageOptions": [
-          "☀️",
           "🌧️",
-          "💨",
-          "❄️"
+          "❄️",
+          "☀️",
+          "💨"
         ],
         "correctAnswer": "💨"
       },
@@ -13549,10 +13549,10 @@ export const lessonsData = [
         "prompt": "Listen to the Italian word and select the matching image.",
         "audioText": "Neve",
         "imageOptions": [
-          "💨",
-          "❄️",
           "☀️",
-          "🌧️"
+          "🌧️",
+          "💨",
+          "❄️"
         ],
         "correctAnswer": "❄️"
       },
@@ -13565,8 +13565,8 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Italian word to its meaning.",
         "options": [
-          "Rain - Pioggia",
           "Sun - Sole",
+          "Rain - Pioggia",
           "Snow - Neve",
           "Wind - Vento"
         ],
@@ -13649,9 +13649,9 @@ export const lessonsData = [
         "prompt": "What does \"Biglietto\" mean?",
         "options": [
           "Ticket",
-          "Passport",
+          "Luggage",
           "Flight",
-          "Luggage"
+          "Passport"
         ],
         "correctAnswer": "Ticket"
       },
@@ -13659,10 +13659,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Passport\" in Italian?",
         "options": [
-          "Passaporto",
           "Biglietto",
+          "Bagaglio",
           "Volo",
-          "Bagaglio"
+          "Passaporto"
         ],
         "correctAnswer": "Passaporto"
       },
@@ -13672,8 +13672,8 @@ export const lessonsData = [
         "imageOptions": [
           "🎫",
           "🛂",
-          "🧳",
-          "✈️"
+          "✈️",
+          "🧳"
         ],
         "correctAnswer": "✈️"
       },
@@ -13684,8 +13684,8 @@ export const lessonsData = [
         "imageOptions": [
           "🧳",
           "🎫",
-          "🛂",
-          "✈️"
+          "✈️",
+          "🛂"
         ],
         "correctAnswer": "🧳"
       },
@@ -13698,10 +13698,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Italian word to its meaning.",
         "options": [
-          "Passport - Passaporto",
           "Luggage - Bagaglio",
-          "Ticket - Biglietto",
-          "Flight - Volo"
+          "Flight - Volo",
+          "Passport - Passaporto",
+          "Ticket - Biglietto"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -13781,10 +13781,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Taxi\" mean?",
         "options": [
-          "Street",
-          "Address",
           "Driver",
-          "Taxi"
+          "Street",
+          "Taxi",
+          "Address"
         ],
         "correctAnswer": "Taxi"
       },
@@ -13792,10 +13792,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Driver\" in Italian?",
         "options": [
+          "Via",
           "Indirizzo",
-          "Taxi",
           "Autista",
-          "Via"
+          "Taxi"
         ],
         "correctAnswer": "Autista"
       },
@@ -13805,8 +13805,8 @@ export const lessonsData = [
         "imageOptions": [
           "🚕",
           "👨‍✈️",
-          "📍",
-          "🛣️"
+          "🛣️",
+          "📍"
         ],
         "correctAnswer": "📍"
       },
@@ -13831,10 +13831,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Italian word to its meaning.",
         "options": [
-          "Address - Indirizzo",
-          "Street - Via",
           "Driver - Autista",
-          "Taxi - Taxi"
+          "Taxi - Taxi",
+          "Address - Indirizzo",
+          "Street - Via"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -13914,10 +13914,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Camera\" mean?",
         "options": [
-          "Key",
+          "Shower",
           "Bed",
-          "Room",
-          "Shower"
+          "Key",
+          "Room"
         ],
         "correctAnswer": "Room"
       },
@@ -13925,10 +13925,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Key\" in Italian?",
         "options": [
-          "Doccia",
-          "Letto",
           "Camera",
-          "Chiave"
+          "Letto",
+          "Chiave",
+          "Doccia"
         ],
         "correctAnswer": "Chiave"
       },
@@ -13936,10 +13936,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Letto\"?",
         "imageOptions": [
-          "🛏️",
-          "🔑",
+          "🚿",
           "🗝️",
-          "🚿"
+          "🔑",
+          "🛏️"
         ],
         "correctAnswer": "🛏️"
       },
@@ -13948,10 +13948,10 @@ export const lessonsData = [
         "prompt": "Listen to the Italian word and select the matching image.",
         "audioText": "Doccia",
         "imageOptions": [
-          "🚿",
-          "🛏️",
           "🗝️",
-          "🔑"
+          "🚿",
+          "🔑",
+          "🛏️"
         ],
         "correctAnswer": "🚿"
       },
@@ -13966,8 +13966,8 @@ export const lessonsData = [
         "options": [
           "Shower - Doccia",
           "Bed - Letto",
-          "Room - Camera",
-          "Key - Chiave"
+          "Key - Chiave",
+          "Room - Camera"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -14047,9 +14047,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Menu\" mean?",
         "options": [
-          "Bill",
           "Menu",
           "Water",
+          "Bill",
           "Food"
         ],
         "correctAnswer": "Menu"
@@ -14058,10 +14058,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Water\" in Italian?",
         "options": [
-          "Acqua",
-          "Menu",
+          "Cibo",
           "Conto",
-          "Cibo"
+          "Menu",
+          "Acqua"
         ],
         "correctAnswer": "Acqua"
       },
@@ -14070,9 +14070,9 @@ export const lessonsData = [
         "prompt": "Which image matches \"Conto\"?",
         "imageOptions": [
           "🍲",
-          "🧾",
           "📜",
-          "🥤"
+          "🥤",
+          "🧾"
         ],
         "correctAnswer": "🧾"
       },
@@ -14081,9 +14081,9 @@ export const lessonsData = [
         "prompt": "Listen to the Italian word and select the matching image.",
         "audioText": "Cibo",
         "imageOptions": [
+          "🥤",
           "🍲",
           "🧾",
-          "🥤",
           "📜"
         ],
         "correctAnswer": "🍲"
@@ -14097,10 +14097,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Italian word to its meaning.",
         "options": [
-          "Menu - Menu",
-          "Food - Cibo",
           "Water - Acqua",
-          "Bill - Conto"
+          "Bill - Conto",
+          "Food - Cibo",
+          "Menu - Menu"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -14181,9 +14181,9 @@ export const lessonsData = [
         "prompt": "What does \"Negozio\" mean?",
         "options": [
           "Money",
-          "Store",
+          "Buy",
           "Price",
-          "Buy"
+          "Store"
         ],
         "correctAnswer": "Store"
       },
@@ -14191,10 +14191,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Price\" in Italian?",
         "options": [
-          "Soldi",
           "Comprare",
           "Negozio",
-          "Prezzo"
+          "Prezzo",
+          "Soldi"
         ],
         "correctAnswer": "Prezzo"
       },
@@ -14202,9 +14202,9 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Comprare\"?",
         "imageOptions": [
-          "💰",
           "🛍️",
           "🏷️",
+          "💰",
           "🏪"
         ],
         "correctAnswer": "🛍️"
@@ -14215,9 +14215,9 @@ export const lessonsData = [
         "audioText": "Soldi",
         "imageOptions": [
           "🏪",
+          "💰",
           "🏷️",
-          "🛍️",
-          "💰"
+          "🛍️"
         ],
         "correctAnswer": "💰"
       },
@@ -14230,10 +14230,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Italian word to its meaning.",
         "options": [
+          "Buy - Comprare",
           "Price - Prezzo",
-          "Money - Soldi",
           "Store - Negozio",
-          "Buy - Comprare"
+          "Money - Soldi"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -14313,10 +14313,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Scuola\" mean?",
         "options": [
-          "School",
-          "Teacher",
+          "Class",
           "Student",
-          "Class"
+          "Teacher",
+          "School"
         ],
         "correctAnswer": "School"
       },
@@ -14325,9 +14325,9 @@ export const lessonsData = [
         "prompt": "How do you say \"Teacher\" in Italian?",
         "options": [
           "Insegnante",
+          "Scuola",
           "Studente",
-          "Classe",
-          "Scuola"
+          "Classe"
         ],
         "correctAnswer": "Insegnante"
       },
@@ -14336,9 +14336,9 @@ export const lessonsData = [
         "prompt": "Which image matches \"Studente\"?",
         "imageOptions": [
           "📖",
+          "🏫",
           "🧑&zwj;🎓",
-          "👩&zwj;🏫",
-          "🏫"
+          "👩&zwj;🏫"
         ],
         "correctAnswer": "🧑&zwj;🎓"
       },
@@ -14347,9 +14347,9 @@ export const lessonsData = [
         "prompt": "Listen to the Italian word and select the matching image.",
         "audioText": "Classe",
         "imageOptions": [
-          "👩&zwj;🏫",
           "📖",
           "🏫",
+          "👩&zwj;🏫",
           "🧑&zwj;🎓"
         ],
         "correctAnswer": "📖"
@@ -14363,10 +14363,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Italian word to its meaning.",
         "options": [
-          "Teacher - Insegnante",
           "School - Scuola",
-          "Class - Classe",
-          "Student - Studente"
+          "Teacher - Insegnante",
+          "Student - Studente",
+          "Class - Classe"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -14446,10 +14446,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Ospedale\" mean?",
         "options": [
-          "Sick",
           "Medicine",
           "Doctor",
-          "Hospital"
+          "Hospital",
+          "Sick"
         ],
         "correctAnswer": "Hospital"
       },
@@ -14457,10 +14457,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Doctor\" in Italian?",
         "options": [
+          "Medico",
           "Malato",
-          "Medicina",
           "Ospedale",
-          "Medico"
+          "Medicina"
         ],
         "correctAnswer": "Medico"
       },
@@ -14468,10 +14468,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"Medicina\"?",
         "imageOptions": [
-          "🏥",
-          "🤢",
+          "💊",
           "🥼",
-          "💊"
+          "🤢",
+          "🏥"
         ],
         "correctAnswer": "💊"
       },
@@ -14480,10 +14480,10 @@ export const lessonsData = [
         "prompt": "Listen to the Italian word and select the matching image.",
         "audioText": "Malato",
         "imageOptions": [
-          "🤢",
-          "💊",
           "🥼",
-          "🏥"
+          "💊",
+          "🏥",
+          "🤢"
         ],
         "correctAnswer": "🤢"
       },
@@ -14496,10 +14496,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Italian word to its meaning.",
         "options": [
+          "Hospital - Ospedale",
           "Sick - Malato",
-          "Medicine - Medicina",
           "Doctor - Medico",
-          "Hospital - Ospedale"
+          "Medicine - Medicina"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -14579,10 +14579,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"Viaggiare\" mean?",
         "options": [
-          "Bus",
+          "Travel",
           "Train",
-          "City",
-          "Travel"
+          "Bus",
+          "City"
         ],
         "correctAnswer": "Travel"
       },
@@ -14590,10 +14590,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Train\" in Italian?",
         "options": [
-          "Autobus",
           "Città",
-          "Treno",
-          "Viaggiare"
+          "Autobus",
+          "Viaggiare",
+          "Treno"
         ],
         "correctAnswer": "Treno"
       },
@@ -14613,8 +14613,8 @@ export const lessonsData = [
         "prompt": "Listen to the Italian word and select the matching image.",
         "audioText": "Città",
         "imageOptions": [
-          "🧭",
           "🚆",
+          "🧭",
           "🚌",
           "🏙️"
         ],
@@ -14630,9 +14630,9 @@ export const lessonsData = [
         "prompt": "Match each Italian word to its meaning.",
         "options": [
           "City - Città",
-          "Bus - Autobus",
+          "Travel - Viaggiare",
           "Train - Treno",
-          "Travel - Viaggiare"
+          "Bus - Autobus"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -14663,10 +14663,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Thank you\" in Italian?",
         "options": [
-          "Grazie",
           "Per favore",
+          "Arrivederci",
           "Ciao",
-          "Arrivederci"
+          "Grazie"
         ],
         "correctAnswer": "Grazie"
       },
@@ -14674,10 +14674,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image represents \"Macchina\"?",
         "imageOptions": [
+          "🍎",
           "🚗",
-          "🏠",
           "💧",
-          "🍎"
+          "🏠"
         ],
         "correctAnswer": "🚗"
       },
@@ -14686,10 +14686,10 @@ export const lessonsData = [
         "prompt": "Listen to the Italian word and choose the matching image.",
         "audioText": "Gatto",
         "imageOptions": [
-          "🐐",
-          "🐶",
+          "🐦",
           "🐱",
-          "🐦"
+          "🐶",
+          "🐐"
         ],
         "correctAnswer": "🐱"
       },
@@ -14769,9 +14769,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"안녕하세요\" mean?",
         "options": [
+          "Goodbye",
           "Hello",
           "Please",
-          "Goodbye",
           "Thank you"
         ],
         "correctAnswer": "Hello"
@@ -14781,9 +14781,9 @@ export const lessonsData = [
         "prompt": "How do you say \"Goodbye\" in Korean?",
         "options": [
           "주세요",
-          "안녕히 계세요",
+          "감사합니다",
           "안녕하세요",
-          "감사합니다"
+          "안녕히 계세요"
         ],
         "correctAnswer": "안녕히 계세요"
       },
@@ -14791,10 +14791,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"감사합니다\"?",
         "imageOptions": [
-          "🙌",
-          "🙏",
           "👋",
-          "👋"
+          "👋",
+          "🙏",
+          "🙌"
         ],
         "correctAnswer": "🙏"
       },
@@ -14804,9 +14804,9 @@ export const lessonsData = [
         "audioText": "주세요",
         "imageOptions": [
           "👋",
+          "👋",
           "🙏",
-          "🙌",
-          "👋"
+          "🙌"
         ],
         "correctAnswer": "🙌"
       },
@@ -14820,9 +14820,9 @@ export const lessonsData = [
         "prompt": "Match each Korean word to its meaning.",
         "options": [
           "Please - 주세요",
+          "Thank you - 감사합니다",
           "Goodbye - 안녕히 계세요",
-          "Hello - 안녕하세요",
-          "Thank you - 감사합니다"
+          "Hello - 안녕하세요"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -14904,8 +14904,8 @@ export const lessonsData = [
         "options": [
           "Water",
           "Apple",
-          "House",
-          "Car"
+          "Car",
+          "House"
         ],
         "correctAnswer": "Car"
       },
@@ -14913,10 +14913,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"House\" in Korean?",
         "options": [
+          "사과",
           "물",
-          "집",
           "차",
-          "사과"
+          "집"
         ],
         "correctAnswer": "집"
       },
@@ -14924,10 +14924,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"물\"?",
         "imageOptions": [
-          "💧",
+          "🚗",
           "🏠",
-          "🍎",
-          "🚗"
+          "💧",
+          "🍎"
         ],
         "correctAnswer": "💧"
       },
@@ -14936,10 +14936,10 @@ export const lessonsData = [
         "prompt": "Listen to the Korean word and select the matching image.",
         "audioText": "사과",
         "imageOptions": [
-          "🚗",
-          "🏠",
+          "🍎",
           "💧",
-          "🍎"
+          "🏠",
+          "🚗"
         ],
         "correctAnswer": "🍎"
       },
@@ -14952,10 +14952,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Korean word to its meaning.",
         "options": [
-          "Car - 차",
-          "House - 집",
+          "Apple - 사과",
           "Water - 물",
-          "Apple - 사과"
+          "House - 집",
+          "Car - 차"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -15036,9 +15036,9 @@ export const lessonsData = [
         "prompt": "What does \"개\" mean?",
         "options": [
           "Bird",
+          "Goat",
           "Cat",
-          "Dog",
-          "Goat"
+          "Dog"
         ],
         "correctAnswer": "Dog"
       },
@@ -15046,10 +15046,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Cat\" in Korean?",
         "options": [
+          "새",
           "염소",
           "개",
-          "고양이",
-          "새"
+          "고양이"
         ],
         "correctAnswer": "고양이"
       },
@@ -15057,10 +15057,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"염소\"?",
         "imageOptions": [
-          "🐐",
+          "🐶",
           "🐱",
-          "🐦",
-          "🐶"
+          "🐐",
+          "🐦"
         ],
         "correctAnswer": "🐐"
       },
@@ -15069,8 +15069,8 @@ export const lessonsData = [
         "prompt": "Listen to the Korean word and select the matching image.",
         "audioText": "새",
         "imageOptions": [
-          "🐱",
           "🐶",
+          "🐱",
           "🐐",
           "🐦"
         ],
@@ -15085,9 +15085,9 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Korean word to its meaning.",
         "options": [
-          "Goat - 염소",
           "Dog - 개",
           "Cat - 고양이",
+          "Goat - 염소",
           "Bird - 새"
         ],
         "correctAnswer": "Matched successfully"
@@ -15168,10 +15168,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"밥\" mean?",
         "options": [
+          "Egg",
           "Bread",
-          "Meat",
           "Rice",
-          "Egg"
+          "Meat"
         ],
         "correctAnswer": "Rice"
       },
@@ -15179,9 +15179,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Bread\" in Korean?",
         "options": [
-          "고기",
           "계란",
           "빵",
+          "고기",
           "밥"
         ],
         "correctAnswer": "빵"
@@ -15191,9 +15191,9 @@ export const lessonsData = [
         "prompt": "Which image matches \"계란\"?",
         "imageOptions": [
           "🍚",
-          "🥩",
+          "🥚",
           "🍞",
-          "🥚"
+          "🥩"
         ],
         "correctAnswer": "🥚"
       },
@@ -15203,9 +15203,9 @@ export const lessonsData = [
         "audioText": "고기",
         "imageOptions": [
           "🥩",
-          "🍚",
+          "🥚",
           "🍞",
-          "🥚"
+          "🍚"
         ],
         "correctAnswer": "🥩"
       },
@@ -15219,8 +15219,8 @@ export const lessonsData = [
         "prompt": "Match each Korean word to its meaning.",
         "options": [
           "Bread - 빵",
-          "Meat - 고기",
           "Egg - 계란",
+          "Meat - 고기",
           "Rice - 밥"
         ],
         "correctAnswer": "Matched successfully"
@@ -15301,10 +15301,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"어머니\" mean?",
         "options": [
-          "Mother",
-          "Father",
+          "Sister",
           "Brother",
-          "Sister"
+          "Father",
+          "Mother"
         ],
         "correctAnswer": "Mother"
       },
@@ -15312,9 +15312,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Father\" in Korean?",
         "options": [
-          "형제",
-          "어머니",
           "아버지",
+          "어머니",
+          "형제",
           "자매"
         ],
         "correctAnswer": "아버지"
@@ -15323,10 +15323,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"형제\"?",
         "imageOptions": [
-          "👩",
-          "👨",
+          "👧",
           "👦",
-          "👧"
+          "👨",
+          "👩"
         ],
         "correctAnswer": "👦"
       },
@@ -15335,10 +15335,10 @@ export const lessonsData = [
         "prompt": "Listen to the Korean word and select the matching image.",
         "audioText": "자매",
         "imageOptions": [
-          "👧",
-          "👦",
+          "👩",
           "👨",
-          "👩"
+          "👦",
+          "👧"
         ],
         "correctAnswer": "👧"
       },
@@ -15434,9 +15434,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"하나\" mean?",
         "options": [
-          "Three",
-          "Four",
           "Two",
+          "Four",
+          "Three",
           "One"
         ],
         "correctAnswer": "One"
@@ -15445,10 +15445,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Two\" in Korean?",
         "options": [
-          "넷",
+          "셋",
           "둘",
           "하나",
-          "셋"
+          "넷"
         ],
         "correctAnswer": "둘"
       },
@@ -15456,10 +15456,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"셋\"?",
         "imageOptions": [
-          "4️⃣",
           "1️⃣",
           "2️⃣",
-          "3️⃣"
+          "3️⃣",
+          "4️⃣"
         ],
         "correctAnswer": "3️⃣"
       },
@@ -15470,8 +15470,8 @@ export const lessonsData = [
         "imageOptions": [
           "1️⃣",
           "3️⃣",
-          "2️⃣",
-          "4️⃣"
+          "4️⃣",
+          "2️⃣"
         ],
         "correctAnswer": "4️⃣"
       },
@@ -15484,10 +15484,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Korean word to its meaning.",
         "options": [
-          "One - 하나",
-          "Two - 둘",
           "Three - 셋",
-          "Four - 넷"
+          "Four - 넷",
+          "Two - 둘",
+          "One - 하나"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -15578,10 +15578,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Blue\" in Korean?",
         "options": [
-          "파란색",
           "노란색",
+          "초록색",
           "빨간색",
-          "초록색"
+          "파란색"
         ],
         "correctAnswer": "파란색"
       },
@@ -15589,10 +15589,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"초록색\"?",
         "imageOptions": [
-          "🔴",
-          "🔵",
           "🟡",
-          "🟢"
+          "🟢",
+          "🔵",
+          "🔴"
         ],
         "correctAnswer": "🟢"
       },
@@ -15601,8 +15601,8 @@ export const lessonsData = [
         "prompt": "Listen to the Korean word and select the matching image.",
         "audioText": "노란색",
         "imageOptions": [
-          "🔴",
           "🟡",
+          "🔴",
           "🔵",
           "🟢"
         ],
@@ -15618,9 +15618,9 @@ export const lessonsData = [
         "prompt": "Match each Korean word to its meaning.",
         "options": [
           "Red - 빨간색",
-          "Green - 초록색",
           "Blue - 파란색",
-          "Yellow - 노란색"
+          "Yellow - 노란색",
+          "Green - 초록색"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -15711,10 +15711,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Pants\" in Korean?",
         "options": [
-          "신발",
           "모자",
+          "바지",
           "셔츠",
-          "바지"
+          "신발"
         ],
         "correctAnswer": "바지"
       },
@@ -15722,10 +15722,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"신발\"?",
         "imageOptions": [
-          "👖",
-          "👕",
           "👒",
-          "👞"
+          "👞",
+          "👖",
+          "👕"
         ],
         "correctAnswer": "👞"
       },
@@ -15734,10 +15734,10 @@ export const lessonsData = [
         "prompt": "Listen to the Korean word and select the matching image.",
         "audioText": "모자",
         "imageOptions": [
-          "👞",
-          "👖",
           "👒",
-          "👕"
+          "👞",
+          "👕",
+          "👖"
         ],
         "correctAnswer": "👒"
       },
@@ -15750,10 +15750,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Korean word to its meaning.",
         "options": [
-          "Shirt - 셔츠",
-          "Shoes - 신발",
           "Hat - 모자",
-          "Pants - 바지"
+          "Shoes - 신발",
+          "Pants - 바지",
+          "Shirt - 셔츠"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -15833,9 +15833,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"머리\" mean?",
         "options": [
-          "Head",
-          "Face",
           "Eye",
+          "Face",
+          "Head",
           "Ear"
         ],
         "correctAnswer": "Head"
@@ -15844,9 +15844,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Face\" in Korean?",
         "options": [
+          "귀",
           "눈",
           "머리",
-          "귀",
           "얼굴"
         ],
         "correctAnswer": "얼굴"
@@ -15855,10 +15855,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"눈\"?",
         "imageOptions": [
-          "👤",
-          "😊",
           "👁️",
-          "👂"
+          "👂",
+          "😊",
+          "👤"
         ],
         "correctAnswer": "👁️"
       },
@@ -15867,10 +15867,10 @@ export const lessonsData = [
         "prompt": "Listen to the Korean word and select the matching image.",
         "audioText": "귀",
         "imageOptions": [
-          "👁️",
-          "😊",
+          "👤",
           "👂",
-          "👤"
+          "👁️",
+          "😊"
         ],
         "correctAnswer": "👂"
       },
@@ -15884,9 +15884,9 @@ export const lessonsData = [
         "prompt": "Match each Korean word to its meaning.",
         "options": [
           "Head - 머리",
-          "Ear - 귀",
           "Face - 얼굴",
-          "Eye - 눈"
+          "Eye - 눈",
+          "Ear - 귀"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -15966,10 +15966,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"태양\" mean?",
         "options": [
-          "Snow",
-          "Rain",
           "Sun",
-          "Wind"
+          "Rain",
+          "Wind",
+          "Snow"
         ],
         "correctAnswer": "Sun"
       },
@@ -15977,10 +15977,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Rain\" in Korean?",
         "options": [
-          "비",
-          "태양",
+          "눈",
           "바람",
-          "눈"
+          "태양",
+          "비"
         ],
         "correctAnswer": "비"
       },
@@ -15988,10 +15988,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"바람\"?",
         "imageOptions": [
+          "☀️",
           "❄️",
-          "💨",
           "🌧️",
-          "☀️"
+          "💨"
         ],
         "correctAnswer": "💨"
       },
@@ -16000,10 +16000,10 @@ export const lessonsData = [
         "prompt": "Listen to the Korean word and select the matching image.",
         "audioText": "눈",
         "imageOptions": [
+          "❄️",
           "☀️",
           "🌧️",
-          "💨",
-          "❄️"
+          "💨"
         ],
         "correctAnswer": "❄️"
       },
@@ -16099,8 +16099,8 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"표\" mean?",
         "options": [
-          "Flight",
           "Luggage",
+          "Flight",
           "Passport",
           "Ticket"
         ],
@@ -16110,10 +16110,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Passport\" in Korean?",
         "options": [
-          "표",
           "여권",
           "비행",
-          "수하물"
+          "수하물",
+          "표"
         ],
         "correctAnswer": "여권"
       },
@@ -16121,10 +16121,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"비행\"?",
         "imageOptions": [
-          "✈️",
-          "🧳",
           "🛂",
-          "🎫"
+          "🎫",
+          "🧳",
+          "✈️"
         ],
         "correctAnswer": "✈️"
       },
@@ -16133,10 +16133,10 @@ export const lessonsData = [
         "prompt": "Listen to the Korean word and select the matching image.",
         "audioText": "수하물",
         "imageOptions": [
-          "🧳",
-          "✈️",
           "🛂",
-          "🎫"
+          "🧳",
+          "🎫",
+          "✈️"
         ],
         "correctAnswer": "🧳"
       },
@@ -16149,10 +16149,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Korean word to its meaning.",
         "options": [
-          "Luggage - 수하물",
+          "Flight - 비행",
           "Passport - 여권",
           "Ticket - 표",
-          "Flight - 비행"
+          "Luggage - 수하물"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -16233,8 +16233,8 @@ export const lessonsData = [
         "prompt": "What does \"택시\" mean?",
         "options": [
           "Street",
-          "Address",
           "Driver",
+          "Address",
           "Taxi"
         ],
         "correctAnswer": "Taxi"
@@ -16243,10 +16243,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Driver\" in Korean?",
         "options": [
-          "거리",
-          "주소",
+          "운전사",
           "택시",
-          "운전사"
+          "거리",
+          "주소"
         ],
         "correctAnswer": "운전사"
       },
@@ -16254,10 +16254,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"주소\"?",
         "imageOptions": [
-          "👨‍✈️",
-          "🚕",
           "🛣️",
-          "📍"
+          "📍",
+          "👨‍✈️",
+          "🚕"
         ],
         "correctAnswer": "📍"
       },
@@ -16282,10 +16282,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Korean word to its meaning.",
         "options": [
-          "Street - 거리",
+          "Taxi - 택시",
           "Address - 주소",
-          "Driver - 운전사",
-          "Taxi - 택시"
+          "Street - 거리",
+          "Driver - 운전사"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -16365,10 +16365,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"방\" mean?",
         "options": [
-          "Key",
           "Room",
-          "Bed",
-          "Shower"
+          "Key",
+          "Shower",
+          "Bed"
         ],
         "correctAnswer": "Room"
       },
@@ -16376,10 +16376,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Key\" in Korean?",
         "options": [
-          "열쇠",
           "방",
-          "침대",
-          "샤워"
+          "열쇠",
+          "샤워",
+          "침대"
         ],
         "correctAnswer": "열쇠"
       },
@@ -16387,10 +16387,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"침대\"?",
         "imageOptions": [
-          "🛏️",
           "🗝️",
-          "🚿",
-          "🔑"
+          "🛏️",
+          "🔑",
+          "🚿"
         ],
         "correctAnswer": "🛏️"
       },
@@ -16399,9 +16399,9 @@ export const lessonsData = [
         "prompt": "Listen to the Korean word and select the matching image.",
         "audioText": "샤워",
         "imageOptions": [
-          "🗝️",
           "🚿",
           "🔑",
+          "🗝️",
           "🛏️"
         ],
         "correctAnswer": "🚿"
@@ -16415,10 +16415,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Korean word to its meaning.",
         "options": [
-          "Room - 방",
-          "Key - 열쇠",
           "Shower - 샤워",
-          "Bed - 침대"
+          "Bed - 침대",
+          "Key - 열쇠",
+          "Room - 방"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -16498,10 +16498,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"메뉴\" mean?",
         "options": [
-          "Food",
           "Bill",
           "Water",
-          "Menu"
+          "Menu",
+          "Food"
         ],
         "correctAnswer": "Menu"
       },
@@ -16509,9 +16509,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Water\" in Korean?",
         "options": [
-          "계산서",
-          "메뉴",
           "물",
+          "메뉴",
+          "계산서",
           "음식"
         ],
         "correctAnswer": "물"
@@ -16520,10 +16520,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"계산서\"?",
         "imageOptions": [
-          "🥤",
+          "🍲",
           "🧾",
-          "📜",
-          "🍲"
+          "🥤",
+          "📜"
         ],
         "correctAnswer": "🧾"
       },
@@ -16532,10 +16532,10 @@ export const lessonsData = [
         "prompt": "Listen to the Korean word and select the matching image.",
         "audioText": "음식",
         "imageOptions": [
-          "🥤",
-          "📜",
           "🧾",
-          "🍲"
+          "🍲",
+          "🥤",
+          "📜"
         ],
         "correctAnswer": "🍲"
       },
@@ -16548,10 +16548,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Korean word to its meaning.",
         "options": [
+          "Food - 음식",
           "Menu - 메뉴",
           "Water - 물",
-          "Bill - 계산서",
-          "Food - 음식"
+          "Bill - 계산서"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -16631,9 +16631,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"가게\" mean?",
         "options": [
-          "Price",
-          "Store",
           "Money",
+          "Store",
+          "Price",
           "Buy"
         ],
         "correctAnswer": "Store"
@@ -16642,10 +16642,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Price\" in Korean?",
         "options": [
-          "가격",
-          "가게",
+          "돈",
           "사다",
-          "돈"
+          "가게",
+          "가격"
         ],
         "correctAnswer": "가격"
       },
@@ -16654,9 +16654,9 @@ export const lessonsData = [
         "prompt": "Which image matches \"사다\"?",
         "imageOptions": [
           "💰",
-          "🏪",
+          "🛍️",
           "🏷️",
-          "🛍️"
+          "🏪"
         ],
         "correctAnswer": "🛍️"
       },
@@ -16665,10 +16665,10 @@ export const lessonsData = [
         "prompt": "Listen to the Korean word and select the matching image.",
         "audioText": "돈",
         "imageOptions": [
-          "🏷️",
-          "🏪",
+          "💰",
           "🛍️",
-          "💰"
+          "🏷️",
+          "🏪"
         ],
         "correctAnswer": "💰"
       },
@@ -16682,9 +16682,9 @@ export const lessonsData = [
         "prompt": "Match each Korean word to its meaning.",
         "options": [
           "Price - 가격",
-          "Money - 돈",
           "Store - 가게",
-          "Buy - 사다"
+          "Buy - 사다",
+          "Money - 돈"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -16765,9 +16765,9 @@ export const lessonsData = [
         "prompt": "What does \"학교\" mean?",
         "options": [
           "School",
-          "Class",
           "Teacher",
-          "Student"
+          "Student",
+          "Class"
         ],
         "correctAnswer": "School"
       },
@@ -16775,10 +16775,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Teacher\" in Korean?",
         "options": [
-          "선생님",
-          "학교",
           "교실",
-          "학생"
+          "학생",
+          "학교",
+          "선생님"
         ],
         "correctAnswer": "선생님"
       },
@@ -16786,10 +16786,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"학생\"?",
         "imageOptions": [
+          "📖",
           "🧑&zwj;🎓",
-          "🏫",
           "👩&zwj;🏫",
-          "📖"
+          "🏫"
         ],
         "correctAnswer": "🧑&zwj;🎓"
       },
@@ -16798,10 +16798,10 @@ export const lessonsData = [
         "prompt": "Listen to the Korean word and select the matching image.",
         "audioText": "교실",
         "imageOptions": [
-          "👩&zwj;🏫",
-          "📖",
           "🏫",
-          "🧑&zwj;🎓"
+          "👩&zwj;🏫",
+          "🧑&zwj;🎓",
+          "📖"
         ],
         "correctAnswer": "📖"
       },
@@ -16814,10 +16814,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Korean word to its meaning.",
         "options": [
-          "Class - 교실",
-          "Student - 학생",
           "Teacher - 선생님",
-          "School - 학교"
+          "School - 학교",
+          "Class - 교실",
+          "Student - 학생"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -16899,8 +16899,8 @@ export const lessonsData = [
         "options": [
           "Hospital",
           "Doctor",
-          "Sick",
-          "Medicine"
+          "Medicine",
+          "Sick"
         ],
         "correctAnswer": "Hospital"
       },
@@ -16908,10 +16908,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Doctor\" in Korean?",
         "options": [
-          "아픈",
-          "병원",
           "의사",
-          "약"
+          "약",
+          "병원",
+          "아픈"
         ],
         "correctAnswer": "의사"
       },
@@ -16920,9 +16920,9 @@ export const lessonsData = [
         "prompt": "Which image matches \"약\"?",
         "imageOptions": [
           "💊",
-          "🤢",
+          "🏥",
           "🥼",
-          "🏥"
+          "🤢"
         ],
         "correctAnswer": "💊"
       },
@@ -16931,10 +16931,10 @@ export const lessonsData = [
         "prompt": "Listen to the Korean word and select the matching image.",
         "audioText": "아픈",
         "imageOptions": [
-          "🤢",
           "🏥",
+          "🥼",
           "💊",
-          "🥼"
+          "🤢"
         ],
         "correctAnswer": "🤢"
       },
@@ -16947,9 +16947,9 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Korean word to its meaning.",
         "options": [
+          "Medicine - 약",
           "Doctor - 의사",
           "Sick - 아픈",
-          "Medicine - 약",
           "Hospital - 병원"
         ],
         "correctAnswer": "Matched successfully"
@@ -17030,10 +17030,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"여행\" mean?",
         "options": [
-          "City",
           "Bus",
-          "Train",
-          "Travel"
+          "City",
+          "Travel",
+          "Train"
         ],
         "correctAnswer": "Travel"
       },
@@ -17041,10 +17041,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Train\" in Korean?",
         "options": [
-          "버스",
           "도시",
-          "여행",
-          "기차"
+          "기차",
+          "버스",
+          "여행"
         ],
         "correctAnswer": "기차"
       },
@@ -17052,10 +17052,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"버스\"?",
         "imageOptions": [
-          "🏙️",
           "🚌",
-          "🚆",
-          "🧭"
+          "🧭",
+          "🏙️",
+          "🚆"
         ],
         "correctAnswer": "🚌"
       },
@@ -17080,8 +17080,8 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Korean word to its meaning.",
         "options": [
-          "Train - 기차",
           "Travel - 여행",
+          "Train - 기차",
           "Bus - 버스",
           "City - 도시"
         ],
@@ -17116,8 +17116,8 @@ export const lessonsData = [
         "options": [
           "감사합니다",
           "안녕하세요",
-          "안녕히 계세요",
-          "주세요"
+          "주세요",
+          "안녕히 계세요"
         ],
         "correctAnswer": "감사합니다"
       },
@@ -17125,10 +17125,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image represents \"차\"?",
         "imageOptions": [
-          "🚗",
           "🏠",
           "🍎",
-          "💧"
+          "💧",
+          "🚗"
         ],
         "correctAnswer": "🚗"
       },
@@ -17139,8 +17139,8 @@ export const lessonsData = [
         "imageOptions": [
           "🐱",
           "🐶",
-          "🐐",
-          "🐦"
+          "🐦",
+          "🐐"
         ],
         "correctAnswer": "🐱"
       },
@@ -17221,9 +17221,9 @@ export const lessonsData = [
         "prompt": "What does \"こんにちは\" mean?",
         "options": [
           "Thank you",
-          "Goodbye",
           "Hello",
-          "Please"
+          "Please",
+          "Goodbye"
         ],
         "correctAnswer": "Hello"
       },
@@ -17231,10 +17231,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Goodbye\" in Japanese?",
         "options": [
-          "ありがとう",
-          "お願いします",
+          "さようなら",
           "こんにちは",
-          "さようなら"
+          "お願いします",
+          "ありがとう"
         ],
         "correctAnswer": "さようなら"
       },
@@ -17243,9 +17243,9 @@ export const lessonsData = [
         "prompt": "Which image matches \"ありがとう\"?",
         "imageOptions": [
           "👋",
-          "🙌",
+          "🙏",
           "👋",
-          "🙏"
+          "🙌"
         ],
         "correctAnswer": "🙏"
       },
@@ -17254,10 +17254,10 @@ export const lessonsData = [
         "prompt": "Listen to the Japanese word and select the matching image.",
         "audioText": "お願いします",
         "imageOptions": [
-          "🙌",
           "👋",
           "👋",
-          "🙏"
+          "🙏",
+          "🙌"
         ],
         "correctAnswer": "🙌"
       },
@@ -17270,9 +17270,9 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Japanese word to its meaning.",
         "options": [
+          "Thank you - ありがとう",
           "Hello - こんにちは",
           "Goodbye - さようなら",
-          "Thank you - ありがとう",
           "Please - お願いします"
         ],
         "correctAnswer": "Matched successfully"
@@ -17353,10 +17353,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"車\" mean?",
         "options": [
-          "Apple",
-          "Water",
           "House",
-          "Car"
+          "Water",
+          "Car",
+          "Apple"
         ],
         "correctAnswer": "Car"
       },
@@ -17364,10 +17364,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"House\" in Japanese?",
         "options": [
-          "車",
-          "家",
           "水",
-          "りんご"
+          "りんご",
+          "車",
+          "家"
         ],
         "correctAnswer": "家"
       },
@@ -17375,10 +17375,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"水\"?",
         "imageOptions": [
-          "💧",
-          "🍎",
+          "🚗",
           "🏠",
-          "🚗"
+          "💧",
+          "🍎"
         ],
         "correctAnswer": "💧"
       },
@@ -17387,8 +17387,8 @@ export const lessonsData = [
         "prompt": "Listen to the Japanese word and select the matching image.",
         "audioText": "りんご",
         "imageOptions": [
-          "💧",
           "🍎",
+          "💧",
           "🏠",
           "🚗"
         ],
@@ -17403,10 +17403,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Japanese word to its meaning.",
         "options": [
-          "Car - 車",
           "Apple - りんご",
-          "Water - 水",
-          "House - 家"
+          "Car - 車",
+          "House - 家",
+          "Water - 水"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -17486,10 +17486,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"犬\" mean?",
         "options": [
-          "Dog",
+          "Goat",
           "Bird",
           "Cat",
-          "Goat"
+          "Dog"
         ],
         "correctAnswer": "Dog"
       },
@@ -17498,9 +17498,9 @@ export const lessonsData = [
         "prompt": "How do you say \"Cat\" in Japanese?",
         "options": [
           "猫",
-          "鳥",
+          "犬",
           "山羊",
-          "犬"
+          "鳥"
         ],
         "correctAnswer": "猫"
       },
@@ -17510,8 +17510,8 @@ export const lessonsData = [
         "imageOptions": [
           "🐦",
           "🐶",
-          "🐱",
-          "🐐"
+          "🐐",
+          "🐱"
         ],
         "correctAnswer": "🐐"
       },
@@ -17520,10 +17520,10 @@ export const lessonsData = [
         "prompt": "Listen to the Japanese word and select the matching image.",
         "audioText": "鳥",
         "imageOptions": [
-          "🐐",
           "🐱",
           "🐦",
-          "🐶"
+          "🐶",
+          "🐐"
         ],
         "correctAnswer": "🐦"
       },
@@ -17536,10 +17536,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Japanese word to its meaning.",
         "options": [
-          "Cat - 猫",
+          "Goat - 山羊",
           "Dog - 犬",
-          "Bird - 鳥",
-          "Goat - 山羊"
+          "Cat - 猫",
+          "Bird - 鳥"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -17619,10 +17619,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"ご飯\" mean?",
         "options": [
-          "Rice",
-          "Bread",
           "Egg",
-          "Meat"
+          "Meat",
+          "Rice",
+          "Bread"
         ],
         "correctAnswer": "Rice"
       },
@@ -17630,10 +17630,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Bread\" in Japanese?",
         "options": [
-          "ご飯",
+          "肉",
           "パン",
-          "卵",
-          "肉"
+          "ご飯",
+          "卵"
         ],
         "correctAnswer": "パン"
       },
@@ -17641,10 +17641,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"卵\"?",
         "imageOptions": [
-          "🍚",
-          "🍞",
           "🥩",
-          "🥚"
+          "🍚",
+          "🥚",
+          "🍞"
         ],
         "correctAnswer": "🥚"
       },
@@ -17653,10 +17653,10 @@ export const lessonsData = [
         "prompt": "Listen to the Japanese word and select the matching image.",
         "audioText": "肉",
         "imageOptions": [
+          "🍚",
           "🥩",
-          "🥚",
           "🍞",
-          "🍚"
+          "🥚"
         ],
         "correctAnswer": "🥩"
       },
@@ -17669,8 +17669,8 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Japanese word to its meaning.",
         "options": [
-          "Rice - ご飯",
           "Meat - 肉",
+          "Rice - ご飯",
           "Bread - パン",
           "Egg - 卵"
         ],
@@ -17753,9 +17753,9 @@ export const lessonsData = [
         "prompt": "What does \"お母さん\" mean?",
         "options": [
           "Mother",
+          "Father",
           "Brother",
-          "Sister",
-          "Father"
+          "Sister"
         ],
         "correctAnswer": "Mother"
       },
@@ -17763,10 +17763,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Father\" in Japanese?",
         "options": [
-          "兄弟",
           "お母さん",
+          "お父さん",
           "姉妹",
-          "お父さん"
+          "兄弟"
         ],
         "correctAnswer": "お父さん"
       },
@@ -17776,8 +17776,8 @@ export const lessonsData = [
         "imageOptions": [
           "👦",
           "👧",
-          "👨",
-          "👩"
+          "👩",
+          "👨"
         ],
         "correctAnswer": "👦"
       },
@@ -17786,10 +17786,10 @@ export const lessonsData = [
         "prompt": "Listen to the Japanese word and select the matching image.",
         "audioText": "姉妹",
         "imageOptions": [
-          "👩",
-          "👨",
+          "👧",
           "👦",
-          "👧"
+          "👨",
+          "👩"
         ],
         "correctAnswer": "👧"
       },
@@ -17802,10 +17802,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Japanese word to its meaning.",
         "options": [
-          "Father - お父さん",
           "Mother - お母さん",
-          "Brother - 兄弟",
-          "Sister - 姉妹"
+          "Father - お父さん",
+          "Sister - 姉妹",
+          "Brother - 兄弟"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -17896,10 +17896,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Two\" in Japanese?",
         "options": [
-          "四",
-          "三",
           "一",
-          "二"
+          "四",
+          "二",
+          "三"
         ],
         "correctAnswer": "二"
       },
@@ -17919,10 +17919,10 @@ export const lessonsData = [
         "prompt": "Listen to the Japanese word and select the matching image.",
         "audioText": "四",
         "imageOptions": [
-          "4️⃣",
-          "3️⃣",
+          "1️⃣",
           "2️⃣",
-          "1️⃣"
+          "3️⃣",
+          "4️⃣"
         ],
         "correctAnswer": "4️⃣"
       },
@@ -17936,9 +17936,9 @@ export const lessonsData = [
         "prompt": "Match each Japanese word to its meaning.",
         "options": [
           "Three - 三",
-          "One - 一",
+          "Two - 二",
           "Four - 四",
-          "Two - 二"
+          "One - 一"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -18030,9 +18030,9 @@ export const lessonsData = [
         "prompt": "How do you say \"Blue\" in Japanese?",
         "options": [
           "黄色",
-          "緑",
           "赤",
-          "青"
+          "青",
+          "緑"
         ],
         "correctAnswer": "青"
       },
@@ -18040,10 +18040,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"緑\"?",
         "imageOptions": [
-          "🔴",
-          "🔵",
           "🟢",
-          "🟡"
+          "🟡",
+          "🔵",
+          "🔴"
         ],
         "correctAnswer": "🟢"
       },
@@ -18052,9 +18052,9 @@ export const lessonsData = [
         "prompt": "Listen to the Japanese word and select the matching image.",
         "audioText": "黄色",
         "imageOptions": [
-          "🟢",
-          "🔵",
           "🟡",
+          "🔵",
+          "🟢",
           "🔴"
         ],
         "correctAnswer": "🟡"
@@ -18068,10 +18068,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Japanese word to its meaning.",
         "options": [
-          "Red - 赤",
           "Yellow - 黄色",
           "Blue - 青",
-          "Green - 緑"
+          "Green - 緑",
+          "Red - 赤"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -18152,8 +18152,8 @@ export const lessonsData = [
         "prompt": "What does \"シャツ\" mean?",
         "options": [
           "Shirt",
-          "Hat",
           "Pants",
+          "Hat",
           "Shoes"
         ],
         "correctAnswer": "Shirt"
@@ -18173,10 +18173,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"靴\"?",
         "imageOptions": [
-          "👞",
+          "👕",
           "👖",
-          "👒",
-          "👕"
+          "👞",
+          "👒"
         ],
         "correctAnswer": "👞"
       },
@@ -18186,9 +18186,9 @@ export const lessonsData = [
         "audioText": "帽子",
         "imageOptions": [
           "👕",
-          "👒",
           "👖",
-          "👞"
+          "👞",
+          "👒"
         ],
         "correctAnswer": "👒"
       },
@@ -18201,10 +18201,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Japanese word to its meaning.",
         "options": [
-          "Hat - 帽子",
-          "Shoes - 靴",
+          "Shirt - シャツ",
           "Pants - ズ본",
-          "Shirt - シャツ"
+          "Shoes - 靴",
+          "Hat - 帽子"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -18285,9 +18285,9 @@ export const lessonsData = [
         "prompt": "What does \"頭\" mean?",
         "options": [
           "Face",
-          "Head",
+          "Ear",
           "Eye",
-          "Ear"
+          "Head"
         ],
         "correctAnswer": "Head"
       },
@@ -18295,9 +18295,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Face\" in Japanese?",
         "options": [
+          "頭",
           "顔",
           "耳",
-          "頭",
           "目"
         ],
         "correctAnswer": "顔"
@@ -18306,10 +18306,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"目\"?",
         "imageOptions": [
-          "👤",
           "😊",
           "👁️",
-          "👂"
+          "👂",
+          "👤"
         ],
         "correctAnswer": "👁️"
       },
@@ -18318,9 +18318,9 @@ export const lessonsData = [
         "prompt": "Listen to the Japanese word and select the matching image.",
         "audioText": "耳",
         "imageOptions": [
-          "👤",
-          "😊",
           "👁️",
+          "😊",
+          "👤",
           "👂"
         ],
         "correctAnswer": "👂"
@@ -18334,8 +18334,8 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Japanese word to its meaning.",
         "options": [
-          "Face - 顔",
           "Head - 頭",
+          "Face - 顔",
           "Eye - 目",
           "Ear - 耳"
         ],
@@ -18417,8 +18417,8 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"太陽\" mean?",
         "options": [
-          "Wind",
           "Rain",
+          "Wind",
           "Sun",
           "Snow"
         ],
@@ -18429,9 +18429,9 @@ export const lessonsData = [
         "prompt": "How do you say \"Rain\" in Japanese?",
         "options": [
           "雪",
-          "雨",
           "風",
-          "太陽"
+          "太陽",
+          "雨"
         ],
         "correctAnswer": "雨"
       },
@@ -18451,10 +18451,10 @@ export const lessonsData = [
         "prompt": "Listen to the Japanese word and select the matching image.",
         "audioText": "雪",
         "imageOptions": [
-          "🌧️",
+          "❄️",
           "☀️",
-          "💨",
-          "❄️"
+          "🌧️",
+          "💨"
         ],
         "correctAnswer": "❄️"
       },
@@ -18467,9 +18467,9 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Japanese word to its meaning.",
         "options": [
+          "Snow - 雪",
           "Wind - 風",
           "Rain - 雨",
-          "Snow - 雪",
           "Sun - 太陽"
         ],
         "correctAnswer": "Matched successfully"
@@ -18551,9 +18551,9 @@ export const lessonsData = [
         "prompt": "What does \"切符\" mean?",
         "options": [
           "Luggage",
-          "Ticket",
+          "Flight",
           "Passport",
-          "Flight"
+          "Ticket"
         ],
         "correctAnswer": "Ticket"
       },
@@ -18561,10 +18561,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Passport\" in Japanese?",
         "options": [
-          "荷物",
-          "飛行",
           "切符",
-          "パスポート"
+          "パスポート",
+          "荷物",
+          "飛行"
         ],
         "correctAnswer": "パスポート"
       },
@@ -18574,8 +18574,8 @@ export const lessonsData = [
         "imageOptions": [
           "🧳",
           "✈️",
-          "🛂",
-          "🎫"
+          "🎫",
+          "🛂"
         ],
         "correctAnswer": "✈️"
       },
@@ -18584,10 +18584,10 @@ export const lessonsData = [
         "prompt": "Listen to the Japanese word and select the matching image.",
         "audioText": "荷物",
         "imageOptions": [
-          "🛂",
-          "🎫",
           "🧳",
-          "✈️"
+          "✈️",
+          "🛂",
+          "🎫"
         ],
         "correctAnswer": "🧳"
       },
@@ -18600,10 +18600,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Japanese word to its meaning.",
         "options": [
-          "Passport - パスポート",
-          "Luggage - 荷物",
+          "Flight - 飛行",
           "Ticket - 切符",
-          "Flight - 飛行"
+          "Passport - パスポート",
+          "Luggage - 荷物"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -18683,10 +18683,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"タクシー\" mean?",
         "options": [
-          "Street",
-          "Address",
+          "Taxi",
           "Driver",
-          "Taxi"
+          "Address",
+          "Street"
         ],
         "correctAnswer": "Taxi"
       },
@@ -18694,9 +18694,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Driver\" in Japanese?",
         "options": [
+          "タクシー",
           "住所",
           "通り",
-          "タクシー",
           "運転手"
         ],
         "correctAnswer": "運転手"
@@ -18705,10 +18705,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"住所\"?",
         "imageOptions": [
-          "👨‍✈️",
           "🚕",
           "🛣️",
-          "📍"
+          "📍",
+          "👨‍✈️"
         ],
         "correctAnswer": "📍"
       },
@@ -18717,10 +18717,10 @@ export const lessonsData = [
         "prompt": "Listen to the Japanese word and select the matching image.",
         "audioText": "通り",
         "imageOptions": [
-          "👨‍✈️",
+          "🛣️",
           "📍",
-          "🚕",
-          "🛣️"
+          "👨‍✈️",
+          "🚕"
         ],
         "correctAnswer": "🛣️"
       },
@@ -18816,9 +18816,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"部屋\" mean?",
         "options": [
-          "Room",
-          "Key",
           "Bed",
+          "Key",
+          "Room",
           "Shower"
         ],
         "correctAnswer": "Room"
@@ -18827,10 +18827,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Key\" in Japanese?",
         "options": [
-          "シャワー",
-          "ベッド",
+          "鍵",
           "部屋",
-          "鍵"
+          "ベッド",
+          "シャワー"
         ],
         "correctAnswer": "鍵"
       },
@@ -18838,8 +18838,8 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"ベッド\"?",
         "imageOptions": [
-          "🗝️",
           "🔑",
+          "🗝️",
           "🛏️",
           "🚿"
         ],
@@ -18850,10 +18850,10 @@ export const lessonsData = [
         "prompt": "Listen to the Japanese word and select the matching image.",
         "audioText": "シャワー",
         "imageOptions": [
-          "🛏️",
-          "🚿",
           "🗝️",
-          "🔑"
+          "🔑",
+          "🛏️",
+          "🚿"
         ],
         "correctAnswer": "🚿"
       },
@@ -18867,9 +18867,9 @@ export const lessonsData = [
         "prompt": "Match each Japanese word to its meaning.",
         "options": [
           "Room - 部屋",
+          "Bed - ベッド",
           "Shower - シャワー",
-          "Key - 鍵",
-          "Bed - ベッド"
+          "Key - 鍵"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -18949,10 +18949,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"メニュー\" mean?",
         "options": [
-          "Food",
-          "Bill",
+          "Menu",
           "Water",
-          "Menu"
+          "Food",
+          "Bill"
         ],
         "correctAnswer": "Menu"
       },
@@ -18960,10 +18960,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Water\" in Japanese?",
         "options": [
-          "会計",
           "食べ物",
           "水",
-          "メニュー"
+          "メニュー",
+          "会計"
         ],
         "correctAnswer": "水"
       },
@@ -18971,10 +18971,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"会計\"?",
         "imageOptions": [
-          "🥤",
           "🍲",
-          "🧾",
-          "📜"
+          "📜",
+          "🥤",
+          "🧾"
         ],
         "correctAnswer": "🧾"
       },
@@ -18983,10 +18983,10 @@ export const lessonsData = [
         "prompt": "Listen to the Japanese word and select the matching image.",
         "audioText": "食べ物",
         "imageOptions": [
-          "📜",
           "🥤",
-          "🧾",
-          "🍲"
+          "🍲",
+          "📜",
+          "🧾"
         ],
         "correctAnswer": "🍲"
       },
@@ -18999,10 +18999,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Japanese word to its meaning.",
         "options": [
-          "Water - 水",
           "Food - 食べ物",
-          "Menu - メニュー",
-          "Bill - 会計"
+          "Bill - 会計",
+          "Water - 水",
+          "Menu - メニュー"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -19082,10 +19082,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"店\" mean?",
         "options": [
-          "Price",
-          "Store",
           "Buy",
-          "Money"
+          "Money",
+          "Store",
+          "Price"
         ],
         "correctAnswer": "Store"
       },
@@ -19093,10 +19093,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Price\" in Japanese?",
         "options": [
-          "価格",
-          "店",
+          "買う",
           "お金",
-          "買う"
+          "店",
+          "価格"
         ],
         "correctAnswer": "価格"
       },
@@ -19104,9 +19104,9 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"買う\"?",
         "imageOptions": [
+          "🏪",
           "🛍️",
           "💰",
-          "🏪",
           "🏷️"
         ],
         "correctAnswer": "🛍️"
@@ -19118,8 +19118,8 @@ export const lessonsData = [
         "imageOptions": [
           "🏪",
           "🏷️",
-          "💰",
-          "🛍️"
+          "🛍️",
+          "💰"
         ],
         "correctAnswer": "💰"
       },
@@ -19132,10 +19132,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Japanese word to its meaning.",
         "options": [
-          "Price - 価格",
-          "Store - 店",
           "Buy - 買う",
-          "Money - お金"
+          "Money - お金",
+          "Store - 店",
+          "Price - 価格"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -19215,10 +19215,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"学校\" mean?",
         "options": [
-          "Class",
           "Student",
+          "School",
           "Teacher",
-          "School"
+          "Class"
         ],
         "correctAnswer": "School"
       },
@@ -19227,8 +19227,8 @@ export const lessonsData = [
         "prompt": "How do you say \"Teacher\" in Japanese?",
         "options": [
           "教室",
-          "学校",
           "先生",
+          "学校",
           "学生"
         ],
         "correctAnswer": "先生"
@@ -19237,10 +19237,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"学生\"?",
         "imageOptions": [
+          "🏫",
           "📖",
-          "🧑&zwj;🎓",
           "👩&zwj;🏫",
-          "🏫"
+          "🧑&zwj;🎓"
         ],
         "correctAnswer": "🧑&zwj;🎓"
       },
@@ -19249,10 +19249,10 @@ export const lessonsData = [
         "prompt": "Listen to the Japanese word and select the matching image.",
         "audioText": "教室",
         "imageOptions": [
-          "🏫",
           "👩&zwj;🏫",
-          "🧑&zwj;🎓",
-          "📖"
+          "📖",
+          "🏫",
+          "🧑&zwj;🎓"
         ],
         "correctAnswer": "📖"
       },
@@ -19265,10 +19265,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Japanese word to its meaning.",
         "options": [
-          "Class - 教室",
-          "Student - 学生",
+          "School - 学校",
           "Teacher - 先生",
-          "School - 学校"
+          "Student - 学生",
+          "Class - 教室"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -19348,10 +19348,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"病院\" mean?",
         "options": [
-          "Sick",
-          "Medicine",
           "Hospital",
-          "Doctor"
+          "Doctor",
+          "Sick",
+          "Medicine"
         ],
         "correctAnswer": "Hospital"
       },
@@ -19359,10 +19359,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Doctor\" in Japanese?",
         "options": [
-          "医師",
           "病気",
           "病院",
-          "薬"
+          "薬",
+          "医師"
         ],
         "correctAnswer": "医師"
       },
@@ -19371,9 +19371,9 @@ export const lessonsData = [
         "prompt": "Which image matches \"薬\"?",
         "imageOptions": [
           "🏥",
+          "🤢",
           "🥼",
-          "💊",
-          "🤢"
+          "💊"
         ],
         "correctAnswer": "💊"
       },
@@ -19383,9 +19383,9 @@ export const lessonsData = [
         "audioText": "病気",
         "imageOptions": [
           "🏥",
-          "🤢",
+          "🥼",
           "💊",
-          "🥼"
+          "🤢"
         ],
         "correctAnswer": "🤢"
       },
@@ -19398,10 +19398,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Japanese word to its meaning.",
         "options": [
-          "Medicine - 薬",
           "Doctor - 医師",
-          "Sick - 病気",
-          "Hospital - 病院"
+          "Hospital - 病院",
+          "Medicine - 薬",
+          "Sick - 病気"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -19481,10 +19481,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "What does \"旅行\" mean?",
         "options": [
-          "Train",
-          "Travel",
+          "City",
           "Bus",
-          "City"
+          "Train",
+          "Travel"
         ],
         "correctAnswer": "Travel"
       },
@@ -19492,9 +19492,9 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Train\" in Japanese?",
         "options": [
-          "バス",
           "電車",
           "旅行",
+          "バス",
           "都市"
         ],
         "correctAnswer": "電車"
@@ -19503,10 +19503,10 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image matches \"バス\"?",
         "imageOptions": [
-          "🚌",
-          "🚆",
           "🏙️",
-          "🧭"
+          "🧭",
+          "🚌",
+          "🚆"
         ],
         "correctAnswer": "🚌"
       },
@@ -19515,9 +19515,9 @@ export const lessonsData = [
         "prompt": "Listen to the Japanese word and select the matching image.",
         "audioText": "都市",
         "imageOptions": [
-          "🚌",
           "🚆",
           "🧭",
+          "🚌",
           "🏙️"
         ],
         "correctAnswer": "🏙️"
@@ -19531,10 +19531,10 @@ export const lessonsData = [
         "type": "match",
         "prompt": "Match each Japanese word to its meaning.",
         "options": [
-          "Travel - 旅行",
           "Train - 電車",
+          "City - 都市",
           "Bus - バス",
-          "City - 都市"
+          "Travel - 旅行"
         ],
         "correctAnswer": "Matched successfully"
       },
@@ -19565,10 +19565,10 @@ export const lessonsData = [
         "type": "multiple-choice",
         "prompt": "How do you say \"Thank you\" in Japanese?",
         "options": [
-          "お願いします",
-          "さようなら",
+          "ありがとう",
           "こんにちは",
-          "ありがとう"
+          "さようなら",
+          "お願いします"
         ],
         "correctAnswer": "ありがとう"
       },
@@ -19576,9 +19576,9 @@ export const lessonsData = [
         "type": "identify-image",
         "prompt": "Which image represents \"車\"?",
         "imageOptions": [
-          "🍎",
           "💧",
           "🏠",
+          "🍎",
           "🚗"
         ],
         "correctAnswer": "🚗"
@@ -19588,9 +19588,9 @@ export const lessonsData = [
         "prompt": "Listen to the Japanese word and choose the matching image.",
         "audioText": "猫",
         "imageOptions": [
+          "🐦",
           "🐐",
           "🐶",
-          "🐦",
           "🐱"
         ],
         "correctAnswer": "🐱"

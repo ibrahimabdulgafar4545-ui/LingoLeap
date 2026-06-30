@@ -8,7 +8,6 @@ const bottomNavItems = [
   { to: '/dashboard', icon: <LayoutDashboard size={18} />, key: 'dashboard' },
   { to: '/learn', icon: <BookOpen size={18} />, key: 'learn' },
   { to: '/practice', icon: <Zap size={18} />, key: 'practice' },
-  { to: '/ai-tutor', icon: <Bot size={18} />, key: 'ai_tutor' },
   { to: '/ai-conversation', icon: <Globe size={18} />, key: 'ai_conversation' },
   { to: '/profile', icon: <User size={18} />, key: 'profile' },
 ];
