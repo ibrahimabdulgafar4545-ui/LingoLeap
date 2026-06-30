@@ -39,7 +39,7 @@ export const buyItem = async (req, res) => {
     }
 
     const items = await getShopItems();
-    const item = items.find(i => i.itemId === itemId || i._id.toString() === itemId || i.id === itemId);
+    const item = items.find(i => i.itemId === itemId || i._id?.toString() === itemId || i.id === itemId);
     if (!item) {
       return res.status(404).json({ success: false, message: 'Item not found in shop.' });
     }

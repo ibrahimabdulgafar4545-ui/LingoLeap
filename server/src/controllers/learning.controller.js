@@ -117,7 +117,7 @@ const buildLearningState = async (userId) => {
   const unitCompleted = new Map();
   lessons.forEach((lesson, index) => {
     const unit = getUnitNumber(lesson, index);
-    const id = lesson._id.toString();
+    const id = lesson._id?.toString() || lesson.id;
     unitTotals.set(unit, (unitTotals.get(unit) || 0) + 1);
     if (completedIds.includes(id)) unitCompleted.set(unit, (unitCompleted.get(unit) || 0) + 1);
   });
@@ -210,10 +210,10 @@ export const getLessons = async (req, res) => {
     // Mark each lesson as completed/locked
     const lessonsWithStatus = lessons.map((lesson, index) => {
       const lessonObj = typeof lesson.toObject === 'function' ? lesson.toObject() : { ...lesson };
-      const lessonIdStr = lessonObj._id.toString();
+      const lessonIdStr = lessonObj._id?.toString() || lessonObj.id || '';
       lessonObj.isCompleted = completedIds.includes(lessonIdStr);
       // Lesson is unlocked if it's first, or the previous lesson is completed
-      lessonObj.isLocked = index > 0 && !completedIds.includes(lessons[index - 1]._id.toString());
+      lessonObj.isLocked = index > 0 && !completedIds.includes(lessons[index - 1]._id?.toString() || lessons[index - 1].id || '');
       return lessonObj;
     });
 
@@ -614,7 +614,7 @@ The JSON object must have a single key "questions" containing an array of object
     // Database Fallback: Pick questions from user's lessons and enforce shuffling + randomized answer positions
     const allLessons = await findLessonsByLanguage(language);
     const completedIds = await getCompletedLessons(userId.toString());
-    const completedLessons = allLessons.filter(l => completedIds.includes(l._id.toString()));
+    const completedLessons = allLessons.filter(l => completedIds.includes(l._id?.toString() || l.id));
 
     let candidateQuestions = [];
     const sourceLessons = completedLessons.length > 0 ? completedLessons : allLessons;
