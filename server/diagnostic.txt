@@ -1,4 +1,4 @@
-=== STARTUP DIAGNOSTIC AT 2026-06-30T09:45:00.060Z ===
+=== STARTUP DIAGNOSTIC AT 2026-06-30T09:54:22.218Z ===
 Loaded db.json successfully. User count: 6
 User: testuser_1781852838739 (test_1781852838739@example.com)
   Existing Hash: $2a$10$Sn7ApPhD44CA5KiyXPdr0.2/4S70lrF5PzvY9s.T0lDTZNNRXsBxO
